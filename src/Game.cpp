@@ -23,15 +23,26 @@
 
 Game::Game( int numberPlayers )
 {
-  players.insert( new Human( "You" ) );
-  players.insert( new AI( "Alice" ) );
-  players.insert( new AI( "Bob" ) );
+  vector<string> names;
+  names.push_back("Alice");
+  names.push_back("Bob");
+  if( numberPlayers >= 4)
+    {
+      names.push_back("Charly");
+      if( numberPlayers == 5)
+	names.push_back("Dave");
+    }
+  
+  players.push_back( shared_ptr<Human>( new Human( "You" ) ) );
+  players.push_back( shared_ptr<AI>( new AI( "Alice", names ) ) );
+  players.push_back( shared_ptr<AI>( new AI( "Bob", names ) ) );
   
   if( numberPlayers >= 4)
     {
-      players.insert( new AI( "Charly" ) );
+
+      players.push_back( shared_ptr<AI>( new AI( "Charly", names ) ) );
       if( numberPlayers == 5)
-	players.insert( new AI( "Dave" ) );
+	players.push_back( shared_ptr<AI>( new AI( "Dave", names ) ) );
     }
 
   currentTrick	= nullptr;
@@ -49,7 +60,7 @@ Game::~Game()
 void Game::newGame()
 {
   for( shared_ptr<Player> player : players )
-    player.newGame();
+    player->newGame();
 
   while( !history.empty() )
     history.pop();
@@ -62,7 +73,8 @@ void Game::newGame()
 
 void Game::printScores()
 {
-  cout << 
+  for(shared_ptr<Player> player : players)
+    cout << player->name << " " << player->score << endl;
 }
 
 Team Game::play()

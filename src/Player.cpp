@@ -21,28 +21,33 @@
 
 #include <Player.hpp>
 
+Player::Player( string name ) : name(name) {}
+Player::Player( const Player &player ) {}
+Player::~Player() {}
+
 void Player::addCard( shared_ptr<Card> card )
 {
-  switch( card->color )
+  switch( card->getColor() )
     {
     case heart:
-      hearts.insert( card );
+      hearts.push_back( card );
       break;
     case spade:
-      spades.insert( card );
+      spades.push_back( card );
       break;
     case diamond:
-      diamonds.insert( card );
+      diamonds.push_back( card );
       break;
     case club:
-      clubs.insert( card );
+      clubs.push_back( card );
       break;
     case trump:
-      trumps.insert( card );
+      trumps.push_back( card );
       break;
-    case fool:
-      fool = card;
+    case Colors::fool:
+      fool = move( card );
       break;
     default:
+      break;
     }
 }
