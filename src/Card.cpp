@@ -19,6 +19,8 @@
 * along with Tarot.  If not, see http://www.gnu.org/licenses/.
 */
 
+#include <sstream>
+
 #include <Card.hpp>
 
 Card::Card( Colors color, int value, double points, bool oudler )
@@ -50,4 +52,71 @@ bool		Card::operator<	( shared_ptr<Card> card )
 inline bool	Card::isComparable ( shared_ptr<Card> card ) 
 { 
   return this->color == card->color || this->color == 4 || card->color == 4;
+}
+
+ostream& operator<<( ostream& os, const Card& card )
+{
+  string col;
+  string val;
+
+  ostringstream oss;
+ 
+  switch( card.value )
+    {
+    case 1:
+      val = "A";
+      break;
+    case 11:
+      val = "J";
+      break;
+    case 12:
+      val = "Kn";
+      break;
+    case 13:
+      val = "Q";
+      break;
+    case 14:
+      val = "K";
+      break;
+    default:
+      oss << card.value;
+      val = oss.str();
+      break;
+    }
+
+  switch( card.color )
+    {
+    case heart:
+      col = "♥";
+      break;
+    case spade:
+      col = "♠";
+      break;
+    case diamond:
+      col = "♦";
+      break;
+    case club:
+      col = "♣";
+      break;
+    case trump:
+      col = "T";
+      if( card.value == 1 )
+	val = "1";
+      else if( card.value == 11 )
+	val = "11";
+      else if( card.value == 12 )
+	val = "12";
+      else if( card.value == 13 )
+	val = "13";
+      else if( card.value == 14 )
+	val = "14";
+      break;
+    case fool:
+      col = "F";
+      val = "";
+      break;
+    }
+
+  os << val + col + "  ";
+  return os;
 }
