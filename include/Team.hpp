@@ -34,6 +34,8 @@ public:
   Team();
   ~Team();
 
+  void newGame();
+
   map<string, shared_ptr<Player> >	members;
   double				score;
 };

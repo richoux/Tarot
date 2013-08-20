@@ -27,10 +27,6 @@ Card::Card( Colors color, int value, double points, bool oudler )
 
 Card::~Card() {}
 
-inline double	Card::getPoints	() { return points; }
-inline bool	Card::isOudler	() { return oudler; }
-inline bool	Card::isFaceCard() { return value > 10; }
-
 bool		Card::operator>	( shared_ptr<Card> card ) 
 { 
   if( this->color == 4 && card->color < 4)
