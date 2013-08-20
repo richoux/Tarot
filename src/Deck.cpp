@@ -23,12 +23,17 @@
 
 Deck::Deck() 
 {
-
+  newDeal();
 }
 
 Deck::~Deck() 
 {
   cards.clear();
+}
+
+void Deck::newDeal()
+{
+  
 }
 
 bool Deck::isInDeck( shared_ptr<Card> card )

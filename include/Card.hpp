@@ -33,9 +33,12 @@ public:
   Card( Colors, int, double, bool );
   ~Card();
 
-  double	getPoints	();
-  bool		isOudler	();
-  bool		isFaceCard	();
+  inline double	getPoints	() { return points; }
+  inline Colors getColor	() { return color; }
+  inline int	getValue	() { return value; }
+  inline bool	isOudler	() { return oudler; }
+  inline bool	isFaceCard	() { return value > 10; }
+
   bool		operator>	( shared_ptr<Card> );
   bool		operator<	( shared_ptr<Card> );
   bool		isComparable	( shared_ptr<Card> );
