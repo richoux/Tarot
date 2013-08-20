@@ -47,6 +47,7 @@ public:
   void newGame();
   void printScores();
   Team play();
+  void showDeck();
 
 private:
   vector< shared_ptr<Player> >	players;
