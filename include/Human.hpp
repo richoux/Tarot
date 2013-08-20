@@ -21,26 +21,20 @@
 
 #pragma once
 
-#include <vector>
 #include <memory>
 
+#include <Player.hpp>
+#include <Colors.hpp>
 #include <Card.hpp>
 
 using namespace std;
 
-class Deck
+class Human : public Player
 {
 public:
-  Deck();
-  ~Deck();
-
-  bool isInDeck( shared_ptr<Card> );
-  bool hasStrongerThan( shared_ptr<Card> );
-  void newDeal();
-
-  vector< shared_ptr<Card> >	cards;
-  int				numberHearts;
-  int				numberSpades;
-  int				numberDiamonds;
-  int				numberClubs;
+  Human( string );
+  ~Human();
+  
+  shared_ptr<Card>	playCard		( shared_ptr<Card> );
+  void			newGame			();
 };

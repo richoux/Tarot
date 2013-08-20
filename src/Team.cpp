@@ -27,3 +27,10 @@ Team::Team()
 }
 
 Team::~Team() {}
+
+void Team::newGame()
+{
+  map<string, shared_ptr<Player> >::iterator it;
+  for( it = members.begin(); it != members.end(); ++it )
+    it->second->newGame();
+}

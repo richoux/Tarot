@@ -19,28 +19,24 @@
 * along with Tarot.  If not, see http://www.gnu.org/licenses/.
 */
 
-#pragma once
+#include <Human.hpp>
 
-#include <vector>
-#include <memory>
+Human::Human( string name ) : Player( name ) {}
+Human::~Human() {}
 
-#include <Card.hpp>
-
-using namespace std;
-
-class Deck
+shared_ptr<Card> Human::playCard( shared_ptr<Card> card )
 {
-public:
-  Deck();
-  ~Deck();
+  return card;
+}
 
-  bool isInDeck( shared_ptr<Card> );
-  bool hasStrongerThan( shared_ptr<Card> );
-  void newDeal();
+void Human::newGame() 
+{
+  score = 0;
+  hearts.clear();
+  spades.clear();
+  diamonds.clear();
+  clubs.clear();
+  trumps.clear();
+  fool.reset();
+}
 
-  vector< shared_ptr<Card> >	cards;
-  int				numberHearts;
-  int				numberSpades;
-  int				numberDiamonds;
-  int				numberClubs;
-};
