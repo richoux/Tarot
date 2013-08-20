@@ -43,4 +43,5 @@ public:
   int				numberSpades;
   int				numberDiamonds;
   int				numberClubs;
+  int				numberTrumps;
 };

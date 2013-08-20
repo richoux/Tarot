@@ -77,6 +77,14 @@ void Game::printScores()
     cout << player->name << " " << player->score << endl;
 }
 
+void Game::showDeck()
+{
+  cout << "Deck: ";
+  for( shared_ptr<Card> card : deck.cards )
+    cout << *card;
+  cout << endl;
+}
+
 Team Game::play()
 {
 
