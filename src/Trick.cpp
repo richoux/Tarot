@@ -25,7 +25,7 @@ Trick::Trick( shared_ptr<Card> kingCalled) : kingCalled(kingCalled), leader(null
 
 Trick::~Trick() 
 {
-  leader = nullptr;
+  leader.reset();
   trickCards.clear();
 }
 

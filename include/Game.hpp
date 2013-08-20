@@ -30,7 +30,9 @@
 #include <Biddings.hpp>
 #include <Team.hpp>
 #include <Player.hpp>
-#include <StratLang.hpp>
+#include <Human.hpp>
+#include <AI.hpp>
+// #include <StratLang.hpp>
 #include <Trick.hpp>
 #include <Deck.hpp>
 
@@ -48,7 +50,7 @@ public:
 
 private:
   vector< shared_ptr<Player> >	players;
-  shared_ptr<StratLang>		language;
+  // shared_ptr<StratLang>		language;
   shared_ptr<Trick>		currentTrick;
   stack< shared_ptr<Trick> >	history;
   shared_ptr<Player>		nextPlayer;
