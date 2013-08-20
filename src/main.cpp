@@ -25,5 +25,7 @@
 
 int main(int argc, char **argv)
 {
-  Game game( 3 );
+  Game game( 4 );
+  game.printScores();
+  game.showDeck();
 }

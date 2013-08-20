@@ -21,6 +21,7 @@
 
 #pragma once
 
+#include <iostream>
 #include <memory>
 
 #include <Colors.hpp>
@@ -29,6 +30,8 @@ using namespace std;
 
 class Card
 {
+  friend ostream& operator<<	( ostream&, const Card& );
+
 public:
   Card( Colors, int, double, bool );
   ~Card();
