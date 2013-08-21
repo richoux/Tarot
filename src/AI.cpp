@@ -34,8 +34,7 @@ AI::~AI() {}
 
 bool AI::isOpponent( string name )
 {
-  map<string, Counting>::const_iterator it;
-  for( it = opponents.begin(); it != opponents.end(); ++it )
+  for( auto it = opponents.begin(); it != opponents.end(); ++it )
     if( it->first.compare( name ) == 0 )
       return true;
 
@@ -44,8 +43,7 @@ bool AI::isOpponent( string name )
 
 bool AI::isPartner( string name )
 {
-  map<string, Counting>::const_iterator it;
-  for( it = partners.begin(); it != partners.end(); ++it )
+  for( auto it = partners.begin(); it != partners.end(); ++it )
     if( it->first.compare( name ) == 0 )
       return true;
 
@@ -64,17 +62,26 @@ bool AI::haveColor( string player, Colors color )
 
 bool AI::opponentsHaveColor( Colors color )
 {
-  map<string, Counting>::const_iterator it;
-  for( it = opponents.begin(); it != opponents.end(); ++it )
+  for( auto it = opponents.begin(); it != opponents.end(); ++it )
     if( it->second.hasColor( color ) )
       return true;
 
   return false;
 }
 
-shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard )
+shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
 {
-  return difficulty->playCard( validCards( referenceCard ) );
+  cout << "Player " << name << " valid cards: ";
+  for( shared_ptr<Card> card : validCards( referenceCard, highTrump ) )
+    cout << *card;
+  cout << endl;
+
+  shared_ptr<Card> theCard = difficulty->playCard( validCards( referenceCard, highTrump ) );
+  cout << "Played card: " << *theCard << endl;
+  
+  delCard( theCard );
+
+  return theCard;
 }
 
 void AI::newGame() 

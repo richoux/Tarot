@@ -21,19 +21,48 @@
 
 #include <Trick.hpp>
 
-Trick::Trick( shared_ptr<Card> kingCalled) : kingCalled(kingCalled), leader(nullptr) {}
+Trick::Trick( shared_ptr<Card> kingCalled) : kingCalled(kingCalled), leader(nullptr), greaterTrump(nullptr) 
+{}
 
 Trick::~Trick() 
 {
-  leader.reset();
   trickCards.clear();
+}
+
+vector< shared_ptr<Card> > Trick::getAllCards()
+{
+  vector< shared_ptr<Card> > allCards;
+  
+  for( auto it = trickCards.begin(); it != trickCards.end(); ++it )
+    allCards.push_back( it->second );
+  
+  return allCards;
+}
+
+double Trick::getScore()
+{
+  double score = 0;
+  vector< shared_ptr<Card> > allCards = getAllCards();
+
+  for( shared_ptr<Card> card : allCards )
+    score += card->getPoints();
+
+  return score;
+}
+
+void Trick::setCard( shared_ptr<Player> player, shared_ptr<Card> card )
+{
+  trickCards[player] = card;
+  if( leader == nullptr || card > trickCards[leader] )
+    leader = player;
+
+  if( card->isTrump() && ( greaterTrump == nullptr || card > greaterTrump ) )
+    greaterTrump = card;
 }
 
 shared_ptr<Player> Trick::asCalledKing()
 {
-  map< shared_ptr<Player>, shared_ptr<Card> >::const_iterator it;
-
-  for(it = trickCards.begin(); it != trickCards.end(); ++it)
+  for( auto it = trickCards.begin(); it != trickCards.end(); ++it)
     if( it->second == kingCalled )
       return it->first;
 

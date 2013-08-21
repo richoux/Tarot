@@ -30,12 +30,16 @@ using namespace std;
 
 class Team
 {
+  friend ostream& operator<<	( ostream&, const Team& );
+
 public:
   Team();
   ~Team();
 
-  void newGame();
+  void		newGame		();
+  bool		operator>	( Team& );
+  bool		operator<	( Team& );
+  double	getScore	();
 
   map<string, shared_ptr<Player> >	members;
-  double				score;
 };

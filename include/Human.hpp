@@ -27,6 +27,7 @@
 #include <Player.hpp>
 #include <Colors.hpp>
 #include <Card.hpp>
+#include <getInt.hpp>
 
 using namespace std;
 
@@ -36,6 +37,6 @@ public:
   Human( string );
   ~Human();
   
-  shared_ptr<Card>	playCard		( shared_ptr<Card> );
+  shared_ptr<Card>	playCard		( shared_ptr<Card>, shared_ptr<Card> );
   void			newGame			();
 };

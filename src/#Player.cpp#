@@ -78,7 +78,7 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
 	  if( !trumps.empty() )
 	    {
 	      for( shared_ptr<Card> card : trumps )
-		if( card > greaterTrump )
+		if( *card > *greaterTrump )
 		  returnCards.push_back( card );
 	      // if we have trumps, but not better than the highest of the trick
 	      if( returnCards.empty() )
@@ -94,7 +94,7 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
 	  if( !trumps.empty() )
 	    {
 	      for( shared_ptr<Card> card : trumps )
-		if( card > greaterTrump )
+		if( *card > *greaterTrump )
 		  returnCards.push_back( card );
 	    }
 	  // if one has no trumps
