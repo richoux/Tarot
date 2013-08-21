@@ -19,42 +19,11 @@
 * along with Tarot.  If not, see http://www.gnu.org/licenses/.
 */
 
-#include <Human.hpp>
+// From a dude on stackoverflow.com
 
-Human::Human( string name ) : Player( name ) {}
-Human::~Human() {}
+#pragma once
 
-shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
-{
-  vector< shared_ptr<Card> > valids = validCards( referenceCard, highTrump );
+#include <iostream>
+#include <sstream>
 
-  cout << "My cards: ";
-  showCards();
-  cout << endl;
-  
-  for( int i = 0; i < valids.size(); i++ )
-    cout << "(" << i << ") " << *valids[i] << " | ";
-  
-  int index;
-  
-  do
-    {
-      index = getInt( "\nSelect your card.\n" );
-    }
-  while( index < 0 || index >= valids.size() );
-
-  delCard( valids[index] );
-  return valids[index];
-}
-
-void Human::newGame() 
-{
-  score = 0;
-  hearts.clear();
-  spades.clear();
-  diamonds.clear();
-  clubs.clear();
-  trumps.clear();
-  fool.reset();
-}
-
+int getInt(char *message);
