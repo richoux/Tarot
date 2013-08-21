@@ -19,25 +19,10 @@
 * along with Tarot.  If not, see http://www.gnu.org/licenses/.
 */
 
-#include <Human.hpp>
+#include <Beginner.hpp>
 
-Human::Human( string name ) : Player( name ) {}
-Human::~Human() {}
-
-shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard )
+shared_ptr<Card> Beginner::playCard( vector< shared_ptr<Card> > cardsCanPlay )
 {
-  shared_ptr<Card> dummyCard = validCards( referenceCard )[0];
-  return dummyCard;
+  // play random
+  return cardsCanPlay[ rand() % cardsCanPlay.size() ]; 
 }
-
-void Human::newGame() 
-{
-  score = 0;
-  hearts.clear();
-  spades.clear();
-  diamonds.clear();
-  clubs.clear();
-  trumps.clear();
-  fool.reset();
-}
-

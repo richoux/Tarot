@@ -1,7 +1,8 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -O3 -W -Wall -I../include -c 
 CPP_FILES = main.cpp AI.cpp Card.cpp Deck.cpp\
- Game.cpp Human.cpp Player.cpp Team.cpp Trick.cpp
+ Game.cpp Human.cpp Player.cpp Team.cpp Trick.cpp\
+ Beginner.cpp 
 OBJ = $(patsubst %.cpp,%.o,$(CPP_FILES))
 EXEC = tarot
 
@@ -22,7 +23,11 @@ Game.o: ../include/AI.hpp ../include/Biddings.hpp ../include/Card.hpp\
  ../include/Team.hpp ../include/Trick.hpp
 
 AI.o: ../include/AI.hpp ../include/Card.hpp ../include/Colors.hpp\
- ../include/Deck.hpp ../include/Player.hpp
+ ../include/Deck.hpp ../include/Player.hpp ../include/StratDiff.hpp\
+ ../include/Beginner.hpp
+
+Beginner.o: ../include/Beginner.hpp ../include/Card.hpp\
+ ../include/StratDiff.hpp
 
 Card.o: ../include/Card.hpp ../include/Colors.hpp
 Deck.o: ../include/Card.hpp ../include/Deck.hpp
