@@ -46,10 +46,17 @@ public:
   double score;
 
 protected:
-  set< shared_ptr<Card> >	hearts;
-  set< shared_ptr<Card> >	spades;
-  set< shared_ptr<Card> >	diamonds;
-  set< shared_ptr<Card> >	clubs;
-  set< shared_ptr<Card> >	trumps;
+  struct cardOrder {
+    bool operator() (shared_ptr<Card> const lhs, shared_ptr<Card> const rhs) const
+    {
+      return lhs->getValue() < rhs->getValue();
+    }
+  };
+
+  set< shared_ptr<Card>, cardOrder >	hearts;
+  set< shared_ptr<Card>, cardOrder >	spades;
+  set< shared_ptr<Card>, cardOrder >	diamonds;
+  set< shared_ptr<Card>, cardOrder >	clubs;
+  set< shared_ptr<Card>, cardOrder >	trumps;
   shared_ptr<Card>		fool;
 };

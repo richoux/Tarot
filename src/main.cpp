@@ -20,25 +20,52 @@
 */
 
 #include <iostream>
+#include <sstream>
 #include <cstdlib>
 
 #include <Game.hpp>
 
 using namespace std;
 
+int get_int(char *message)
+{
+	using namespace std;
+
+	int out;
+	string in;
+
+	while(true) {
+
+		cout << message;
+		getline(cin,in);
+		stringstream ss(in); //covert input to a stream for conversion to int
+
+		if(ss >> out && !(ss >> in)) return out;
+		//(ss >> out) checks for valid conversion to integer
+		//!(ss >> in) checks for unconverted input and rejects it
+
+		cin.clear(); //in case of a cin error, like eof() -- prevent infinite loop
+		cerr << "\nInvalid input. Please try again.\n"; //if you get here, it's an error
+	}
+}
+
 int main(int argc, char **argv)
 {
   srand ( unsigned ( time(0) ) );
 
+  Game *game;
   string playerName;
+  int nberPlayers;
+
   cout << "Please enter your name." << endl;
   getline( cin, playerName );
-  Game *game;
+ 
+  nberPlayers = get_int( "Please enter the number of players.\n" );
 
   if( playerName.compare("") != 0 )
-    game = new Game( 4, playerName );
+    game = new Game( nberPlayers, playerName );
   else
-    game = new Game( 4 );
+    game = new Game( nberPlayers );
 
   game->printScores();
   game->showDeck();
