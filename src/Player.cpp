@@ -30,24 +30,51 @@ void Player::addCard( shared_ptr<Card> card )
   switch( card->getColor() )
     {
     case heart:
-      hearts.push_back( card );
+      hearts.insert( card );
       break;
     case spade:
-      spades.push_back( card );
+      spades.insert( card );
       break;
     case diamond:
-      diamonds.push_back( card );
+      diamonds.insert( card );
       break;
     case club:
-      clubs.push_back( card );
+      clubs.insert( card );
       break;
     case trump:
-      trumps.push_back( card );
+      trumps.insert( card );
       break;
     case Colors::fool:
-      fool = move( card );
+      fool = card;
       break;
     default:
       break;
     }
+}
+
+void Player::showCards()
+{
+  // show trumps
+  for( shared_ptr<Card> card : trumps )
+    cout << *card;
+
+  // show fool
+  if( fool.get() != nullptr )
+    cout << *fool;
+
+  // show hearts
+  for( shared_ptr<Card> card : hearts )
+    cout << *card;
+
+  // show spades
+  for( shared_ptr<Card> card : spades )
+    cout << *card;
+
+  // show diamonds
+  for( shared_ptr<Card> card : diamonds )
+    cout << *card;
+
+  // show clubs
+  for( shared_ptr<Card> card : clubs )
+    cout << *card;
 }

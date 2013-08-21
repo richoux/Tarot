@@ -23,7 +23,6 @@
 
 Deck::Deck() 
 {
-  srand ( unsigned ( time(0) ) );
   newDeal();
 }
 
