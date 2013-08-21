@@ -45,7 +45,6 @@ int main(int argc, char **argv)
   else
     game = new Game( nberPlayers );
 
-  //game->printScores();
   //game->showDeck();
   //game->shuffleDeck();
   //game->showDeck();
@@ -53,7 +52,8 @@ int main(int argc, char **argv)
   //game->showPlayersCards();
   Team winners = game->play();
   
-  cout << "Winners: " << winners;
+  game->printScores();  
+  cout << "Winners: " << winners << endl;
 
   delete game;
 }
