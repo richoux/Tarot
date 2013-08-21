@@ -25,6 +25,84 @@ Player::Player( string name ) : name(name) {}
 Player::Player( const Player &player ) {}
 Player::~Player() {}
 
+vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard )
+{
+  vector< shared_ptr<Card> > returnCards;
+  if( refCard->getColor() == Colors::fool )
+    {
+      for( shared_ptr<Card> card : hearts )
+	returnCards.push_back( card );
+      for( shared_ptr<Card> card : spades )
+	returnCards.push_back( card );
+      for( shared_ptr<Card> card : diamonds )
+	returnCards.push_back( card );
+      for( shared_ptr<Card> card : clubs )
+	returnCards.push_back( card );
+      for( shared_ptr<Card> card : trumps )
+	returnCards.push_back( card );
+
+      return returnCards;
+    }
+
+  switch( refCard->getColor() )
+    {
+    case Colors::heart:
+      if( !hearts.empty() )
+	{
+	  for( shared_ptr<Card> card : hearts )
+	    returnCards.push_back( card );
+	}
+      break;
+    case Colors::spade:
+      if( !spades.empty() )
+	{
+	  for( shared_ptr<Card> card : spades )
+	    returnCards.push_back( card );
+	}
+      break;
+    case Colors::diamond:
+      if( !diamonds.empty() )
+	{
+	  for( shared_ptr<Card> card : diamonds )
+	    returnCards.push_back( card );
+	}
+      break;
+    case Colors::club:
+      if( !clubs.empty() )
+	{
+	  for( shared_ptr<Card> card : clubs )
+	    returnCards.push_back( card );
+	}
+      break;
+    case Colors::trump:
+      if( !trumps.empty() )
+	{
+	  for( shared_ptr<Card> card : trumps )
+	    if( card->getValue() > refCard->getValue() )
+	      returnCards.push_back( card );
+	}
+      break;
+    }
+
+  // occurs if one does not have the asked color 
+  // and has no trumps
+  if( returnCards.empty() )
+    {
+      for( shared_ptr<Card> card : hearts )
+	returnCards.push_back( card );
+      for( shared_ptr<Card> card : spades )
+	returnCards.push_back( card );
+      for( shared_ptr<Card> card : diamonds )
+	returnCards.push_back( card );
+      for( shared_ptr<Card> card : clubs )
+	returnCards.push_back( card );
+      for( shared_ptr<Card> card : trumps )
+	returnCards.push_back( card );
+    }
+
+  return returnCards;
+}
+
 void Player::addCard( shared_ptr<Card> card )
 {
   switch( card->getColor() )

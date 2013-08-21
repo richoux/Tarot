@@ -26,6 +26,8 @@ AI::AI( string name, vector<string> knownPartners ) : Player( name )
   for( string partner : knownPartners )
     if( !partner.compare( name ) == 0 )
       partners[partner];
+
+  difficulty = shared_ptr<Beginner>( new Beginner() );
 }
 
 AI::~AI() {}
@@ -70,9 +72,9 @@ bool AI::opponentsHaveColor( Colors color )
   return false;
 }
 
-shared_ptr<Card> AI::playCard( shared_ptr<Card> card )
+shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard )
 {
-  return card;
+  return difficulty->playCard( validCards( referenceCard ) );
 }
 
 void AI::newGame() 

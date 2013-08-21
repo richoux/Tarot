@@ -23,11 +23,14 @@
 
 #include <memory>
 #include <map>
+#include <vector>
 
 #include <Player.hpp>
 #include <Colors.hpp>
 #include <Card.hpp>
 #include <Deck.hpp>
+#include <StratDiff.hpp>
+#include <Beginner.hpp>
 
 using namespace std;
 
@@ -43,6 +46,8 @@ public:
   bool			opponentsHaveColor	( Colors );
   shared_ptr<Card>	playCard		( shared_ptr<Card> );
   void			newGame			();
+
+  inline void setDifficulty ( shared_ptr<StratDiff> diff) {difficulty = diff;}
 
 private:
   class Counting
@@ -84,4 +89,5 @@ private:
   Deck			cardCounting;
   map<string, Counting>	opponents;
   map<string, Counting>	partners;
+  shared_ptr<StratDiff>	difficulty;
 };

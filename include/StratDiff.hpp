@@ -19,25 +19,17 @@
 * along with Tarot.  If not, see http://www.gnu.org/licenses/.
 */
 
-#include <Human.hpp>
+#pragma once
 
-Human::Human( string name ) : Player( name ) {}
-Human::~Human() {}
+#include <vector>
+#include <memory>
 
-shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard )
+#include <Card.hpp>
+
+using namespace std;
+
+class StratDiff
 {
-  shared_ptr<Card> dummyCard = validCards( referenceCard )[0];
-  return dummyCard;
-}
-
-void Human::newGame() 
-{
-  score = 0;
-  hearts.clear();
-  spades.clear();
-  diamonds.clear();
-  clubs.clear();
-  trumps.clear();
-  fool.reset();
-}
-
+public:
+  virtual shared_ptr<Card> playCard( vector< shared_ptr<Card> > ) = 0;
+};
