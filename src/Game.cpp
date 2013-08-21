@@ -27,26 +27,27 @@ Game::Game( int numberPlayers, string yourName )
   names.push_back("Alice");
   names.push_back("Bob");
 
-  switch( numberPlayers )
+  if( numberPlayers == 3 )
     {
-    case 3:
       dogSize = 6;
       cardsPerPlayer = 24;
       consecutiveDealing = 4;
-      break;
-    case 5:
+    }
+  else if( numberPlayers == 5 )
+    {
       dogSize = 3;
       cardsPerPlayer = 15;
       consecutiveDealing = 3;
       names.push_back("Charly");
       names.push_back("Dave");
-      break;
-    default:
+    }
+  else
+    {
       dogSize = 6;
       cardsPerPlayer = 18;
       consecutiveDealing = 3;
       names.push_back("Charly");
-      break;
+      numberPlayers = 4;
     }
 
   players.push_back( shared_ptr<Human>( new Human( yourName ) ) );
