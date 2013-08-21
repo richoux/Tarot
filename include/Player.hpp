@@ -22,10 +22,12 @@
 #pragma once
 
 #include <set>
+#include <vector>
 #include <memory>
 #include <iostream>
 
 #include <Card.hpp>
+#include <Colors.hpp>
 
 using namespace std;
 
@@ -39,6 +41,7 @@ public:
   virtual shared_ptr<Card>	playCard( shared_ptr<Card> )	= 0;
   virtual void			newGame	()			= 0;
 
+  vector< shared_ptr<Card> >	validCards( shared_ptr<Card> );
   void				addCard	( shared_ptr<Card> );
   void				showCards();
 
@@ -58,5 +61,5 @@ protected:
   set< shared_ptr<Card>, cardOrder >	diamonds;
   set< shared_ptr<Card>, cardOrder >	clubs;
   set< shared_ptr<Card>, cardOrder >	trumps;
-  shared_ptr<Card>		fool;
+  shared_ptr<Card>			fool;
 };
