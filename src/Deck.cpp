@@ -23,6 +23,7 @@
 
 Deck::Deck() 
 {
+  srand ( unsigned ( time(0) ) );
   newDeal();
 }
 
@@ -130,6 +131,11 @@ void Deck::newDeal()
   numberDiamonds	= 14;
   numberClubs		= 14;
   numberTrumps		= 21;
+}
+
+void Deck::shuffle()
+{
+  random_shuffle( cards.begin(), cards.end() );
 }
 
 bool Deck::isInDeck( shared_ptr<Card> card )

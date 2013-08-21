@@ -48,6 +48,7 @@ public:
   void printScores();
   Team play();
   void showDeck();
+  void shuffleDeck();
 
 private:
   vector< shared_ptr<Player> >	players;

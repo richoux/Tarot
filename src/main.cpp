@@ -28,4 +28,6 @@ int main(int argc, char **argv)
   Game game( 4 );
   game.printScores();
   game.showDeck();
+  game.shuffleDeck();
+  game.showDeck();
 }
