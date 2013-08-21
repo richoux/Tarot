@@ -29,29 +29,29 @@ Card::Card( Colors color, int value, double points, bool oudler )
 
 Card::~Card() {}
 
-bool		Card::operator>	( shared_ptr<Card> card ) 
+bool Card::operator>( Card card ) 
 { 
-  if( this->color == 4 && card->color < 4)
+  if( this->color == 4 && card.color < 4)
     return true;
-  else if( this->color < 4 && card->color == 4)
+  else if( this->color < 4 && card.color == 4)
     return false;
   else
-    return this->value > card->value;
+    return this->value > card.value;
 }
 
-bool		Card::operator<	( shared_ptr<Card> card ) 
+bool Card::operator<( Card card ) 
 { 
-  if( this->color == 4 && card->color < 4)
+  if( this->color == 4 && card.color < 4)
     return false;
-  else if( this->color < 4 && card->color == 4)
+  else if( this->color < 4 && card.color == 4)
     return true;
   else
-    return this->value < card->value;
+    return this->value < card.value;
 }
 
-inline bool	Card::isComparable ( shared_ptr<Card> card ) 
+bool Card::operator==( Card card ) 
 { 
-  return this->color == card->color || this->color == 4 || card->color == 4;
+  return this->color == card.color && this->value == card.value;
 }
 
 ostream& operator<<( ostream& os, const Card& card )

@@ -139,8 +139,7 @@ void Deck::shuffle()
 
 bool Deck::isInDeck( shared_ptr<Card> card )
 {
-  vector< shared_ptr<Card> >::const_iterator it;
-  for( it = cards.begin(); it != cards.end(); ++it )
+  for( auto it = cards.begin(); it != cards.end(); ++it )
     if( *it == card)
       return true;
 
@@ -149,9 +148,8 @@ bool Deck::isInDeck( shared_ptr<Card> card )
 
 bool Deck::hasStrongerThan( shared_ptr<Card> card )
 {
-  vector< shared_ptr<Card> >::const_iterator it;
-  for( it = cards.begin(); it != cards.end(); ++it )
-    if( *it > card)
+  for( auto it = cards.begin(); it != cards.end(); ++it )
+    if( *(*it) > *card)
       return true;
 
   return false;  

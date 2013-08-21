@@ -21,16 +21,45 @@
 
 #include <Team.hpp>
 
-Team::Team()
-{
-  score = 0;
-}
+Team::Team() {}
 
 Team::~Team() {}
 
 void Team::newGame()
 {
-  map<string, shared_ptr<Player> >::iterator it;
-  for( it = members.begin(); it != members.end(); ++it )
+  for( auto it = members.begin(); it != members.end(); ++it )
     it->second->newGame();
+}
+
+bool Team::operator<( Team &team )
+{
+  return this->getScore() < team.getScore();
+}
+
+bool Team::operator>( Team &team )
+{
+  return this->getScore() > team.getScore();
+}
+
+double Team::getScore()
+{
+  double score = 0;
+
+  for( auto it = members.begin(); it != members.end(); ++it )
+    score += it->second->score;
+
+  return score;
+}
+
+ostream& operator<<( ostream& os, const Team& team )
+{
+  string names = "";
+  for( auto it = team.members.begin(); it !=team.members.end(); ++it )
+    if( it == team.members.begin() )
+      names += it->first;
+    else
+      names += ", " + it->first;
+
+  os << names;
+  return os;
 }

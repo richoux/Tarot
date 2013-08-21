@@ -44,7 +44,7 @@ public:
   bool			isPartner		( string );
   bool			haveColor		( string, Colors );
   bool			opponentsHaveColor	( Colors );
-  shared_ptr<Card>	playCard		( shared_ptr<Card> );
+  shared_ptr<Card>	playCard		( shared_ptr<Card>, shared_ptr<Card> );
   void			newGame			();
 
   inline void setDifficulty ( shared_ptr<StratDiff> diff) {difficulty = diff;}

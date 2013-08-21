@@ -38,11 +38,12 @@ public:
   Player( const Player& );
   virtual ~Player();
 
-  virtual shared_ptr<Card>	playCard( shared_ptr<Card> )	= 0;
+  virtual shared_ptr<Card>	playCard( shared_ptr<Card>, shared_ptr<Card> )	= 0;
   virtual void			newGame	()			= 0;
 
-  vector< shared_ptr<Card> >	validCards( shared_ptr<Card> );
+  vector< shared_ptr<Card> >	validCards( shared_ptr<Card>, shared_ptr<Card> );
   void				addCard	( shared_ptr<Card> );
+  void				delCard	( shared_ptr<Card> );
   void				showCards();
 
   string name;
