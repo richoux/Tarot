@@ -21,19 +21,35 @@
 
 #include <Game.hpp>
 
-Game::Game( int numberPlayers )
+Game::Game( int numberPlayers, string yourName )
 {
   vector<string> names;
   names.push_back("Alice");
   names.push_back("Bob");
-  if( numberPlayers >= 4)
+
+  switch( numberPlayers )
     {
+    case 3:
+      dogSize = 6;
+      cardsPerPlayer = 24;
+      consecutiveDealing = 4;
+      break;
+    case 5:
+      dogSize = 3;
+      cardsPerPlayer = 15;
+      consecutiveDealing = 3;
       names.push_back("Charly");
-      if( numberPlayers == 5)
-	names.push_back("Dave");
+      names.push_back("Dave");
+      break;
+    default:
+      dogSize = 6;
+      cardsPerPlayer = 18;
+      consecutiveDealing = 3;
+      names.push_back("Charly");
+      break;
     }
-  
-  players.push_back( shared_ptr<Human>( new Human( "You" ) ) );
+
+  players.push_back( shared_ptr<Human>( new Human( yourName ) ) );
   players.push_back( shared_ptr<AI>( new AI( "Alice", names ) ) );
   players.push_back( shared_ptr<AI>( new AI( "Bob", names ) ) );
   
@@ -45,8 +61,9 @@ Game::Game( int numberPlayers )
 	players.push_back( shared_ptr<AI>( new AI( "Dave", names ) ) );
     }
 
-  currentTrick	= nullptr;
-  nextPlayer	= nullptr;
+  currentTrick = nullptr;
+  indexPlayers = rand() % players.size();
+  next = players[ indexPlayers ];
 }
 
 Game::~Game()
@@ -85,6 +102,15 @@ void Game::showDeck()
   cout << endl;
 }
 
+void Game::showPlayersCards()
+{
+  for( shared_ptr<Player> player : players )
+    {
+      cout << player->name << ": ";
+      player->showCards();
+      cout << endl;
+    }
+}
 void Game::shuffleDeck()
 {
   deck.shuffle();
@@ -93,7 +119,57 @@ void Game::shuffleDeck()
   cout << "Deck shuffled!" << endl;
 }
 
+void Game::dealCards()
+{
+  int indexCard = 0;
+  set<int> indexDog;
+  int newIndex;
+
+  // choose dogSize number of cards to compose the dog.
+  do
+    {
+      newIndex = rand() % 78;
+      indexDog.insert( newIndex );
+    }
+  while( indexDog.size() < dogSize );
+
+  // deal cards to players and the dog
+  for( int round = 0; round < cardsPerPlayer; round += consecutiveDealing )
+    for( int gamers = 0; gamers < players.size(); gamers++ )
+      {
+	for( int card = 0; card < consecutiveDealing; card++ )
+	  {
+	    // card for the dog
+	    if( indexDog.find( indexCard ) != indexDog.end() )
+	      {
+		dog.insert( deck.cards[ indexCard++ ] );
+		card--;
+	      }
+	    // card for a player
+	    else
+	      next->addCard( deck.cards[ indexCard++ ] );
+	  }
+	nextPlayer();
+      }
+  
+  cout << "Dog: ";
+  for( shared_ptr<Card> card : dog )
+    cout << *card;
+  cout << endl;
+}
+
+void Game::nextPlayer()
+{
+  if( indexPlayers == players.size() - 1 )
+    indexPlayers = 0;
+  else
+    indexPlayers++;
+
+  next = players[ indexPlayers ];
+}
+
 Team Game::play()
 {
-
+  dealCards();
+  return Team();
 }
