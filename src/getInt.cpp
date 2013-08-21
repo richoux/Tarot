@@ -19,42 +19,28 @@
 * along with Tarot.  If not, see http://www.gnu.org/licenses/.
 */
 
-#include <Human.hpp>
+// From a dude on stackoverflow.com
 
-Human::Human( string name ) : Player( name ) {}
-Human::~Human() {}
+#include <getInt.hpp>
 
-shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
+using namespace std;
+
+int getInt(char *message)
 {
-  vector< shared_ptr<Card> > valids = validCards( referenceCard, highTrump );
+  int out;
+  string in;
 
-  cout << "My cards: ";
-  showCards();
-  cout << endl;
-  
-  for( int i = 0; i < valids.size(); i++ )
-    cout << "(" << i << ") " << *valids[i] << " | ";
-  
-  int index;
-  
-  do
-    {
-      index = getInt( "\nSelect your card.\n" );
-    }
-  while( index < 0 || index >= valids.size() );
+  while(true) {
 
-  delCard( valids[index] );
-  return valids[index];
+    cout << message;
+    getline(cin,in);
+    stringstream ss(in); //covert input to a stream for conversion to int
+
+    if(ss >> out && !(ss >> in)) return out;
+    //(ss >> out) checks for valid conversion to integer
+    //!(ss >> in) checks for unconverted input and rejects it
+
+    cin.clear(); //in case of a cin error, like eof() -- prevent infinite loop
+    cerr << "\nInvalid input. Please try again.\n"; //if you get here, it's an error
+  }
 }
-
-void Human::newGame() 
-{
-  score = 0;
-  hearts.clear();
-  spades.clear();
-  diamonds.clear();
-  clubs.clear();
-  trumps.clear();
-  fool.reset();
-}
-

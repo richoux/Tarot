@@ -25,6 +25,7 @@
 #include <vector>
 #include <stack>
 #include <set>
+#include <map>
 #include <memory>
 #include <cstdlib>
 
@@ -46,14 +47,15 @@ public:
   Game( int, string = "You" );
   ~Game();
 
-  void newGame();
-  void printScores();
-  Team play();
-  void showDeck();
-  void showPlayersCards();
-  void shuffleDeck();
-  void dealCards();
-  void nextPlayer();
+  void			newGame		();
+  void			printScores	();
+  Team			play		();
+  void			showDeck	();
+  void			showPlayersCards();
+  void			shuffleDeck	();
+  void			dealCards	();
+  void			nextPlayer	();
+  void			setNext		( shared_ptr<Player> );
 
 private:
   vector< shared_ptr<Player> >	players;

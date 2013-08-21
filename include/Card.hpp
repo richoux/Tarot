@@ -39,12 +39,18 @@ public:
   inline double	getPoints	() { return points; }
   inline Colors getColor	() { return color; }
   inline int	getValue	() { return value; }
+  inline bool	isFool		() { return color == Colors::fool; }
+  inline bool	isTrump		() { return color == Colors::trump; }
   inline bool	isOudler	() { return oudler; }
   inline bool	isFaceCard	() { return value > 10; }
 
-  bool		operator>	( shared_ptr<Card> );
-  bool		operator<	( shared_ptr<Card> );
-  bool		isComparable	( shared_ptr<Card> );
+  bool		operator>	( Card );
+  bool		operator<	( Card );
+  bool		operator==	( Card );
+  inline bool	isComparable	( Card card ) 
+  { 
+    return this->color == card.color || this->color == 4 || card.color == 4;
+  }
 
 private:
   Colors	color;

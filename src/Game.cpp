@@ -62,7 +62,6 @@ Game::Game( int numberPlayers, string yourName )
 	players.push_back( shared_ptr<AI>( new AI( "Dave", names ) ) );
     }
 
-  currentTrick = nullptr;
   indexPlayers = rand() % players.size();
   next = players[ indexPlayers ];
 }
@@ -169,8 +168,62 @@ void Game::nextPlayer()
   next = players[ indexPlayers ];
 }
 
+void Game::setNext( shared_ptr<Player> player )
+{
+  next = player;
+  for( int i = 0; i < players.size(); ++i )
+    if( players[i] == player )
+      indexPlayers = i;
+}
+
 Team Game::play()
 {
+  shared_ptr<Card> refCard; 
   dealCards();
-  return Team();
+
+  takers.members[next->name] = next;
+  cout << "Taker: " << takers << endl;
+
+  for( int gamer = 1; gamer < players.size(); ++gamer )
+    {
+      nextPlayer();
+      defenders.members[next->name] = next;
+    }
+  cout << "Defenders: " << defenders << endl;
+  nextPlayer();
+
+  currentTrick = shared_ptr<Trick>( new Trick( nullptr ) );
+
+  for( int round = 0; round < cardsPerPlayer; ++round )
+    {
+      for( int gamer = 0; gamer < players.size(); ++gamer )
+	{
+	  if( gamer == 0)
+	    {
+	      refCard = next->playCard( nullptr, nullptr );
+	      cout << "refCard: " << *refCard << endl;
+	      currentTrick->setCard( next, refCard );
+	    }
+	  else if( gamer == 1 && refCard->isFool() )
+	    {
+	      refCard = next->playCard( refCard, nullptr );
+	      cout << "refCard 2: " << *refCard << endl;
+	      currentTrick->setCard( next, refCard );
+	    }
+	  else
+	    currentTrick->setCard( next, 
+				   next->playCard( refCard, 
+						   currentTrick->getGreaterTrump() ) );
+	  
+	  nextPlayer();
+	}
+      setNext( currentTrick->getLeader() );
+      currentTrick->getLeader()->score = currentTrick->getScore();
+      history.push( currentTrick );
+    }
+
+  if( takers > defenders )
+    return takers;
+  else
+    return defenders;
 }
