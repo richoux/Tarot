@@ -23,6 +23,9 @@
 
 #include <vector>
 #include <memory>
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
 
 #include <Card.hpp>
 
@@ -37,6 +40,7 @@ public:
   bool isInDeck( shared_ptr<Card> );
   bool hasStrongerThan( shared_ptr<Card> );
   void newDeal();
+  void shuffle();
 
   vector< shared_ptr<Card> >	cards;
   int				numberHearts;

@@ -85,6 +85,14 @@ void Game::showDeck()
   cout << endl;
 }
 
+void Game::shuffleDeck()
+{
+  deck.shuffle();
+  deck.shuffle();
+  deck.shuffle();
+  cout << "Deck shuffled!" << endl;
+}
+
 Team Game::play()
 {
 
