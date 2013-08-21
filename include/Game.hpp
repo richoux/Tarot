@@ -24,7 +24,9 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <set>
 #include <memory>
+#include <cstdlib>
 
 #include <Colors.hpp>
 #include <Biddings.hpp>
@@ -41,26 +43,33 @@ using namespace std;
 class Game
 {
 public:
-  Game( int );
+  Game( int, string = "You" );
   ~Game();
 
   void newGame();
   void printScores();
   Team play();
   void showDeck();
+  void showPlayersCards();
   void shuffleDeck();
+  void dealCards();
+  void nextPlayer();
 
 private:
   vector< shared_ptr<Player> >	players;
   // shared_ptr<StratLang>		language;
   shared_ptr<Trick>		currentTrick;
   stack< shared_ptr<Trick> >	history;
-  shared_ptr<Player>		nextPlayer;
+  shared_ptr<Player>		next;
+  int				indexPlayers;
   Deck				deck;
+  set< shared_ptr<Card> >	dog;
   Team				takers;
   Team				defenders;
   Team				unknown;
   Biddings			bidding;
   Colors			kingCalled;
-  int				rounds;
+  int				dogSize;
+  int				cardsPerPlayer;
+  int				consecutiveDealing;
 };

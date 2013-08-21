@@ -20,14 +20,32 @@
 */
 
 #include <iostream>
+#include <cstdlib>
 
 #include <Game.hpp>
 
+using namespace std;
+
 int main(int argc, char **argv)
 {
-  Game game( 4 );
-  game.printScores();
-  game.showDeck();
-  game.shuffleDeck();
-  game.showDeck();
+  srand ( unsigned ( time(0) ) );
+
+  string playerName;
+  cout << "Please enter your name." << endl;
+  getline( cin, playerName );
+  Game *game;
+
+  if( playerName.compare("") != 0 )
+    game = new Game( 4, playerName );
+  else
+    game = new Game( 4 );
+
+  game->printScores();
+  game->showDeck();
+  game->shuffleDeck();
+  game->showDeck();
+  game->dealCards();
+  game->showPlayersCards();
+
+  delete game;
 }

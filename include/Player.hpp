@@ -21,8 +21,9 @@
 
 #pragma once
 
-#include <vector>
+#include <set>
 #include <memory>
+#include <iostream>
 
 #include <Card.hpp>
 
@@ -39,15 +40,16 @@ public:
   virtual void			newGame	()			= 0;
 
   void				addCard	( shared_ptr<Card> );
+  void				showCards();
 
   string name;
   double score;
 
 protected:
-  vector< shared_ptr<Card> >	hearts;
-  vector< shared_ptr<Card> >	spades;
-  vector< shared_ptr<Card> >	diamonds;
-  vector< shared_ptr<Card> >	clubs;
-  vector< shared_ptr<Card> >	trumps;
+  set< shared_ptr<Card> >	hearts;
+  set< shared_ptr<Card> >	spades;
+  set< shared_ptr<Card> >	diamonds;
+  set< shared_ptr<Card> >	clubs;
+  set< shared_ptr<Card> >	trumps;
   shared_ptr<Card>		fool;
 };
