@@ -64,6 +64,8 @@ Game::Game( int numberPlayers, string yourName )
 
   indexPlayers = rand() % players.size();
   next = players[ indexPlayers ];
+  foolGiver = foolReceiver = nullptr;
+  toSwap = false;
 }
 
 Game::~Game()
@@ -86,6 +88,9 @@ void Game::newGame()
   defenders.newGame();
   if( players.size() == 5 )
     unknown.newGame();
+
+  foolGiver = foolReceiver = nullptr;
+  toSwap = false;
 }
 
 void Game::printScores()
@@ -174,6 +179,12 @@ void Game::setNext( shared_ptr<Player> player )
       indexPlayers = i;
 }
 
+bool Game::sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 )
+{
+  return ( takers.contains(p1->name) && takers.contains(p2->name) ) 
+    || ( defenders.contains(p1->name) && defenders.contains(p2->name) );
+}
+
 Team Game::play()
 {
   shared_ptr<Card> refCard; 
@@ -192,6 +203,7 @@ Team Game::play()
 
   for( int round = 0; round < cardsPerPlayer; ++round )
     {
+      cout << endl;
       cout << "**************" << endl;
       cout << "** Round " << round+1 << " **" << endl;
       cout << "**************" << endl;
@@ -217,17 +229,98 @@ Team Game::play()
 	  
 	  nextPlayer();
 	}
-
+      
       cout << "Trick: ";
       currentTrick->showAllCards();
       cout << ". Won by " << currentTrick->getLeader()->name << endl;
+
+      addWinnedCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
+
+      // if the Fool has been played, decide who must keep it.
+      if( currentTrick->getFoolPlayer() != nullptr 
+	  && 
+	  !sameTeam(currentTrick->getFoolPlayer(), currentTrick->getLeader() ) )
+	{
+	  toSwap = true;
+	  foolGiver = currentTrick->getLeader();
+	  foolReceiver = currentTrick->getFoolPlayer();
+	}
+
       setNext( currentTrick->getLeader() );
-      currentTrick->getLeader()->score = currentTrick->getScore();
+      //currentTrick->getLeader()->score = currentTrick->getScore();
       history.push( currentTrick );
     }
+
+  if( toSwap )
+    swapFool();
+
+  cout << "Winned cards:" << endl;
+  for( auto player : players )
+    {
+      cout << player->name << ": ";
+      for( auto card : cardsPlayer[player->name])
+	cout << *card << " ";
+      cout << endl;
+    }
+
+  // Compute score for each player
+  for( shared_ptr<Player> player : players )
+    player->score = computeScore( player->name );
 
   if( takers > defenders )
     return takers;
   else
     return defenders;
+}
+
+void Game::addWinnedCards( string name, set<shared_ptr<Card> > cards )
+{
+  cardsPlayer[name].insert(cards.begin(), cards.end());
+}
+
+double Game::computeScore( string name)
+{
+  double score = 0;
+  
+  for( shared_ptr<Card> card : cardsPlayer[name] )
+    score += card->getPoints();
+
+  return score;
+}
+
+void Game::swapFool()
+{
+  shared_ptr<Card> fromReceiver;
+  shared_ptr<Card> theFool;
+
+  // for( auto player : players )
+  //   {
+  //     cout << player->name << ": ";
+  //     for( auto card : cardsPlayer[player->name])
+  // 	cout << *card << " ";
+  //     cout << endl;
+  //   }
+
+  // search a dummy card
+  for( shared_ptr<Card> card : cardsPlayer[foolReceiver->name] )
+    if( card->getPoints() == 0.5 )
+      {
+	fromReceiver = card;
+	break;
+      }
+
+  // search the Fool
+  for( shared_ptr<Card> card : cardsPlayer[foolGiver->name] )
+    if( card->isFool() )
+      {
+	theFool = card;
+	break;
+      }
+  
+  // swap
+  cardsPlayer[foolReceiver->name].erase( fromReceiver );
+  cardsPlayer[foolGiver->name].erase( theFool );
+  
+  cardsPlayer[foolReceiver->name].insert( theFool );
+  cardsPlayer[foolGiver->name].insert( fromReceiver );
 }

@@ -22,7 +22,7 @@
 #pragma once
 
 #include <map>
-#include <vector>
+#include <set>
 #include <memory>
 #include <iostream>
 
@@ -38,7 +38,7 @@ public:
   ~Trick();
   
   shared_ptr<Player>		asCalledKing	();
-  vector< shared_ptr<Card> >	getAllCards	();
+  set< shared_ptr<Card> >	getAllCards	();
   void				setCard		( shared_ptr<Player>, shared_ptr<Card> );
   double			getScore	();
   void				showAllCards	();
@@ -47,10 +47,12 @@ public:
   inline shared_ptr<Card>	getWinCard	() { return trickCards[leader]; }
   inline void			setLeader	( shared_ptr<Player> player) { leader = player; }
   inline shared_ptr<Player>	getLeader	() { return leader; }
+  inline shared_ptr<Player>	getFoolPlayer	() { return foolPlayer; }
   inline shared_ptr<Card>	getGreaterTrump	() { return greaterTrump; }
 
 private:
   shared_ptr<Player>				leader;
+  shared_ptr<Player>				foolPlayer;
   shared_ptr<Card>				kingCalled;
   shared_ptr<Card>				greaterTrump;
   map< shared_ptr<Player>, shared_ptr<Card> >	trickCards;
