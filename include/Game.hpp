@@ -56,9 +56,15 @@ public:
   void			dealCards	();
   void			nextPlayer	();
   void			setNext		( shared_ptr<Player> );
+  bool			sameTeam	( shared_ptr<Player>, shared_ptr<Player> );
+  void			addWinnedCards	( string, set<shared_ptr<Card> > );
+  double		computeScore	( string );
 
 private:
+  void			swapFool	();
+
   vector< shared_ptr<Player> >	players;
+  map< string, set<shared_ptr<Card> > > cardsPlayer;
   // shared_ptr<StratLang>		language;
   shared_ptr<Trick>		currentTrick;
   stack< shared_ptr<Trick> >	history;
@@ -74,4 +80,9 @@ private:
   int				dogSize;
   int				cardsPerPlayer;
   int				consecutiveDealing;
+
+  // to swap fool at the end of the game
+  bool				toSwap;
+  shared_ptr<Player>		foolGiver;
+  shared_ptr<Player>		foolReceiver;
 };
