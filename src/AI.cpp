@@ -71,13 +71,17 @@ bool AI::opponentsHaveColor( Colors color )
 
 shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
 {
-  cout << "Player " << name << " valid cards: ";
-  for( shared_ptr<Card> card : validCards( referenceCard, highTrump ) )
-    cout << *card;
-  cout << endl;
+  // cout << "Cards of " << name << ": ";
+  // showCards();
+  // cout << endl;
+
+  // cout << "Player " << name << " valid cards: ";
+  // for( shared_ptr<Card> card : validCards( referenceCard, highTrump ) )
+  //   cout << *card;
+  // cout << endl;
 
   shared_ptr<Card> theCard = difficulty->playCard( validCards( referenceCard, highTrump ) );
-  cout << "Played card: " << *theCard << endl;
+  cout << name << " played " << *theCard << endl;
   
   delCard( theCard );
 
