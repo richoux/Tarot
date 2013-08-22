@@ -24,6 +24,7 @@
 #include <map>
 #include <vector>
 #include <memory>
+#include <iostream>
 
 #include <Player.hpp>
 #include <Card.hpp>
@@ -40,6 +41,7 @@ public:
   vector< shared_ptr<Card> >	getAllCards	();
   void				setCard		( shared_ptr<Player>, shared_ptr<Card> );
   double			getScore	();
+  void				showAllCards	();
 
   inline shared_ptr<Card>	getCard		( shared_ptr<Player> player ) { return trickCards[player]; }
   inline shared_ptr<Card>	getWinCard	() { return trickCards[leader]; }
