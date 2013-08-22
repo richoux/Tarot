@@ -41,5 +41,7 @@ public:
   bool		operator<	( Team& );
   double	getScore	();
 
+  inline bool contains ( string name ) {   return members.find( name ) != members.end(); }
+
   map<string, shared_ptr<Player> >	members;
 };
