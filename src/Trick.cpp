@@ -21,7 +21,7 @@
 
 #include <Trick.hpp>
 
-Trick::Trick( shared_ptr<Card> kingCalled) : kingCalled(kingCalled), leader(nullptr), greaterTrump(nullptr) 
+Trick::Trick( shared_ptr<Card> kingCalled) : kingCalled(kingCalled), leader(nullptr), greaterTrump(nullptr), foolPlayer(nullptr) 
 {}
 
 Trick::~Trick() 
@@ -29,12 +29,12 @@ Trick::~Trick()
   trickCards.clear();
 }
 
-vector< shared_ptr<Card> > Trick::getAllCards()
+set< shared_ptr<Card> > Trick::getAllCards()
 {
-  vector< shared_ptr<Card> > allCards;
+  set< shared_ptr<Card> > allCards;
   
   for( auto it = trickCards.begin(); it != trickCards.end(); ++it )
-    allCards.push_back( it->second );
+    allCards.insert( it->second );
   
   return allCards;
 }
@@ -42,7 +42,7 @@ vector< shared_ptr<Card> > Trick::getAllCards()
 double Trick::getScore()
 {
   double score = 0;
-  vector< shared_ptr<Card> > allCards = getAllCards();
+  set< shared_ptr<Card> > allCards = getAllCards();
 
   for( shared_ptr<Card> card : allCards )
     score += card->getPoints();
@@ -53,11 +53,16 @@ double Trick::getScore()
 void Trick::setCard( shared_ptr<Player> player, shared_ptr<Card> card )
 {
   trickCards[player] = card;
-  if( leader == nullptr || *card > *trickCards[leader] )
-    leader = player;
-
-  if( card->isTrump() && ( greaterTrump == nullptr || *card > *greaterTrump ) )
-    greaterTrump = card;
+  if( card->isFool() )
+    foolPlayer = player;
+  else
+    {
+      if( leader == nullptr || *card > *trickCards[leader] )
+	leader = player;
+      
+      if( card->isTrump() && ( greaterTrump == nullptr || *card > *greaterTrump ) )
+	greaterTrump = card;
+    }
 }
 
 shared_ptr<Player> Trick::asCalledKing()
@@ -71,10 +76,13 @@ shared_ptr<Player> Trick::asCalledKing()
 
 void Trick::showAllCards()
 {
-  vector< shared_ptr<Card> > allCards = getAllCards();
-  for( int i = 0; i < allCards.size(); ++i )
-    if( i == 0 )
-      cout << *allCards[i];
+  bool first = true;
+  for( shared_ptr<Card> card : getAllCards() )
+    if( first )
+      {
+	cout << *card;
+	first = false;
+      }
     else
-      cout << " " << *allCards[i];
+      cout << " " << *card;
 }
