@@ -31,6 +31,8 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
 
   if( refCard == nullptr || refCard->isFool() )
     {
+      for( shared_ptr<Card> card : trumps )
+	returnCards.push_back( card );
       for( shared_ptr<Card> card : hearts )
 	returnCards.push_back( card );
       for( shared_ptr<Card> card : spades )
@@ -38,8 +40,6 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
       for( shared_ptr<Card> card : diamonds )
 	returnCards.push_back( card );
       for( shared_ptr<Card> card : clubs )
-	returnCards.push_back( card );
-      for( shared_ptr<Card> card : trumps )
 	returnCards.push_back( card );
     }
   else
@@ -78,9 +78,10 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
 	  if( !trumps.empty() )
 	    {
 	      for( shared_ptr<Card> card : trumps )
-		if( *card > *greaterTrump )
+		if( greaterTrump != nullptr && *card > *greaterTrump )
 		  returnCards.push_back( card );
 	      // if we have trumps, but not better than the highest of the trick
+	      // OR, if no trumps have been played
 	      if( returnCards.empty() )
 	      for( shared_ptr<Card> card : trumps )
 		returnCards.push_back( card );
@@ -94,7 +95,12 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
 	  if( !trumps.empty() )
 	    {
 	      for( shared_ptr<Card> card : trumps )
-		if( *card > *greaterTrump )
+		if( greaterTrump != nullptr && *card > *greaterTrump )
+		  returnCards.push_back( card );
+	      // if we have trumps, but not better than the highest of the trick
+	      // OR, if no trumps have been played
+	      if( returnCards.empty() )
+		for( shared_ptr<Card> card : trumps )
 		  returnCards.push_back( card );
 	    }
 	  // if one has no trumps

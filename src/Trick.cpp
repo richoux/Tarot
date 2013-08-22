@@ -53,10 +53,10 @@ double Trick::getScore()
 void Trick::setCard( shared_ptr<Player> player, shared_ptr<Card> card )
 {
   trickCards[player] = card;
-  if( leader == nullptr || card > trickCards[leader] )
+  if( leader == nullptr || *card > *trickCards[leader] )
     leader = player;
 
-  if( card->isTrump() && ( greaterTrump == nullptr || card > greaterTrump ) )
+  if( card->isTrump() && ( greaterTrump == nullptr || *card > *greaterTrump ) )
     greaterTrump = card;
 }
 
@@ -67,4 +67,14 @@ shared_ptr<Player> Trick::asCalledKing()
       return it->first;
 
   return nullptr;
+}
+
+void Trick::showAllCards()
+{
+  vector< shared_ptr<Card> > allCards = getAllCards();
+  for( int i = 0; i < allCards.size(); ++i )
+    if( i == 0 )
+      cout << *allCards[i];
+    else
+      cout << " " << *allCards[i];
 }

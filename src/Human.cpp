@@ -39,10 +39,11 @@ shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Car
   
   do
     {
-      index = getInt( "\nSelect your card.\n" );
+      index = getInt( "\nSelect your card: " );
     }
   while( index < 0 || index >= valids.size() );
 
+  cout << "You played " << *valids[index] << endl;
   delCard( valids[index] );
   return valids[index];
 }
