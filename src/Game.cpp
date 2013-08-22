@@ -113,10 +113,8 @@ void Game::showPlayersCards()
 }
 void Game::shuffleDeck()
 {
-  deck.shuffle();
-  deck.shuffle();
-  deck.shuffle();
-  cout << "Deck shuffled!" << endl;
+  for( int i = 0; i < players.size(); ++i )
+    deck.shuffle();
 }
 
 void Game::dealCards()
@@ -192,22 +190,24 @@ Team Game::play()
   cout << "Defenders: " << defenders << endl;
   nextPlayer();
 
-  currentTrick = shared_ptr<Trick>( new Trick( nullptr ) );
-
   for( int round = 0; round < cardsPerPlayer; ++round )
     {
+      cout << "**************" << endl;
+      cout << "** Round " << round+1 << " **" << endl;
+      cout << "**************" << endl;
+
+      currentTrick = shared_ptr<Trick>( new Trick( nullptr ) );
+      
       for( int gamer = 0; gamer < players.size(); ++gamer )
 	{
 	  if( gamer == 0)
 	    {
 	      refCard = next->playCard( nullptr, nullptr );
-	      cout << "refCard: " << *refCard << endl;
 	      currentTrick->setCard( next, refCard );
 	    }
 	  else if( gamer == 1 && refCard->isFool() )
 	    {
 	      refCard = next->playCard( refCard, nullptr );
-	      cout << "refCard 2: " << *refCard << endl;
 	      currentTrick->setCard( next, refCard );
 	    }
 	  else
@@ -217,6 +217,10 @@ Team Game::play()
 	  
 	  nextPlayer();
 	}
+
+      cout << "Trick: ";
+      currentTrick->showAllCards();
+      cout << ". Won by " << currentTrick->getLeader()->name << endl;
       setNext( currentTrick->getLeader() );
       currentTrick->getLeader()->score = currentTrick->getScore();
       history.push( currentTrick );

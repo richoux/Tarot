@@ -46,7 +46,7 @@ int main(int argc, char **argv)
     game = new Game( nberPlayers );
 
   //game->showDeck();
-  //game->shuffleDeck();
+  game->shuffleDeck();
   //game->showDeck();
   //game->dealCards();
   //game->showPlayersCards();
