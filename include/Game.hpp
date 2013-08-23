@@ -29,7 +29,7 @@
 #include <memory>
 #include <cstdlib>
 
-#include <Colors.hpp>
+#include <Suits.hpp>
 #include <Biddings.hpp>
 #include <Team.hpp>
 #include <Player.hpp>
@@ -54,13 +54,13 @@ public:
   void			showPlayersCards();
   void			shuffleDeck	();
   void			dealCards	();
-  void			nextPlayer	();
-  void			setNext		( shared_ptr<Player> );
   bool			sameTeam	( shared_ptr<Player>, shared_ptr<Player> );
-  void			addWinnedCards	( string, set<shared_ptr<Card> > );
   double		computeScore	( string );
 
 private:
+  void			nextPlayer	();
+  void			setNext		( shared_ptr<Player> );
+  void			addWinnedCards	( string, set<shared_ptr<Card> > );
   void			swapFool	();
 
   vector< shared_ptr<Player> >	players;
@@ -76,7 +76,7 @@ private:
   Team				defenders;
   Team				unknown;
   Biddings			bidding;
-  Colors			kingCalled;
+  Suits			kingCalled;
   int				dogSize;
   int				cardsPerPlayer;
   int				consecutiveDealing;

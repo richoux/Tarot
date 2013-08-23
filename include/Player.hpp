@@ -27,7 +27,7 @@
 #include <iostream>
 
 #include <Card.hpp>
-#include <Colors.hpp>
+#include <Suits.hpp>
 
 using namespace std;
 
@@ -43,13 +43,14 @@ public:
 
   vector< shared_ptr<Card> >	validCards( shared_ptr<Card>, shared_ptr<Card> );
   void				addCard	( shared_ptr<Card> );
-  void				delCard	( shared_ptr<Card> );
   void				showCards();
 
   string name;
   double score;
 
 protected:
+  void				delCard	( shared_ptr<Card> );
+
   struct cardOrder {
     bool operator() (shared_ptr<Card> const lhs, shared_ptr<Card> const rhs) const
     {
