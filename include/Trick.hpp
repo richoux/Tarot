@@ -45,7 +45,6 @@ public:
 
   inline shared_ptr<Card>	getCard		( shared_ptr<Player> player ) { return trickCards[player]; }
   inline shared_ptr<Card>	getWinCard	() { return trickCards[leader]; }
-  inline void			setLeader	( shared_ptr<Player> player) { leader = player; }
   inline shared_ptr<Player>	getLeader	() { return leader; }
   inline shared_ptr<Player>	getFoolPlayer	() { return foolPlayer; }
   inline shared_ptr<Card>	getGreaterTrump	() { return greaterTrump; }

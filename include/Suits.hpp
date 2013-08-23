@@ -29,4 +29,4 @@ typedef enum
     club,
     trump,
     fool
-  }  Colors;
+  }  Suits;
