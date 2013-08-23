@@ -26,7 +26,7 @@
 #include <vector>
 
 #include <Player.hpp>
-#include <Colors.hpp>
+#include <Suits.hpp>
 #include <Card.hpp>
 #include <Deck.hpp>
 #include <StratDiff.hpp>
@@ -42,8 +42,8 @@ public:
 
   bool			isOpponent		( string );
   bool			isPartner		( string );
-  bool			haveColor		( string, Colors );
-  bool			opponentsHaveColor	( Colors );
+  bool			haveSuit		( string, Suits );
+  bool			opponentsHaveSuit	( Suits );
   shared_ptr<Card>	playCard		( shared_ptr<Card>, shared_ptr<Card> );
   void			newGame			();
 
@@ -66,9 +66,9 @@ private:
     bool hasClub;
     bool hasTrump;
     
-    bool hasColor( Colors color ) const
+    bool hasSuit( Suits suit ) const
     {
-      switch( color )
+      switch( suit )
 	{
 	case heart:
 	  return hasHeart;

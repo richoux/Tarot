@@ -25,7 +25,7 @@
 #include <vector>
 
 #include <Player.hpp>
-#include <Colors.hpp>
+#include <Suits.hpp>
 #include <Card.hpp>
 #include <getInt.hpp>
 

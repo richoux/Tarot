@@ -23,17 +23,17 @@
 
 #include <Card.hpp>
 
-Card::Card( Colors color, int value, double points, bool oudler )
-  : color(color), value(value), points(points), oudler(oudler)
+Card::Card( Suits suit, int value, double points, bool oudler )
+  : suit(suit), value(value), points(points), oudler(oudler)
 {}
 
 Card::~Card() {}
 
 bool Card::operator>( Card card ) 
 { 
-  if( this->color == 4 && card.color < 4)
+  if( this->suit == 4 && card.suit < 4)
     return true;
-  else if( this->color < 4 && card.color == 4)
+  else if( this->suit < 4 && card.suit == 4)
     return false;
   else
     return this->value > card.value;
@@ -41,9 +41,9 @@ bool Card::operator>( Card card )
 
 bool Card::operator<( Card card ) 
 { 
-  if( this->color == 4 && card.color < 4)
+  if( this->suit == 4 && card.suit < 4)
     return false;
-  else if( this->color < 4 && card.color == 4)
+  else if( this->suit < 4 && card.suit == 4)
     return true;
   else
     return this->value < card.value;
@@ -51,7 +51,7 @@ bool Card::operator<( Card card )
 
 bool Card::operator==( Card card ) 
 { 
-  return this->color == card.color && this->value == card.value;
+  return this->suit == card.suit && this->value == card.value;
 }
 
 ostream& operator<<( ostream& os, const Card& card )
@@ -84,7 +84,7 @@ ostream& operator<<( ostream& os, const Card& card )
       break;
     }
 
-  switch( card.color )
+  switch( card.suit )
     {
     case heart:
       col = "♥";
