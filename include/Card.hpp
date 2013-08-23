@@ -24,7 +24,7 @@
 #include <iostream>
 #include <memory>
 
-#include <Colors.hpp>
+#include <Suits.hpp>
 
 using namespace std;
 
@@ -33,14 +33,14 @@ class Card
   friend ostream& operator<<	( ostream&, const Card& );
 
 public:
-  Card( Colors, int, double, bool );
+  Card( Suits, int, double, bool );
   ~Card();
 
   inline double	getPoints	() { return points; }
-  inline Colors getColor	() { return color; }
+  inline Suits	getSuit		() { return suit; }
   inline int	getValue	() { return value; }
-  inline bool	isFool		() { return color == Colors::fool; }
-  inline bool	isTrump		() { return color == Colors::trump; }
+  inline bool	isFool		() { return suit == Suits::fool; }
+  inline bool	isTrump		() { return suit == Suits::trump; }
   inline bool	isOudler	() { return oudler; }
   inline bool	isFaceCard	() { return value > 10; }
 
@@ -49,11 +49,11 @@ public:
   bool		operator==	( Card );
   inline bool	isComparable	( Card card ) 
   { 
-    return this->color == card.color || this->color == 4 || card.color == 4;
+    return this->suit == card.suit || this->suit == 4 || card.suit == 4;
   }
 
 private:
-  Colors	color;
+  Suits	suit;
   int		value;
   double	points;
   bool		oudler;

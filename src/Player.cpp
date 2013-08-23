@@ -44,37 +44,37 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
     }
   else
     {
-      switch( refCard->getColor() )
+      switch( refCard->getSuit() )
 	{
-	case Colors::heart:
+	case Suits::heart:
 	  if( !hearts.empty() )
 	    {
 	      for( shared_ptr<Card> card : hearts )
 		returnCards.push_back( card );
 	    }
 	  break;
-	case Colors::spade:
+	case Suits::spade:
 	  if( !spades.empty() )
 	    {
 	      for( shared_ptr<Card> card : spades )
 		returnCards.push_back( card );
 	    }
 	  break;
-	case Colors::diamond:
+	case Suits::diamond:
 	  if( !diamonds.empty() )
 	    {
 	      for( shared_ptr<Card> card : diamonds )
 		returnCards.push_back( card );
 	    }
 	  break;
-	case Colors::club:
+	case Suits::club:
 	  if( !clubs.empty() )
 	    {
 	      for( shared_ptr<Card> card : clubs )
 		returnCards.push_back( card );
 	    }
 	  break;
-	case Colors::trump:
+	case Suits::trump:
 	  if( !trumps.empty() )
 	    {
 	      for( shared_ptr<Card> card : trumps )
@@ -89,7 +89,7 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
 	  break;
 	}
 
-      // occurs if one does not have the asked color 
+      // occurs if one does not have the asked suit 
       if( returnCards.empty() )
 	{
 	  if( !trumps.empty() )
@@ -127,7 +127,7 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
 
 void Player::addCard( shared_ptr<Card> card )
 {
-  switch( card->getColor() )
+  switch( card->getSuit() )
     {
     case heart:
       hearts.insert( card );
@@ -144,7 +144,7 @@ void Player::addCard( shared_ptr<Card> card )
     case trump:
       trumps.insert( card );
       break;
-    case Colors::fool:
+    case Suits::fool:
       fool = card;
       break;
     default:
@@ -154,7 +154,7 @@ void Player::addCard( shared_ptr<Card> card )
 
 void Player::delCard( shared_ptr<Card> card )
 {
-  switch( card->getColor() )
+  switch( card->getSuit() )
     {
     case heart:
       hearts.erase( card );
@@ -171,7 +171,7 @@ void Player::delCard( shared_ptr<Card> card )
     case trump:
       trumps.erase( card );
       break;
-    case Colors::fool:
+    case Suits::fool:
       fool = nullptr;
       break;
     default:

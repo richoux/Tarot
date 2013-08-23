@@ -50,20 +50,20 @@ bool AI::isPartner( string name )
   return false;
 }
 
-bool AI::haveColor( string player, Colors color )
+bool AI::haveSuit( string player, Suits suit )
 {
   if( isOpponent( player ) )
-    return opponents[player].hasColor( color );
+    return opponents[player].hasSuit( suit );
   else if( isPartner( player ) )
-    return partners[player].hasColor( color );
+    return partners[player].hasSuit( suit );
   else
     return true;
 }
 
-bool AI::opponentsHaveColor( Colors color )
+bool AI::opponentsHaveSuit( Suits suit )
 {
   for( auto it = opponents.begin(); it != opponents.end(); ++it )
-    if( it->second.hasColor( color ) )
+    if( it->second.hasSuit( suit ) )
       return true;
 
   return false;
