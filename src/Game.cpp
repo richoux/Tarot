@@ -232,7 +232,7 @@ Team Game::play()
       
       cout << "Trick: ";
       currentTrick->showAllCards();
-      cout << ". Won by " << currentTrick->getLeader()->name << endl;
+      cout << "=> Won by " << currentTrick->getLeader()->name << endl;
 
       addWinnedCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
 
