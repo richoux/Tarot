@@ -19,13 +19,28 @@
 * along with Tarot.  If not, see http://www.gnu.org/licenses/.
 */
 
-#pragma once
+// From a dude on stackoverflow.com
 
-typedef enum
-  {
-    none = 0,
-    small = 1,
-    guard = 2,
-    guard_w = 4,
-    guard_a = 6
-  } Biddings;
+#include <getChar.hpp>
+
+using namespace std;
+
+char getChar(char *message)
+{
+  char out;
+  string in;
+
+  while(true) {
+
+    cout << message;
+    getline(cin,in);
+    stringstream ss(in); //covert input to a stream for conversion to char
+
+    if(ss >> out && !(ss >> in)) return out;
+    //(ss >> out) checks for valid conversion to char
+    //!(ss >> in) checks for unconverted input and rejects it
+
+    cin.clear(); //in case of a cin error, like eof() -- prevent infinite loop
+    cerr << "\nInvalid input. Please try again.\n"; //if you get here, it's an error
+  }
+}

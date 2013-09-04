@@ -28,6 +28,8 @@
 
 #include <Card.hpp>
 #include <Suits.hpp>
+#include <Biddings.hpp>
+#include <Announcements.hpp>
 
 using namespace std;
 
@@ -38,18 +40,24 @@ public:
   Player( const Player& );
   virtual ~Player();
 
-  virtual shared_ptr<Card>	playCard( shared_ptr<Card>, shared_ptr<Card> )	= 0;
-  virtual void			newGame	()			= 0;
+  virtual shared_ptr<Card>		playCard	( shared_ptr<Card>, shared_ptr<Card> )	= 0;
+  virtual void				newGame		()					= 0;
+  virtual Biddings			bid		( Biddings, bool )			= 0;
+  virtual set< shared_ptr<Card> >	makeEcart	( int )					= 0;
 
-  vector< shared_ptr<Card> >	validCards( shared_ptr<Card>, shared_ptr<Card> );
-  void				addCard	( shared_ptr<Card> );
-  void				showCards();
+  inline  set< Announcements >		getAnnounced() { return announced; }
+  inline  int				getNumberOudlers() { return numberOudlers; }
+  inline  vector< shared_ptr<Card> >	getInitialCards	() { return initialCards; }
+
+  vector< shared_ptr<Card> >	validCards	( shared_ptr<Card>, shared_ptr<Card> );
+  void				addCard		( shared_ptr<Card> );
+  void				showCards	();
 
   string name;
   double score;
 
 protected:
-  void				delCard	( shared_ptr<Card> );
+  void	delCard	( shared_ptr<Card> );
 
   struct cardOrder {
     bool operator() (shared_ptr<Card> const lhs, shared_ptr<Card> const rhs) const
@@ -64,4 +72,8 @@ protected:
   set< shared_ptr<Card>, cardOrder >	clubs;
   set< shared_ptr<Card>, cardOrder >	trumps;
   shared_ptr<Card>			fool;
+  vector< shared_ptr<Card> >		initialCards;
+  int					numberOudlers;
+  double				initialPoints;
+  set< Announcements >			announced;
 };
