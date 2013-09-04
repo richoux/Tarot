@@ -22,14 +22,18 @@
 #pragma once
 
 #include <vector>
+#include <set>
 #include <memory>
 
 #include <Card.hpp>
+#include <Biddings.hpp>
 
 using namespace std;
 
 class StratDiff
 {
 public:
-  virtual shared_ptr<Card> playCard( vector< shared_ptr<Card> > ) = 0;
+  virtual shared_ptr<Card>		playCard( vector< shared_ptr<Card> > )		= 0;
+  virtual Biddings			bid	( Biddings, int, bool )			= 0;
+  virtual set< shared_ptr<Card> >	makeEcart( int, vector< shared_ptr<Card> > )	= 0;
 };

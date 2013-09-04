@@ -22,6 +22,7 @@
 #pragma once
 
 #include <vector>
+#include <set>
 #include <memory>
 #include <cstdlib>
 
@@ -33,5 +34,7 @@ using namespace std;
 class Beginner : public StratDiff
 {
 public:
-  shared_ptr<Card> playCard( vector< shared_ptr<Card> > );
+  shared_ptr<Card>		playCard( vector< shared_ptr<Card> > );
+  Biddings			bid	( Biddings, int, bool );
+  set< shared_ptr<Card> >	makeEcart( int, vector< shared_ptr<Card> > );
 };

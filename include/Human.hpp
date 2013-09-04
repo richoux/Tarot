@@ -28,6 +28,7 @@
 #include <Suits.hpp>
 #include <Card.hpp>
 #include <getInt.hpp>
+#include <getChar.hpp>
 
 using namespace std;
 
@@ -37,6 +38,8 @@ public:
   Human( string );
   ~Human();
   
-  shared_ptr<Card>	playCard		( shared_ptr<Card>, shared_ptr<Card> );
-  void			newGame			();
+  shared_ptr<Card>		playCard	( shared_ptr<Card>, shared_ptr<Card> );
+  void				newGame		();
+  Biddings			bid		( Biddings, bool );
+  set< shared_ptr<Card> >	makeEcart	( int );
 };

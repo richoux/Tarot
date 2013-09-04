@@ -48,14 +48,116 @@ shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Car
   return valids[index];
 }
 
+Biddings Human::bid( Biddings bestBid, bool chelemAnnounced )
+{
+  cout << "My cards: ";
+  showCards();
+  cout << endl;
+
+  if( bestBid == Biddings::guard_a )
+    {
+      cout << "Impossible to bid, Guard Against has been chosen" << endl;
+      return Biddings::none;
+    }
+  else
+    {
+      char choice;
+      cout << "Biddings: (p)Pass, ";
+      if( bestBid == Biddings::none )
+	{
+	  cout << "(s)Small, (g)Guard, (w)Guard Without, (a)Guard Against" << endl;
+	  do
+	    {
+	      choice = getChar( "\nSelect your choice: " );
+	    }
+	  while( choice != 'p' && choice != 's' && choice != 'g' && choice != 'w' && choice != 'a' );
+	}
+      else if( bestBid == Biddings::small )
+	{
+	  cout << "(g)Guard, (w)Guard Without, (a)Guard Against" << endl;
+	  do
+	    {
+	      choice = getChar( "\nSelect your choice: " );
+	    }
+	  while( choice != 'p' && choice != 'g' && choice != 'w' && choice != 'a' );
+	}
+      else if( bestBid == Biddings::guard )
+	{
+	  cout << "(w)Guard Without, (a)Guard Against" << endl;
+	  do
+	    {
+	      choice = getChar( "\nSelect your choice: " );
+	    }
+	  while( choice != 'p' && choice != 'w' && choice != 'a' );
+	}
+      else 
+	{
+	  cout << "(a)Guard Against" << endl;
+	  do
+	    {
+	      choice = getChar( "\nSelect your choice: " );
+	    }
+	  while( choice != 'p' && choice != 'a' );
+	}
+      
+      switch( choice )
+	{
+	case 'p':
+	  return Biddings::none;
+	case 's':
+	  return Biddings::small;
+	case 'g':
+	  return Biddings::guard;
+	case 'w':
+	  return Biddings::guard_w;
+	case 'a':
+	  return Biddings::guard_a;
+	default:
+	  return Biddings::none;
+	}
+    }  
+}
+
+set< shared_ptr<Card> >	Human::makeEcart( int dogSize )
+{
+  set< shared_ptr<Card> > ecart;
+
+  cout << "Make your ecart." << endl;
+  
+  for( int i = 0; i < getInitialCards().size(); i++ )
+    cout << "(" << i << ") " << *getInitialCards()[i] << " | ";
+
+  int index;
+
+  while( ecart.size() < dogSize )
+    {
+      do
+	{
+	  index = getInt( "\nSelect a card: " );
+	}
+      while( index < 0 || index >= getInitialCards().size() );
+      
+      if( ecart.find( getInitialCards()[index] ) == ecart.end() )
+	ecart.insert( getInitialCards()[index] );
+      else
+	cout << "You already choose this card. Please select a new one." << endl;
+    }
+
+  return ecart;
+}
+
 void Human::newGame() 
 {
   score = 0;
+  numberOudlers = 0;
+  initialPoints = 0;
+
   hearts.clear();
   spades.clear();
   diamonds.clear();
   clubs.clear();
   trumps.clear();
   fool.reset();
+  initialCards.clear();
 }
 
