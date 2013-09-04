@@ -23,9 +23,8 @@
 
 typedef enum
   {
-    none = 0,
-    small = 1,
-    guard = 2,
-    guard_w = 4,
-    guard_a = 6
-  } Biddings;
+    poignee = 20,
+    double_poignee = 30,
+    triple_poignee = 40,
+    chelem = 400
+  } Announcements;

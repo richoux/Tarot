@@ -54,6 +54,8 @@ public:
   void			showPlayersCards();
   void			shuffleDeck	();
   void			dealCards	();
+  void			takeBiddings	();
+  void			takeDog		();
   bool			sameTeam	( shared_ptr<Player>, shared_ptr<Player> );
   double		computeScore	( string );
 
@@ -69,17 +71,22 @@ private:
   shared_ptr<Trick>		currentTrick;
   stack< shared_ptr<Trick> >	history;
   shared_ptr<Player>		next;
-  int				indexPlayers;
+  int				indexNext;
+  int				indexStarter;
+  int				indexToBid;
+  int				indexBidder;
   Deck				deck;
   set< shared_ptr<Card> >	dog;
   Team				takers;
   Team				defenders;
   Team				unknown;
   Biddings			bidding;
-  Suits			kingCalled;
+  Suits				kingCalled;
   int				dogSize;
   int				cardsPerPlayer;
   int				consecutiveDealing;
+  bool				chelemAnnounced;
+  bool				addDogAtTheEnd;
 
   // to swap fool at the end of the game
   bool				toSwap;

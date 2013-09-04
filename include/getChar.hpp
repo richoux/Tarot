@@ -19,13 +19,11 @@
 * along with Tarot.  If not, see http://www.gnu.org/licenses/.
 */
 
+// From a dude on stackoverflow.com
+
 #pragma once
 
-typedef enum
-  {
-    none = 0,
-    small = 1,
-    guard = 2,
-    guard_w = 4,
-    guard_a = 6
-  } Biddings;
+#include <iostream>
+#include <sstream>
+
+char getChar(char *message);

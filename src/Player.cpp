@@ -21,7 +21,7 @@
 
 #include <Player.hpp>
 
-Player::Player( string name ) : name(name) {}
+Player::Player( string name ) : name(name), numberOudlers(0), initialPoints(0) {}
 Player::Player( const Player &player ) {}
 Player::~Player() {}
 
@@ -150,6 +150,12 @@ void Player::addCard( shared_ptr<Card> card )
     default:
       break;
     }
+
+  if( card->isOudler() )
+    numberOudlers++;
+
+  initialPoints += card->getPoints();
+  initialCards.push_back( card );
 }
 
 void Player::delCard( shared_ptr<Card> card )
