@@ -88,15 +88,37 @@ shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> 
   return theCard;
 }
 
+Biddings AI::bid( Biddings bestBid, bool chelemAnnounced )
+{
+  if( bestBid == Biddings::guard_a )
+    return Biddings::none;
+
+  // manage chelem announcement here
+
+  return difficulty->bid( bestBid, getNumberOudlers(), chelemAnnounced );
+}
+
+set< shared_ptr<Card> >	AI::makeEcart( int dogSize )
+{
+  set< shared_ptr<Card> > ecart = difficulty->makeEcart( dogSize, getInitialCards() );
+  for( auto card : ecart)
+    delCard( card );
+  return ecart;
+}
+
 void AI::newGame() 
 {
   score = 0;
+  numberOudlers = 0;
+  initialPoints = 0;
+
   hearts.clear();
   spades.clear();
   diamonds.clear();
   clubs.clear();
   trumps.clear();
   fool.reset();
+  initialCards.clear();
 
   partners.clear();
   opponents.clear();

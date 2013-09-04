@@ -24,6 +24,7 @@
 #include <memory>
 #include <map>
 #include <vector>
+#include <cstdlib>
 
 #include <Player.hpp>
 #include <Suits.hpp>
@@ -31,6 +32,7 @@
 #include <Deck.hpp>
 #include <StratDiff.hpp>
 #include <Beginner.hpp>
+#include <Biddings.hpp>
 
 using namespace std;
 
@@ -40,12 +42,14 @@ public:
   AI( string, vector<string> );
   ~AI();
 
-  bool			isOpponent		( string );
-  bool			isPartner		( string );
-  bool			haveSuit		( string, Suits );
-  bool			opponentsHaveSuit	( Suits );
-  shared_ptr<Card>	playCard		( shared_ptr<Card>, shared_ptr<Card> );
-  void			newGame			();
+  bool				isOpponent		( string );
+  bool				isPartner		( string );
+  bool				haveSuit		( string, Suits );
+  bool				opponentsHaveSuit	( Suits );
+  shared_ptr<Card>		playCard		( shared_ptr<Card>, shared_ptr<Card> );
+  void				newGame			();
+  Biddings			bid			( Biddings, bool );
+  set< shared_ptr<Card> >	makeEcart		( int );
 
   inline void setDifficulty ( shared_ptr<StratDiff> diff) {difficulty = diff;}
 

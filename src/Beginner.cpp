@@ -26,3 +26,59 @@ shared_ptr<Card> Beginner::playCard( vector< shared_ptr<Card> > cardsCanPlay )
   // play random
   return cardsCanPlay[ rand() % cardsCanPlay.size() ]; 
 }
+
+Biddings Beginner::bid( Biddings bestBid, int numberOudlers, bool chelemAnnounced )
+{
+    int chance = rand() % 101;
+
+  if( numberOudlers == 0 )
+    {
+      if( bestBid == Biddings::none && chance >= 50 )
+	return Biddings::small;
+      else
+	return Biddings::none;
+    }
+  else if( numberOudlers == 1 )
+    {
+      if( bestBid <= Biddings::small && chance >= 80 )
+	return Biddings::guard;
+      else if( bestBid == Biddings::none && chance >= 35 )
+	return Biddings::small;
+      else
+	return Biddings::none;
+    }
+  else if( numberOudlers == 2 )
+    {
+      if( bestBid <= Biddings::guard && chance >= 90 )
+	return Biddings::guard_w;
+      else if( bestBid <= Biddings::small && chance >= 65 )
+	return Biddings::guard;
+      else if( bestBid == Biddings::none && chance >= 20 )
+	return Biddings::small;
+      else
+	return Biddings::none;
+    }
+  else
+    {
+      if( bestBid <= Biddings::guard_w && chance >= 95 )
+	return Biddings::guard_a;
+      else if( bestBid <= Biddings::guard && chance >= 80 )
+	return Biddings::guard_w;
+      else if( bestBid <= Biddings::small && chance >= 40 )
+	return Biddings::guard;
+      else if( bestBid == Biddings::none && chance >= 10 )
+	return Biddings::small;
+      else
+	return Biddings::none;
+    }
+}
+
+set< shared_ptr<Card> >	Beginner::makeEcart( int dogSize, vector< shared_ptr<Card> > allCards )
+{
+  set< shared_ptr<Card> > ecart;
+  
+  while( ecart.size() < dogSize )
+    ecart.insert( allCards[rand() % allCards.size()]);
+  
+  return ecart;
+}
