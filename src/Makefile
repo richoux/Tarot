@@ -6,13 +6,14 @@ CPP_FILES = main.cpp AI.cpp Card.cpp Deck.cpp\
 OBJ = $(patsubst %.cpp,%.o,$(CPP_FILES))
 EXEC = tarot
 
+all: CXXFLAGS += -DNDEBUG
 all: $(EXEC)
 
 debug: CXXFLAGS += -g
 debug: $(EXEC)
 
 $(EXEC): $(OBJ)
-	$(CXX) $^ -o ../$@
+	$(CXX) $^ -o ../bin/$@
 	rm -f *.o
 
 main.o: ../include/Announcements.hpp ../include/AI.hpp ../include/Biddings.hpp\
@@ -52,4 +53,4 @@ Trick.o: ../include/Card.hpp ../include/Player.hpp ../include/Trick.hpp
 .PHONY: clean
 
 clean:
-	rm -f *.o *~ core ../include/*~ ../$(EXEC)
+	rm -f *.o *~ core ../include/*~ ../bin/$(EXEC)
