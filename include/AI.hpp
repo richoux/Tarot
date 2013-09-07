@@ -36,10 +36,27 @@
 
 using namespace std;
 
+//! This class defines AI players
+/*!
+  The class AI extends Player and shows an interface for actions like playCard, make a bid, etc.
+  Actions' implementation is decoupled from the class with a Strategy pattern, where concret classes
+  correspond to a level of difficulty.
+ */
 class AI : public Player
 {
 public:
+  //! AI constructor
+  /*!
+    This is the unique constructor for AI.
+    \param a string for the AI name
+    \param a vector of strings composed of the name of its partners.
+   */
   AI( string, vector<string> );
+
+  //! AI destructor
+  /*!
+    This is the unique destructor for AI. It does nothing special.
+   */
   ~AI();
 
   bool				isOpponent		( string );
