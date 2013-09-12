@@ -31,10 +31,36 @@
 
 using namespace std;
 
+//! One of the proposed difficulty.
+/*! 
+  Beginner is one of the concrete class of the Strategy pattern dealing with 
+  the game difficulty (i.e., how good the AI is). 
+*/
 class Beginner : public StratDiff
 {
 public:
+  //! Choose what card we play, given the first card and the highest trump of the trick.
+  /*!
+    \param A Card pointer of the first played card of the trick.
+    \param A Card pointer of the highest trump of the trick.
+    \return The card we play.
+  */
   shared_ptr<Card>		playCard( vector< shared_ptr<Card> > );
+
+  //! Called to decide if we propose a bid or not, and if any, what bid.
+  /*!
+    bid is delegated to the difficulty Strategy.
+    \param The best bid proposed so far.
+    \param A Boolean to know if someone has declared a chelem.
+    \return Our bid (Biddings::none if we pass)
+  */
   Biddings			bid	( Biddings, int, bool );
+
+  //! To make the ecart once we take the dog.
+  /*!
+    makeEcart is delegated to the difficulty Strategy.
+    \param The number of card we must include into the ecart.
+    \return A set of Card pointers for the cards we place into the ecart.
+  */
   set< shared_ptr<Card> >	makeEcart( int, vector< shared_ptr<Card> > );
 };
