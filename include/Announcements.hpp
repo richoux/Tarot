@@ -21,6 +21,14 @@
 
 #pragma once
 
+//! The enum containing all official announcements.
+/*!
+  Composed of:
+    - poignee (8, 10 or 13 trumps, respectively for a 5, 4 or 3-player game). 20 points.
+    - double poignee (10, 13 or 15 trumps). 30 points.
+    - triple poignee (13, 15, or 18 trumps). 40 points.
+    - chelem (all tricks taken). 200 points if realized without announcement, 400 points with.
+ */
 typedef enum
   {
     poignee = 20,
