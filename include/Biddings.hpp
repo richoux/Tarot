@@ -21,6 +21,17 @@
 
 #pragma once
 
+//! The enum containing all official biddings.
+/*!
+  The value is the coefficient used to multiply a part of points
+  at the end of a game.
+  Composed of:
+    - none, used when we pass. Value = 0.
+    - small, with a regular coefficient 1.
+    - guard, with a coefficient 2.
+    - guard_w, without the dog. Coefficient 4.
+    - guard_a, against the dog. Coefficient 6.
+ */
 typedef enum
   {
     none = 0,
