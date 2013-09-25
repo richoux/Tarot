@@ -26,4 +26,9 @@
 #include <iostream>
 #include <sstream>
 
+//! Get an integer from the standard input and keep asking until it does not received an integer.
+/*!
+  \param message A string (char* in fact) with the error message to print if something goes wrong.
+  \return An integer read from the standard input.
+ */
 int getInt(char *message);

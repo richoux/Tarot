@@ -29,10 +29,10 @@
     - triple poignee (13, 15, or 18 trumps). 40 points.
     - chelem (all tricks taken). 200 points if realized without announcement, 400 points with.
  */
-typedef enum
+enum Announcements
   {
     poignee = 20,
     double_poignee = 30,
     triple_poignee = 40,
     chelem = 400
-  } Announcements;
+  };
