@@ -32,11 +32,11 @@
     - guard_w, without the dog. Coefficient 4.
     - guard_a, against the dog. Coefficient 6.
  */
-typedef enum
+enum Biddings
   {
     none = 0,
     small = 1,
     guard = 2,
     guard_w = 4,
     guard_a = 6
-  } Biddings;
+  };

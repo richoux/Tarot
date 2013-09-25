@@ -32,14 +32,41 @@
 
 using namespace std;
 
+//! Human is the class implementing Human player actions, like playing a card.
 class Human : public Player
 {
 public:
-  Human( string );
+  //! The unique constructor of Human.
+  /*!
+    \param name The name of the Human player.
+   */
+  Human( string name );
+
+  //! The unique destructor of Human.
   ~Human();
   
-  shared_ptr<Card>		playCard	( shared_ptr<Card>, shared_ptr<Card> );
-  void				newGame		();
-  Biddings			bid		( Biddings, bool );
-  set< shared_ptr<Card> >	makeEcart	( int );
+  //! To play a card, knowing the ask suit and the highest trump of the trick, if any.
+  /*!
+    \param referenceCard The card fixing the ask suit for the trick.
+    \param highTrump The highest trump played so far for the trick, if any.
+    \return The card the player plays.
+   */
+  shared_ptr<Card> playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump );
+
+  //! To get prepared for a new game.
+  void newGame();
+  
+  //! To let the Human player bids.
+  /*!
+    \param bestBid The best bid proposed so far. 
+    \param chelemAnnounced True iff a chelem has been announced.
+    \return The Human player's bid.
+   */
+  Biddings bid( Biddings bestBid, bool chelemAnnounced );
+  
+  //! To let the Human player makes his/her ecart.
+  /*!
+    \param dogSize The number of cards to put into the ecart.
+   */
+  set< shared_ptr<Card> > makeEcart( int dogSize );
 };

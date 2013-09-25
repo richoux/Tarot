@@ -26,4 +26,9 @@
 #include <iostream>
 #include <sstream>
 
+//! Get a character from the standard input and keep asking until it does not received a character.
+/*!
+  \param message A string (char* in fact) with the error message to print if something goes wrong.
+  \return A character read from the standard input.
+ */
 char getChar(char *message);

@@ -30,21 +30,40 @@
 
 using namespace std;
 
+//! Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a counting cards AI.
 class Deck
 {
 public:
+  //! The unique constructor of Deck.
   Deck();
+
+  //! The unique destructor of Deck.
   ~Deck();
 
-  bool isInDeck( shared_ptr<Card> );
-  bool hasStrongerThan( shared_ptr<Card> );
+  //! isInDeck returns if a given card is in the deck or not.
+  /*!
+    \param card A pointer of Card.
+    \return True iff the given card is in the deck.
+   */
+  bool isInDeck( shared_ptr<Card> card );
+
+  //! Tests if the current deck has a stronger card than to proposed one.
+  /*!
+    \param card A pointer of Card.
+    \return True iff the deck has a stronger card than the input. 
+   */
+  bool hasStrongerThan( shared_ptr<Card> card );
+
+  //! Make a new deal; create each card of the game.
   void newDeal();
+
+  //! Calls random_shuffle from the algorithm library.
   void shuffle();
 
-  vector< shared_ptr<Card> >	cards;
-  int				numberHearts;
-  int				numberSpades;
-  int				numberDiamonds;
-  int				numberClubs;
-  int				numberTrumps;
+  vector< shared_ptr<Card> >	cards;		//!< The vector of all cards in the deck.
+  int				numberHearts;	//!< The number of Hearts in the deck.
+  int				numberSpades;	//!< The number of Spades in the deck.	
+  int				numberDiamonds;	//!< The number of Diamonds in the deck.
+  int				numberClubs;	//!< The number of Clubs in the deck.
+  int				numberTrumps;	//!< The number of Trumps in the deck.
 };
