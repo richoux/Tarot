@@ -35,61 +35,114 @@
 #include <Player.hpp>
 #include <Human.hpp>
 #include <AI.hpp>
+#include <Card.hpp>
 // #include <StratLang.hpp>
 #include <Trick.hpp>
 #include <Deck.hpp>
 
 using namespace std; 
 
+//! Game is one of the main class of Tarot. Here are defined rules, games' turns, scores, etc. 
 class Game
 {
 public:
-  Game( int, string = "You" );
+  
+  //! The unique constructor of Game.
+  /*!
+    \param numberPlayers The number of players.
+    \param yourName The human player name.
+   */
+  Game( int numberPlayers, string yourName = "You" );
+
+  //! The unique destructor of Game.
   ~Game();
 
-  void			newGame		();
-  void			printScores	();
-  Team			play		();
-  void			showDeck	();
-  void			showPlayersCards();
-  void			shuffleDeck	();
-  void			dealCards	();
-  void			takeBiddings	();
-  void			takeDog		();
-  bool			sameTeam	( shared_ptr<Player>, shared_ptr<Player> );
-  double		computeScore	( string );
+  //! Creates a new game.
+  void newGame();
+
+  //! Prints players' / teams' scores.
+  void printScores();
+
+  //! Plays all turns of a game and returns the winner team.
+  Team play();
+
+  //! Shows the deck on the screen.
+  void showDeck();
+
+  //! Shows players' cards on the screen
+  void showPlayersCards();
+
+  //! Shuffles (three time) the deck.
+  void shuffleDeck();
+
+  //! Deals cards.
+  void dealCards();
+
+  //! Makes all players bidding.
+  void takeBiddings();
+
+  //! To take the dog after biddings.
+  void takeDog();
+
+  //! Determines if two players belong to the same team.
+  /*!
+    \param p1 A player.
+    \param p2 Another player.
+    \return True iff p1 and p2 belong to the same team.
+   */
+  bool sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 );
+
+  //! Computes the score of a given player (refered by his/her name).
+  /*!
+    \param name A string for a player's name.
+    \return The score of the given player.
+   */
+  double computeScore( string name );
 
 private:
-  void			nextPlayer	();
-  void			setNext		( shared_ptr<Player> );
-  void			addWinnedCards	( string, set<shared_ptr<Card> > );
-  void			swapFool	();
+  //! To change the value of the current player's pointer.
+  void nextPlayer();
 
-  vector< shared_ptr<Player> >	players;
-  map< string, set<shared_ptr<Card> > > cardsPlayer;
+  //! To set the current player (the next to play).
+  /*!
+    \param player The player assigned to be the next to play.
+   */
+  void setNext( shared_ptr<Player> player );
+
+  //! At the end of a trick, add it to the heap of won cards by the winner of the trick.
+  /*!
+    \param name The name of the trick winner.
+    \param cards The set of cards from the won trick.
+   */
+  void addWonCards( string name, set<shared_ptr<Card> > cards );
+
+  //! Ensures to not lose the Fool, unless a very specific case: playing it at the very last trick without a chelem.
+  void swapFool();
+
+  vector< shared_ptr<Player> >	players;		//!< The vector of players.
+  map< string, set<shared_ptr<Card> > > cardsPlayer;	//!< Won cards of each player.
   // shared_ptr<StratLang>		language;
-  shared_ptr<Trick>		currentTrick;
-  stack< shared_ptr<Trick> >	history;
-  shared_ptr<Player>		next;
-  int				indexNext;
-  int				indexStarter;
-  int				indexToBid;
-  int				indexBidder;
-  Deck				deck;
-  set< shared_ptr<Card> >	dog;
-  Team				takers;
-  Team				defenders;
-  Team				unknown;
-  Biddings			bidding;
-  Suits				kingCalled;
-  int				dogSize;
-  int				cardsPerPlayer;
-  int				consecutiveDealing;
-  bool				chelemAnnounced;
-  bool				addDogAtTheEnd;
+  shared_ptr<Trick>		currentTrick;		//!< The current trick.
+  stack< shared_ptr<Trick> >	history;		//!< The tricks history. 
+  shared_ptr<Player>		next;			//!< A pointer on the next player to play.
+  int				indexNext;		//!< Index of the next player to play. 
+  int				indexStarter;		//!< ???
+  int				indexToBid;		//!< Index of the next player to bid.
+  int				indexBidder;		//!< Index of the best bidder.
+  Deck				deck;			//!< The game deck.
+  set< shared_ptr<Card> >	dog;			//!< The dog.
+  Team				takers;			//!< The team with the best bid.
+  Team				defenders;		//!< The non-taking team.
+  Team				unknown;		//!< In a 5-player game, we don't know in which team are players, except the best bidder.
+  Biddings			bidding;		//!< The type of bidding for its game.
+  Suits				kingCalled;		//!< In a 5-player game, which king (or card) has been called.
+  int				dogSize;		//!< The dog size, depending of the number of players.
+  int				cardsPerPlayer;		//!< The number of cards each player has in its initial hand, depending also of the number of players.
+  int				consecutiveDealing;	//!< How many cards the dealer must give to players consecutively.
+  bool				chelemAnnounced;	//!< A boolean set to true iff a chelem has been announced.
+  bool				addDogAtTheEnd;		//!< A boolean set to true iff the defender must keep the dog for them (in the case of a "guard against").
 
-  // to swap fool at the end of the game
-  bool				toSwap;
-  shared_ptr<Player>		foolGiver;
-  shared_ptr<Player>		foolReceiver;
+  bool				toSwap;			//!< True iff one must retakes its Fool card.
+  shared_ptr<Player>		foolGiver;		//!< The player from who one must retake the Fool card.
+  shared_ptr<Player>		foolReceiver;		//!< The former owner of the Fool card.
 };

@@ -21,6 +21,9 @@
 
 #include <AI.hpp>
 
+/*!
+  The unique constructor for AI.
+ */
 AI::AI( string name, vector<string> knownPartners ) : Player( name )
 {
   for( string partner : knownPartners )
@@ -30,6 +33,9 @@ AI::AI( string name, vector<string> knownPartners ) : Player( name )
   difficulty = shared_ptr<Beginner>( new Beginner() );
 }
 
+/*!
+  The unique destructor for AI, doing nothing. 
+ */
 AI::~AI() {}
 
 bool AI::isOpponent( string name )
@@ -50,12 +56,12 @@ bool AI::isPartner( string name )
   return false;
 }
 
-bool AI::haveSuit( string player, Suits suit )
+bool AI::haveSuit( string name, Suits suit )
 {
-  if( isOpponent( player ) )
-    return opponents[player].hasSuit( suit );
-  else if( isPartner( player ) )
-    return partners[player].hasSuit( suit );
+  if( isOpponent( name ) )
+    return opponents[name].hasSuit( suit );
+  else if( isPartner( name ) )
+    return partners[name].hasSuit( suit );
   else
     return true;
 }

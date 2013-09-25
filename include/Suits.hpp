@@ -21,7 +21,8 @@
 
 #pragma once
 
-typedef enum
+//! The enum containing all suits, plus the Fool as a special suit.
+enum Suits
   {
     heart,
     spade,
@@ -29,4 +30,4 @@ typedef enum
     club,
     trump,
     fool
-  }  Suits;
+  };

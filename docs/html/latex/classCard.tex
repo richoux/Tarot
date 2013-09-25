@@ -1,0 +1,171 @@
+\hypertarget{classCard}{\section{\-Card \-Class \-Reference}
+\label{classCard}\index{\-Card@{\-Card}}
+}
+
+
+\hyperlink{classCard}{\-Card} is the class compiling all useful information on cards\-: points, suit, value...  
+
+
+
+
+{\ttfamily \#include $<$\-Card.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCard_aecb55d926669ff89cac3e1e58cf76b2b}{\-Card} (\-Suits suit, int value, double points, bool oudler)
+\begin{DoxyCompactList}\small\item\em \-The unique constructor for \hyperlink{classCard}{\-Card}. \end{DoxyCompactList}\item 
+\hypertarget{classCard_a4e05b0b68e43e5e76c6194458cee874f}{\hyperlink{classCard_a4e05b0b68e43e5e76c6194458cee874f}{$\sim$\-Card} ()}\label{classCard_a4e05b0b68e43e5e76c6194458cee874f}
+
+\begin{DoxyCompactList}\small\item\em \-The unique destructor of \hyperlink{classCard}{\-Card}. \end{DoxyCompactList}\item 
+\hypertarget{classCard_a578753a12aa969121f98e890b710b27f}{double \hyperlink{classCard_a578753a12aa969121f98e890b710b27f}{get\-Points} ()}\label{classCard_a578753a12aa969121f98e890b710b27f}
+
+\begin{DoxyCompactList}\small\item\em \-Inline assessor to get the card's points. \end{DoxyCompactList}\item 
+\hypertarget{classCard_a6f5c7500047e8b54803b55cf84444190}{\-Suits \hyperlink{classCard_a6f5c7500047e8b54803b55cf84444190}{get\-Suit} ()}\label{classCard_a6f5c7500047e8b54803b55cf84444190}
+
+\begin{DoxyCompactList}\small\item\em \-Inline assessor to get the card's suit. \end{DoxyCompactList}\item 
+\hypertarget{classCard_a3df85ce283a6e38b719ffe25f3d4610a}{int \hyperlink{classCard_a3df85ce283a6e38b719ffe25f3d4610a}{get\-Value} ()}\label{classCard_a3df85ce283a6e38b719ffe25f3d4610a}
+
+\begin{DoxyCompactList}\small\item\em \-Inline assessor to get the card's value. \end{DoxyCompactList}\item 
+\hypertarget{classCard_a6728e1f5451d4eebd83b925363c53ab9}{bool \hyperlink{classCard_a6728e1f5451d4eebd83b925363c53ab9}{is\-Fool} ()}\label{classCard_a6728e1f5451d4eebd83b925363c53ab9}
+
+\begin{DoxyCompactList}\small\item\em \-Inline function returning true iif the card is the \-Fool. \end{DoxyCompactList}\item 
+\hypertarget{classCard_a70fad6545c57824bbd4197f7b1af2c9c}{bool \hyperlink{classCard_a70fad6545c57824bbd4197f7b1af2c9c}{is\-Trump} ()}\label{classCard_a70fad6545c57824bbd4197f7b1af2c9c}
+
+\begin{DoxyCompactList}\small\item\em \-Inline function returning true iif the card is a trump. \end{DoxyCompactList}\item 
+\hypertarget{classCard_a4dd1af34db5f67b43ab959f71bb7aea0}{bool \hyperlink{classCard_a4dd1af34db5f67b43ab959f71bb7aea0}{is\-Oudler} ()}\label{classCard_a4dd1af34db5f67b43ab959f71bb7aea0}
+
+\begin{DoxyCompactList}\small\item\em \-Inline function returning true iif the card is an oudler. \end{DoxyCompactList}\item 
+\hypertarget{classCard_ab8f264758d02d47a381564455883c9a3}{bool \hyperlink{classCard_ab8f264758d02d47a381564455883c9a3}{is\-Face\-Card} ()}\label{classCard_ab8f264758d02d47a381564455883c9a3}
+
+\begin{DoxyCompactList}\small\item\em \-Inline function returning true iif the card is a face card. \end{DoxyCompactList}\item 
+bool \hyperlink{classCard_aaba87fcffc3d8cb7aa1b143a849d2059}{operator$>$} (\hyperlink{classCard}{\-Card} card)
+\begin{DoxyCompactList}\small\item\em \-A greater-\/than comparator to make easier the comparison between cards. \end{DoxyCompactList}\item 
+bool \hyperlink{classCard_a6183667cf3621ce28c8b1102c398f665}{operator$<$} (\hyperlink{classCard}{\-Card} card)
+\begin{DoxyCompactList}\small\item\em \-A less-\/than comparator to make easier the comparison between cards. \end{DoxyCompactList}\item 
+bool \hyperlink{classCard_ac13638d979545e702ad4deb3906c42d4}{operator==} (\hyperlink{classCard}{\-Card} card)
+\begin{DoxyCompactList}\small\item\em \-An equal comparator to make easier the comparison between cards. \end{DoxyCompactList}\item 
+bool \hyperlink{classCard_a8e417f86a410132484af0764b6822d65}{is\-Comparable} (\hyperlink{classCard}{\-Card} card)
+\begin{DoxyCompactList}\small\item\em \-A function to decide if two cards are comparable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCard_a19eb35e24a8f6368e34575698fca9008}{ostream \& \hyperlink{classCard_a19eb35e24a8f6368e34575698fca9008}{operator$<$$<$} (ostream \&, const \hyperlink{classCard}{\-Card} \&)}\label{classCard_a19eb35e24a8f6368e34575698fca9008}
+
+\begin{DoxyCompactList}\small\item\em \-Surcharging $<$$<$ to make std\-::cout easier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classCard}{\-Card} is the class compiling all useful information on cards\-: points, suit, value... 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classCard_aecb55d926669ff89cac3e1e58cf76b2b}{\index{\-Card@{\-Card}!\-Card@{\-Card}}
+\index{\-Card@{\-Card}!Card@{\-Card}}
+\subsubsection[{\-Card}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Card\-::\-Card} (
+\begin{DoxyParamCaption}
+\item[{\-Suits}]{suit, }
+\item[{int}]{value, }
+\item[{double}]{points, }
+\item[{bool}]{oudler}
+\end{DoxyParamCaption}
+)}}\label{classCard_aecb55d926669ff89cac3e1e58cf76b2b}
+
+
+\-The unique constructor for \hyperlink{classCard}{\-Card}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em suit} & \-The card's suit. \\
+\hline
+{\em value} & \-Its value (11, 12, 13 and 14 for a \-Jack, \-Knigh, \-Queen and \-King, respectively). \\
+\hline
+{\em points} & \-Its points, needing a real value. \\
+\hline
+{\em oudler} & \-A \-Boolean set to true iff the card is an oudler. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classCard_a8e417f86a410132484af0764b6822d65}{\index{\-Card@{\-Card}!is\-Comparable@{is\-Comparable}}
+\index{is\-Comparable@{is\-Comparable}!Card@{\-Card}}
+\subsubsection[{is\-Comparable}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Card\-::is\-Comparable} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Card}}]{card}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classCard_a8e417f86a410132484af0764b6822d65}
+
+
+\-A function to decide if two cards are comparable. 
+
+\-Decides if the two involved cards are comparable, i.\-e., from the same suit or be trump. 
+\begin{DoxyParams}{\-Parameters}
+{\em card} & \-Another card. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-True iff the two cards are comparable. 
+\end{DoxyReturn}
+\hypertarget{classCard_a6183667cf3621ce28c8b1102c398f665}{\index{\-Card@{\-Card}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Card@{\-Card}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Card\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Card}}]{card}
+\end{DoxyParamCaption}
+)}}\label{classCard_a6183667cf3621ce28c8b1102c398f665}
+
+
+\-A less-\/than comparator to make easier the comparison between cards. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em card} & \-The card one's compared with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true iff the given card is greater than the left hand side card. \-Cards must be comparable, i.\-e., from the same suit or be trump. 
+\end{DoxyReturn}
+\hypertarget{classCard_ac13638d979545e702ad4deb3906c42d4}{\index{\-Card@{\-Card}!operator==@{operator==}}
+\index{operator==@{operator==}!Card@{\-Card}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Card\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Card}}]{card}
+\end{DoxyParamCaption}
+)}}\label{classCard_ac13638d979545e702ad4deb3906c42d4}
+
+
+\-An equal comparator to make easier the comparison between cards. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em card} & \-The card one's compared with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true iff the two cards are the same. 
+\end{DoxyReturn}
+\hypertarget{classCard_aaba87fcffc3d8cb7aa1b143a849d2059}{\index{\-Card@{\-Card}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Card@{\-Card}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Card\-::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Card}}]{card}
+\end{DoxyParamCaption}
+)}}\label{classCard_aaba87fcffc3d8cb7aa1b143a849d2059}
+
+
+\-A greater-\/than comparator to make easier the comparison between cards. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em card} & \-The card one's compared with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true iff the given card is smaller than the left hand side card. \-Cards must be comparable, i.\-e., from the same suit or be trump. 
+\end{DoxyReturn}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/\-Card.\-hpp\item 
+src/\-Card.\-cpp\end{DoxyCompactItemize}
