@@ -35,14 +35,14 @@ class Card
   friend ostream& operator<<	( ostream&, const Card& );
 
 public:
-  //! The unique constructor for Card
+  //! The unique constructor for Card.
   /*!
-    \param The card's suit.
-    \param Its value (11, 12, 13 and 14 for a Jack, Knigh, Queen and King, respectively)
-    \param Its points, needing a real value
-    \param A Boolean set to true iff the card is an oudler.
+    \param suit The card's suit.
+    \param value Its value (11, 12, 13 and 14 for a Jack, Knigh, Queen and King, respectively).
+    \param points Its points, needing a real value.
+    \param oudler A Boolean set to true iff the card is an oudler.
    */
-  Card( Suits, int, double, bool );
+  Card( Suits suit, int value, double points, bool oudler );
 
   //! The unique destructor of Card.
   ~Card();
@@ -70,32 +70,35 @@ public:
 
   //! A greater-than comparator to make easier the comparison between cards.
   /*! 
-    Return true iff the given card is smaller than the left hand side card.
+    \param card The card one's compared with.
+    \return true iff the given card is smaller than the left hand side card.
     Cards must be comparable, i.e., from the same suit or be trump.
    */ 
-  bool		operator>	( Card );
+  bool operator>( Card card );
 
   //! A less-than comparator to make easier the comparison between cards.
   /*! 
-    Return true iff the given card is greater than the left hand side card.
+    \param card The card one's compared with.
+    \return true iff the given card is greater than the left hand side card.
     Cards must be comparable, i.e., from the same suit or be trump.
    */ 
-  bool		operator<	( Card );
+  bool operator<( Card card );
 
   //! An equal comparator to make easier the comparison between cards.
   /*! 
-    Return true iff the two cards are the same.
+    \param card The card one's compared with.
+    \return true iff the two cards are the same.
    */ 
-  bool		operator==	( Card );
+  bool operator==( Card card );
 
   //! A function to decide if two cards are comparable
   /*! 
     Decides if the two involved cards are comparable, i.e., from the same 
     suit or be trump.
-    \param Another card.
+    \param card Another card.
     \return True iff the two cards are comparable.
   */
-  inline bool	isComparable	( Card card ) 
+  inline bool isComparable( Card card ) 
   { 
     return this->suit == card.suit || this->suit == 4 || card.suit == 4;
   }

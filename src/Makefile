@@ -35,15 +35,18 @@ Beginner.o: ../include/Beginner.hpp ../include/Biddings.hpp\
  ../include/Card.hpp ../include/StratDiff.hpp
 
 getInt.o: ../include/getInt.hpp
+getChar.o: ../include/getChar.hpp
 Card.o: ../include/Card.hpp ../include/Suits.hpp
 Deck.o: ../include/Card.hpp ../include/Deck.hpp
 Human.o: ../include/Card.hpp ../include/Suits.hpp\
  ../include/Human.hpp ../include/Player.hpp ../include/getInt.hpp\
  ../include/getChar.hpp
 
-Player.o: ../include/Card.hpp ../include/Player.hpp ../include/Announcements.hpp \
- ../include/Suits.hpp ../include/Biddings.hpp 
+Player.o: ../include/Card.hpp ../include/Player.hpp\
+ ../include/Announcements.hpp ../include/Suits.hpp ../include/Biddings.hpp 
 StratLang.o: ../include/StratLang.hpp
+StratDiff.o: ../include/StratDiff.hpp ../include/Card.hpp\
+ ../include/Biddings.hpp 
 Team.o: ../include/Player.hpp ../include/Team.hpp
 Trick.o: ../include/Card.hpp ../include/Player.hpp ../include/Trick.hpp
 

@@ -26,6 +26,7 @@
 #include <memory>
 #include <cstdlib>
 
+#include <Biddings.hpp>
 #include <Card.hpp>
 #include <StratDiff.hpp>
 
@@ -41,26 +42,27 @@ class Beginner : public StratDiff
 public:
   //! Choose what card we play, given the first card and the highest trump of the trick.
   /*!
-    \param A Card pointer of the first played card of the trick.
-    \param A Card pointer of the highest trump of the trick.
+    \param cardCanPlay The vector of cards one is allowed to play.
     \return The card we play.
   */
-  shared_ptr<Card>		playCard( vector< shared_ptr<Card> > );
+  shared_ptr<Card> playCard( vector< shared_ptr<Card> > cardsCanPlay);
 
   //! Called to decide if we propose a bid or not, and if any, what bid.
   /*!
     bid is delegated to the difficulty Strategy.
-    \param The best bid proposed so far.
-    \param A Boolean to know if someone has declared a chelem.
-    \return Our bid (Biddings::none if we pass)
+    \param bestBid The best bid proposed so far.
+    \param numberOudlers The number of oudlers we have in our hand.
+    \param chelemAnnounced A Boolean to know if someone has declared a chelem.
+    \return Our bid (Biddings::none if we pass).
   */
-  Biddings			bid	( Biddings, int, bool );
+  Biddings bid( Biddings bestBid, int numberOudlers, bool chelemAnnounced);
 
   //! To make the ecart once we take the dog.
   /*!
     makeEcart is delegated to the difficulty Strategy.
-    \param The number of card we must include into the ecart.
+    \param dogSize The number of card we must include into the ecart.
+    \param allCards The vector of all our cards, including the dog.
     \return A set of Card pointers for the cards we place into the ecart.
   */
-  set< shared_ptr<Card> >	makeEcart( int, vector< shared_ptr<Card> > );
+  set< shared_ptr<Card> > makeEcart( int dogSize, vector< shared_ptr<Card> > allCards);
 };

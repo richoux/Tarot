@@ -276,11 +276,11 @@ void Game::takeDog()
       for( shared_ptr<Card> card : dog )
 	players[indexBidder]->addCard( card );
       dog.clear();
-      addWinnedCards( players[indexBidder]->name, players[indexBidder]->makeEcart( dogSize ) );
+      addWonCards( players[indexBidder]->name, players[indexBidder]->makeEcart( dogSize ) );
     }
   else if( bidding == Biddings::guard_w )
     {
-      addWinnedCards( players[indexBidder]->name, dog );
+      addWonCards( players[indexBidder]->name, dog );
       dog.clear();
     }
   else
@@ -341,7 +341,7 @@ Team Game::play()
       currentTrick->showAllCards();
       cout << "=> Won by " << currentTrick->getLeader()->name << endl;
 
-      addWinnedCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
+      addWonCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
 
       // if the Fool has been played, decide who must keep it.
       if( currentTrick->getFoolPlayer() != nullptr 
@@ -362,9 +362,9 @@ Team Game::play()
     swapFool();
 
   if( addDogAtTheEnd )
-    addWinnedCards( defenders.members.begin()->first, dog );
+    addWonCards( defenders.members.begin()->first, dog );
 
-  cout << "Winned cards:" << endl;
+  cout << "Won cards:" << endl;
   for( auto player : players )
     {
       cout << player->name << ": ";
@@ -383,12 +383,12 @@ Team Game::play()
     return defenders;
 }
 
-void Game::addWinnedCards( string name, set<shared_ptr<Card> > cards )
+void Game::addWonCards( string name, set<shared_ptr<Card> > cards )
 {
   cardsPlayer[name].insert(cards.begin(), cards.end());
 }
 
-double Game::computeScore( string name)
+double Game::computeScore( string name )
 {
   double score = 0;
   
