@@ -28,20 +28,37 @@
 
 using namespace std;
 
+//! Team is the class handling team management.
 class Team
 {
+  //! Used to simplify team screen printings.
   friend ostream& operator<<	( ostream&, const Team& );
 
 public:
+  //! The unique constructor for Team.
   Team();
+
+  //! The unique destructor for Team.
   ~Team();
 
-  void		newGame		();
-  bool		operator>	( Team& );
-  bool		operator<	( Team& );
-  double	getScore	();
+  //! To prepare a new game.
+  void newGame();
 
-  inline bool contains ( string name ) {   return members.find( name ) != members.end(); }
+  //! To compare two teams regarding their score.
+  bool operator>( Team& t );
 
-  map<string, shared_ptr<Player> >	members;
+  //! To compare two teams regarding their score.
+  bool operator<( Team& t );
+
+  //! Assessor returning the team's score.
+  double getScore();
+
+  //! Inline function to test if a player belongs to this team
+  /*!
+    \param name The considered player name.
+    \reutrn True iff the team contains the given player.
+   */
+  inline bool contains ( string name ) { return members.find( name ) != members.end(); }
+
+  map<string, shared_ptr<Player> > members; //!< A map of team members, to quickly have an hand on the player object knowing his/her name.
 };

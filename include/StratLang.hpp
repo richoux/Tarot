@@ -23,6 +23,7 @@
 
 #include <iostream>
 
+//! StratDiff is the abstract class handling the Strategy pattern to propose different languages.
 class StratLang
 {
 public:
