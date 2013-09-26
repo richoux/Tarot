@@ -73,23 +73,23 @@ public:
   /*!
     \param name The Player's name in string.
     \param suit The asked suit.
-    \return False iff we are sure p does not have any cards of the asked suit.
+    \return False iff one is sure p does not have any cards of the asked suit.
   */
   bool haveSuit( string name, Suits suit);
 
   //! Do opponents have at least one card on the asked suit?
   /*!
     \param suit The asked suit.
-    \return False iff we are sure no opponent player has a card of the asked suit.
+    \return False iff one is sure no opponent player has a card of the asked suit.
   */
   bool opponentsHaveSuit( Suits suit );
 
-  //! Choose what card we play, given the first card and the highest trump of the trick.
+  //! Choose what card one plays, given the first card and the highest trump of the trick.
   /*!
     playCard is delegated to the difficulty Strategy.
     \param referenceCard A Card pointer of the first played card of the trick.
     \param highTrump A Card pointer of the highest trump of the trick.
-    \return The card we play.
+    \return The card the AI plays.
   */
   shared_ptr<Card> playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump);
 
@@ -99,20 +99,20 @@ public:
   */
   void newGame();
 
-  //! Called to decide if we propose a bid or not, and if any, what bid.
+  //! Called to decide if one proposes a bid or not, and if any, what bid.
   /*!
     bid is delegated to the difficulty Strategy.
     \param bestBid The best bid proposed so far.
     \param chelemAnnounced A Boolean to know if someone has declared a chelem.
-    \return Our bid (Biddings::none if we pass).
+    \return Our bid (Biddings::none if one passes).
   */
   Biddings bid( Biddings bestBid, bool chelemAnnounced);
 
-  //! To make the ecart once we take the dog.
+  //! To make the ecart once one takes the dog.
   /*!
     makeEcart is delegated to the difficulty Strategy.
-    \param dogSize The number of card we must include into the ecart.
-    \return A set of Card pointers for the cards we place into the ecart.
+    \param dogSize The number of card one must include into the ecart.
+    \return A set of Card pointers for the cards one places into the ecart.
   */
   set< shared_ptr<Card> > makeEcart( int dogSize );
 
