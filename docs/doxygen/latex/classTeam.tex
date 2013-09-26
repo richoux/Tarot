@@ -1,0 +1,75 @@
+\hypertarget{classTeam}{\section{\-Team \-Class \-Reference}
+\label{classTeam}\index{\-Team@{\-Team}}
+}
+
+
+\hyperlink{classTeam}{\-Team} is the class handling team management.  
+
+
+
+
+{\ttfamily \#include $<$\-Team.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTeam_aada295895b747960576b69d8c87a54ba}{\hyperlink{classTeam_aada295895b747960576b69d8c87a54ba}{\-Team} ()}\label{classTeam_aada295895b747960576b69d8c87a54ba}
+
+\begin{DoxyCompactList}\small\item\em \-The unique constructor for \hyperlink{classTeam}{\-Team}. \end{DoxyCompactList}\item 
+\hypertarget{classTeam_ab4218fddd612d52bab47bec4feeb49de}{\hyperlink{classTeam_ab4218fddd612d52bab47bec4feeb49de}{$\sim$\-Team} ()}\label{classTeam_ab4218fddd612d52bab47bec4feeb49de}
+
+\begin{DoxyCompactList}\small\item\em \-The unique destructor for \hyperlink{classTeam}{\-Team}. \end{DoxyCompactList}\item 
+\hypertarget{classTeam_af7fdc812a83e0e8c0bb24bc1c50b30ca}{void \hyperlink{classTeam_af7fdc812a83e0e8c0bb24bc1c50b30ca}{new\-Game} ()}\label{classTeam_af7fdc812a83e0e8c0bb24bc1c50b30ca}
+
+\begin{DoxyCompactList}\small\item\em \-To prepare a new game. \end{DoxyCompactList}\item 
+\hypertarget{classTeam_a44bbbb20e623b2f340377295f6a5b391}{bool \hyperlink{classTeam_a44bbbb20e623b2f340377295f6a5b391}{operator$>$} (\hyperlink{classTeam}{\-Team} \&t)}\label{classTeam_a44bbbb20e623b2f340377295f6a5b391}
+
+\begin{DoxyCompactList}\small\item\em \-To compare two teams regarding their score. \end{DoxyCompactList}\item 
+\hypertarget{classTeam_a3d03b0049c53f3ba8632b4f0ffb6f385}{bool \hyperlink{classTeam_a3d03b0049c53f3ba8632b4f0ffb6f385}{operator$<$} (\hyperlink{classTeam}{\-Team} \&t)}\label{classTeam_a3d03b0049c53f3ba8632b4f0ffb6f385}
+
+\begin{DoxyCompactList}\small\item\em \-To compare two teams regarding their score. \end{DoxyCompactList}\item 
+\hypertarget{classTeam_a87c5336a6fb6b87b569e73031e78dfa4}{double \hyperlink{classTeam_a87c5336a6fb6b87b569e73031e78dfa4}{get\-Score} ()}\label{classTeam_a87c5336a6fb6b87b569e73031e78dfa4}
+
+\begin{DoxyCompactList}\small\item\em \-Assessor returning the team's score. \end{DoxyCompactList}\item 
+bool \hyperlink{classTeam_ab0fe5bff14090bc5ab8ce90a81780412}{contains} (string name)
+\begin{DoxyCompactList}\small\item\em \-Inline function to test if a player belongs to this team. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTeam_a5e2f0bd7b2f9885e7d99c0b1c612b5fa}{map$<$ string, shared\-\_\-ptr$<$ \hyperlink{classPlayer}{\-Player} $>$ $>$ \hyperlink{classTeam_a5e2f0bd7b2f9885e7d99c0b1c612b5fa}{members}}\label{classTeam_a5e2f0bd7b2f9885e7d99c0b1c612b5fa}
+
+\begin{DoxyCompactList}\small\item\em \-A map of team members, to quickly have an hand on the player object knowing his/her name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTeam_a6a20eb26a63a224b3970386af40bfb2b}{ostream \& \hyperlink{classTeam_a6a20eb26a63a224b3970386af40bfb2b}{operator$<$$<$} (ostream \&, const \hyperlink{classTeam}{\-Team} \&)}\label{classTeam_a6a20eb26a63a224b3970386af40bfb2b}
+
+\begin{DoxyCompactList}\small\item\em \-Used to simplify team screen printings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classTeam}{\-Team} is the class handling team management. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classTeam_ab0fe5bff14090bc5ab8ce90a81780412}{\index{\-Team@{\-Team}!contains@{contains}}
+\index{contains@{contains}!Team@{\-Team}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Team\-::contains} (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classTeam_ab0fe5bff14090bc5ab8ce90a81780412}
+
+
+\-Inline function to test if a player belongs to this team. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-The considered player name.  \-True iff the team contains the given player. \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/\-Team.\-hpp\item 
+src/\-Team.\-cpp\end{DoxyCompactItemize}

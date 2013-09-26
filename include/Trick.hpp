@@ -31,17 +31,18 @@
 
 using namespace std;
 
+//! This class manages the current and previously played tricks.
 class Trick
 {
 public:
   Trick( shared_ptr<Card> );
   ~Trick();
   
-  shared_ptr<Player>		asCalledKing	();
-  set< shared_ptr<Card> >	getAllCards	();
-  void				setCard		( shared_ptr<Player>, shared_ptr<Card> );
-  double			getScore	();
-  void				showAllCards	();
+  shared_ptr<Player> asCalledKing();
+  set< shared_ptr<Card> > getAllCards();
+  void setCard( shared_ptr<Player>, shared_ptr<Card> );
+  double getScore();
+  void showAllCards();
 
   inline shared_ptr<Card>	getCard		( shared_ptr<Player> player ) { return trickCards[player]; }
   inline shared_ptr<Card>	getWinCard	() { return trickCards[leader]; }
@@ -50,9 +51,9 @@ public:
   inline shared_ptr<Card>	getGreaterTrump	() { return greaterTrump; }
 
 private:
-  shared_ptr<Player>				leader;
-  shared_ptr<Player>				foolPlayer;
-  shared_ptr<Card>				kingCalled;
-  shared_ptr<Card>				greaterTrump;
-  map< shared_ptr<Player>, shared_ptr<Card> >	trickCards;
+  shared_ptr<Player>				leader;		//!< A pointer on the actual leader (i.e., current winner) of the trick.
+  shared_ptr<Player>				foolPlayer;	//!< A pointer on the player who played the Fool.
+  shared_ptr<Card>				kingCalled;	//!< A pointer on the king (or others) card asked at the beginning of a 5-player game.
+  shared_ptr<Card>				greaterTrump;	//!< A pointer on the greatest trump played so far in the trick.
+  map< shared_ptr<Player>, shared_ptr<Card> >	trickCards;	//!< A map of all cards composing the trick.
 };
