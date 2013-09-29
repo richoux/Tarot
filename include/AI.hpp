@@ -25,6 +25,7 @@
 #include <map>
 #include <vector>
 #include <cstdlib>
+#include <cassert>
 
 #include <Player.hpp>
 #include <Suits.hpp>
