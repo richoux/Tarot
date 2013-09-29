@@ -35,19 +35,47 @@ using namespace std;
 class Trick
 {
 public:
-  Trick( shared_ptr<Card> );
+  //! The unique constructor of Trick.
+  /*!
+    \param kingCalled A pointer on the king called for a 5-player game.
+   */
+  Trick( shared_ptr<Card> kingCalled );
+
+  //! The unique destructor of Trick.
   ~Trick();
   
+  //! Determine if a player has played the called king in the current trick, and returns a pointer on this player, if any.
   shared_ptr<Player> asCalledKing();
+
+  //! Get all cards in the current trick.
   set< shared_ptr<Card> > getAllCards();
-  void setCard( shared_ptr<Player>, shared_ptr<Card> );
+
+  //! Update the trickCards map, and determine also the value of other variables like foolPlayer, greaterTrump and leader.
+  /*!
+    \param player A pointer on the player who just played.
+    \param card A point on the card the player just played.
+   */
+  void setCard( shared_ptr<Player> player, shared_ptr<Card> card );
+
+  //! To get the cumulative points of the current trick.
   double getScore();
+
+  //! Show all card of the current trick
   void showAllCards();
 
+  //! Inline assessor to the card played of the given player during the current trick.
   inline shared_ptr<Card>	getCard		( shared_ptr<Player> player ) { return trickCards[player]; }
+
+  //! Inline function returning the card which takes the trick.
   inline shared_ptr<Card>	getWinCard	() { return trickCards[leader]; }
+
+  // Inline assessor to get the pointer on the leader.
   inline shared_ptr<Player>	getLeader	() { return leader; }
+
+  // Inline assessor to get the pointer on the player who played the Fool.
   inline shared_ptr<Player>	getFoolPlayer	() { return foolPlayer; }
+
+  // Inline assessor to get the pointer on the greatest trump of the current trick.
   inline shared_ptr<Card>	getGreaterTrump	() { return greaterTrump; }
 
 private:
