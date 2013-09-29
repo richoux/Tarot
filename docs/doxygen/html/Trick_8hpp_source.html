@@ -114,28 +114,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a><a class="code" href="classTrick.html">00035</a> <span class="keyword">class </span><a class="code" href="classTrick.html" title="This class manages the current and previously played tricks.">Trick</a>
 <a name="l00036"></a>00036 {
 <a name="l00037"></a>00037 <span class="keyword">public</span>:
-<a name="l00038"></a>00038   <a class="code" href="classTrick.html" title="This class manages the current and previously played tricks.">Trick</a>( shared_ptr&lt;Card&gt; );
-<a name="l00039"></a>00039   ~<a class="code" href="classTrick.html" title="This class manages the current and previously played tricks.">Trick</a>();
-<a name="l00040"></a>00040   
-<a name="l00041"></a>00041   shared_ptr&lt;Player&gt; asCalledKing();
-<a name="l00042"></a>00042   set&lt; shared_ptr&lt;Card&gt; &gt; getAllCards();
-<a name="l00043"></a>00043   <span class="keywordtype">void</span> setCard( shared_ptr&lt;Player&gt;, shared_ptr&lt;Card&gt; );
-<a name="l00044"></a>00044   <span class="keywordtype">double</span> getScore();
-<a name="l00045"></a>00045   <span class="keywordtype">void</span> showAllCards();
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047   <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       getCard         ( shared_ptr&lt;Player&gt; player ) { <span class="keywordflow">return</span> trickCards[player]; }
-<a name="l00048"></a>00048   <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       getWinCard      () { <span class="keywordflow">return</span> trickCards[leader]; }
-<a name="l00049"></a>00049   <span class="keyword">inline</span> shared_ptr&lt;Player&gt;     getLeader       () { <span class="keywordflow">return</span> leader; }
-<a name="l00050"></a>00050   <span class="keyword">inline</span> shared_ptr&lt;Player&gt;     getFoolPlayer   () { <span class="keywordflow">return</span> foolPlayer; }
-<a name="l00051"></a>00051   <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       getGreaterTrump () { <span class="keywordflow">return</span> greaterTrump; }
+<a name="l00039"></a>00039 
+<a name="l00042"></a>00042   <a class="code" href="classTrick.html" title="This class manages the current and previously played tricks.">Trick</a>( shared_ptr&lt;Card&gt; kingCalled );
+<a name="l00043"></a>00043 
+<a name="l00045"></a>00045   ~<a class="code" href="classTrick.html" title="This class manages the current and previously played tricks.">Trick</a>();
+<a name="l00046"></a>00046   
+<a name="l00048"></a>00048   shared_ptr&lt;Player&gt; asCalledKing();
+<a name="l00049"></a>00049 
+<a name="l00051"></a>00051   set&lt; shared_ptr&lt;Card&gt; &gt; getAllCards();
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="keyword">private</span>:
-<a name="l00054"></a>00054   shared_ptr&lt;Player&gt;                            leader;         
-<a name="l00055"></a>00055   shared_ptr&lt;Player&gt;                            foolPlayer;     
-<a name="l00056"></a>00056   shared_ptr&lt;Card&gt;                              kingCalled;     
-<a name="l00057"></a>00057   shared_ptr&lt;Card&gt;                              greaterTrump;   
-<a name="l00058"></a>00058   map&lt; shared_ptr&lt;Player&gt;, shared_ptr&lt;Card&gt; &gt;   trickCards;     
-<a name="l00059"></a>00059 };
+<a name="l00054"></a>00054 
+<a name="l00058"></a>00058   <span class="keywordtype">void</span> setCard( shared_ptr&lt;Player&gt; player, shared_ptr&lt;Card&gt; card );
+<a name="l00059"></a>00059 
+<a name="l00061"></a>00061   <span class="keywordtype">double</span> getScore();
+<a name="l00062"></a>00062 
+<a name="l00064"></a>00064   <span class="keywordtype">void</span> showAllCards();
+<a name="l00065"></a>00065 
+<a name="l00067"></a><a class="code" href="classTrick.html#a29246478abfaf149e3ba10396e3f1b05">00067</a>   <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       <a class="code" href="classTrick.html#a29246478abfaf149e3ba10396e3f1b05" title="Inline assessor to the card played of the given player during the current trick.">getCard</a>         ( shared_ptr&lt;Player&gt; player ) { <span class="keywordflow">return</span> trickCards[player]; }
+<a name="l00068"></a>00068 
+<a name="l00070"></a><a class="code" href="classTrick.html#a38816b1d7ccd9c8d576539463b6de715">00070</a>   <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       <a class="code" href="classTrick.html#a38816b1d7ccd9c8d576539463b6de715" title="Inline function returning the card which takes the trick.">getWinCard</a>      () { <span class="keywordflow">return</span> trickCards[leader]; }
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072   <span class="comment">// Inline assessor to get the pointer on the leader.</span>
+<a name="l00073"></a>00073   <span class="keyword">inline</span> shared_ptr&lt;Player&gt;     getLeader       () { <span class="keywordflow">return</span> leader; }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075   <span class="comment">// Inline assessor to get the pointer on the player who played the Fool.</span>
+<a name="l00076"></a>00076   <span class="keyword">inline</span> shared_ptr&lt;Player&gt;     getFoolPlayer   () { <span class="keywordflow">return</span> foolPlayer; }
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078   <span class="comment">// Inline assessor to get the pointer on the greatest trump of the current trick.</span>
+<a name="l00079"></a>00079   <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       getGreaterTrump () { <span class="keywordflow">return</span> greaterTrump; }
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 <span class="keyword">private</span>:
+<a name="l00082"></a>00082   shared_ptr&lt;Player&gt;                            leader;         
+<a name="l00083"></a>00083   shared_ptr&lt;Player&gt;                            foolPlayer;     
+<a name="l00084"></a>00084   shared_ptr&lt;Card&gt;                              kingCalled;     
+<a name="l00085"></a>00085   shared_ptr&lt;Card&gt;                              greaterTrump;   
+<a name="l00086"></a>00086   map&lt; shared_ptr&lt;Player&gt;, shared_ptr&lt;Card&gt; &gt;   trickCards;     
+<a name="l00087"></a>00087 };
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -154,7 +168,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 26 2013 23:10:13 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 29 2013 17:17:04 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
