@@ -6,5 +6,6 @@ var searchData=
   ['_7egame',['~Game',['../classGame.html#ae3d112ca6e0e55150d2fdbc704474530',1,'Game']]],
   ['_7ehuman',['~Human',['../classHuman.html#a93ca0fbf9e5b5bcb6f2f72eeb450219b',1,'Human']]],
   ['_7eplayer',['~Player',['../classPlayer.html#a749d2c00e1fe0f5c2746f7505a58c062',1,'Player']]],
-  ['_7eteam',['~Team',['../classTeam.html#ab4218fddd612d52bab47bec4feeb49de',1,'Team']]]
+  ['_7eteam',['~Team',['../classTeam.html#ab4218fddd612d52bab47bec4feeb49de',1,'Team']]],
+  ['_7etrick',['~Trick',['../classTrick.html#a96a443338c26a142b45ba08c2f5748a1',1,'Trick']]]
 ];
