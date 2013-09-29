@@ -23,13 +23,14 @@
 
 shared_ptr<Card> Beginner::playCard( vector< shared_ptr<Card> > cardsCanPlay )
 {
+  assert( !cardsCanPlay.empty() );
   // play random
   return cardsCanPlay[ rand() % cardsCanPlay.size() ]; 
 }
 
 Biddings Beginner::bid( Biddings bestBid, int numberOudlers, bool chelemAnnounced )
 {
-    int chance = rand() % 101;
+  int chance = rand() % 101;
 
   if( numberOudlers == 0 )
     {
@@ -75,6 +76,8 @@ Biddings Beginner::bid( Biddings bestBid, int numberOudlers, bool chelemAnnounce
 
 set< shared_ptr<Card> >	Beginner::makeEcart( int dogSize, vector< shared_ptr<Card> > allCards )
 {
+  assert( allCards.size() >= 15 && allCards.size() <= 24 );
+
   set< shared_ptr<Card> > ecart;
   
   while( ecart.size() < dogSize )
