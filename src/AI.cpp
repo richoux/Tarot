@@ -87,10 +87,11 @@ shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> 
   // cout << endl;
 
   shared_ptr<Card> theCard = difficulty->playCard( validCards( referenceCard, highTrump ) );
-  cout << name << " played " << *theCard << endl;
   
+  assert( theCard != nullptr );
+  
+  cout << name << " played " << *theCard << endl;
   delCard( theCard );
-
   return theCard;
 }
 
@@ -107,6 +108,9 @@ Biddings AI::bid( Biddings bestBid, bool chelemAnnounced )
 set< shared_ptr<Card> >	AI::makeEcart( int dogSize )
 {
   set< shared_ptr<Card> > ecart = difficulty->makeEcart( dogSize, getInitialCards() );
+
+  assert( ecart.size() == dogSize );
+  
   for( auto card : ecart)
     delCard( card );
   return ecart;

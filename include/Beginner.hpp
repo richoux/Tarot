@@ -25,6 +25,7 @@
 #include <set>
 #include <memory>
 #include <cstdlib>
+#include <cassert>
 
 #include <Biddings.hpp>
 #include <Card.hpp>
