@@ -1,23 +1,23 @@
 /*
-* Tarot is an application for Android system to play to French Tarot.
-* Please visit https://github.com/richoux/Tarot for further information.
-* 
-* Copyright (C) 2013 Florian Richoux
-*
-* This file is part of Tarot.
-* Tarot is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
+ * Tarot is an application for Android system to play to French Tarot.
+ * Please visit https://github.com/richoux/Tarot for further information.
+ * 
+ * Copyright (C) 2013 Florian Richoux
+ *
+ * This file is part of Tarot.
+ * Tarot is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
 
-* Tarot is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
+ * Tarot is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
 
-* You should have received a copy of the GNU General Public License
-* along with Tarot.  If not, see http://www.gnu.org/licenses/.
-*/
+ * You should have received a copy of the GNU General Public License
+ * along with Tarot.  If not, see http://www.gnu.org/licenses/.
+ */
 
 #pragma once
 
@@ -42,7 +42,7 @@ using namespace std;
   The class AI extends Player and shows an interface for actions like playCard, make a bid, etc.
   Actions' implementation is decoupled from the class with a Strategy pattern, where concret classes
   correspond to a level of difficulty.
- */
+*/
 class AI : public Player
 {
 public:
@@ -147,10 +147,10 @@ private:
     /*!
       \param suit The asked suit.
       \return True iif there remains at least one card of the given suit in the hand of other players.
-     */
+    */
     bool hasSuit( Suits suit ) const
-    {
-      switch( suit )
+      {
+	switch( suit )
 	{
 	case heart:
 	  return hasHeart;
@@ -165,7 +165,7 @@ private:
 	default:
 	  return true;
 	}
-    }
+      }
   };
 
   Deck			cardCounting;	//!< A deck to count cards.

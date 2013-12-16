@@ -1,23 +1,23 @@
 /*
-* Tarot is an application for Android system to play to French Tarot.
-* Please visit https://github.com/richoux/Tarot for further information.
-* 
-* Copyright (C) 2013 Florian Richoux
-*
-* This file is part of Tarot.
-* Tarot is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
+ * Tarot is an application for Android system to play to French Tarot.
+ * Please visit https://github.com/richoux/Tarot for further information.
+ * 
+ * Copyright (C) 2013 Florian Richoux
+ *
+ * This file is part of Tarot.
+ * Tarot is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
 
-* Tarot is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
+ * Tarot is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
 
-* You should have received a copy of the GNU General Public License
-* along with Tarot.  If not, see http://www.gnu.org/licenses/.
-*/
+ * You should have received a copy of the GNU General Public License
+ * along with Tarot.  If not, see http://www.gnu.org/licenses/.
+ */
 
 #include <Human.hpp>
 
@@ -38,9 +38,9 @@ shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Car
   int index;
   
   do
-    {
-      index = getInt( "\nSelect your card: " );
-    }
+  {
+    index = getInt( "\nSelect your card: " );
+  }
   while( index < 0 || index >= valids.size() );
 
   cout << "You played " << *valids[index] << endl;
@@ -55,67 +55,67 @@ Biddings Human::bid( Biddings bestBid, bool chelemAnnounced )
   cout << endl;
 
   if( bestBid == Biddings::guard_a )
+  {
+    cout << "Impossible to bid, Guard Against has been chosen" << endl;
+    return Biddings::none;
+  }
+  else
+  {
+    char choice;
+    cout << "Biddings: (p)Pass, ";
+    if( bestBid == Biddings::none )
     {
-      cout << "Impossible to bid, Guard Against has been chosen" << endl;
+      cout << "(s)Small, (g)Guard, (w)Guard Without, (a)Guard Against" << endl;
+      do
+      {
+	choice = getChar( "\nSelect your choice: " );
+      }
+      while( choice != 'p' && choice != 's' && choice != 'g' && choice != 'w' && choice != 'a' );
+    }
+    else if( bestBid == Biddings::small )
+    {
+      cout << "(g)Guard, (w)Guard Without, (a)Guard Against" << endl;
+      do
+      {
+	choice = getChar( "\nSelect your choice: " );
+      }
+      while( choice != 'p' && choice != 'g' && choice != 'w' && choice != 'a' );
+    }
+    else if( bestBid == Biddings::guard )
+    {
+      cout << "(w)Guard Without, (a)Guard Against" << endl;
+      do
+      {
+	choice = getChar( "\nSelect your choice: " );
+      }
+      while( choice != 'p' && choice != 'w' && choice != 'a' );
+    }
+    else 
+    {
+      cout << "(a)Guard Against" << endl;
+      do
+      {
+	choice = getChar( "\nSelect your choice: " );
+      }
+      while( choice != 'p' && choice != 'a' );
+    }
+      
+    switch( choice )
+    {
+    case 'p':
+      return Biddings::none;
+    case 's':
+      return Biddings::small;
+    case 'g':
+      return Biddings::guard;
+    case 'w':
+      return Biddings::guard_w;
+    case 'a':
+      return Biddings::guard_a;
+    default:
       return Biddings::none;
     }
-  else
-    {
-      char choice;
-      cout << "Biddings: (p)Pass, ";
-      if( bestBid == Biddings::none )
-	{
-	  cout << "(s)Small, (g)Guard, (w)Guard Without, (a)Guard Against" << endl;
-	  do
-	    {
-	      choice = getChar( "\nSelect your choice: " );
-	    }
-	  while( choice != 'p' && choice != 's' && choice != 'g' && choice != 'w' && choice != 'a' );
-	}
-      else if( bestBid == Biddings::small )
-	{
-	  cout << "(g)Guard, (w)Guard Without, (a)Guard Against" << endl;
-	  do
-	    {
-	      choice = getChar( "\nSelect your choice: " );
-	    }
-	  while( choice != 'p' && choice != 'g' && choice != 'w' && choice != 'a' );
-	}
-      else if( bestBid == Biddings::guard )
-	{
-	  cout << "(w)Guard Without, (a)Guard Against" << endl;
-	  do
-	    {
-	      choice = getChar( "\nSelect your choice: " );
-	    }
-	  while( choice != 'p' && choice != 'w' && choice != 'a' );
-	}
-      else 
-	{
-	  cout << "(a)Guard Against" << endl;
-	  do
-	    {
-	      choice = getChar( "\nSelect your choice: " );
-	    }
-	  while( choice != 'p' && choice != 'a' );
-	}
-      
-      switch( choice )
-	{
-	case 'p':
-	  return Biddings::none;
-	case 's':
-	  return Biddings::small;
-	case 'g':
-	  return Biddings::guard;
-	case 'w':
-	  return Biddings::guard_w;
-	case 'a':
-	  return Biddings::guard_a;
-	default:
-	  return Biddings::none;
-	}
-    }  
+  }  
 }
 
 set< shared_ptr<Card> >	Human::makeEcart( int dogSize )
@@ -130,18 +130,18 @@ set< shared_ptr<Card> >	Human::makeEcart( int dogSize )
   int index;
 
   while( ecart.size() < dogSize )
+  {
+    do
     {
-      do
-	{
-	  index = getInt( "\nSelect a card: " );
-	}
-      while( index < 0 || index >= getInitialCards().size() );
-      
-      if( ecart.find( getInitialCards()[index] ) == ecart.end() )
-	ecart.insert( getInitialCards()[index] );
-      else
-	cout << "You already choose this card. Please select a new one." << endl;
+      index = getInt( "\nSelect a card: " );
     }
+    while( index < 0 || index >= getInitialCards().size() );
+      
+    if( ecart.find( getInitialCards()[index] ) == ecart.end() )
+      ecart.insert( getInitialCards()[index] );
+    else
+      cout << "You already choose this card. Please select a new one." << endl;
+  }
 
   return ecart;
 }

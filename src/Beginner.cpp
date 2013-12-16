@@ -1,23 +1,23 @@
 /*
-* Tarot is an application for Android system to play to French Tarot.
-* Please visit https://github.com/richoux/Tarot for further information.
-* 
-* Copyright (C) 2013 Florian Richoux
-*
-* This file is part of Tarot.
-* Tarot is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
+ * Tarot is an application for Android system to play to French Tarot.
+ * Please visit https://github.com/richoux/Tarot for further information.
+ * 
+ * Copyright (C) 2013 Florian Richoux
+ *
+ * This file is part of Tarot.
+ * Tarot is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
 
-* Tarot is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
+ * Tarot is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
 
-* You should have received a copy of the GNU General Public License
-* along with Tarot.  If not, see http://www.gnu.org/licenses/.
-*/
+ * You should have received a copy of the GNU General Public License
+ * along with Tarot.  If not, see http://www.gnu.org/licenses/.
+ */
 
 #include <Beginner.hpp>
 
@@ -33,45 +33,45 @@ Biddings Beginner::bid( Biddings bestBid, int numberOudlers, bool chelemAnnounce
   int chance = rand() % 101;
 
   if( numberOudlers == 0 )
-    {
-      if( bestBid == Biddings::none && chance >= 50 )
-	return Biddings::small;
-      else
-	return Biddings::none;
-    }
+  {
+    if( bestBid == Biddings::none && chance >= 50 )
+      return Biddings::small;
+    else
+      return Biddings::none;
+  }
   else if( numberOudlers == 1 )
-    {
-      if( bestBid <= Biddings::small && chance >= 80 )
-	return Biddings::guard;
-      else if( bestBid == Biddings::none && chance >= 35 )
-	return Biddings::small;
-      else
-	return Biddings::none;
-    }
+  {
+    if( bestBid <= Biddings::small && chance >= 80 )
+      return Biddings::guard;
+    else if( bestBid == Biddings::none && chance >= 35 )
+      return Biddings::small;
+    else
+      return Biddings::none;
+  }
   else if( numberOudlers == 2 )
-    {
-      if( bestBid <= Biddings::guard && chance >= 90 )
-	return Biddings::guard_w;
-      else if( bestBid <= Biddings::small && chance >= 65 )
-	return Biddings::guard;
-      else if( bestBid == Biddings::none && chance >= 20 )
-	return Biddings::small;
-      else
-	return Biddings::none;
-    }
+  {
+    if( bestBid <= Biddings::guard && chance >= 90 )
+      return Biddings::guard_w;
+    else if( bestBid <= Biddings::small && chance >= 65 )
+      return Biddings::guard;
+    else if( bestBid == Biddings::none && chance >= 20 )
+      return Biddings::small;
+    else
+      return Biddings::none;
+  }
   else
-    {
-      if( bestBid <= Biddings::guard_w && chance >= 95 )
-	return Biddings::guard_a;
-      else if( bestBid <= Biddings::guard && chance >= 80 )
-	return Biddings::guard_w;
-      else if( bestBid <= Biddings::small && chance >= 40 )
-	return Biddings::guard;
-      else if( bestBid == Biddings::none && chance >= 10 )
-	return Biddings::small;
-      else
-	return Biddings::none;
-    }
+  {
+    if( bestBid <= Biddings::guard_w && chance >= 95 )
+      return Biddings::guard_a;
+    else if( bestBid <= Biddings::guard && chance >= 80 )
+      return Biddings::guard_w;
+    else if( bestBid <= Biddings::small && chance >= 40 )
+      return Biddings::guard;
+    else if( bestBid == Biddings::none && chance >= 10 )
+      return Biddings::small;
+    else
+      return Biddings::none;
+  }
 }
 
 set< shared_ptr<Card> >	Beginner::makeEcart( int dogSize, vector< shared_ptr<Card> > allCards )
