@@ -1,23 +1,23 @@
 /*
-* Tarot is an application for Android system to play to French Tarot.
-* Please visit https://github.com/richoux/Tarot for further information.
-* 
-* Copyright (C) 2013 Florian Richoux
-*
-* This file is part of Tarot.
-* Tarot is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
+ * Tarot is an application for Android system to play to French Tarot.
+ * Please visit https://github.com/richoux/Tarot for further information.
+ * 
+ * Copyright (C) 2013 Florian Richoux
+ *
+ * This file is part of Tarot.
+ * Tarot is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
 
-* Tarot is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
+ * Tarot is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
 
-* You should have received a copy of the GNU General Public License
-* along with Tarot.  If not, see http://www.gnu.org/licenses/.
-*/
+ * You should have received a copy of the GNU General Public License
+ * along with Tarot.  If not, see http://www.gnu.org/licenses/.
+ */
 
 #pragma once
 
@@ -51,7 +51,7 @@ public:
   /*!
     \param numberPlayers The number of players.
     \param yourName The human player name.
-   */
+  */
   Game( int numberPlayers, string yourName = "You" );
 
   //! The unique destructor of Game.
@@ -89,14 +89,14 @@ public:
     \param p1 A player.
     \param p2 Another player.
     \return True iff p1 and p2 belong to the same team.
-   */
+  */
   bool sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 );
 
   //! Computes the score of a given player (refered by his/her name).
   /*!
     \param name A string for a player's name.
     \return The score of the given player.
-   */
+  */
   double computeScore( string name );
 
 private:
@@ -106,14 +106,14 @@ private:
   //! To set the current player (the next to play).
   /*!
     \param player The player assigned to be the next to play.
-   */
+  */
   void setNext( shared_ptr<Player> player );
 
   //! At the end of a trick, add it to the heap of won cards by the winner of the trick.
   /*!
     \param name The name of the trick winner.
     \param cards The set of cards from the won trick.
-   */
+  */
   void addWonCards( string name, set<shared_ptr<Card> > cards );
 
   //! Ensures to not lose the Fool, unless a very specific case: playing it at the very last trick without a chelem.

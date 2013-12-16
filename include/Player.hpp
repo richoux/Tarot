@@ -1,23 +1,23 @@
 /*
-* Tarot is an application for Android system to play to French Tarot.
-* Please visit https://github.com/richoux/Tarot for further information.
-* 
-* Copyright (C) 2013 Florian Richoux
-*
-* This file is part of Tarot.
-* Tarot is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
+ * Tarot is an application for Android system to play to French Tarot.
+ * Please visit https://github.com/richoux/Tarot for further information.
+ * 
+ * Copyright (C) 2013 Florian Richoux
+ *
+ * This file is part of Tarot.
+ * Tarot is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
 
-* Tarot is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
+ * Tarot is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
 
-* You should have received a copy of the GNU General Public License
-* along with Tarot.  If not, see http://www.gnu.org/licenses/.
-*/
+ * You should have received a copy of the GNU General Public License
+ * along with Tarot.  If not, see http://www.gnu.org/licenses/.
+ */
 
 #pragma once
 
@@ -40,7 +40,7 @@ public:
   //! The unique constructor of Player.
   /*!
     \param name The player name.
-   */
+  */
   Player( string name );
 
   //! The copy constructor of Player
@@ -89,13 +89,13 @@ public:
     \param refCard A pointer of the card fixing the asked suit of the trick.
     \param greaterTrump A pointer on the greater trump of the trick, if any.
     \return The vector of all cards the player can play in his/her situation. 
-   */
+  */
   vector< shared_ptr<Card> > validCards	( shared_ptr<Card> refCard, shared_ptr<Card> greaterTrump );
 
   //! Add a card among player's initial cards.
   /*!
     \param card The card to add.
-   */
+  */
   void addCard( shared_ptr<Card> card );
 
   //! To print all player's cards in his/her current hand. 
@@ -108,15 +108,15 @@ protected:
   //! To delete a card from the player's current hand.
   /*!
     \param card The card to delete from the player's hand.
-   */
+  */
   void	delCard	( shared_ptr<Card> card );
 
   //! A structure to automatically fix an insert order into cards' sets. 
   struct cardOrder {
     bool operator() (shared_ptr<Card> const lhs, shared_ptr<Card> const rhs) const
-    {
-      return lhs->getValue() < rhs->getValue();
-    }
+      {
+	return lhs->getValue() < rhs->getValue();
+      }
   };
 
   set< shared_ptr<Card>, cardOrder >	hearts;		//!< The set of Hearts owned by the player.
