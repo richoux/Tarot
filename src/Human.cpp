@@ -48,7 +48,7 @@ shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Car
   return valids[index];
 }
 
-Biddings Human::bid( Biddings bestBid, bool chelemAnnounced )
+Biddings Human::bid( const Biddings bestBid, const bool chelemAnnounced ) const
 {
   cout << "My cards: ";
   showCards();

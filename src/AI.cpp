@@ -30,7 +30,8 @@ AI::AI( string name, vector<string> knownPartners ) : Player( name )
     if( !partner.compare( name ) == 0 )
       partners[partner];
 
-  difficulty = shared_ptr<Beginner>( new Beginner() );
+  //difficulty = shared_ptr<Beginner>( new Beginner() );
+  difficulty = make_shared<Beginner>();
 }
 
 /*!
@@ -38,35 +39,39 @@ AI::AI( string name, vector<string> knownPartners ) : Player( name )
 */
 AI::~AI() {}
 
-bool AI::isOpponent( string name )
+bool AI::isOpponent( const string name ) const
 {
-  for( auto it = opponents.begin(); it != opponents.end(); ++it )
-    if( it->first.compare( name ) == 0 )
-      return true;
+  return opponents.find( name ) == opponents.end() ? false : true; 
 
-  return false;
+  // for( auto it = opponents.begin(); it != opponents.end(); ++it )
+  //   if( it->first.compare( name ) == 0 )
+  //     return true;
+
+  // return false;
 }
 
-bool AI::isPartner( string name )
+bool AI::isPartner( const string name ) const
 {
-  for( auto it = partners.begin(); it != partners.end(); ++it )
-    if( it->first.compare( name ) == 0 )
-      return true;
+  return partners.find( name ) == partners.end() ? false : true; 
 
-  return false;
+  // for( auto it = partners.begin(); it != partners.end(); ++it )
+  //   if( it->first.compare( name ) == 0 )
+  //     return true;
+
+  // return false;
 }
 
-bool AI::haveSuit( string name, Suits suit )
+bool AI::haveSuit( const string name, const Suits suit ) const
 {
   if( isOpponent( name ) )
-    return opponents[name].hasSuit( suit );
+    return opponents.at( name ).hasSuit( suit );
   else if( isPartner( name ) )
-    return partners[name].hasSuit( suit );
+    return partners.at( name ).hasSuit( suit );
   else
     return true;
 }
 
-bool AI::opponentsHaveSuit( Suits suit )
+bool AI::opponentsHaveSuit( const Suits suit ) const
 {
   for( auto it = opponents.begin(); it != opponents.end(); ++it )
     if( it->second.hasSuit( suit ) )
@@ -95,7 +100,7 @@ shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> 
   return theCard;
 }
 
-Biddings AI::bid( Biddings bestBid, bool chelemAnnounced )
+Biddings AI::bid( const Biddings bestBid, const bool chelemAnnounced ) const
 {
   if( bestBid == Biddings::guard_a )
     return Biddings::none;
@@ -105,7 +110,7 @@ Biddings AI::bid( Biddings bestBid, bool chelemAnnounced )
   return difficulty->bid( bestBid, getNumberOudlers(), chelemAnnounced );
 }
 
-set< shared_ptr<Card> >	AI::makeEcart( int dogSize )
+set< shared_ptr<Card> >	AI::makeEcart( const int dogSize )
 {
   set< shared_ptr<Card> > ecart = difficulty->makeEcart( dogSize, getInitialCards() );
 
