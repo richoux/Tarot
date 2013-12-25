@@ -66,7 +66,7 @@ public:
     \param chelemAnnounced A Boolean to know if someone has declared a chelem.
     \return The chosen bid (Biddings::none if one passes).
   */
-  virtual Biddings bid( Biddings bestBid, bool chelemAnnounced ) = 0;
+  virtual Biddings bid( const Biddings bestBid, const bool chelemAnnounced ) const = 0;
 
   //! Pure virtual function to make the ecart when the player is the best bidder.
   /*!
@@ -76,13 +76,13 @@ public:
   virtual set< shared_ptr<Card> > makeEcart( int dogSize ) = 0;
 
   //! Inline assessor to the set of announcements.
-  inline  set< Announcements > getAnnounced() { return announced; }
+  inline  set< Announcements > getAnnounced() const { return announced; }
 
   //! Inline assessor to the number of oudlers the player has with his/her initial hand.
-  inline  int getNumberOudlers() { return numberOudlers; }
+  inline  int getNumberOudlers() const { return numberOudlers; }
 
   //! Inline assessor to the player's initial cards.
-  inline  vector< shared_ptr<Card> > getInitialCards() { return initialCards; }
+  inline  vector< shared_ptr<Card> > getInitialCards() const { return initialCards; }
 
   //! Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick.
   /*!
@@ -99,7 +99,7 @@ public:
   void addCard( shared_ptr<Card> card );
 
   //! To print all player's cards in his/her current hand. 
-  void showCards();
+  void showCards() const;
 
   string name; //!< The player's name. 
   double score; //!< The player's score.
