@@ -62,7 +62,7 @@ public:
     \param chelemAnnounced True iff a chelem has been announced.
     \return The Human player's bid.
   */
-  Biddings bid( Biddings bestBid, bool chelemAnnounced );
+  Biddings bid( const Biddings bestBid, const bool chelemAnnounced ) const;
   
   //! To let the Human player makes his/her ecart.
   /*!

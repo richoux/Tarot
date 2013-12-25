@@ -61,14 +61,14 @@ public:
     \param name The Player's name in string.
     \return If the given Player is an opponent or not. 
   */
-  bool isOpponent( string name );
+  bool isOpponent( const string name ) const;
 
   //! To know if someone is your partner.
   /*!
     \param name The Player's name in string.
     \return If the given Player is an partner or not. 
   */
-  bool isPartner( string name );
+  bool isPartner( const string name ) const;
 
   //! Given a Player p, does p have at least one card on the asked suit?
   /*!
@@ -76,14 +76,14 @@ public:
     \param suit The asked suit.
     \return False iff one is sure p does not have any cards of the asked suit.
   */
-  bool haveSuit( string name, Suits suit);
+  bool haveSuit( const string name, const Suits suit) const;
 
   //! Do opponents have at least one card on the asked suit?
   /*!
     \param suit The asked suit.
     \return False iff one is sure no opponent player has a card of the asked suit.
   */
-  bool opponentsHaveSuit( Suits suit );
+  bool opponentsHaveSuit( const Suits suit ) const;
 
   //! Choose what card one plays, given the first card and the highest trump of the trick.
   /*!
@@ -107,7 +107,7 @@ public:
     \param chelemAnnounced A Boolean to know if someone has declared a chelem.
     \return Our bid (Biddings::none if one passes).
   */
-  Biddings bid( Biddings bestBid, bool chelemAnnounced);
+  Biddings bid( const Biddings bestBid, const bool chelemAnnounced) const;
 
   //! To make the ecart once one takes the dog.
   /*!
@@ -115,13 +115,13 @@ public:
     \param dogSize The number of card one must include into the ecart.
     \return A set of Card pointers for the cards one places into the ecart.
   */
-  set< shared_ptr<Card> > makeEcart( int dogSize );
+  set< shared_ptr<Card> > makeEcart( const int dogSize );
 
   //! Inline function to set the difficulty (set a Strategy concrete class).
   /*!
     \param diff A pointer on the difficuty to set.
   */
-  inline void setDifficulty ( shared_ptr<StratDiff> diff) {difficulty = diff;}
+  inline void setDifficulty ( shared_ptr<StratDiff> diff ) {difficulty = diff;}
 
 private:
 
@@ -148,7 +148,7 @@ private:
       \param suit The asked suit.
       \return True iif there remains at least one card of the given suit in the hand of other players.
     */
-    bool hasSuit( Suits suit ) const
+    bool hasSuit( const Suits suit ) const
       {
 	switch( suit )
 	{
