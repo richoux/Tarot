@@ -185,7 +185,7 @@ void Player::delCard( shared_ptr<Card> card )
   }
 }
 
-void Player::showCards()
+void Player::showCards() const
 {
   // show trumps
   for( shared_ptr<Card> card : trumps )
