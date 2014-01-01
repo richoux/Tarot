@@ -21,7 +21,7 @@
 
 #include <Trick.hpp>
 
-Trick::Trick( shared_ptr<Card> kingCalled) : kingCalled(kingCalled), leader(nullptr), greaterTrump(nullptr), foolPlayer(nullptr) 
+Trick::Trick( shared_ptr<Card> kingCalled) : leader(nullptr), foolPlayer(nullptr), kingCalled(kingCalled), greaterTrump(nullptr) 
 {}
 
 Trick::~Trick() 
