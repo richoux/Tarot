@@ -45,14 +45,14 @@ public:
     \param card A pointer of Card.
     \return True iff the given card is in the deck.
   */
-  bool isInDeck( shared_ptr<Card> card );
+  bool isInDeck( shared_ptr<Card> card ) const;
 
   //! Tests if the current deck has a stronger card than to proposed one.
   /*!
     \param card A pointer of Card.
     \return True iff the deck has a stronger card than the input. 
   */
-  bool hasStrongerThan( shared_ptr<Card> card );
+  bool hasStrongerThan( shared_ptr<Card> card ) const;
 
   //! Make a new deal; create each card of the game.
   void newDeal();

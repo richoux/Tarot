@@ -46,7 +46,7 @@ public:
     \param cardCanPlay The vector of cards one is allowed to play.
     \return The card we play.
   */
-  shared_ptr<Card> playCard( const vector< shared_ptr<Card> >& cardsCanPlay);
+  shared_ptr<Card> playCard( const vector< shared_ptr<Card> >& cardsCanPlay) const;
 
   //! Called to decide if we propose a bid or not, and if any, what bid.
   /*!
@@ -56,7 +56,7 @@ public:
     \param chelemAnnounced A Boolean to know if someone has declared a chelem.
     \return Our bid (Biddings::none if we pass).
   */
-  Biddings bid( const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced);
+  Biddings bid( const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced) const;
 
   //! To make the ecart once we take the dog.
   /*!
@@ -65,5 +65,5 @@ public:
     \param allCards The vector of all our cards, including the dog.
     \return A set of Card pointers for the cards we place into the ecart.
   */
-  set< shared_ptr<Card> > makeEcart( const int dogSize, const vector< shared_ptr<Card> >& allCards);
+  set< shared_ptr<Card> > makeEcart( const int dogSize, const vector< shared_ptr<Card> >& allCards) const;
 };
