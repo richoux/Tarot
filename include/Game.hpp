@@ -2,7 +2,7 @@
  * Tarot is an application for Android system to play to French Tarot.
  * Please visit https://github.com/richoux/Tarot for further information.
  * 
- * Copyright (C) 2013 Florian Richoux
+ * Copyright (C) 2013-2014 Florian Richoux
  *
  * This file is part of Tarot.
  * Tarot is free software: you can redistribute it and/or modify
@@ -52,7 +52,7 @@ public:
     \param numberPlayers The number of players.
     \param yourName The human player name.
   */
-  Game( int numberPlayers, string yourName = "You" );
+  Game( int& numberPlayers, const string yourName = "You" );
 
   //! The unique destructor of Game.
   ~Game();
@@ -61,16 +61,16 @@ public:
   void newGame();
 
   //! Prints players' / teams' scores.
-  void printScores();
+  void printScores() const;
 
   //! Plays all turns of a game and returns the winner team.
   Team play();
 
   //! Shows the deck on the screen.
-  void showDeck();
+  void showDeck() const;
 
   //! Shows players' cards on the screen
-  void showPlayersCards();
+  void showPlayersCards() const;
 
   //! Shuffles (three time) the deck.
   void shuffleDeck();
@@ -90,14 +90,14 @@ public:
     \param p2 Another player.
     \return True iff p1 and p2 belong to the same team.
   */
-  bool sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 );
+  bool sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const;
 
   //! Computes the score of a given player (refered by his/her name).
   /*!
     \param name A string for a player's name.
     \return The score of the given player.
   */
-  double computeScore( string name );
+  double computeScore( const string& name ) const;
 
 private:
   //! To change the value of the current player's pointer.
@@ -114,7 +114,7 @@ private:
     \param name The name of the trick winner.
     \param cards The set of cards from the won trick.
   */
-  void addWonCards( string name, set<shared_ptr<Card> > cards );
+  void addWonCards( const string& name, const set<shared_ptr<Card> >& cards );
 
   //! Ensures to not lose the Fool, unless a very specific case: playing it at the very last trick without a chelem.
   void swapFool();
