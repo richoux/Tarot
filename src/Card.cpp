@@ -23,13 +23,13 @@
 
 #include <Card.hpp>
 
-Card::Card( Suits suit, int value, double points, bool oudler )
+Card::Card( const Suits suit, const int value, const double points, const bool oudler )
   : suit(suit), value(value), points(points), oudler(oudler)
 {}
 
 Card::~Card() {}
 
-bool Card::operator>( Card card ) 
+bool Card::operator>( const Card& card ) const 
 { 
   if( this->suit == 4 && card.suit < 4)
     return true;
@@ -39,7 +39,7 @@ bool Card::operator>( Card card )
     return this->value > card.value;
 }
 
-bool Card::operator<( Card card ) 
+bool Card::operator<( const Card& card ) const
 { 
   if( this->suit == 4 && card.suit < 4)
     return false;
@@ -49,7 +49,7 @@ bool Card::operator<( Card card )
     return this->value < card.value;
 }
 
-bool Card::operator==( Card card ) 
+bool Card::operator==( const Card& card ) const 
 { 
   return this->suit == card.suit && this->value == card.value;
 }
