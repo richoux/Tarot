@@ -27,7 +27,7 @@
 
 using namespace std;
 
-int main(int argc, char **argv)
+int main()
 {
   srand ( unsigned ( time(0) ) );
 
@@ -37,7 +37,6 @@ int main(int argc, char **argv)
 
   cout << "Please enter your name." << endl;
   getline( cin, playerName );
- 
   nberPlayers = getInt( "Please enter the number of players.\n" );
 
   if( playerName.compare("") != 0 )

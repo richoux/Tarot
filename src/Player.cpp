@@ -21,8 +21,8 @@
 
 #include <Player.hpp>
 
-Player::Player( string name ) : name(name), numberOudlers(0), initialPoints(0) {}
-Player::Player( const Player &player ) {}
+Player::Player( const string& name ) : name(name), numberOudlers(0), initialPoints(0) {}
+Player::Player( const Player& player ) {}
 Player::~Player() {}
 
 vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_ptr<Card> greaterTrump )
@@ -86,6 +86,8 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
 	  for( shared_ptr<Card> card : trumps )
 	    returnCards.push_back( card );
       }
+      break;
+    default:
       break;
     }
 

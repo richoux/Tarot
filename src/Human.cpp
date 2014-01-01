@@ -21,7 +21,7 @@
 
 #include <Human.hpp>
 
-Human::Human( string name ) : Player( name ) {}
+Human::Human( const string& name ) : Player( name ) {}
 Human::~Human() {}
 
 shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
@@ -32,7 +32,7 @@ shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Car
   showCards();
   cout << endl;
   
-  for( int i = 0; i < valids.size(); i++ )
+  for( unsigned int i = 0; i < valids.size(); i++ )
     cout << "(" << i << ") " << *valids[i] << " | ";
   
   int index;
@@ -118,13 +118,13 @@ Biddings Human::bid( const Biddings bestBid, const bool chelemAnnounced ) const
   }  
 }
 
-set< shared_ptr<Card> >	Human::makeEcart( int dogSize )
+set< shared_ptr<Card> >	Human::makeEcart( const int dogSize )
 {
   set< shared_ptr<Card> > ecart;
 
   cout << "Make your ecart." << endl;
   
-  for( int i = 0; i < getInitialCards().size(); i++ )
+  for( unsigned int i = 0; i < getInitialCards().size(); i++ )
     cout << "(" << i << ") " << *getInitialCards()[i] << " | ";
 
   int index;

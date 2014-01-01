@@ -22,7 +22,7 @@
 #include <Game.hpp>
 
 Game::Game( int numberPlayers, string yourName )
-  : foolGiver(nullptr), foolReceiver(nullptr), toSwap(false), indexToBid(-1), indexBidder(0), chelemAnnounced(false), addDogAtTheEnd(false)
+  : indexToBid(-1), indexBidder(0), chelemAnnounced(false), addDogAtTheEnd(false), toSwap(false), foolGiver(nullptr), foolReceiver(nullptr)
 {
   vector<string> names;
   names.push_back("Alice");
@@ -119,7 +119,7 @@ void Game::showPlayersCards()
 }
 void Game::shuffleDeck()
 {
-  for( int i = 0; i < players.size(); ++i )
+  for( unsigned int i = 0; i < players.size(); ++i )
     deck.shuffle();
 }
 
@@ -139,7 +139,7 @@ void Game::dealCards()
 
   // deal cards to players and the dog
   for( int round = 0; round < cardsPerPlayer; round += consecutiveDealing )
-    for( int gamers = 0; gamers < players.size(); gamers++ )
+    for( unsigned int gamers = 0; gamers < players.size(); gamers++ )
     {
       for( int card = 0; card < consecutiveDealing; card++ )
       {
@@ -175,7 +175,7 @@ void Game::nextPlayer()
 void Game::setNext( shared_ptr<Player> player )
 {
   next = player;
-  for( int i = 0; i < players.size(); ++i )
+  for( unsigned int i = 0; i < players.size(); ++i )
     if( players[i] == player )
       indexNext = i;
 }
@@ -201,7 +201,7 @@ void Game::takeBiddings()
   int index = indexToBid;
   Biddings bestBid = Biddings::none;  
 
-  for( int i = 0; i < players.size(); i++ )
+  for( unsigned int i = 0; i < players.size(); i++ )
   {
     if( index == players.size() )
       index = 0;
@@ -251,13 +251,13 @@ void Game::takeBiddings()
   takers.members[ players[indexBidder]->name ] = players[indexBidder];
   if( players.size() < 5 )
   {
-    for( int i = 0; i < players.size(); i++ )
+    for( unsigned int i = 0; i < players.size(); i++ )
       if( i != indexBidder )
 	defenders.members[ players[i]->name ] = players[i];
   }
   else
   {
-    for( int i = 0; i < players.size(); i++ )
+    for( unsigned int i = 0; i < players.size(); i++ )
       if( i != indexBidder )
 	unknown.members[ players[i]->name ] = players[i];
   }
@@ -317,7 +317,7 @@ Team Game::play()
 
     currentTrick = shared_ptr<Trick>( new Trick( nullptr ) );
       
-    for( int gamer = 0; gamer < players.size(); ++gamer )
+    for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
     {
       if( gamer == 0)
       {

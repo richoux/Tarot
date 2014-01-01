@@ -25,7 +25,7 @@
 
 using namespace std;
 
-int getInt(char *message)
+int getInt(const string& message)
 {
   int out;
   string in;
