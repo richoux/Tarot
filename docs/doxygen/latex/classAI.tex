@@ -24,28 +24,41 @@ class {\bfseries \-Counting}
 \subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classAI_a66d6cd98eca679d4f2e53d8e07d70231}{\-A\-I} (string \hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}, vector$<$ string $>$ known\-Partners)
+\hyperlink{classAI_a059fcf3ea09f908bca75567937f7e8a7}{\-A\-I} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}, const vector$<$ string $>$ \&known\-Partners)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} constructor. \end{DoxyCompactList}\item 
-\hyperlink{classAI_a66a8645f0c27285cd75346f2c2bbfb14}{$\sim$\-A\-I} ()
+\hyperlink{classAI_aa58c0b5165f06063316d257abc996e41}{\-A\-I} (const \hyperlink{classAI}{\-A\-I} \&other)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classAI_a8a2a39a4e227c23829cb77aa0f362af3}{\-A\-I} (\hyperlink{classAI}{\-A\-I} \&\&other)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} move constructor. \end{DoxyCompactList}\item 
+\hypertarget{classAI_a66a8645f0c27285cd75346f2c2bbfb14}{\hyperlink{classAI_a66a8645f0c27285cd75346f2c2bbfb14}{$\sim$\-A\-I} ()}\label{classAI_a66a8645f0c27285cd75346f2c2bbfb14}
+
 \begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} destructor. \end{DoxyCompactList}\item 
-bool \hyperlink{classAI_a4b7197635ffe4d2496b367c38c19cef4}{is\-Opponent} (string \hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name})
+\hypertarget{classAI_a1eb14f1ec8ef778f070362ba37f17d6c}{\hyperlink{classAI}{\-A\-I} \& \hyperlink{classAI_a1eb14f1ec8ef778f070362ba37f17d6c}{operator=} (\hyperlink{classAI}{\-A\-I} other)}\label{classAI_a1eb14f1ec8ef778f070362ba37f17d6c}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} assignment operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classAI_aec78eb8010bdcd99c899aaa7af79d9ea}{is\-Opponent} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}) const 
 \begin{DoxyCompactList}\small\item\em \-To know if someone is your opponent. \end{DoxyCompactList}\item 
-bool \hyperlink{classAI_a6527528ecab508fa4bf99f80ee0efa50}{is\-Partner} (string \hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name})
+bool \hyperlink{classAI_a0cd8c8e4a646c6c1ae51c7812eb1194e}{is\-Partner} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}) const 
 \begin{DoxyCompactList}\small\item\em \-To know if someone is your partner. \end{DoxyCompactList}\item 
-bool \hyperlink{classAI_a6f39142d5c4b2dab8b053fcc0fbe9ab4}{have\-Suit} (string \hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}, \-Suits suit)
+bool \hyperlink{classAI_a01cd7c1760412dde024605226591328c}{have\-Suit} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}, const \-Suits suit) const 
 \begin{DoxyCompactList}\small\item\em \-Given a \hyperlink{classPlayer}{\-Player} p, does p have at least one card on the asked suit? \end{DoxyCompactList}\item 
-bool \hyperlink{classAI_a7203308d46eca68cc9b77b804857037d}{opponents\-Have\-Suit} (\-Suits suit)
+bool \hyperlink{classAI_affad35d086fe81539b07a5626b19c1bb}{opponents\-Have\-Suit} (const \-Suits suit) const 
 \begin{DoxyCompactList}\small\item\em \-Do opponents have at least one card on the asked suit? \end{DoxyCompactList}\item 
 shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ \hyperlink{classAI_a3f5b2888e03634db701c66f82a4f03a8}{play\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ reference\-Card, shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ high\-Trump)
 \begin{DoxyCompactList}\small\item\em \-Choose what card one plays, given the first card and the highest trump of the trick. \end{DoxyCompactList}\item 
 void \hyperlink{classAI_a6cda26d3bf7238b1a7ea3725bf4aabb7}{new\-Game} ()
 \begin{DoxyCompactList}\small\item\em \-Must be called when starting a new game. \end{DoxyCompactList}\item 
-\-Biddings \hyperlink{classAI_a168d96ab354298c316faa905418cfb57}{bid} (\-Biddings best\-Bid, bool chelem\-Announced)
+\-Biddings \hyperlink{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{bid} (const \-Biddings best\-Bid, const bool chelem\-Announced) const 
 \begin{DoxyCompactList}\small\item\em \-Called to decide if one proposes a bid or not, and if any, what bid. \end{DoxyCompactList}\item 
-set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classAI_a7a7df533ccc838f818a1ee94c4153fe0}{make\-Ecart} (int dog\-Size)
+set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classAI_ad12a3efd1da4acc6e1855bd7262779e3}{make\-Ecart} (const int dog\-Size)
 \begin{DoxyCompactList}\small\item\em \-To make the ecart once one takes the dog. \end{DoxyCompactList}\item 
 void \hyperlink{classAI_a19cae044bb7f221819f61b017b6a7ffe}{set\-Difficulty} (shared\-\_\-ptr$<$ \hyperlink{classStratDiff}{\-Strat\-Diff} $>$ diff)
 \begin{DoxyCompactList}\small\item\em \-Inline function to set the difficulty (set a \-Strategy concrete class). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAI_a6c2a2d1ac6ecf7362dc45ce9d16e0e49}{swap} (\hyperlink{classAI}{\-A\-I} \&first, \hyperlink{classAI}{\-A\-I} \&second)
+\begin{DoxyCompactList}\small\item\em \-Friend function swap used for the copy-\/and-\/swap idiom. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{\-Detailed \-Description}
@@ -54,14 +67,14 @@ void \hyperlink{classAI_a19cae044bb7f221819f61b017b6a7ffe}{set\-Difficulty} (sha
 \-The class \hyperlink{classAI}{\-A\-I} extends \hyperlink{classPlayer}{\-Player} and shows an interface for actions like play\-Card, make a bid, etc. \-Actions' implementation is decoupled from the class with a \-Strategy pattern, where concret classes correspond to a level of difficulty. 
 
 \subsection{\-Constructor \& \-Destructor \-Documentation}
-\hypertarget{classAI_a66d6cd98eca679d4f2e53d8e07d70231}{\index{\-A\-I@{\-A\-I}!\-A\-I@{\-A\-I}}
+\hypertarget{classAI_a059fcf3ea09f908bca75567937f7e8a7}{\index{\-A\-I@{\-A\-I}!\-A\-I@{\-A\-I}}
 \index{\-A\-I@{\-A\-I}!AI@{\-A\-I}}
 \subsubsection[{\-A\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-A\-I\-::\-A\-I} (
 \begin{DoxyParamCaption}
-\item[{string}]{name, }
-\item[{vector$<$ string $>$}]{known\-Partners}
+\item[{const string \&}]{name, }
+\item[{const vector$<$ string $>$ \&}]{known\-Partners}
 \end{DoxyParamCaption}
-)}}\label{classAI_a66d6cd98eca679d4f2e53d8e07d70231}
+)}}\label{classAI_a059fcf3ea09f908bca75567937f7e8a7}
 
 
 \hyperlink{classAI}{\-A\-I} constructor. 
@@ -70,31 +83,52 @@ void \hyperlink{classAI_a19cae044bb7f221819f61b017b6a7ffe}{set\-Difficulty} (sha
 \begin{DoxyParams}{\-Parameters}
 {\em name} & \-A string for the \hyperlink{classAI}{\-A\-I} name. \\
 \hline
-{\em known\-Partners} & \-A vector of strings composed of the name of its partners.\\
+{\em known\-Partners} & \-A vector of strings composed of the name of its partners. \\
 \hline
 \end{DoxyParams}
-\-The unique constructor for \hyperlink{classAI}{\-A\-I}. \hypertarget{classAI_a66a8645f0c27285cd75346f2c2bbfb14}{\index{\-A\-I@{\-A\-I}!$\sim$\-A\-I@{$\sim$\-A\-I}}
-\index{$\sim$\-A\-I@{$\sim$\-A\-I}!AI@{\-A\-I}}
-\subsubsection[{$\sim$\-A\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-A\-I\-::$\sim$\-A\-I} (
+\hypertarget{classAI_aa58c0b5165f06063316d257abc996e41}{\index{\-A\-I@{\-A\-I}!\-A\-I@{\-A\-I}}
+\index{\-A\-I@{\-A\-I}!AI@{\-A\-I}}
+\subsubsection[{\-A\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-A\-I\-::\-A\-I} (
 \begin{DoxyParamCaption}
-{}
+\item[{const {\bf \-A\-I} \&}]{other}
 \end{DoxyParamCaption}
-)}}\label{classAI_a66a8645f0c27285cd75346f2c2bbfb14}
+)}}\label{classAI_aa58c0b5165f06063316d257abc996e41}
 
 
-\hyperlink{classAI}{\-A\-I} destructor. 
+\hyperlink{classAI}{\-A\-I} copy constructor. 
 
-\-The unique destructor for \hyperlink{classAI}{\-A\-I}, doing nothing. 
+
+\begin{DoxyParams}{\-Parameters}
+{\em other} & \-The constant reference of the object to copied. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAI_a8a2a39a4e227c23829cb77aa0f362af3}{\index{\-A\-I@{\-A\-I}!\-A\-I@{\-A\-I}}
+\index{\-A\-I@{\-A\-I}!AI@{\-A\-I}}
+\subsubsection[{\-A\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-A\-I\-::\-A\-I} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-A\-I} \&\&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classAI_a8a2a39a4e227c23829cb77aa0f362af3}
+
+
+\hyperlink{classAI}{\-A\-I} move constructor. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em other} & \-The \char`\"{}universal reference\char`\"{} of the object to moved. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{\-Member \-Function \-Documentation}
-\hypertarget{classAI_a168d96ab354298c316faa905418cfb57}{\index{\-A\-I@{\-A\-I}!bid@{bid}}
+\hypertarget{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{\index{\-A\-I@{\-A\-I}!bid@{bid}}
 \index{bid@{bid}!AI@{\-A\-I}}
 \subsubsection[{bid}]{\setlength{\rightskip}{0pt plus 5cm}\-Biddings {\bf \-A\-I\-::bid} (
 \begin{DoxyParamCaption}
-\item[{\-Biddings}]{best\-Bid, }
-\item[{bool}]{chelem\-Announced}
+\item[{const \-Biddings}]{best\-Bid, }
+\item[{const bool}]{chelem\-Announced}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classAI_a168d96ab354298c316faa905418cfb57}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classAI_a9e2fd7ff440ada8339135c23b73e1a96}
 
 
 \-Called to decide if one proposes a bid or not, and if any, what bid. 
@@ -111,16 +145,16 @@ bid is delegated to the difficulty \-Strategy.
 \end{DoxyReturn}
 
 
-\-Implements \hyperlink{classPlayer_add75318310fa04cd492a1cf32c8e9a00}{\-Player}.
+\-Implements \hyperlink{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{\-Player}.
 
-\hypertarget{classAI_a6f39142d5c4b2dab8b053fcc0fbe9ab4}{\index{\-A\-I@{\-A\-I}!have\-Suit@{have\-Suit}}
+\hypertarget{classAI_a01cd7c1760412dde024605226591328c}{\index{\-A\-I@{\-A\-I}!have\-Suit@{have\-Suit}}
 \index{have\-Suit@{have\-Suit}!AI@{\-A\-I}}
 \subsubsection[{have\-Suit}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-A\-I\-::have\-Suit} (
 \begin{DoxyParamCaption}
-\item[{string}]{name, }
-\item[{\-Suits}]{suit}
+\item[{const string \&}]{name, }
+\item[{const \-Suits}]{suit}
 \end{DoxyParamCaption}
-)}}\label{classAI_a6f39142d5c4b2dab8b053fcc0fbe9ab4}
+) const}}\label{classAI_a01cd7c1760412dde024605226591328c}
 
 
 \-Given a \hyperlink{classPlayer}{\-Player} p, does p have at least one card on the asked suit? 
@@ -135,13 +169,13 @@ bid is delegated to the difficulty \-Strategy.
 \begin{DoxyReturn}{\-Returns}
 \-False iff one is sure p does not have any cards of the asked suit. 
 \end{DoxyReturn}
-\hypertarget{classAI_a4b7197635ffe4d2496b367c38c19cef4}{\index{\-A\-I@{\-A\-I}!is\-Opponent@{is\-Opponent}}
+\hypertarget{classAI_aec78eb8010bdcd99c899aaa7af79d9ea}{\index{\-A\-I@{\-A\-I}!is\-Opponent@{is\-Opponent}}
 \index{is\-Opponent@{is\-Opponent}!AI@{\-A\-I}}
 \subsubsection[{is\-Opponent}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-A\-I\-::is\-Opponent} (
 \begin{DoxyParamCaption}
-\item[{string}]{name}
+\item[{const string \&}]{name}
 \end{DoxyParamCaption}
-)}}\label{classAI_a4b7197635ffe4d2496b367c38c19cef4}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classAI_aec78eb8010bdcd99c899aaa7af79d9ea}
 
 
 \-To know if someone is your opponent. 
@@ -154,13 +188,13 @@ bid is delegated to the difficulty \-Strategy.
 \begin{DoxyReturn}{\-Returns}
 \-If the given \hyperlink{classPlayer}{\-Player} is an opponent or not. 
 \end{DoxyReturn}
-\hypertarget{classAI_a6527528ecab508fa4bf99f80ee0efa50}{\index{\-A\-I@{\-A\-I}!is\-Partner@{is\-Partner}}
+\hypertarget{classAI_a0cd8c8e4a646c6c1ae51c7812eb1194e}{\index{\-A\-I@{\-A\-I}!is\-Partner@{is\-Partner}}
 \index{is\-Partner@{is\-Partner}!AI@{\-A\-I}}
 \subsubsection[{is\-Partner}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-A\-I\-::is\-Partner} (
 \begin{DoxyParamCaption}
-\item[{string}]{name}
+\item[{const string \&}]{name}
 \end{DoxyParamCaption}
-)}}\label{classAI_a6527528ecab508fa4bf99f80ee0efa50}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classAI_a0cd8c8e4a646c6c1ae51c7812eb1194e}
 
 
 \-To know if someone is your partner. 
@@ -173,13 +207,13 @@ bid is delegated to the difficulty \-Strategy.
 \begin{DoxyReturn}{\-Returns}
 \-If the given \hyperlink{classPlayer}{\-Player} is an partner or not. 
 \end{DoxyReturn}
-\hypertarget{classAI_a7a7df533ccc838f818a1ee94c4153fe0}{\index{\-A\-I@{\-A\-I}!make\-Ecart@{make\-Ecart}}
+\hypertarget{classAI_ad12a3efd1da4acc6e1855bd7262779e3}{\index{\-A\-I@{\-A\-I}!make\-Ecart@{make\-Ecart}}
 \index{make\-Ecart@{make\-Ecart}!AI@{\-A\-I}}
 \subsubsection[{make\-Ecart}]{\setlength{\rightskip}{0pt plus 5cm}set$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$ {\bf \-A\-I\-::make\-Ecart} (
 \begin{DoxyParamCaption}
-\item[{int}]{dog\-Size}
+\item[{const int}]{dog\-Size}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classAI_a7a7df533ccc838f818a1ee94c4153fe0}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classAI_ad12a3efd1da4acc6e1855bd7262779e3}
 
 
 \-To make the ecart once one takes the dog. 
@@ -194,7 +228,7 @@ make\-Ecart is delegated to the difficulty \-Strategy.
 \end{DoxyReturn}
 
 
-\-Implements \hyperlink{classPlayer_af4ec3b84a1f57691f867121f64be3d22}{\-Player}.
+\-Implements \hyperlink{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}{\-Player}.
 
 \hypertarget{classAI_a6cda26d3bf7238b1a7ea3725bf4aabb7}{\index{\-A\-I@{\-A\-I}!new\-Game@{new\-Game}}
 \index{new\-Game@{new\-Game}!AI@{\-A\-I}}
@@ -211,13 +245,13 @@ make\-Ecart is delegated to the difficulty \-Strategy.
 
 \-Implements \hyperlink{classPlayer_a76a707ceb6f24b0a2a801434ee5a60ad}{\-Player}.
 
-\hypertarget{classAI_a7203308d46eca68cc9b77b804857037d}{\index{\-A\-I@{\-A\-I}!opponents\-Have\-Suit@{opponents\-Have\-Suit}}
+\hypertarget{classAI_affad35d086fe81539b07a5626b19c1bb}{\index{\-A\-I@{\-A\-I}!opponents\-Have\-Suit@{opponents\-Have\-Suit}}
 \index{opponents\-Have\-Suit@{opponents\-Have\-Suit}!AI@{\-A\-I}}
 \subsubsection[{opponents\-Have\-Suit}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-A\-I\-::opponents\-Have\-Suit} (
 \begin{DoxyParamCaption}
-\item[{\-Suits}]{suit}
+\item[{const \-Suits}]{suit}
 \end{DoxyParamCaption}
-)}}\label{classAI_a7203308d46eca68cc9b77b804857037d}
+) const}}\label{classAI_affad35d086fe81539b07a5626b19c1bb}
 
 
 \-Do opponents have at least one card on the asked suit? 
@@ -269,7 +303,29 @@ play\-Card is delegated to the difficulty \-Strategy.
 
 
 \begin{DoxyParams}{\-Parameters}
-{\em diff} & \-A pointer on the difficuty to set. \\
+{\em diff} & \-A pointer on the difficulty to set. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classAI_a6c2a2d1ac6ecf7362dc45ce9d16e0e49}{\index{\-A\-I@{\-A\-I}!swap@{swap}}
+\index{swap@{swap}!AI@{\-A\-I}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf swap} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-A\-I} \&}]{first, }
+\item[{{\bf \-A\-I} \&}]{second}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classAI_a6c2a2d1ac6ecf7362dc45ce9d16e0e49}
+
+
+\-Friend function swap used for the copy-\/and-\/swap idiom. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em first} & \-The first \hyperlink{classAI}{\-A\-I} object. \\
+\hline
+{\em second} & \-The second \hyperlink{classAI}{\-A\-I} object to be swapped with the first one. \\
 \hline
 \end{DoxyParams}
 
