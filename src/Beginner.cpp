@@ -21,14 +21,14 @@
 
 #include <Beginner.hpp>
 
-shared_ptr<Card> Beginner::playCard( const vector< shared_ptr<Card> >& cardsCanPlay )
+shared_ptr<Card> Beginner::playCard( const vector< shared_ptr<Card> >& cardsCanPlay ) const
 {
   assert( !cardsCanPlay.empty() );
   // play random
   return cardsCanPlay[ rand() % cardsCanPlay.size() ]; 
 }
 
-Biddings Beginner::bid( const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced )
+Biddings Beginner::bid( const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced ) const
 {
   int chance = rand() % 101;
 
@@ -74,7 +74,7 @@ Biddings Beginner::bid( const Biddings bestBid, const int numberOudlers, const b
   }
 }
 
-set< shared_ptr<Card> >	Beginner::makeEcart( const int dogSize, const vector< shared_ptr<Card> >& allCards )
+set< shared_ptr<Card> >	Beginner::makeEcart( const int dogSize, const vector< shared_ptr<Card> >& allCards ) const
 {
   assert( allCards.size() >= 15 && allCards.size() <= 24 );
 
