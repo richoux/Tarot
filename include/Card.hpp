@@ -32,7 +32,7 @@ using namespace std;
 class Card
 {
   //! Surcharging << to make std::cout easier. 
-  friend ostream& operator<<	( ostream&, const Card& );
+  friend ostream& operator<< ( ostream&, const Card& );
 
 public:
   //! The unique constructor for Card.
@@ -42,31 +42,31 @@ public:
     \param points Its points, needing a real value.
     \param oudler A Boolean set to true iff the card is an oudler.
   */
-  Card( Suits suit, int value, double points, bool oudler );
+  Card( const Suits suit, const int value, const double points, const bool oudler );
 
   //! The unique destructor of Card.
   ~Card();
 
   //! Inline assessor to get the card's points.
-  inline double	getPoints	() { return points; }
+  inline double	getPoints	() const { return points; }
 
   //! Inline assessor to get the card's suit.
-  inline Suits	getSuit		() { return suit; }
+  inline Suits	getSuit		() const { return suit; }
 
   //! Inline assessor to get the card's value.
-  inline int	getValue	() { return value; }
+  inline int	getValue	() const { return value; }
 
   //! Inline function returning true iif the card is the Fool.
-  inline bool	isFool		() { return suit == Suits::fool; }
+  inline bool	isFool		() const { return suit == Suits::fool; }
 
   //! Inline function returning true iif the card is a trump.
-  inline bool	isTrump		() { return suit == Suits::trump; }
+  inline bool	isTrump		() const { return suit == Suits::trump; }
 
   //! Inline function returning true iif the card is an oudler.
-  inline bool	isOudler	() { return oudler; }
+  inline bool	isOudler	() const { return oudler; }
 
   //! Inline function returning true iif the card is a face card.
-  inline bool	isFaceCard	() { return value > 10; }
+  inline bool	isFaceCard	() const { return value > 10; }
 
   //! A greater-than comparator to make easier the comparison between cards.
   /*! 
@@ -74,7 +74,7 @@ public:
     \return true iff the given card is smaller than the left hand side card.
     Cards must be comparable, i.e., from the same suit or be trump.
   */ 
-  bool operator>( Card card );
+  bool operator>( const Card& card ) const;
 
   //! A less-than comparator to make easier the comparison between cards.
   /*! 
@@ -82,14 +82,14 @@ public:
     \return true iff the given card is greater than the left hand side card.
     Cards must be comparable, i.e., from the same suit or be trump.
   */ 
-  bool operator<( Card card );
+  bool operator<( const Card& card ) const;
 
   //! An equal comparator to make easier the comparison between cards.
   /*! 
     \param card The card one's compared with.
     \return true iff the two cards are the same.
   */ 
-  bool operator==( Card card );
+  bool operator==( const Card& card ) const;
 
   //! A function to decide if two cards are comparable
   /*! 
@@ -98,7 +98,7 @@ public:
     \param card Another card.
     \return True iff the two cards are comparable.
   */
-  inline bool isComparable( Card card ) 
+  inline bool isComparable( const Card& card ) const 
     { 
       return this->suit == card.suit || this->suit == 4 || card.suit == 4;
     }
