@@ -2,7 +2,7 @@
  * Tarot is an application for Android system to play to French Tarot.
  * Please visit https://github.com/richoux/Tarot for further information.
  * 
- * Copyright (C) 2013 Florian Richoux
+ * Copyright (C) 2013-2014 Florian Richoux
  *
  * This file is part of Tarot.
  * Tarot is free software: you can redistribute it and/or modify
@@ -25,23 +25,23 @@ Team::Team() {}
 
 Team::~Team() {}
 
-void Team::newGame()
+void Team::newGame() const
 {
   for( auto it = members.begin(); it != members.end(); ++it )
     it->second->newGame();
 }
 
-bool Team::operator<( Team &team )
+bool Team::operator<( const Team &team ) const
 {
   return this->getScore() < team.getScore();
 }
 
-bool Team::operator>( Team &team )
+bool Team::operator>( const Team &team ) const
 {
   return this->getScore() > team.getScore();
 }
 
-double Team::getScore()
+double Team::getScore() const
 {
   double score = 0;
 
