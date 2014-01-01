@@ -40,7 +40,7 @@ public:
   /*!
     \param name The name of the Human player.
   */
-  Human( string name );
+  Human( const string& name );
 
   //! The unique destructor of Human.
   ~Human();
@@ -68,5 +68,5 @@ public:
   /*!
     \param dogSize The number of cards to put into the ecart.
   */
-  set< shared_ptr<Card> > makeEcart( int dogSize );
+  set< shared_ptr<Card> > makeEcart( const int dogSize );
 };

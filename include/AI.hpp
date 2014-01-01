@@ -51,7 +51,7 @@ public:
     \param name A string for the AI name.
     \param knownPartners A vector of strings composed of the name of its partners.
   */
-  AI( string name, vector<string> knownPartners);
+  AI( const string& name, const vector<string>& knownPartners);
 
   //! AI destructor.
   ~AI();
@@ -61,14 +61,14 @@ public:
     \param name The Player's name in string.
     \return If the given Player is an opponent or not. 
   */
-  bool isOpponent( const string name ) const;
+  bool isOpponent( const string& name ) const;
 
   //! To know if someone is your partner.
   /*!
     \param name The Player's name in string.
     \return If the given Player is an partner or not. 
   */
-  bool isPartner( const string name ) const;
+  bool isPartner( const string& name ) const;
 
   //! Given a Player p, does p have at least one card on the asked suit?
   /*!
@@ -76,7 +76,7 @@ public:
     \param suit The asked suit.
     \return False iff one is sure p does not have any cards of the asked suit.
   */
-  bool haveSuit( const string name, const Suits suit) const;
+  bool haveSuit( const string& name, const Suits suit) const;
 
   //! Do opponents have at least one card on the asked suit?
   /*!
