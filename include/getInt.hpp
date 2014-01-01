@@ -31,4 +31,4 @@
   \param message A string (char* in fact) with the error message to print if something goes wrong.
   \return An integer read from the standard input.
 */
-int getInt(char *message);
+int getInt(const std::string& message);

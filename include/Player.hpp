@@ -41,7 +41,7 @@ public:
   /*!
     \param name The player name.
   */
-  Player( string name );
+  Player( const string& name );
 
   //! The copy constructor of Player
   Player( const Player& p);
@@ -73,7 +73,7 @@ public:
     \param dogSize The number of card one must include into the ecart.
     \return A set of Card pointers for the cards one places into the ecart.
   */
-  virtual set< shared_ptr<Card> > makeEcart( int dogSize ) = 0;
+  virtual set< shared_ptr<Card> > makeEcart( const int dogSize ) = 0;
 
   //! Inline assessor to the set of announcements.
   inline  set< Announcements > getAnnounced() const { return announced; }

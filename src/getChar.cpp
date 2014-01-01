@@ -25,7 +25,7 @@
 
 using namespace std;
 
-char getChar(char *message)
+char getChar(const string& message)
 {
   char out;
   string in;

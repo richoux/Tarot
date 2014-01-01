@@ -24,7 +24,7 @@
 /*!
   The unique constructor for AI.
 */
-AI::AI( string name, vector<string> knownPartners ) : Player( name )
+AI::AI( const string& name, const vector<string>& knownPartners ) : Player( name )
 {
   for( string partner : knownPartners )
     if( !partner.compare( name ) == 0 )
@@ -39,7 +39,7 @@ AI::AI( string name, vector<string> knownPartners ) : Player( name )
 */
 AI::~AI() {}
 
-bool AI::isOpponent( const string name ) const
+bool AI::isOpponent( const string& name ) const
 {
   return opponents.find( name ) == opponents.end() ? false : true; 
 
@@ -50,7 +50,7 @@ bool AI::isOpponent( const string name ) const
   // return false;
 }
 
-bool AI::isPartner( const string name ) const
+bool AI::isPartner( const string& name ) const
 {
   return partners.find( name ) == partners.end() ? false : true; 
 
@@ -61,7 +61,7 @@ bool AI::isPartner( const string name ) const
   // return false;
 }
 
-bool AI::haveSuit( const string name, const Suits suit ) const
+bool AI::haveSuit( const string& name, const Suits suit ) const
 {
   if( isOpponent( name ) )
     return opponents.at( name ).hasSuit( suit );
