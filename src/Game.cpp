@@ -51,16 +51,16 @@ Game::Game( int& numberPlayers, const string yourName )
     numberPlayers = 4;
   }
 
-  players.push_back( shared_ptr<Human>( new Human( yourName ) ) );
-  players.push_back( shared_ptr<AI>( new AI( "Alice", names ) ) );
-  players.push_back( shared_ptr<AI>( new AI( "Bob", names ) ) );
+  players.push_back( make_shared<Human>( yourName ) );
+  players.push_back( make_shared<AI>( "Alice", names ) );
+  players.push_back( make_shared<AI>( "Bob", names ) );
   
   if( numberPlayers >= 4)
   {
 
-    players.push_back( shared_ptr<AI>( new AI( "Charly", names ) ) );
+    players.push_back( make_shared<AI>( "Charly", names ) );
     if( numberPlayers == 5)
-      players.push_back( shared_ptr<AI>( new AI( "Dave", names ) ) );
+      players.push_back( make_shared<AI>( "Dave", names ) );
   }
 
   indexNext = rand() % players.size();
@@ -126,7 +126,7 @@ Team Game::play()
     cout << "** Round " << round+1 << " **" << endl;
     cout << "**************" << endl;
 
-    currentTrick = shared_ptr<Trick>( new Trick( nullptr ) );
+    currentTrick = make_shared<Trick>( nullptr );
       
     for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
     {

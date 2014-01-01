@@ -82,7 +82,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">Player Class Reference</div>  </div>
 </div><!--header-->
@@ -111,11 +112,14 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure to automatically fix an insert order into cards' sets.  <a href="structPlayer_1_1cardOrder.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a05402e93b2be9cb0bcda742a68f27b47">Player</a> (string <a class="el" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">name</a>)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a>.  <a href="#a05402e93b2be9cb0bcda742a68f27b47"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf2e45581d8fd61e26328fa48d13b9b7"></a><!-- doxytag: member="Player::Player" ref="adf2e45581d8fd61e26328fa48d13b9b7" args="(const Player &amp;p)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#adf2e45581d8fd61e26328fa48d13b9b7">Player</a> (const <a class="el" href="classPlayer.html">Player</a> &amp;p)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The copy constructor of <a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a>. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5a2790fccf10c30106370d910c96d317">Player</a> (const string &amp;<a class="el" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">name</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a>.  <a href="#a5a2790fccf10c30106370d910c96d317"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a8b7f689e924b15a9e6f9888983fb43"></a><!-- doxytag: member="Player::Player" ref="a4a8b7f689e924b15a9e6f9888983fb43" args="(const Player &amp;other)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4a8b7f689e924b15a9e6f9888983fb43">Player</a> (const <a class="el" href="classPlayer.html">Player</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a> copy constructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3d3eb16a37c49cf91b5093632061d69"></a><!-- doxytag: member="Player::Player" ref="ae3d3eb16a37c49cf91b5093632061d69" args="(Player &amp;&amp;other)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ae3d3eb16a37c49cf91b5093632061d69">Player</a> (<a class="el" href="classPlayer.html">Player</a> &amp;&amp;other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a> move constructor. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a749d2c00e1fe0f5c2746f7505a58c062"></a><!-- doxytag: member="Player::~Player" ref="a749d2c00e1fe0f5c2746f7505a58c062" args="()" -->
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a749d2c00e1fe0f5c2746f7505a58c062">~Player</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique (virtual) destructor of <a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a>. <br/></td></tr>
@@ -124,25 +128,25 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76a707ceb6f24b0a2a801434ee5a60ad"></a><!-- doxytag: member="Player::newGame" ref="a76a707ceb6f24b0a2a801434ee5a60ad" args="()=0" -->
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a76a707ceb6f24b0a2a801434ee5a60ad">newGame</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to prepare the player for a new game. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#add75318310fa04cd492a1cf32c8e9a00">bid</a> (Biddings bestBid, bool chelemAnnounced)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make a choice for biddings.  <a href="#add75318310fa04cd492a1cf32c8e9a00"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#af4ec3b84a1f57691f867121f64be3d22">makeEcart</a> (int dogSize)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make the ecart when the player is the best bidder.  <a href="#af4ec3b84a1f57691f867121f64be3d22"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1c5b7d16fb6fd0427b404e89850a84b"></a><!-- doxytag: member="Player::getAnnounced" ref="aa1c5b7d16fb6fd0427b404e89850a84b" args="()" -->
-set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#aa1c5b7d16fb6fd0427b404e89850a84b">getAnnounced</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4bb658ca7b46f32a42578b884ad7fe82">bid</a> (const Biddings bestBid, const bool chelemAnnounced) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make a choice for biddings.  <a href="#a4bb658ca7b46f32a42578b884ad7fe82"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a34c9e9f402c6a68d6e16caebdb93a33f">makeEcart</a> (const int dogSize)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make the ecart when the player is the best bidder.  <a href="#a34c9e9f402c6a68d6e16caebdb93a33f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5573dd91ddb6fa8874d5a7f7a186f186"></a><!-- doxytag: member="Player::getAnnounced" ref="a5573dd91ddb6fa8874d5a7f7a186f186" args="() const " -->
+set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5573dd91ddb6fa8874d5a7f7a186f186">getAnnounced</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the set of announcements. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af242539c463b23a5712e2343af483d99"></a><!-- doxytag: member="Player::getNumberOudlers" ref="af242539c463b23a5712e2343af483d99" args="()" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#af242539c463b23a5712e2343af483d99">getNumberOudlers</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dc51cf2a773556eb26f3d47c4274b0a"></a><!-- doxytag: member="Player::getNumberOudlers" ref="a4dc51cf2a773556eb26f3d47c4274b0a" args="() const " -->
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4dc51cf2a773556eb26f3d47c4274b0a">getNumberOudlers</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the number of oudlers the player has with his/her initial hand. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18e512170f8327237dbfced03155015c"></a><!-- doxytag: member="Player::getInitialCards" ref="a18e512170f8327237dbfced03155015c" args="()" -->
-vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a18e512170f8327237dbfced03155015c">getInitialCards</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab2cfa2ce2e7a3903ff99ac5c7ef8db6"></a><!-- doxytag: member="Player::getInitialCards" ref="aab2cfa2ce2e7a3903ff99ac5c7ef8db6" args="() const " -->
+vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#aab2cfa2ce2e7a3903ff99ac5c7ef8db6">getInitialCards</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the player's initial cards. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ab89873d894a8e4e7e67a16feba4bf116">validCards</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; refCard, shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; greaterTrump)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick.  <a href="#ab89873d894a8e4e7e67a16feba4bf116"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a7c7b8325247c91ef255ca493de9f35eb">addCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a card among player's initial cards.  <a href="#a7c7b8325247c91ef255ca493de9f35eb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3813d858078112fa9118b20ed4794e65"></a><!-- doxytag: member="Player::showCards" ref="a3813d858078112fa9118b20ed4794e65" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a3813d858078112fa9118b20ed4794e65">showCards</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5216f487067dd79371af457f4b8f1769"></a><!-- doxytag: member="Player::showCards" ref="a5216f487067dd79371af457f4b8f1769" args="() const " -->
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5216f487067dd79371af457f4b8f1769">showCards</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">To print all player's cards in his/her current hand. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -193,18 +197,23 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90efe0cf8930297c7d30805d19763b65"></a><!-- doxytag: member="Player::announced" ref="a90efe0cf8930297c7d30805d19763b65" args="" -->
 set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a90efe0cf8930297c7d30805d19763b65">announced</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The set of announcements (for what?). <br/></td></tr>
+<tr><td colspan="2"><h2><a name="friends"></a>
+Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a461866409bfc29db76efa8baa2db8f5c"></a><!-- doxytag: member="Player::swap" ref="a461866409bfc29db76efa8baa2db8f5c" args="(Player &amp;first, Player &amp;second)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a461866409bfc29db76efa8baa2db8f5c">swap</a> (<a class="el" href="classPlayer.html">Player</a> &amp;first, <a class="el" href="classPlayer.html">Player</a> &amp;second)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Friend function swap used for the copy-and-swap idiom. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a> is an abstract class presenting a common interface for <a class="el" href="classAI.html" title="This class defines AI players.">AI</a> and <a class="el" href="classHuman.html" title="Human is the class implementing Human player actions, like playing a card.">Human</a> players. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a05402e93b2be9cb0bcda742a68f27b47"></a><!-- doxytag: member="Player::Player" ref="a05402e93b2be9cb0bcda742a68f27b47" args="(string name)" -->
+<a class="anchor" id="a5a2790fccf10c30106370d910c96d317"></a><!-- doxytag: member="Player::Player" ref="a5a2790fccf10c30106370d910c96d317" args="(const string &amp;name)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classPlayer.html#a05402e93b2be9cb0bcda742a68f27b47">Player::Player</a> </td>
+          <td class="memname"><a class="el" href="classPlayer.html#a5a2790fccf10c30106370d910c96d317">Player::Player</a> </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
@@ -248,26 +257,26 @@ set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a
 
 </div>
 </div>
-<a class="anchor" id="add75318310fa04cd492a1cf32c8e9a00"></a><!-- doxytag: member="Player::bid" ref="add75318310fa04cd492a1cf32c8e9a00" args="(Biddings bestBid, bool chelemAnnounced)=0" -->
+<a class="anchor" id="a4bb658ca7b46f32a42578b884ad7fe82"></a><!-- doxytag: member="Player::bid" ref="a4bb658ca7b46f32a42578b884ad7fe82" args="(const Biddings bestBid, const bool chelemAnnounced) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Biddings <a class="el" href="classPlayer.html#add75318310fa04cd492a1cf32c8e9a00">Player::bid</a> </td>
+          <td class="memname">virtual Biddings <a class="el" href="classPlayer.html#a4bb658ca7b46f32a42578b884ad7fe82">Player::bid</a> </td>
           <td>(</td>
-          <td class="paramtype">Biddings&#160;</td>
+          <td class="paramtype">const Biddings&#160;</td>
           <td class="paramname"><em>bestBid</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>chelemAnnounced</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [pure virtual]</code></td>
+          <td></td><td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -283,7 +292,7 @@ set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The chosen bid (Biddings::none if one passes). </dd></dl>
 
-<p>Implemented in <a class="el" href="classAI.html#a168d96ab354298c316faa905418cfb57">AI</a>, and <a class="el" href="classHuman.html#aebbb26f8477fa2234bfa23d153a1bf0b">Human</a>.</p>
+<p>Implemented in <a class="el" href="classAI.html#a9e2fd7ff440ada8339135c23b73e1a96">AI</a>, and <a class="el" href="classHuman.html#a424bc9179b7036f22a694329b5f6fedf">Human</a>.</p>
 
 </div>
 </div>
@@ -312,14 +321,14 @@ set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a
 
 </div>
 </div>
-<a class="anchor" id="af4ec3b84a1f57691f867121f64be3d22"></a><!-- doxytag: member="Player::makeEcart" ref="af4ec3b84a1f57691f867121f64be3d22" args="(int dogSize)=0" -->
+<a class="anchor" id="a34c9e9f402c6a68d6e16caebdb93a33f"></a><!-- doxytag: member="Player::makeEcart" ref="a34c9e9f402c6a68d6e16caebdb93a33f" args="(const int dogSize)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual set&lt; shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; &gt; <a class="el" href="classPlayer.html#af4ec3b84a1f57691f867121f64be3d22">Player::makeEcart</a> </td>
+          <td class="memname">virtual set&lt; shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; &gt; <a class="el" href="classPlayer.html#a34c9e9f402c6a68d6e16caebdb93a33f">Player::makeEcart</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>dogSize</em></td><td>)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
@@ -336,7 +345,7 @@ set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A set of <a class="el" href="classCard.html" title="Card is the class compiling all useful information on cards: points, suit, value...">Card</a> pointers for the cards one places into the ecart. </dd></dl>
 
-<p>Implemented in <a class="el" href="classAI.html#a7a7df533ccc838f818a1ee94c4153fe0">AI</a>, and <a class="el" href="classHuman.html#accfa928e35d3ff981b7acb5e351eaeb5">Human</a>.</p>
+<p>Implemented in <a class="el" href="classAI.html#ad12a3efd1da4acc6e1855bd7262779e3">AI</a>, and <a class="el" href="classHuman.html#a02cdef89dde0adcb554f081e81f97896">Human</a>.</p>
 
 </div>
 </div>
@@ -438,7 +447,7 @@ set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 29 2013 17:17:05 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 2 2014 00:02:57 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

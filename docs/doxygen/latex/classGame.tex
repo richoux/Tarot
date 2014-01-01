@@ -13,7 +13,7 @@
 \subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classGame_a21476fd601061aa07e841ec8ab8f15a6}{\-Game} (int number\-Players, string your\-Name=\char`\"{}\-You\char`\"{})
+\hyperlink{classGame_ad800214017e2813ed0dc77d95d5766aa}{\-Game} (int \&number\-Players, const string your\-Name=\char`\"{}\-You\char`\"{})
 \begin{DoxyCompactList}\small\item\em \-The unique constructor of \hyperlink{classGame}{\-Game}. \end{DoxyCompactList}\item 
 \hypertarget{classGame_ae3d112ca6e0e55150d2fdbc704474530}{\hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\-Game} ()}\label{classGame_ae3d112ca6e0e55150d2fdbc704474530}
 
@@ -21,16 +21,16 @@
 \hypertarget{classGame_a12f32ba70a35a0dcd1f527b4d4a0d2c4}{void \hyperlink{classGame_a12f32ba70a35a0dcd1f527b4d4a0d2c4}{new\-Game} ()}\label{classGame_a12f32ba70a35a0dcd1f527b4d4a0d2c4}
 
 \begin{DoxyCompactList}\small\item\em \-Creates a new game. \end{DoxyCompactList}\item 
-\hypertarget{classGame_aa2e7e28601a14be6a92325681a7ff079}{void \hyperlink{classGame_aa2e7e28601a14be6a92325681a7ff079}{print\-Scores} ()}\label{classGame_aa2e7e28601a14be6a92325681a7ff079}
+\hypertarget{classGame_acb39f55a7b0b1d0d35b06d305a508dd4}{void \hyperlink{classGame_acb39f55a7b0b1d0d35b06d305a508dd4}{print\-Scores} () const }\label{classGame_acb39f55a7b0b1d0d35b06d305a508dd4}
 
 \begin{DoxyCompactList}\small\item\em \-Prints players' / teams' scores. \end{DoxyCompactList}\item 
 \hypertarget{classGame_a6a76e181e24425eb361960d5b5d184bd}{\hyperlink{classTeam}{\-Team} \hyperlink{classGame_a6a76e181e24425eb361960d5b5d184bd}{play} ()}\label{classGame_a6a76e181e24425eb361960d5b5d184bd}
 
 \begin{DoxyCompactList}\small\item\em \-Plays all turns of a game and returns the winner team. \end{DoxyCompactList}\item 
-\hypertarget{classGame_ae53579403950f816d662454021f6d460}{void \hyperlink{classGame_ae53579403950f816d662454021f6d460}{show\-Deck} ()}\label{classGame_ae53579403950f816d662454021f6d460}
+\hypertarget{classGame_a1e9e48c10a9ca4bc66b69e05b983e3ab}{void \hyperlink{classGame_a1e9e48c10a9ca4bc66b69e05b983e3ab}{show\-Deck} () const }\label{classGame_a1e9e48c10a9ca4bc66b69e05b983e3ab}
 
 \begin{DoxyCompactList}\small\item\em \-Shows the deck on the screen. \end{DoxyCompactList}\item 
-\hypertarget{classGame_a280383798308721f9655dbf509dbc050}{void \hyperlink{classGame_a280383798308721f9655dbf509dbc050}{show\-Players\-Cards} ()}\label{classGame_a280383798308721f9655dbf509dbc050}
+\hypertarget{classGame_aed6d30748ef9db0a89fba543fa4b5dfb}{void \hyperlink{classGame_aed6d30748ef9db0a89fba543fa4b5dfb}{show\-Players\-Cards} () const }\label{classGame_aed6d30748ef9db0a89fba543fa4b5dfb}
 
 \begin{DoxyCompactList}\small\item\em \-Shows players' cards on the screen. \end{DoxyCompactList}\item 
 \hypertarget{classGame_a8eb0a092d23b426a8b4b03c4083b7afe}{void \hyperlink{classGame_a8eb0a092d23b426a8b4b03c4083b7afe}{shuffle\-Deck} ()}\label{classGame_a8eb0a092d23b426a8b4b03c4083b7afe}
@@ -45,9 +45,9 @@
 \hypertarget{classGame_ab725d07327db4dfb836e90eb08c83393}{void \hyperlink{classGame_ab725d07327db4dfb836e90eb08c83393}{take\-Dog} ()}\label{classGame_ab725d07327db4dfb836e90eb08c83393}
 
 \begin{DoxyCompactList}\small\item\em \-To take the dog after biddings. \end{DoxyCompactList}\item 
-bool \hyperlink{classGame_a37a035ff6df37f80453e657306ca1137}{same\-Team} (shared\-\_\-ptr$<$ \hyperlink{classPlayer}{\-Player} $>$ p1, shared\-\_\-ptr$<$ \hyperlink{classPlayer}{\-Player} $>$ p2)
+bool \hyperlink{classGame_a1d945d8519b4cf2253e2b91d1149bf7d}{same\-Team} (shared\-\_\-ptr$<$ \hyperlink{classPlayer}{\-Player} $>$ p1, shared\-\_\-ptr$<$ \hyperlink{classPlayer}{\-Player} $>$ p2) const 
 \begin{DoxyCompactList}\small\item\em \-Determines if two players belong to the same team. \end{DoxyCompactList}\item 
-double \hyperlink{classGame_a31b0191607587fea7254a4a1b32876c9}{compute\-Score} (string name)
+double \hyperlink{classGame_af3ae0695c2600b273e14d9fa93dd980a}{compute\-Score} (const string \&name) const 
 \begin{DoxyCompactList}\small\item\em \-Computes the score of a given player (refered by his/her name). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -55,14 +55,14 @@ double \hyperlink{classGame_a31b0191607587fea7254a4a1b32876c9}{compute\-Score} (
 \hyperlink{classGame}{\-Game} is one of the main class of \-Tarot. \-Here are defined rules, games' turns, scores, etc. 
 
 \subsection{\-Constructor \& \-Destructor \-Documentation}
-\hypertarget{classGame_a21476fd601061aa07e841ec8ab8f15a6}{\index{\-Game@{\-Game}!\-Game@{\-Game}}
+\hypertarget{classGame_ad800214017e2813ed0dc77d95d5766aa}{\index{\-Game@{\-Game}!\-Game@{\-Game}}
 \index{\-Game@{\-Game}!Game@{\-Game}}
 \subsubsection[{\-Game}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Game\-::\-Game} (
 \begin{DoxyParamCaption}
-\item[{int}]{number\-Players, }
-\item[{string}]{your\-Name = {\ttfamily \char`\"{}\-You\char`\"{}}}
+\item[{int \&}]{number\-Players, }
+\item[{const string}]{your\-Name = {\ttfamily \char`\"{}\-You\char`\"{}}}
 \end{DoxyParamCaption}
-)}}\label{classGame_a21476fd601061aa07e841ec8ab8f15a6}
+)}}\label{classGame_ad800214017e2813ed0dc77d95d5766aa}
 
 
 \-The unique constructor of \hyperlink{classGame}{\-Game}. 
@@ -77,13 +77,13 @@ double \hyperlink{classGame_a31b0191607587fea7254a4a1b32876c9}{compute\-Score} (
 
 
 \subsection{\-Member \-Function \-Documentation}
-\hypertarget{classGame_a31b0191607587fea7254a4a1b32876c9}{\index{\-Game@{\-Game}!compute\-Score@{compute\-Score}}
+\hypertarget{classGame_af3ae0695c2600b273e14d9fa93dd980a}{\index{\-Game@{\-Game}!compute\-Score@{compute\-Score}}
 \index{compute\-Score@{compute\-Score}!Game@{\-Game}}
 \subsubsection[{compute\-Score}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Game\-::compute\-Score} (
 \begin{DoxyParamCaption}
-\item[{string}]{name}
+\item[{const string \&}]{name}
 \end{DoxyParamCaption}
-)}}\label{classGame_a31b0191607587fea7254a4a1b32876c9}
+) const}}\label{classGame_af3ae0695c2600b273e14d9fa93dd980a}
 
 
 \-Computes the score of a given player (refered by his/her name). 
@@ -96,14 +96,14 @@ double \hyperlink{classGame_a31b0191607587fea7254a4a1b32876c9}{compute\-Score} (
 \begin{DoxyReturn}{\-Returns}
 \-The score of the given player. 
 \end{DoxyReturn}
-\hypertarget{classGame_a37a035ff6df37f80453e657306ca1137}{\index{\-Game@{\-Game}!same\-Team@{same\-Team}}
+\hypertarget{classGame_a1d945d8519b4cf2253e2b91d1149bf7d}{\index{\-Game@{\-Game}!same\-Team@{same\-Team}}
 \index{same\-Team@{same\-Team}!Game@{\-Game}}
 \subsubsection[{same\-Team}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Game\-::same\-Team} (
 \begin{DoxyParamCaption}
 \item[{shared\-\_\-ptr$<$ {\bf \-Player} $>$}]{p1, }
 \item[{shared\-\_\-ptr$<$ {\bf \-Player} $>$}]{p2}
 \end{DoxyParamCaption}
-)}}\label{classGame_a37a035ff6df37f80453e657306ca1137}
+) const}}\label{classGame_a1d945d8519b4cf2253e2b91d1149bf7d}
 
 
 \-Determines if two players belong to the same team. 

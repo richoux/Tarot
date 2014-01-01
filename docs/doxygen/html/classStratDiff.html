@@ -102,42 +102,42 @@ Inheritance diagram for StratDiff:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStratDiff.html#a7882bac82aa02692bf5e6b33e9c4ae6c">playCard</a> (vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; cardsCanPlay)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">playCard is a pure virtual function returning the card the player chooses to play.  <a href="#a7882bac82aa02692bf5e6b33e9c4ae6c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStratDiff.html#a84fc8f51747065234c9356895057008b">bid</a> (Biddings bestBid, int numberOudlers, bool chelemAnnounced)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to decide if we propose a bid or not, and if any, what bid.  <a href="#a84fc8f51747065234c9356895057008b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStratDiff.html#aec61f7e84d1376d41f13d044b3672226">makeEcart</a> (int dogSize, vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; allCards)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">To make the ecart once we take the dog.  <a href="#aec61f7e84d1376d41f13d044b3672226"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStratDiff.html#a550903bf95e6a897f346debab972f33a">playCard</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;cardsCanPlay) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">playCard is a pure virtual function returning the card the player chooses to play.  <a href="#a550903bf95e6a897f346debab972f33a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStratDiff.html#ac77eac57b96c445edeb36c7205cfbcf4">bid</a> (const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to decide if we propose a bid or not, and if any, what bid.  <a href="#ac77eac57b96c445edeb36c7205cfbcf4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStratDiff.html#a892386aed17049a0d757170603fddce1">makeEcart</a> (const int dogSize, const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;allCards) const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">To make the ecart once we take the dog.  <a href="#a892386aed17049a0d757170603fddce1"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classStratDiff.html" title="StratDiff is the abstract class handling the Strategy pattern for applying different AI difficulties...">StratDiff</a> is the abstract class handling the Strategy pattern for applying different <a class="el" href="classAI.html" title="This class defines AI players.">AI</a> difficulties. </p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a84fc8f51747065234c9356895057008b"></a><!-- doxytag: member="StratDiff::bid" ref="a84fc8f51747065234c9356895057008b" args="(Biddings bestBid, int numberOudlers, bool chelemAnnounced)=0" -->
+<a class="anchor" id="ac77eac57b96c445edeb36c7205cfbcf4"></a><!-- doxytag: member="StratDiff::bid" ref="ac77eac57b96c445edeb36c7205cfbcf4" args="(const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Biddings <a class="el" href="classStratDiff.html#a84fc8f51747065234c9356895057008b">StratDiff::bid</a> </td>
+          <td class="memname">virtual Biddings <a class="el" href="classStratDiff.html#ac77eac57b96c445edeb36c7205cfbcf4">StratDiff::bid</a> </td>
           <td>(</td>
-          <td class="paramtype">Biddings&#160;</td>
+          <td class="paramtype">const Biddings&#160;</td>
           <td class="paramname"><em>bestBid</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>numberOudlers</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>chelemAnnounced</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [pure virtual]</code></td>
+          <td></td><td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -154,30 +154,30 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Our bid (Biddings::none if we pass). </dd></dl>
 
-<p>Implemented in <a class="el" href="classBeginner.html#a742825d7c3629507b7486f7bb9ae5544">Beginner</a>.</p>
+<p>Implemented in <a class="el" href="classBeginner.html#ad051797028f352b16df271fb24c435f6">Beginner</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aec61f7e84d1376d41f13d044b3672226"></a><!-- doxytag: member="StratDiff::makeEcart" ref="aec61f7e84d1376d41f13d044b3672226" args="(int dogSize, vector&lt; shared_ptr&lt; Card &gt; &gt; allCards)=0" -->
+<a class="anchor" id="a892386aed17049a0d757170603fddce1"></a><!-- doxytag: member="StratDiff::makeEcart" ref="a892386aed17049a0d757170603fddce1" args="(const int dogSize, const vector&lt; shared_ptr&lt; Card &gt; &gt; &amp;allCards) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual set&lt; shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; &gt; <a class="el" href="classStratDiff.html#aec61f7e84d1376d41f13d044b3672226">StratDiff::makeEcart</a> </td>
+          <td class="memname">virtual set&lt; shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; &gt; <a class="el" href="classStratDiff.html#a892386aed17049a0d757170603fddce1">StratDiff::makeEcart</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>dogSize</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td>
+          <td class="paramtype">const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>allCards</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [pure virtual]</code></td>
+          <td></td><td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -194,20 +194,20 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A set of <a class="el" href="classCard.html" title="Card is the class compiling all useful information on cards: points, suit, value...">Card</a> pointers for the cards we place into the ecart. </dd></dl>
 
-<p>Implemented in <a class="el" href="classBeginner.html#a4901aba2405a6b7ec3a5ab8daf5fe05c">Beginner</a>.</p>
+<p>Implemented in <a class="el" href="classBeginner.html#a7817d38e018ac5e1d9dbb42923ef0752">Beginner</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a7882bac82aa02692bf5e6b33e9c4ae6c"></a><!-- doxytag: member="StratDiff::playCard" ref="a7882bac82aa02692bf5e6b33e9c4ae6c" args="(vector&lt; shared_ptr&lt; Card &gt; &gt; cardsCanPlay)=0" -->
+<a class="anchor" id="a550903bf95e6a897f346debab972f33a"></a><!-- doxytag: member="StratDiff::playCard" ref="a550903bf95e6a897f346debab972f33a" args="(const vector&lt; shared_ptr&lt; Card &gt; &gt; &amp;cardsCanPlay) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; <a class="el" href="classStratDiff.html#a7882bac82aa02692bf5e6b33e9c4ae6c">StratDiff::playCard</a> </td>
+          <td class="memname">virtual shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; <a class="el" href="classStratDiff.html#a550903bf95e6a897f346debab972f33a">StratDiff::playCard</a> </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td>
+          <td class="paramtype">const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>cardsCanPlay</em></td><td>)</td>
-          <td><code> [pure virtual]</code></td>
+          <td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -222,7 +222,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The chosen card to play. </dd></dl>
 
-<p>Implemented in <a class="el" href="classBeginner.html#abc1ffca26bacf167229357e02ff1d145">Beginner</a>.</p>
+<p>Implemented in <a class="el" href="classBeginner.html#a73e2bf8d807166c994c42fd3b6bfc7bf">Beginner</a>.</p>
 
 </div>
 </div>
@@ -247,7 +247,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 29 2013 17:17:05 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 2 2014 00:02:57 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

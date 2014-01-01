@@ -19,11 +19,11 @@
 \subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ \hyperlink{classStratDiff_a7882bac82aa02692bf5e6b33e9c4ae6c}{play\-Card} (vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ cards\-Can\-Play)=0
+virtual shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ \hyperlink{classStratDiff_a550903bf95e6a897f346debab972f33a}{play\-Card} (const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \&cards\-Can\-Play) const =0
 \begin{DoxyCompactList}\small\item\em play\-Card is a pure virtual function returning the card the player chooses to play. \end{DoxyCompactList}\item 
-virtual \-Biddings \hyperlink{classStratDiff_a84fc8f51747065234c9356895057008b}{bid} (\-Biddings best\-Bid, int number\-Oudlers, bool chelem\-Announced)=0
+virtual \-Biddings \hyperlink{classStratDiff_ac77eac57b96c445edeb36c7205cfbcf4}{bid} (const \-Biddings best\-Bid, const int number\-Oudlers, const bool chelem\-Announced) const =0
 \begin{DoxyCompactList}\small\item\em \-Called to decide if we propose a bid or not, and if any, what bid. \end{DoxyCompactList}\item 
-virtual set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classStratDiff_aec61f7e84d1376d41f13d044b3672226}{make\-Ecart} (int dog\-Size, vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ all\-Cards)=0
+virtual set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classStratDiff_a892386aed17049a0d757170603fddce1}{make\-Ecart} (const int dog\-Size, const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \&all\-Cards) const =0
 \begin{DoxyCompactList}\small\item\em \-To make the ecart once we take the dog. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -31,15 +31,15 @@ virtual set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperli
 \hyperlink{classStratDiff}{\-Strat\-Diff} is the abstract class handling the \-Strategy pattern for applying different \hyperlink{classAI}{\-A\-I} difficulties. 
 
 \subsection{\-Member \-Function \-Documentation}
-\hypertarget{classStratDiff_a84fc8f51747065234c9356895057008b}{\index{\-Strat\-Diff@{\-Strat\-Diff}!bid@{bid}}
+\hypertarget{classStratDiff_ac77eac57b96c445edeb36c7205cfbcf4}{\index{\-Strat\-Diff@{\-Strat\-Diff}!bid@{bid}}
 \index{bid@{bid}!StratDiff@{\-Strat\-Diff}}
 \subsubsection[{bid}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Biddings {\bf \-Strat\-Diff\-::bid} (
 \begin{DoxyParamCaption}
-\item[{\-Biddings}]{best\-Bid, }
-\item[{int}]{number\-Oudlers, }
-\item[{bool}]{chelem\-Announced}
+\item[{const \-Biddings}]{best\-Bid, }
+\item[{const int}]{number\-Oudlers, }
+\item[{const bool}]{chelem\-Announced}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classStratDiff_a84fc8f51747065234c9356895057008b}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classStratDiff_ac77eac57b96c445edeb36c7205cfbcf4}
 
 
 \-Called to decide if we propose a bid or not, and if any, what bid. 
@@ -58,16 +58,16 @@ virtual set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperli
 \end{DoxyReturn}
 
 
-\-Implemented in \hyperlink{classBeginner_a742825d7c3629507b7486f7bb9ae5544}{\-Beginner}.
+\-Implemented in \hyperlink{classBeginner_ad051797028f352b16df271fb24c435f6}{\-Beginner}.
 
-\hypertarget{classStratDiff_aec61f7e84d1376d41f13d044b3672226}{\index{\-Strat\-Diff@{\-Strat\-Diff}!make\-Ecart@{make\-Ecart}}
+\hypertarget{classStratDiff_a892386aed17049a0d757170603fddce1}{\index{\-Strat\-Diff@{\-Strat\-Diff}!make\-Ecart@{make\-Ecart}}
 \index{make\-Ecart@{make\-Ecart}!StratDiff@{\-Strat\-Diff}}
 \subsubsection[{make\-Ecart}]{\setlength{\rightskip}{0pt plus 5cm}virtual set$<$ shared\-\_\-ptr$<${\bf \-Card}$>$ $>$ {\bf \-Strat\-Diff\-::make\-Ecart} (
 \begin{DoxyParamCaption}
-\item[{int}]{dog\-Size, }
-\item[{vector$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$}]{all\-Cards}
+\item[{const int}]{dog\-Size, }
+\item[{const vector$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$ \&}]{all\-Cards}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classStratDiff_aec61f7e84d1376d41f13d044b3672226}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classStratDiff_a892386aed17049a0d757170603fddce1}
 
 
 \-To make the ecart once we take the dog. 
@@ -84,15 +84,15 @@ make\-Ecart is delegated to the difficulty \-Strategy.
 \end{DoxyReturn}
 
 
-\-Implemented in \hyperlink{classBeginner_a4901aba2405a6b7ec3a5ab8daf5fe05c}{\-Beginner}.
+\-Implemented in \hyperlink{classBeginner_a7817d38e018ac5e1d9dbb42923ef0752}{\-Beginner}.
 
-\hypertarget{classStratDiff_a7882bac82aa02692bf5e6b33e9c4ae6c}{\index{\-Strat\-Diff@{\-Strat\-Diff}!play\-Card@{play\-Card}}
+\hypertarget{classStratDiff_a550903bf95e6a897f346debab972f33a}{\index{\-Strat\-Diff@{\-Strat\-Diff}!play\-Card@{play\-Card}}
 \index{play\-Card@{play\-Card}!StratDiff@{\-Strat\-Diff}}
 \subsubsection[{play\-Card}]{\setlength{\rightskip}{0pt plus 5cm}virtual shared\-\_\-ptr$<${\bf \-Card}$>$ {\bf \-Strat\-Diff\-::play\-Card} (
 \begin{DoxyParamCaption}
-\item[{vector$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$}]{cards\-Can\-Play}
+\item[{const vector$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$ \&}]{cards\-Can\-Play}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classStratDiff_a7882bac82aa02692bf5e6b33e9c4ae6c}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classStratDiff_a550903bf95e6a897f346debab972f33a}
 
 
 play\-Card is a pure virtual function returning the card the player chooses to play. 
@@ -107,7 +107,7 @@ play\-Card is a pure virtual function returning the card the player chooses to p
 \end{DoxyReturn}
 
 
-\-Implemented in \hyperlink{classBeginner_abc1ffca26bacf167229357e02ff1d145}{\-Beginner}.
+\-Implemented in \hyperlink{classBeginner_a73e2bf8d807166c994c42fd3b6bfc7bf}{\-Beginner}.
 
 
 

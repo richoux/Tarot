@@ -19,7 +19,7 @@
 \subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classHuman_a8041607e0500c6858c9453b903d5b076}{\-Human} (string \hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name})
+\hyperlink{classHuman_abfd57b90d90f9222384c76b44346ba7b}{\-Human} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name})
 \begin{DoxyCompactList}\small\item\em \-The unique constructor of \hyperlink{classHuman}{\-Human}. \end{DoxyCompactList}\item 
 \hypertarget{classHuman_a93ca0fbf9e5b5bcb6f2f72eeb450219b}{\hyperlink{classHuman_a93ca0fbf9e5b5bcb6f2f72eeb450219b}{$\sim$\-Human} ()}\label{classHuman_a93ca0fbf9e5b5bcb6f2f72eeb450219b}
 
@@ -29,9 +29,9 @@ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ \hyperlink{classHuman_a3258
 \hypertarget{classHuman_aae5efb6945fdbcda9c9a4d9e72d4a60e}{void \hyperlink{classHuman_aae5efb6945fdbcda9c9a4d9e72d4a60e}{new\-Game} ()}\label{classHuman_aae5efb6945fdbcda9c9a4d9e72d4a60e}
 
 \begin{DoxyCompactList}\small\item\em \-To get prepared for a new game. \end{DoxyCompactList}\item 
-\-Biddings \hyperlink{classHuman_aebbb26f8477fa2234bfa23d153a1bf0b}{bid} (\-Biddings best\-Bid, bool chelem\-Announced)
+\-Biddings \hyperlink{classHuman_a424bc9179b7036f22a694329b5f6fedf}{bid} (const \-Biddings best\-Bid, const bool chelem\-Announced) const 
 \begin{DoxyCompactList}\small\item\em \-To let the \hyperlink{classHuman}{\-Human} player bids. \end{DoxyCompactList}\item 
-set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classHuman_accfa928e35d3ff981b7acb5e351eaeb5}{make\-Ecart} (int dog\-Size)
+set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classHuman_a02cdef89dde0adcb554f081e81f97896}{make\-Ecart} (const int dog\-Size)
 \begin{DoxyCompactList}\small\item\em \-To let the \hyperlink{classHuman}{\-Human} player makes his/her ecart. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -39,13 +39,13 @@ set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{class
 \hyperlink{classHuman}{\-Human} is the class implementing \hyperlink{classHuman}{\-Human} player actions, like playing a card. 
 
 \subsection{\-Constructor \& \-Destructor \-Documentation}
-\hypertarget{classHuman_a8041607e0500c6858c9453b903d5b076}{\index{\-Human@{\-Human}!\-Human@{\-Human}}
+\hypertarget{classHuman_abfd57b90d90f9222384c76b44346ba7b}{\index{\-Human@{\-Human}!\-Human@{\-Human}}
 \index{\-Human@{\-Human}!Human@{\-Human}}
 \subsubsection[{\-Human}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Human\-::\-Human} (
 \begin{DoxyParamCaption}
-\item[{string}]{name}
+\item[{const string \&}]{name}
 \end{DoxyParamCaption}
-)}}\label{classHuman_a8041607e0500c6858c9453b903d5b076}
+)}}\label{classHuman_abfd57b90d90f9222384c76b44346ba7b}
 
 
 \-The unique constructor of \hyperlink{classHuman}{\-Human}. 
@@ -58,14 +58,14 @@ set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{class
 
 
 \subsection{\-Member \-Function \-Documentation}
-\hypertarget{classHuman_aebbb26f8477fa2234bfa23d153a1bf0b}{\index{\-Human@{\-Human}!bid@{bid}}
+\hypertarget{classHuman_a424bc9179b7036f22a694329b5f6fedf}{\index{\-Human@{\-Human}!bid@{bid}}
 \index{bid@{bid}!Human@{\-Human}}
 \subsubsection[{bid}]{\setlength{\rightskip}{0pt plus 5cm}\-Biddings {\bf \-Human\-::bid} (
 \begin{DoxyParamCaption}
-\item[{\-Biddings}]{best\-Bid, }
-\item[{bool}]{chelem\-Announced}
+\item[{const \-Biddings}]{best\-Bid, }
+\item[{const bool}]{chelem\-Announced}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classHuman_aebbb26f8477fa2234bfa23d153a1bf0b}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classHuman_a424bc9179b7036f22a694329b5f6fedf}
 
 
 \-To let the \hyperlink{classHuman}{\-Human} player bids. 
@@ -82,15 +82,15 @@ set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{class
 \end{DoxyReturn}
 
 
-\-Implements \hyperlink{classPlayer_add75318310fa04cd492a1cf32c8e9a00}{\-Player}.
+\-Implements \hyperlink{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{\-Player}.
 
-\hypertarget{classHuman_accfa928e35d3ff981b7acb5e351eaeb5}{\index{\-Human@{\-Human}!make\-Ecart@{make\-Ecart}}
+\hypertarget{classHuman_a02cdef89dde0adcb554f081e81f97896}{\index{\-Human@{\-Human}!make\-Ecart@{make\-Ecart}}
 \index{make\-Ecart@{make\-Ecart}!Human@{\-Human}}
 \subsubsection[{make\-Ecart}]{\setlength{\rightskip}{0pt plus 5cm}set$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$ {\bf \-Human\-::make\-Ecart} (
 \begin{DoxyParamCaption}
-\item[{int}]{dog\-Size}
+\item[{const int}]{dog\-Size}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classHuman_accfa928e35d3ff981b7acb5e351eaeb5}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classHuman_a02cdef89dde0adcb554f081e81f97896}
 
 
 \-To let the \hyperlink{classHuman}{\-Human} player makes his/her ecart. 
@@ -102,7 +102,7 @@ set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{class
 \end{DoxyParams}
 
 
-\-Implements \hyperlink{classPlayer_af4ec3b84a1f57691f867121f64be3d22}{\-Player}.
+\-Implements \hyperlink{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}{\-Player}.
 
 \hypertarget{classHuman_a3258d3ce0eec7a5e393c639506ef28e5}{\index{\-Human@{\-Human}!play\-Card@{play\-Card}}
 \index{play\-Card@{play\-Card}!Human@{\-Human}}

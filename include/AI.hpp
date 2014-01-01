@@ -26,6 +26,7 @@
 #include <vector>
 #include <cstdlib>
 #include <cassert>
+#include <algorithm>
 
 #include <Player.hpp>
 #include <Suits.hpp>
@@ -46,6 +47,13 @@ using namespace std;
 class AI : public Player
 {
 public:
+  //! Friend function swap used for the copy-and-swap idiom.
+  /*!
+    \param first The first AI object.
+    \param second The second AI object to be swapped with the first one.
+  */
+  friend void swap(AI& first, AI& second);
+
   //! AI constructor.
   /*!
     \param name A string for the AI name.
@@ -53,22 +61,37 @@ public:
   */
   AI( const string& name, const vector<string>& knownPartners);
 
+  //! AI copy constructor.
+  /*!
+    \param other The constant reference of the object to copied.
+  */
+  AI( const AI& other );
+
+  //! AI move constructor.
+  /*!
+    \param other The "universal reference" of the object to moved.
+  */
+  AI( AI&& other );
+
   //! AI destructor.
   ~AI();
+
+  //! AI assignment operator.
+  AI& operator=( AI other );
 
   //! To know if someone is your opponent.
   /*!
     \param name The Player's name in string.
     \return If the given Player is an opponent or not. 
   */
-  bool isOpponent( const string& name ) const;
+  inline bool isOpponent( const string& name ) const { return opponents.find( name ) == opponents.end() ? false : true; }
 
   //! To know if someone is your partner.
   /*!
     \param name The Player's name in string.
     \return If the given Player is an partner or not. 
   */
-  bool isPartner( const string& name ) const;
+  inline bool isPartner( const string& name ) const { return partners.find( name ) == partners.end() ? false : true; }
 
   //! Given a Player p, does p have at least one card on the asked suit?
   /*!
@@ -119,7 +142,7 @@ public:
 
   //! Inline function to set the difficulty (set a Strategy concrete class).
   /*!
-    \param diff A pointer on the difficuty to set.
+    \param diff A pointer on the difficulty to set.
   */
   inline void setDifficulty ( shared_ptr<StratDiff> diff ) {difficulty = diff;}
 
@@ -168,8 +191,8 @@ private:
       }
   };
 
-  Deck			cardCounting;	//!< A deck to count cards.
-  map<string, Counting>	opponents;	//!< To remember what remains among opponents' hands. 
-  map<string, Counting>	partners;	//!< To remember what remains among partners' hands.
-  shared_ptr<StratDiff>	difficulty;	//!< A pointer on the current difficulty.
+  Deck					cardCounting;	//!< A deck to count cards.
+  map<string, shared_ptr<Counting> >	opponents;	//!< To remember what remains among opponents' hands. 
+  map<string, shared_ptr<Counting> >	partners;	//!< To remember what remains among partners' hands.
+  shared_ptr<StratDiff>			difficulty;	//!< A pointer on the current difficulty.
 };
