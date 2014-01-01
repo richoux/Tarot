@@ -2,7 +2,7 @@
  * Tarot is an application for Android system to play to French Tarot.
  * Please visit https://github.com/richoux/Tarot for further information.
  * 
- * Copyright (C) 2013 Florian Richoux
+ * Copyright (C) 2013-2014 Florian Richoux
  *
  * This file is part of Tarot.
  * Tarot is free software: you can redistribute it and/or modify
@@ -29,7 +29,7 @@ Trick::~Trick()
   trickCards.clear();
 }
 
-set< shared_ptr<Card> > Trick::getAllCards()
+set< shared_ptr<Card> > Trick::getAllCards() const
 {
   set< shared_ptr<Card> > allCards;
   
@@ -39,7 +39,7 @@ set< shared_ptr<Card> > Trick::getAllCards()
   return allCards;
 }
 
-double Trick::getScore()
+double Trick::getScore() const
 {
   double score = 0;
   set< shared_ptr<Card> > allCards = getAllCards();
@@ -65,7 +65,7 @@ void Trick::setCard( shared_ptr<Player> player, shared_ptr<Card> card )
   }
 }
 
-shared_ptr<Player> Trick::asCalledKing()
+shared_ptr<Player> Trick::asCalledKing() const
 {
   for( auto it = trickCards.begin(); it != trickCards.end(); ++it)
     if( it->second == kingCalled )
@@ -74,7 +74,7 @@ shared_ptr<Player> Trick::asCalledKing()
   return nullptr;
 }
 
-void Trick::showAllCards()
+void Trick::showAllCards() const
 {
   bool first = true;
   for( shared_ptr<Card> card : getAllCards() )

@@ -2,7 +2,7 @@
  * Tarot is an application for Android system to play to French Tarot.
  * Please visit https://github.com/richoux/Tarot for further information.
  * 
- * Copyright (C) 2013 Florian Richoux
+ * Copyright (C) 2013-2014 Florian Richoux
  *
  * This file is part of Tarot.
  * Tarot is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@
 
 #include <Game.hpp>
 
-Game::Game( int numberPlayers, string yourName )
+Game::Game( int& numberPlayers, const string yourName )
   : indexToBid(-1), indexBidder(0), chelemAnnounced(false), addDogAtTheEnd(false), toSwap(false), foolGiver(nullptr), foolReceiver(nullptr)
 {
   vector<string> names;
@@ -94,13 +94,107 @@ void Game::newGame()
   chelemAnnounced = false;
 }
 
-void Game::printScores()
+void Game::printScores() const
 {
   for(shared_ptr<Player> player : players)
     cout << player->name << " " << player->score << endl;
 }
 
-void Game::showDeck()
+Team Game::play()
+{
+  shared_ptr<Card> refCard; 
+  dealCards();
+  takeBiddings();
+  takeDog();
+
+  // takers.members[next->name] = next;
+  cout << "Taker: " << takers << endl;
+
+  // for( int gamer = 1; gamer < players.size(); ++gamer )
+  //   {
+  //     nextPlayer();
+  //     defenders.members[next->name] = next;
+  //   }
+
+  cout << "Defenders: " << defenders << endl;
+  // nextPlayer();
+
+  for( int round = 0; round < cardsPerPlayer; ++round )
+  {
+    cout << endl;
+    cout << "**************" << endl;
+    cout << "** Round " << round+1 << " **" << endl;
+    cout << "**************" << endl;
+
+    currentTrick = shared_ptr<Trick>( new Trick( nullptr ) );
+      
+    for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
+    {
+      if( gamer == 0)
+      {
+	refCard = next->playCard( nullptr, nullptr );
+	currentTrick->setCard( next, refCard );
+      }
+      else if( gamer == 1 && refCard->isFool() )
+      {
+	refCard = next->playCard( refCard, nullptr );
+	currentTrick->setCard( next, refCard );
+      }
+      else
+	currentTrick->setCard( next, 
+			       next->playCard( refCard, 
+					       currentTrick->getGreaterTrump() ) );
+	  
+      nextPlayer();
+    }
+      
+    cout << "Trick: ";
+    currentTrick->showAllCards();
+    cout << "=> Won by " << currentTrick->getLeader()->name << endl;
+
+    addWonCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
+
+    // if the Fool has been played, decide who must keep it.
+    if( currentTrick->getFoolPlayer() != nullptr 
+	&& 
+	!sameTeam(currentTrick->getFoolPlayer(), currentTrick->getLeader() ) )
+    {
+      toSwap = true;
+      foolGiver = currentTrick->getLeader();
+      foolReceiver = currentTrick->getFoolPlayer();
+    }
+
+    setNext( currentTrick->getLeader() );
+    //currentTrick->getLeader()->score = currentTrick->getScore();
+    history.push( currentTrick );
+  }
+
+  if( toSwap )
+    swapFool();
+
+  if( addDogAtTheEnd )
+    addWonCards( defenders.members.begin()->first, dog );
+
+  cout << "Won cards:" << endl;
+  for( auto player : players )
+  {
+    cout << player->name << ": ";
+    for( auto card : cardsPlayer[player->name])
+      cout << *card << " ";
+    cout << endl;
+  }
+
+  // Compute score for each player
+  for( shared_ptr<Player> player : players )
+    player->score = computeScore( player->name );
+
+  if( takers > defenders )
+    return takers;
+  else
+    return defenders;
+}
+
+void Game::showDeck() const
 {
   cout << "Deck: ";
   for( shared_ptr<Card> card : deck.cards )
@@ -108,7 +202,7 @@ void Game::showDeck()
   cout << endl;
 }
 
-void Game::showPlayersCards()
+void Game::showPlayersCards() const
 {
   for( shared_ptr<Player> player : players )
   {
@@ -160,30 +254,6 @@ void Game::dealCards()
   for( shared_ptr<Card> card : dog )
     cout << *card;
   cout << endl;
-}
-
-void Game::nextPlayer()
-{
-  if( indexNext == players.size() - 1 )
-    indexNext = 0;
-  else
-    indexNext++;
-
-  next = players[ indexNext ];
-}
-
-void Game::setNext( shared_ptr<Player> player )
-{
-  next = player;
-  for( unsigned int i = 0; i < players.size(); ++i )
-    if( players[i] == player )
-      indexNext = i;
-}
-
-bool Game::sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 )
-{
-  return ( takers.contains(p1->name) && takers.contains(p2->name) ) 
-    || ( defenders.contains(p1->name) && defenders.contains(p2->name) );
 }
 
 void Game::takeBiddings()
@@ -289,113 +359,43 @@ void Game::takeDog()
   }
 }
 
-Team Game::play()
+bool Game::sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const
 {
-  shared_ptr<Card> refCard; 
-  dealCards();
-  takeBiddings();
-  takeDog();
-
-  // takers.members[next->name] = next;
-  cout << "Taker: " << takers << endl;
-
-  // for( int gamer = 1; gamer < players.size(); ++gamer )
-  //   {
-  //     nextPlayer();
-  //     defenders.members[next->name] = next;
-  //   }
-
-  cout << "Defenders: " << defenders << endl;
-  // nextPlayer();
-
-  for( int round = 0; round < cardsPerPlayer; ++round )
-  {
-    cout << endl;
-    cout << "**************" << endl;
-    cout << "** Round " << round+1 << " **" << endl;
-    cout << "**************" << endl;
-
-    currentTrick = shared_ptr<Trick>( new Trick( nullptr ) );
-      
-    for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
-    {
-      if( gamer == 0)
-      {
-	refCard = next->playCard( nullptr, nullptr );
-	currentTrick->setCard( next, refCard );
-      }
-      else if( gamer == 1 && refCard->isFool() )
-      {
-	refCard = next->playCard( refCard, nullptr );
-	currentTrick->setCard( next, refCard );
-      }
-      else
-	currentTrick->setCard( next, 
-			       next->playCard( refCard, 
-					       currentTrick->getGreaterTrump() ) );
-	  
-      nextPlayer();
-    }
-      
-    cout << "Trick: ";
-    currentTrick->showAllCards();
-    cout << "=> Won by " << currentTrick->getLeader()->name << endl;
-
-    addWonCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
-
-    // if the Fool has been played, decide who must keep it.
-    if( currentTrick->getFoolPlayer() != nullptr 
-	&& 
-	!sameTeam(currentTrick->getFoolPlayer(), currentTrick->getLeader() ) )
-    {
-      toSwap = true;
-      foolGiver = currentTrick->getLeader();
-      foolReceiver = currentTrick->getFoolPlayer();
-    }
-
-    setNext( currentTrick->getLeader() );
-    //currentTrick->getLeader()->score = currentTrick->getScore();
-    history.push( currentTrick );
-  }
-
-  if( toSwap )
-    swapFool();
-
-  if( addDogAtTheEnd )
-    addWonCards( defenders.members.begin()->first, dog );
-
-  cout << "Won cards:" << endl;
-  for( auto player : players )
-  {
-    cout << player->name << ": ";
-    for( auto card : cardsPlayer[player->name])
-      cout << *card << " ";
-    cout << endl;
-  }
-
-  // Compute score for each player
-  for( shared_ptr<Player> player : players )
-    player->score = computeScore( player->name );
-
-  if( takers > defenders )
-    return takers;
-  else
-    return defenders;
+  return ( takers.contains(p1->name) && takers.contains(p2->name) ) 
+    || ( defenders.contains(p1->name) && defenders.contains(p2->name) );
 }
 
-void Game::addWonCards( string name, set<shared_ptr<Card> > cards )
-{
-  cardsPlayer[name].insert(cards.begin(), cards.end());
-}
-
-double Game::computeScore( string name )
+double Game::computeScore( const string& name ) const
 {
   double score = 0;
   
-  for( shared_ptr<Card> card : cardsPlayer[name] )
+  for( shared_ptr<Card> card : cardsPlayer.at(name) )
     score += card->getPoints();
 
   return score;
+}
+
+void Game::nextPlayer()
+{
+  if( indexNext == players.size() - 1 )
+    indexNext = 0;
+  else
+    indexNext++;
+
+  next = players[ indexNext ];
+}
+
+void Game::setNext( shared_ptr<Player> player )
+{
+  next = player;
+  for( unsigned int i = 0; i < players.size(); ++i )
+    if( players[i] == player )
+      indexNext = i;
+}
+
+void Game::addWonCards( const string& name, const set<shared_ptr<Card> >& cards )
+{
+  cardsPlayer[name].insert(cards.begin(), cards.end());
 }
 
 void Game::swapFool()
