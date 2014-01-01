@@ -102,43 +102,43 @@ Inheritance diagram for Beginner:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#abc1ffca26bacf167229357e02ff1d145">playCard</a> (vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; cardsCanPlay)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose what card we play, given the first card and the highest trump of the trick.  <a href="#abc1ffca26bacf167229357e02ff1d145"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#a742825d7c3629507b7486f7bb9ae5544">bid</a> (Biddings bestBid, int numberOudlers, bool chelemAnnounced)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to decide if we propose a bid or not, and if any, what bid.  <a href="#a742825d7c3629507b7486f7bb9ae5544"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#a4901aba2405a6b7ec3a5ab8daf5fe05c">makeEcart</a> (int dogSize, vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; allCards)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">To make the ecart once we take the dog.  <a href="#a4901aba2405a6b7ec3a5ab8daf5fe05c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#a73e2bf8d807166c994c42fd3b6bfc7bf">playCard</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;cardsCanPlay) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose what card we play, given the first card and the highest trump of the trick.  <a href="#a73e2bf8d807166c994c42fd3b6bfc7bf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#ad051797028f352b16df271fb24c435f6">bid</a> (const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to decide if we propose a bid or not, and if any, what bid.  <a href="#ad051797028f352b16df271fb24c435f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#a7817d38e018ac5e1d9dbb42923ef0752">makeEcart</a> (const int dogSize, const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;allCards) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">To make the ecart once we take the dog.  <a href="#a7817d38e018ac5e1d9dbb42923ef0752"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>One of the proposed difficulty. </p>
 <p><a class="el" href="classBeginner.html" title="One of the proposed difficulty.">Beginner</a> is one of the concrete class of the Strategy pattern dealing with the game difficulty (i.e., how good the <a class="el" href="classAI.html" title="This class defines AI players.">AI</a> is). </p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a742825d7c3629507b7486f7bb9ae5544"></a><!-- doxytag: member="Beginner::bid" ref="a742825d7c3629507b7486f7bb9ae5544" args="(Biddings bestBid, int numberOudlers, bool chelemAnnounced)" -->
+<a class="anchor" id="ad051797028f352b16df271fb24c435f6"></a><!-- doxytag: member="Beginner::bid" ref="ad051797028f352b16df271fb24c435f6" args="(const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Biddings <a class="el" href="classBeginner.html#a742825d7c3629507b7486f7bb9ae5544">Beginner::bid</a> </td>
+          <td class="memname">Biddings <a class="el" href="classBeginner.html#ad051797028f352b16df271fb24c435f6">Beginner::bid</a> </td>
           <td>(</td>
-          <td class="paramtype">Biddings&#160;</td>
+          <td class="paramtype">const Biddings&#160;</td>
           <td class="paramname"><em>bestBid</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>numberOudlers</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>chelemAnnounced</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [virtual]</code></td>
+          <td></td><td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -156,30 +156,30 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Our bid (Biddings::none if we pass). </dd></dl>
 
-<p>Implements <a class="el" href="classStratDiff.html#a84fc8f51747065234c9356895057008b">StratDiff</a>.</p>
+<p>Implements <a class="el" href="classStratDiff.html#ac77eac57b96c445edeb36c7205cfbcf4">StratDiff</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a4901aba2405a6b7ec3a5ab8daf5fe05c"></a><!-- doxytag: member="Beginner::makeEcart" ref="a4901aba2405a6b7ec3a5ab8daf5fe05c" args="(int dogSize, vector&lt; shared_ptr&lt; Card &gt; &gt; allCards)" -->
+<a class="anchor" id="a7817d38e018ac5e1d9dbb42923ef0752"></a><!-- doxytag: member="Beginner::makeEcart" ref="a7817d38e018ac5e1d9dbb42923ef0752" args="(const int dogSize, const vector&lt; shared_ptr&lt; Card &gt; &gt; &amp;allCards) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; <a class="el" href="classBeginner.html#a4901aba2405a6b7ec3a5ab8daf5fe05c">Beginner::makeEcart</a> </td>
+          <td class="memname">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; <a class="el" href="classBeginner.html#a7817d38e018ac5e1d9dbb42923ef0752">Beginner::makeEcart</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>dogSize</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td>
+          <td class="paramtype">const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>allCards</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [virtual]</code></td>
+          <td></td><td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -196,20 +196,20 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A set of <a class="el" href="classCard.html" title="Card is the class compiling all useful information on cards: points, suit, value...">Card</a> pointers for the cards we place into the ecart. </dd></dl>
 
-<p>Implements <a class="el" href="classStratDiff.html#aec61f7e84d1376d41f13d044b3672226">StratDiff</a>.</p>
+<p>Implements <a class="el" href="classStratDiff.html#a892386aed17049a0d757170603fddce1">StratDiff</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abc1ffca26bacf167229357e02ff1d145"></a><!-- doxytag: member="Beginner::playCard" ref="abc1ffca26bacf167229357e02ff1d145" args="(vector&lt; shared_ptr&lt; Card &gt; &gt; cardsCanPlay)" -->
+<a class="anchor" id="a73e2bf8d807166c994c42fd3b6bfc7bf"></a><!-- doxytag: member="Beginner::playCard" ref="a73e2bf8d807166c994c42fd3b6bfc7bf" args="(const vector&lt; shared_ptr&lt; Card &gt; &gt; &amp;cardsCanPlay) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; <a class="el" href="classBeginner.html#abc1ffca26bacf167229357e02ff1d145">Beginner::playCard</a> </td>
+          <td class="memname">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; <a class="el" href="classBeginner.html#a73e2bf8d807166c994c42fd3b6bfc7bf">Beginner::playCard</a> </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td>
+          <td class="paramtype">const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>cardsCanPlay</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -224,7 +224,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The card we play. </dd></dl>
 
-<p>Implements <a class="el" href="classStratDiff.html#a7882bac82aa02692bf5e6b33e9c4ae6c">StratDiff</a>.</p>
+<p>Implements <a class="el" href="classStratDiff.html#a550903bf95e6a897f346debab972f33a">StratDiff</a>.</p>
 
 </div>
 </div>
@@ -250,7 +250,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 29 2013 17:17:05 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 2 2014 00:02:57 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

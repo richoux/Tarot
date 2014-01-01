@@ -19,11 +19,11 @@
 \subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ \hyperlink{classBeginner_abc1ffca26bacf167229357e02ff1d145}{play\-Card} (vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ cards\-Can\-Play)
+shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ \hyperlink{classBeginner_a73e2bf8d807166c994c42fd3b6bfc7bf}{play\-Card} (const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \&cards\-Can\-Play) const 
 \begin{DoxyCompactList}\small\item\em \-Choose what card we play, given the first card and the highest trump of the trick. \end{DoxyCompactList}\item 
-\-Biddings \hyperlink{classBeginner_a742825d7c3629507b7486f7bb9ae5544}{bid} (\-Biddings best\-Bid, int number\-Oudlers, bool chelem\-Announced)
+\-Biddings \hyperlink{classBeginner_ad051797028f352b16df271fb24c435f6}{bid} (const \-Biddings best\-Bid, const int number\-Oudlers, const bool chelem\-Announced) const 
 \begin{DoxyCompactList}\small\item\em \-Called to decide if we propose a bid or not, and if any, what bid. \end{DoxyCompactList}\item 
-set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classBeginner_a4901aba2405a6b7ec3a5ab8daf5fe05c}{make\-Ecart} (int dog\-Size, vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ all\-Cards)
+set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classBeginner_a7817d38e018ac5e1d9dbb42923ef0752}{make\-Ecart} (const int dog\-Size, const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \&all\-Cards) const 
 \begin{DoxyCompactList}\small\item\em \-To make the ecart once we take the dog. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -33,15 +33,15 @@ set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{class
 \hyperlink{classBeginner}{\-Beginner} is one of the concrete class of the \-Strategy pattern dealing with the game difficulty (i.\-e., how good the \hyperlink{classAI}{\-A\-I} is). 
 
 \subsection{\-Member \-Function \-Documentation}
-\hypertarget{classBeginner_a742825d7c3629507b7486f7bb9ae5544}{\index{\-Beginner@{\-Beginner}!bid@{bid}}
+\hypertarget{classBeginner_ad051797028f352b16df271fb24c435f6}{\index{\-Beginner@{\-Beginner}!bid@{bid}}
 \index{bid@{bid}!Beginner@{\-Beginner}}
 \subsubsection[{bid}]{\setlength{\rightskip}{0pt plus 5cm}\-Biddings {\bf \-Beginner\-::bid} (
 \begin{DoxyParamCaption}
-\item[{\-Biddings}]{best\-Bid, }
-\item[{int}]{number\-Oudlers, }
-\item[{bool}]{chelem\-Announced}
+\item[{const \-Biddings}]{best\-Bid, }
+\item[{const int}]{number\-Oudlers, }
+\item[{const bool}]{chelem\-Announced}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classBeginner_a742825d7c3629507b7486f7bb9ae5544}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classBeginner_ad051797028f352b16df271fb24c435f6}
 
 
 \-Called to decide if we propose a bid or not, and if any, what bid. 
@@ -60,16 +60,16 @@ bid is delegated to the difficulty \-Strategy.
 \end{DoxyReturn}
 
 
-\-Implements \hyperlink{classStratDiff_a84fc8f51747065234c9356895057008b}{\-Strat\-Diff}.
+\-Implements \hyperlink{classStratDiff_ac77eac57b96c445edeb36c7205cfbcf4}{\-Strat\-Diff}.
 
-\hypertarget{classBeginner_a4901aba2405a6b7ec3a5ab8daf5fe05c}{\index{\-Beginner@{\-Beginner}!make\-Ecart@{make\-Ecart}}
+\hypertarget{classBeginner_a7817d38e018ac5e1d9dbb42923ef0752}{\index{\-Beginner@{\-Beginner}!make\-Ecart@{make\-Ecart}}
 \index{make\-Ecart@{make\-Ecart}!Beginner@{\-Beginner}}
 \subsubsection[{make\-Ecart}]{\setlength{\rightskip}{0pt plus 5cm}set$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$ {\bf \-Beginner\-::make\-Ecart} (
 \begin{DoxyParamCaption}
-\item[{int}]{dog\-Size, }
-\item[{vector$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$}]{all\-Cards}
+\item[{const int}]{dog\-Size, }
+\item[{const vector$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$ \&}]{all\-Cards}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classBeginner_a4901aba2405a6b7ec3a5ab8daf5fe05c}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classBeginner_a7817d38e018ac5e1d9dbb42923ef0752}
 
 
 \-To make the ecart once we take the dog. 
@@ -86,15 +86,15 @@ make\-Ecart is delegated to the difficulty \-Strategy.
 \end{DoxyReturn}
 
 
-\-Implements \hyperlink{classStratDiff_aec61f7e84d1376d41f13d044b3672226}{\-Strat\-Diff}.
+\-Implements \hyperlink{classStratDiff_a892386aed17049a0d757170603fddce1}{\-Strat\-Diff}.
 
-\hypertarget{classBeginner_abc1ffca26bacf167229357e02ff1d145}{\index{\-Beginner@{\-Beginner}!play\-Card@{play\-Card}}
+\hypertarget{classBeginner_a73e2bf8d807166c994c42fd3b6bfc7bf}{\index{\-Beginner@{\-Beginner}!play\-Card@{play\-Card}}
 \index{play\-Card@{play\-Card}!Beginner@{\-Beginner}}
 \subsubsection[{play\-Card}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf \-Card} $>$ {\bf \-Beginner\-::play\-Card} (
 \begin{DoxyParamCaption}
-\item[{vector$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$}]{cards\-Can\-Play}
+\item[{const vector$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$ \&}]{cards\-Can\-Play}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classBeginner_abc1ffca26bacf167229357e02ff1d145}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classBeginner_a73e2bf8d807166c994c42fd3b6bfc7bf}
 
 
 \-Choose what card we play, given the first card and the highest trump of the trick. 
@@ -109,7 +109,7 @@ make\-Ecart is delegated to the difficulty \-Strategy.
 \end{DoxyReturn}
 
 
-\-Implements \hyperlink{classStratDiff_a7882bac82aa02692bf5e6b33e9c4ae6c}{\-Strat\-Diff}.
+\-Implements \hyperlink{classStratDiff_a550903bf95e6a897f346debab972f33a}{\-Strat\-Diff}.
 
 
 

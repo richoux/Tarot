@@ -1,5 +1,5 @@
 var searchData=
 [
   ['beginner',['Beginner',['../classBeginner.html',1,'']]],
-  ['bid',['bid',['../classAI.html#a168d96ab354298c316faa905418cfb57',1,'AI::bid()'],['../classBeginner.html#a742825d7c3629507b7486f7bb9ae5544',1,'Beginner::bid()'],['../classHuman.html#aebbb26f8477fa2234bfa23d153a1bf0b',1,'Human::bid()'],['../classPlayer.html#add75318310fa04cd492a1cf32c8e9a00',1,'Player::bid()'],['../classStratDiff.html#a84fc8f51747065234c9356895057008b',1,'StratDiff::bid()']]]
+  ['bid',['bid',['../classAI.html#a9e2fd7ff440ada8339135c23b73e1a96',1,'AI::bid()'],['../classBeginner.html#ad051797028f352b16df271fb24c435f6',1,'Beginner::bid()'],['../classHuman.html#a424bc9179b7036f22a694329b5f6fedf',1,'Human::bid()'],['../classPlayer.html#a4bb658ca7b46f32a42578b884ad7fe82',1,'Player::bid()'],['../classStratDiff.html#ac77eac57b96c445edeb36c7205cfbcf4',1,'StratDiff::bid()']]]
 ];

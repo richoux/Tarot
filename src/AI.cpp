@@ -21,63 +21,69 @@
 
 #include <AI.hpp>
 
-/*!
-  The unique constructor for AI.
-*/
+void swap( AI& first, AI& second )
+{
+  swap( first.cardCounting, second.cardCounting );
+  swap( first.opponents, second.opponents );
+  swap( first.partners, second.partners );
+  swap( first.difficulty, second.difficulty );
+}
+
 AI::AI( const string& name, const vector<string>& knownPartners ) : Player( name )
 {
   for( string partner : knownPartners )
-    if( !partner.compare( name ) == 0 )
-      partners[partner];
+    if( partner.compare( name ) != 0 )
+      partners[partner] = make_shared<Counting>();
 
-  //difficulty = shared_ptr<Beginner>( new Beginner() );
   difficulty = make_shared<Beginner>();
 }
 
-/*!
-  The unique destructor for AI, doing nothing. 
-*/
-AI::~AI() {}
+AI::AI( const AI& other )
+  : Player( other.name ) ,
+    cardCounting( other.cardCounting ), 
+    opponents( other.opponents ), 
+    partners( other.partners ), 
+    difficulty( other.difficulty )
+{}
 
-bool AI::isOpponent( const string& name ) const
+AI::AI( AI&& other ) : Player( other )
 {
-  return opponents.find( name ) == opponents.end() ? false : true; 
-
-  // for( auto it = opponents.begin(); it != opponents.end(); ++it )
-  //   if( it->first.compare( name ) == 0 )
-  //     return true;
-
-  // return false;
+  swap( *this, other );
 }
 
-bool AI::isPartner( const string& name ) const
+AI::~AI() 
 {
-  return partners.find( name ) == partners.end() ? false : true; 
+  opponents.clear();
+  partners.clear();
+}
 
-  // for( auto it = partners.begin(); it != partners.end(); ++it )
-  //   if( it->first.compare( name ) == 0 )
-  //     return true;
-
-  // return false;
+AI& AI::operator=( AI other )
+{
+  swap( *this, other );
+  return *this;
 }
 
 bool AI::haveSuit( const string& name, const Suits suit ) const
 {
   if( isOpponent( name ) )
-    return opponents.at( name ).hasSuit( suit );
+    return opponents.at( name )->hasSuit( suit );
   else if( isPartner( name ) )
-    return partners.at( name ).hasSuit( suit );
+    return partners.at( name )->hasSuit( suit );
   else
     return true;
 }
 
 bool AI::opponentsHaveSuit( const Suits suit ) const
 {
-  for( auto it = opponents.begin(); it != opponents.end(); ++it )
-    if( it->second.hasSuit( suit ) )
-      return true;
+  return any_of(opponents.cbegin(), 
+		opponents.cend(), 
+		[&]( const map<string, shared_ptr<Counting> >::value_type counting){ return counting.second->hasSuit( suit ); } );
 
-  return false;
+  // for( auto it = opponents.begin(); it != opponents.end(); ++it )
+  //   if( it->second.hasSuit( suit ) )
+  //     return true;
+
+  // return false;
 }
 
 shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
