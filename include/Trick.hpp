@@ -2,7 +2,7 @@
  * Tarot is an application for Android system to play to French Tarot.
  * Please visit https://github.com/richoux/Tarot for further information.
  * 
- * Copyright (C) 2013 Florian Richoux
+ * Copyright (C) 2013-2014 Florian Richoux
  *
  * This file is part of Tarot.
  * Tarot is free software: you can redistribute it and/or modify
@@ -45,10 +45,10 @@ public:
   ~Trick();
   
   //! Determine if a player has played the called king in the current trick, and returns a pointer on this player, if any.
-  shared_ptr<Player> asCalledKing();
+  shared_ptr<Player> asCalledKing() const;
 
   //! Get all cards in the current trick.
-  set< shared_ptr<Card> > getAllCards();
+  set< shared_ptr<Card> > getAllCards() const;
 
   //! Update the trickCards map, and determine also the value of other variables like foolPlayer, greaterTrump and leader.
   /*!
@@ -58,25 +58,25 @@ public:
   void setCard( shared_ptr<Player> player, shared_ptr<Card> card );
 
   //! To get the cumulative points of the current trick.
-  double getScore();
+  double getScore() const;
 
   //! Show all card of the current trick
-  void showAllCards();
+  void showAllCards() const;
 
   //! Inline assessor to the card played of the given player during the current trick.
-  inline shared_ptr<Card>	getCard		( shared_ptr<Player> player ) { return trickCards[player]; }
+  inline shared_ptr<Card>	getCard		( shared_ptr<Player> player )	const { return trickCards.at(player); }
 
   //! Inline function returning the card which takes the trick.
-  inline shared_ptr<Card>	getWinCard	() { return trickCards[leader]; }
+  inline shared_ptr<Card>	getWinCard	()				const { return trickCards.at(leader); }
 
   // Inline assessor to get the pointer on the leader.
-  inline shared_ptr<Player>	getLeader	() { return leader; }
+  inline shared_ptr<Player>	getLeader	()				const { return leader; }
 
   // Inline assessor to get the pointer on the player who played the Fool.
-  inline shared_ptr<Player>	getFoolPlayer	() { return foolPlayer; }
+  inline shared_ptr<Player>	getFoolPlayer	()				const { return foolPlayer; }
 
   // Inline assessor to get the pointer on the greatest trump of the current trick.
-  inline shared_ptr<Card>	getGreaterTrump	() { return greaterTrump; }
+  inline shared_ptr<Card>	getGreaterTrump	()				const { return greaterTrump; }
 
 private:
   shared_ptr<Player>				leader;		//!< A pointer on the actual leader (i.e., current winner) of the trick.

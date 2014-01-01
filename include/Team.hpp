@@ -2,7 +2,7 @@
  * Tarot is an application for Android system to play to French Tarot.
  * Please visit https://github.com/richoux/Tarot for further information.
  * 
- * Copyright (C) 2013 Florian Richoux
+ * Copyright (C) 2013-2014 Florian Richoux
  *
  * This file is part of Tarot.
  * Tarot is free software: you can redistribute it and/or modify
@@ -42,23 +42,23 @@ public:
   ~Team();
 
   //! To prepare a new game.
-  void newGame();
+  void newGame() const;
 
   //! To compare two teams regarding their score.
-  bool operator>( Team& t );
+  bool operator>( const Team& t ) const;
 
   //! To compare two teams regarding their score.
-  bool operator<( Team& t );
+  bool operator<( const Team& t ) const;
 
   //! Assessor returning the team's score.
-  double getScore();
+  double getScore() const;
 
   //! Inline function to test if a player belongs to this team
   /*!
     \param name The considered player name.
     \reutrn True iff the team contains the given player.
   */
-  inline bool contains ( string name ) { return members.find( name ) != members.end(); }
+  inline bool contains ( const string& name ) const { return members.find( name ) != members.end(); }
 
   map<string, shared_ptr<Player> > members; //!< A map of team members, to quickly have an hand on the player object knowing his/her name.
 };
