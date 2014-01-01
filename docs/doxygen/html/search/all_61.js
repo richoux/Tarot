@@ -1,7 +1,7 @@
 var searchData=
 [
   ['addcard',['addCard',['../classPlayer.html#a7c7b8325247c91ef255ca493de9f35eb',1,'Player']]],
-  ['ai',['AI',['../classAI.html',1,'AI'],['../classAI.html#a66d6cd98eca679d4f2e53d8e07d70231',1,'AI::AI()']]],
+  ['ai',['AI',['../classAI.html',1,'AI'],['../classAI.html#a059fcf3ea09f908bca75567937f7e8a7',1,'AI::AI(const string &amp;name, const vector&lt; string &gt; &amp;knownPartners)'],['../classAI.html#aa58c0b5165f06063316d257abc996e41',1,'AI::AI(const AI &amp;other)'],['../classAI.html#a8a2a39a4e227c23829cb77aa0f362af3',1,'AI::AI(AI &amp;&amp;other)']]],
   ['announced',['announced',['../classPlayer.html#a90efe0cf8930297c7d30805d19763b65',1,'Player']]],
-  ['ascalledking',['asCalledKing',['../classTrick.html#a3e98bee722ab6bfcbd659cb34af77202',1,'Trick']]]
+  ['ascalledking',['asCalledKing',['../classTrick.html#a4d196a8097feccd87f1aca65ea4e80c8',1,'Trick']]]
 ];

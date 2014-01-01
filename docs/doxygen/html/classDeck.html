@@ -100,10 +100,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d1331cc558c302fdf44e5ae8aae1a95"></a><!-- doxytag: member="Deck::~Deck" ref="a7d1331cc558c302fdf44e5ae8aae1a95" args="()" -->
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a7d1331cc558c302fdf44e5ae8aae1a95">~Deck</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique destructor of <a class="el" href="classDeck.html" title="Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a count...">Deck</a>. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a12b3398e1ca7fdddfd9c5bb522714d8d">isInDeck</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">isInDeck returns if a given card is in the deck or not.  <a href="#a12b3398e1ca7fdddfd9c5bb522714d8d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a461b90e5916192e2b361f953748358ce">hasStrongerThan</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if the current deck has a stronger card than to proposed one.  <a href="#a461b90e5916192e2b361f953748358ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#aaafdac9dd57ada20cc78dd330c741963">isInDeck</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">isInDeck returns if a given card is in the deck or not.  <a href="#aaafdac9dd57ada20cc78dd330c741963"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a82a3371b10b8be7bc5fef6999a56bb88">hasStrongerThan</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if the current deck has a stronger card than to proposed one.  <a href="#a82a3371b10b8be7bc5fef6999a56bb88"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec4d8d2a67f1c46a1a7f175b8848f5b6"></a><!-- doxytag: member="Deck::newDeal" ref="aec4d8d2a67f1c46a1a7f175b8848f5b6" args="()" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#aec4d8d2a67f1c46a1a7f175b8848f5b6">newDeal</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a new deal; create each card of the game. <br/></td></tr>
@@ -134,16 +134,16 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classDeck.html" title="Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a count...">Deck</a> is the class managing the deck of cards. Used as well as for the game deck, but also for a counting cards <a class="el" href="classAI.html" title="This class defines AI players.">AI</a>. </p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a461b90e5916192e2b361f953748358ce"></a><!-- doxytag: member="Deck::hasStrongerThan" ref="a461b90e5916192e2b361f953748358ce" args="(shared_ptr&lt; Card &gt; card)" -->
+<a class="anchor" id="a82a3371b10b8be7bc5fef6999a56bb88"></a><!-- doxytag: member="Deck::hasStrongerThan" ref="a82a3371b10b8be7bc5fef6999a56bb88" args="(shared_ptr&lt; Card &gt; card) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDeck.html#a461b90e5916192e2b361f953748358ce">Deck::hasStrongerThan</a> </td>
+          <td class="memname">bool <a class="el" href="classDeck.html#a82a3371b10b8be7bc5fef6999a56bb88">Deck::hasStrongerThan</a> </td>
           <td>(</td>
           <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>card</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div>
@@ -160,16 +160,16 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
-<a class="anchor" id="a12b3398e1ca7fdddfd9c5bb522714d8d"></a><!-- doxytag: member="Deck::isInDeck" ref="a12b3398e1ca7fdddfd9c5bb522714d8d" args="(shared_ptr&lt; Card &gt; card)" -->
+<a class="anchor" id="aaafdac9dd57ada20cc78dd330c741963"></a><!-- doxytag: member="Deck::isInDeck" ref="aaafdac9dd57ada20cc78dd330c741963" args="(shared_ptr&lt; Card &gt; card) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDeck.html#a12b3398e1ca7fdddfd9c5bb522714d8d">Deck::isInDeck</a> </td>
+          <td class="memname">bool <a class="el" href="classDeck.html#aaafdac9dd57ada20cc78dd330c741963">Deck::isInDeck</a> </td>
           <td>(</td>
           <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>card</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div>
@@ -208,7 +208,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 29 2013 17:17:05 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 2 2014 00:02:57 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

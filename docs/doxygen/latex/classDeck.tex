@@ -19,9 +19,9 @@
 \hypertarget{classDeck_a7d1331cc558c302fdf44e5ae8aae1a95}{\hyperlink{classDeck_a7d1331cc558c302fdf44e5ae8aae1a95}{$\sim$\-Deck} ()}\label{classDeck_a7d1331cc558c302fdf44e5ae8aae1a95}
 
 \begin{DoxyCompactList}\small\item\em \-The unique destructor of \hyperlink{classDeck}{\-Deck}. \end{DoxyCompactList}\item 
-bool \hyperlink{classDeck_a12b3398e1ca7fdddfd9c5bb522714d8d}{is\-In\-Deck} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ card)
+bool \hyperlink{classDeck_aaafdac9dd57ada20cc78dd330c741963}{is\-In\-Deck} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ card) const 
 \begin{DoxyCompactList}\small\item\em is\-In\-Deck returns if a given card is in the deck or not. \end{DoxyCompactList}\item 
-bool \hyperlink{classDeck_a461b90e5916192e2b361f953748358ce}{has\-Stronger\-Than} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ card)
+bool \hyperlink{classDeck_a82a3371b10b8be7bc5fef6999a56bb88}{has\-Stronger\-Than} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ card) const 
 \begin{DoxyCompactList}\small\item\em \-Tests if the current deck has a stronger card than to proposed one. \end{DoxyCompactList}\item 
 \hypertarget{classDeck_aec4d8d2a67f1c46a1a7f175b8848f5b6}{void \hyperlink{classDeck_aec4d8d2a67f1c46a1a7f175b8848f5b6}{new\-Deal} ()}\label{classDeck_aec4d8d2a67f1c46a1a7f175b8848f5b6}
 
@@ -56,13 +56,13 @@ bool \hyperlink{classDeck_a461b90e5916192e2b361f953748358ce}{has\-Stronger\-Than
 \hyperlink{classDeck}{\-Deck} is the class managing the deck of cards. \-Used as well as for the game deck, but also for a counting cards \hyperlink{classAI}{\-A\-I}. 
 
 \subsection{\-Member \-Function \-Documentation}
-\hypertarget{classDeck_a461b90e5916192e2b361f953748358ce}{\index{\-Deck@{\-Deck}!has\-Stronger\-Than@{has\-Stronger\-Than}}
+\hypertarget{classDeck_a82a3371b10b8be7bc5fef6999a56bb88}{\index{\-Deck@{\-Deck}!has\-Stronger\-Than@{has\-Stronger\-Than}}
 \index{has\-Stronger\-Than@{has\-Stronger\-Than}!Deck@{\-Deck}}
 \subsubsection[{has\-Stronger\-Than}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Deck\-::has\-Stronger\-Than} (
 \begin{DoxyParamCaption}
 \item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{card}
 \end{DoxyParamCaption}
-)}}\label{classDeck_a461b90e5916192e2b361f953748358ce}
+) const}}\label{classDeck_a82a3371b10b8be7bc5fef6999a56bb88}
 
 
 \-Tests if the current deck has a stronger card than to proposed one. 
@@ -75,13 +75,13 @@ bool \hyperlink{classDeck_a461b90e5916192e2b361f953748358ce}{has\-Stronger\-Than
 \begin{DoxyReturn}{\-Returns}
 \-True iff the deck has a stronger card than the input. 
 \end{DoxyReturn}
-\hypertarget{classDeck_a12b3398e1ca7fdddfd9c5bb522714d8d}{\index{\-Deck@{\-Deck}!is\-In\-Deck@{is\-In\-Deck}}
+\hypertarget{classDeck_aaafdac9dd57ada20cc78dd330c741963}{\index{\-Deck@{\-Deck}!is\-In\-Deck@{is\-In\-Deck}}
 \index{is\-In\-Deck@{is\-In\-Deck}!Deck@{\-Deck}}
 \subsubsection[{is\-In\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Deck\-::is\-In\-Deck} (
 \begin{DoxyParamCaption}
 \item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{card}
 \end{DoxyParamCaption}
-)}}\label{classDeck_a12b3398e1ca7fdddfd9c5bb522714d8d}
+) const}}\label{classDeck_aaafdac9dd57ada20cc78dd330c741963}
 
 
 is\-In\-Deck returns if a given card is in the deck or not. 

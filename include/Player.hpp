@@ -25,6 +25,7 @@
 #include <vector>
 #include <memory>
 #include <iostream>
+#include <algorithm>
 
 #include <Card.hpp>
 #include <Suits.hpp>
@@ -37,14 +38,20 @@ using namespace std;
 class Player
 {
 public:
+  //! Friend function swap used for the copy-and-swap idiom.
+  friend void swap( Player& first, Player& second );
+
   //! The unique constructor of Player.
   /*!
     \param name The player name.
   */
   Player( const string& name );
 
-  //! The copy constructor of Player
-  Player( const Player& p);
+  //! Player copy constructor
+  Player( const Player& other );
+
+  //! Player move constructor
+  Player( Player&& other );
 
   //! The unique (virtual) destructor of Player.
   virtual ~Player();
@@ -55,7 +62,7 @@ public:
     \param highTrump The highest trump played so far for the trick, if any.
     \return The chosen card to play.
   */
-  virtual shared_ptr<Card> playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump) = 0;
+  virtual shared_ptr<Card> playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump ) = 0;
 
   //! Pure virtual function to prepare the player for a new game. 
   virtual void newGame() = 0;
