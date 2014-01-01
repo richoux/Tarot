@@ -137,7 +137,7 @@ void Deck::shuffle()
   random_shuffle( cards.begin(), cards.end() );
 }
 
-bool Deck::isInDeck( shared_ptr<Card> card )
+bool Deck::isInDeck( shared_ptr<Card> card ) const
 {
   for( auto it = cards.begin(); it != cards.end(); ++it )
     if( *it == card)
@@ -146,7 +146,7 @@ bool Deck::isInDeck( shared_ptr<Card> card )
   return false;
 }
 
-bool Deck::hasStrongerThan( shared_ptr<Card> card )
+bool Deck::hasStrongerThan( shared_ptr<Card> card ) const
 {
   for( auto it = cards.begin(); it != cards.end(); ++it )
     if( *(*it) > *card)
