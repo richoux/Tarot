@@ -21,10 +21,6 @@
 
 #include <Team.hpp>
 
-Team::Team() {}
-
-Team::~Team() {}
-
 void Team::newGame() const
 {
   for( auto it = members.begin(); it != members.end(); ++it )

@@ -35,12 +35,6 @@ class Team
   friend ostream& operator<<	( ostream&, const Team& );
 
 public:
-  //! The unique constructor for Team.
-  Team();
-
-  //! The unique destructor for Team.
-  ~Team();
-
   //! To prepare a new game.
   void newGame() const;
 

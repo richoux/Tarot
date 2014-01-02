@@ -42,9 +42,6 @@ public:
   */
   Human( const string& name );
 
-  //! The unique destructor of Human.
-  ~Human();
-  
   //! To play a card, knowing the ask suit and the highest trump of the trick, if any.
   /*!
     \param referenceCard The card fixing the ask suit for the trick.

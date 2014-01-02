@@ -24,11 +24,6 @@
 Trick::Trick( shared_ptr<Card> kingCalled) : leader(nullptr), foolPlayer(nullptr), kingCalled(kingCalled), greaterTrump(nullptr) 
 {}
 
-Trick::~Trick() 
-{
-  trickCards.clear();
-}
-
 set< shared_ptr<Card> > Trick::getAllCards() const
 {
   set< shared_ptr<Card> > allCards;
