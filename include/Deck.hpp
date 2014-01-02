@@ -37,9 +37,6 @@ public:
   //! The unique constructor of Deck.
   Deck();
 
-  //! The unique destructor of Deck.
-  ~Deck();
-
   //! isInDeck returns if a given card is in the deck or not.
   /*!
     \param card A pointer of Card.
