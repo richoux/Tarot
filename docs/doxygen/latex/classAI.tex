@@ -26,16 +26,6 @@ class {\bfseries \-Counting}
 \item 
 \hyperlink{classAI_a059fcf3ea09f908bca75567937f7e8a7}{\-A\-I} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}, const vector$<$ string $>$ \&known\-Partners)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} constructor. \end{DoxyCompactList}\item 
-\hyperlink{classAI_aa58c0b5165f06063316d257abc996e41}{\-A\-I} (const \hyperlink{classAI}{\-A\-I} \&other)
-\begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} copy constructor. \end{DoxyCompactList}\item 
-\hyperlink{classAI_a8a2a39a4e227c23829cb77aa0f362af3}{\-A\-I} (\hyperlink{classAI}{\-A\-I} \&\&other)
-\begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} move constructor. \end{DoxyCompactList}\item 
-\hypertarget{classAI_a66a8645f0c27285cd75346f2c2bbfb14}{\hyperlink{classAI_a66a8645f0c27285cd75346f2c2bbfb14}{$\sim$\-A\-I} ()}\label{classAI_a66a8645f0c27285cd75346f2c2bbfb14}
-
-\begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} destructor. \end{DoxyCompactList}\item 
-\hypertarget{classAI_a1eb14f1ec8ef778f070362ba37f17d6c}{\hyperlink{classAI}{\-A\-I} \& \hyperlink{classAI_a1eb14f1ec8ef778f070362ba37f17d6c}{operator=} (\hyperlink{classAI}{\-A\-I} other)}\label{classAI_a1eb14f1ec8ef778f070362ba37f17d6c}
-
-\begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} assignment operator. \end{DoxyCompactList}\item 
 bool \hyperlink{classAI_aec78eb8010bdcd99c899aaa7af79d9ea}{is\-Opponent} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}) const 
 \begin{DoxyCompactList}\small\item\em \-To know if someone is your opponent. \end{DoxyCompactList}\item 
 bool \hyperlink{classAI_a0cd8c8e4a646c6c1ae51c7812eb1194e}{is\-Partner} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}) const 
@@ -54,11 +44,6 @@ set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{class
 \begin{DoxyCompactList}\small\item\em \-To make the ecart once one takes the dog. \end{DoxyCompactList}\item 
 void \hyperlink{classAI_a19cae044bb7f221819f61b017b6a7ffe}{set\-Difficulty} (shared\-\_\-ptr$<$ \hyperlink{classStratDiff}{\-Strat\-Diff} $>$ diff)
 \begin{DoxyCompactList}\small\item\em \-Inline function to set the difficulty (set a \-Strategy concrete class). \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Friends}
-\begin{DoxyCompactItemize}
-\item 
-void \hyperlink{classAI_a6c2a2d1ac6ecf7362dc45ce9d16e0e49}{swap} (\hyperlink{classAI}{\-A\-I} \&first, \hyperlink{classAI}{\-A\-I} \&second)
-\begin{DoxyCompactList}\small\item\em \-Friend function swap used for the copy-\/and-\/swap idiom. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{\-Detailed \-Description}
@@ -84,38 +69,6 @@ void \hyperlink{classAI_a6c2a2d1ac6ecf7362dc45ce9d16e0e49}{swap} (\hyperlink{cla
 {\em name} & \-A string for the \hyperlink{classAI}{\-A\-I} name. \\
 \hline
 {\em known\-Partners} & \-A vector of strings composed of the name of its partners. \\
-\hline
-\end{DoxyParams}
-\hypertarget{classAI_aa58c0b5165f06063316d257abc996e41}{\index{\-A\-I@{\-A\-I}!\-A\-I@{\-A\-I}}
-\index{\-A\-I@{\-A\-I}!AI@{\-A\-I}}
-\subsubsection[{\-A\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-A\-I\-::\-A\-I} (
-\begin{DoxyParamCaption}
-\item[{const {\bf \-A\-I} \&}]{other}
-\end{DoxyParamCaption}
-)}}\label{classAI_aa58c0b5165f06063316d257abc996e41}
-
-
-\hyperlink{classAI}{\-A\-I} copy constructor. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em other} & \-The constant reference of the object to copied. \\
-\hline
-\end{DoxyParams}
-\hypertarget{classAI_a8a2a39a4e227c23829cb77aa0f362af3}{\index{\-A\-I@{\-A\-I}!\-A\-I@{\-A\-I}}
-\index{\-A\-I@{\-A\-I}!AI@{\-A\-I}}
-\subsubsection[{\-A\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-A\-I\-::\-A\-I} (
-\begin{DoxyParamCaption}
-\item[{{\bf \-A\-I} \&\&}]{other}
-\end{DoxyParamCaption}
-)}}\label{classAI_a8a2a39a4e227c23829cb77aa0f362af3}
-
-
-\hyperlink{classAI}{\-A\-I} move constructor. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em other} & \-The \char`\"{}universal reference\char`\"{} of the object to moved. \\
 \hline
 \end{DoxyParams}
 
@@ -304,28 +257,6 @@ play\-Card is delegated to the difficulty \-Strategy.
 
 \begin{DoxyParams}{\-Parameters}
 {\em diff} & \-A pointer on the difficulty to set. \\
-\hline
-\end{DoxyParams}
-
-
-\subsection{\-Friends \-And \-Related \-Function \-Documentation}
-\hypertarget{classAI_a6c2a2d1ac6ecf7362dc45ce9d16e0e49}{\index{\-A\-I@{\-A\-I}!swap@{swap}}
-\index{swap@{swap}!AI@{\-A\-I}}
-\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf swap} (
-\begin{DoxyParamCaption}
-\item[{{\bf \-A\-I} \&}]{first, }
-\item[{{\bf \-A\-I} \&}]{second}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classAI_a6c2a2d1ac6ecf7362dc45ce9d16e0e49}
-
-
-\-Friend function swap used for the copy-\/and-\/swap idiom. 
-
-
-\begin{DoxyParams}{\-Parameters}
-{\em first} & \-The first \hyperlink{classAI}{\-A\-I} object. \\
-\hline
-{\em second} & \-The second \hyperlink{classAI}{\-A\-I} object to be swapped with the first one. \\
 \hline
 \end{DoxyParams}
 

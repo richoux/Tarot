@@ -82,8 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#friends">Friends</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Player Class Reference</div>  </div>
 </div><!--header-->
@@ -114,15 +113,6 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5a2790fccf10c30106370d910c96d317">Player</a> (const string &amp;<a class="el" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">name</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a>.  <a href="#a5a2790fccf10c30106370d910c96d317"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a8b7f689e924b15a9e6f9888983fb43"></a><!-- doxytag: member="Player::Player" ref="a4a8b7f689e924b15a9e6f9888983fb43" args="(const Player &amp;other)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4a8b7f689e924b15a9e6f9888983fb43">Player</a> (const <a class="el" href="classPlayer.html">Player</a> &amp;other)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a> copy constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3d3eb16a37c49cf91b5093632061d69"></a><!-- doxytag: member="Player::Player" ref="ae3d3eb16a37c49cf91b5093632061d69" args="(Player &amp;&amp;other)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ae3d3eb16a37c49cf91b5093632061d69">Player</a> (<a class="el" href="classPlayer.html">Player</a> &amp;&amp;other)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a> move constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a749d2c00e1fe0f5c2746f7505a58c062"></a><!-- doxytag: member="Player::~Player" ref="a749d2c00e1fe0f5c2746f7505a58c062" args="()" -->
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a749d2c00e1fe0f5c2746f7505a58c062">~Player</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique (virtual) destructor of <a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a>. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#aeba090a124bfd9a3666d2d793439cae0">playCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; referenceCard, shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; highTrump)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">playCard is a pure virtual function returning the card the player chooses to play.  <a href="#aeba090a124bfd9a3666d2d793439cae0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76a707ceb6f24b0a2a801434ee5a60ad"></a><!-- doxytag: member="Player::newGame" ref="a76a707ceb6f24b0a2a801434ee5a60ad" args="()=0" -->
@@ -197,11 +187,6 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90efe0cf8930297c7d30805d19763b65"></a><!-- doxytag: member="Player::announced" ref="a90efe0cf8930297c7d30805d19763b65" args="" -->
 set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a90efe0cf8930297c7d30805d19763b65">announced</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The set of announcements (for what?). <br/></td></tr>
-<tr><td colspan="2"><h2><a name="friends"></a>
-Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a461866409bfc29db76efa8baa2db8f5c"></a><!-- doxytag: member="Player::swap" ref="a461866409bfc29db76efa8baa2db8f5c" args="(Player &amp;first, Player &amp;second)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a461866409bfc29db76efa8baa2db8f5c">swap</a> (<a class="el" href="classPlayer.html">Player</a> &amp;first, <a class="el" href="classPlayer.html">Player</a> &amp;second)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Friend function swap used for the copy-and-swap idiom. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players.">Player</a> is an abstract class presenting a common interface for <a class="el" href="classAI.html" title="This class defines AI players.">AI</a> and <a class="el" href="classHuman.html" title="Human is the class implementing Human player actions, like playing a card.">Human</a> players. </p>
@@ -447,7 +432,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 2 2014 00:02:57 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 2 2014 11:29:21 for Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
