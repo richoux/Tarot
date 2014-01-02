@@ -12,6 +12,5 @@ var searchData=
   ['shuffledeck',['shuffleDeck',['../classGame.html#a8eb0a092d23b426a8b4b03c4083b7afe',1,'Game']]],
   ['spades',['spades',['../classPlayer.html#a89177ee8076c1a3411a74b2b1d68156c',1,'Player']]],
   ['stratdiff',['StratDiff',['../classStratDiff.html',1,'']]],
-  ['stratlang',['StratLang',['../classStratLang.html',1,'']]],
-  ['swap',['swap',['../classAI.html#a6c2a2d1ac6ecf7362dc45ce9d16e0e49',1,'AI::swap()'],['../classPlayer.html#a461866409bfc29db76efa8baa2db8f5c',1,'Player::swap()']]]
+  ['stratlang',['StratLang',['../classStratLang.html',1,'']]]
 ];
