@@ -27,9 +27,9 @@
 class StratLang
 {
 public:
-  StratLang();
-  StratLang( const StratLang& );
-  virtual ~StratLang();
+  //StratLang();
+  //StratLang( const StratLang& );
+  //virtual ~StratLang();
 
   virtual void beginGame() = 0;
 };

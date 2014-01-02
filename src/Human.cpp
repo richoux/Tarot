@@ -22,7 +22,6 @@
 #include <Human.hpp>
 
 Human::Human( const string& name ) : Player( name ) {}
-Human::~Human() {}
 
 shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
 {

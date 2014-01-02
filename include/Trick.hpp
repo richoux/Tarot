@@ -41,9 +41,6 @@ public:
   */
   Trick( shared_ptr<Card> kingCalled );
 
-  //! The unique destructor of Trick.
-  ~Trick();
-  
   //! Determine if a player has played the called king in the current trick, and returns a pointer on this player, if any.
   shared_ptr<Player> asCalledKing() const;
 
