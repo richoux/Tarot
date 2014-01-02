@@ -54,9 +54,6 @@ public:
   */
   Game( int& numberPlayers, const string yourName = "You" );
 
-  //! The unique destructor of Game.
-  ~Game();
-
   //! Creates a new game.
   void newGame();
 

@@ -27,8 +27,6 @@ Card::Card( const Suits suit, const int value, const double points, const bool o
   : suit(suit), value(value), points(points), oudler(oudler)
 {}
 
-Card::~Card() {}
-
 bool Card::operator>( const Card& card ) const 
 { 
   if( this->suit == 4 && card.suit < 4)

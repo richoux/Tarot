@@ -26,11 +26,6 @@ Deck::Deck()
   newDeal();
 }
 
-Deck::~Deck() 
-{
-  cards.clear();
-}
-
 void Deck::newDeal()
 {
   cards.clear();

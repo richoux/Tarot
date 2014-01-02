@@ -68,14 +68,6 @@ Game::Game( int& numberPlayers, const string yourName )
   next = players[ indexNext ];
 }
 
-Game::~Game()
-{
-  players.clear();
-
-  while( !history.empty() )
-    history.pop();
-}
-
 void Game::newGame()
 {
   for( shared_ptr<Player> player : players )

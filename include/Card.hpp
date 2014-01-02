@@ -44,9 +44,6 @@ public:
   */
   Card( const Suits suit, const int value, const double points, const bool oudler );
 
-  //! The unique destructor of Card.
-  ~Card();
-
   //! Inline assessor to get the card's points.
   inline double	getPoints	() const { return points; }
 
