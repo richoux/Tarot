@@ -21,14 +21,6 @@
 
 #include <AI.hpp>
 
-void swap( AI& first, AI& second )
-{
-  swap( first.cardCounting, second.cardCounting );
-  swap( first.opponents, second.opponents );
-  swap( first.partners, second.partners );
-  swap( first.difficulty, second.difficulty );
-}
-
 AI::AI( const string& name, const vector<string>& knownPartners ) : Player( name )
 {
   for( string partner : knownPartners )
@@ -36,31 +28,6 @@ AI::AI( const string& name, const vector<string>& knownPartners ) : Player( name
       partners[partner] = make_shared<Counting>();
 
   difficulty = make_shared<Beginner>();
-}
-
-AI::AI( const AI& other )
-  : Player( other.name ) ,
-    cardCounting( other.cardCounting ), 
-    opponents( other.opponents ), 
-    partners( other.partners ), 
-    difficulty( other.difficulty )
-{}
-
-AI::AI( AI&& other ) : Player( other )
-{
-  swap( *this, other );
-}
-
-AI::~AI() 
-{
-  opponents.clear();
-  partners.clear();
-}
-
-AI& AI::operator=( AI other )
-{
-  swap( *this, other );
-  return *this;
 }
 
 bool AI::haveSuit( const string& name, const Suits suit ) const
