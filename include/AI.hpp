@@ -47,37 +47,12 @@ using namespace std;
 class AI : public Player
 {
 public:
-  //! Friend function swap used for the copy-and-swap idiom.
-  /*!
-    \param first The first AI object.
-    \param second The second AI object to be swapped with the first one.
-  */
-  friend void swap(AI& first, AI& second);
-
   //! AI constructor.
   /*!
     \param name A string for the AI name.
     \param knownPartners A vector of strings composed of the name of its partners.
   */
   AI( const string& name, const vector<string>& knownPartners);
-
-  //! AI copy constructor.
-  /*!
-    \param other The constant reference of the object to copied.
-  */
-  AI( const AI& other );
-
-  //! AI move constructor.
-  /*!
-    \param other The "universal reference" of the object to moved.
-  */
-  AI( AI&& other );
-
-  //! AI destructor.
-  ~AI();
-
-  //! AI assignment operator.
-  AI& operator=( AI other );
 
   //! To know if someone is your opponent.
   /*!

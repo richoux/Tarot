@@ -21,49 +21,11 @@
 
 #include <Player.hpp>
 
-void swap( Player& first, Player& second )
-{
-  swap( first.name, second.name );
-  swap( first.score, second.score );
-  swap( first.hearts, second.hearts );
-  swap( first.spades, second.spades );
-  swap( first.diamonds, second.diamonds );
-  swap( first.clubs, second.clubs );
-  swap( first.trumps, second.trumps );
-  swap( first.fool, second.fool );
-  swap( first.initialCards, second.initialCards );
-  swap( first.numberOudlers, second.numberOudlers );
-  swap( first.initialPoints, second.initialPoints ); 
-  swap( first.announced, second.announced );
-}
-
 Player::Player( const string& name ) 
   : name( name ), 
     numberOudlers( 0 ), 
     initialPoints( 0 ) 
 {}
-
-Player::Player( const Player& other ) 
-  : name( other.name ),
-    score( other.score ),
-    hearts( other.hearts ),
-    spades( other.spades ),
-    diamonds( other.diamonds ),
-    clubs( other.clubs ),
-    trumps( other.trumps ),
-    fool( other.fool ),
-    initialCards( other.initialCards ),
-    numberOudlers( other.numberOudlers ),
-    initialPoints( other.initialPoints ),
-    announced( other.announced )
-{}
-
-Player::Player( Player&& other ) 
-{
-  swap( *this, other );
-}
-
-Player::~Player() {}
 
 vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_ptr<Card> greaterTrump )
 {
