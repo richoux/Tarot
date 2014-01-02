@@ -38,23 +38,11 @@ using namespace std;
 class Player
 {
 public:
-  //! Friend function swap used for the copy-and-swap idiom.
-  friend void swap( Player& first, Player& second );
-
   //! The unique constructor of Player.
   /*!
     \param name The player name.
   */
   Player( const string& name );
-
-  //! Player copy constructor
-  Player( const Player& other );
-
-  //! Player move constructor
-  Player( Player&& other );
-
-  //! The unique (virtual) destructor of Player.
-  virtual ~Player();
 
   //! playCard is a pure virtual function returning the card the player chooses to play.  
   /*!
