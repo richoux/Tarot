@@ -1,4 +1,4 @@
-Tarot
+Mari's Tarot
 =====
 
-Tarot project, in QT for Android
+Mari's Tarot project, for Android and in QT for Linux.
