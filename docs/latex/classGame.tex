@@ -13,7 +13,7 @@
 \subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classGame_ad800214017e2813ed0dc77d95d5766aa}{\-Game} (int \&number\-Players, const string your\-Name=\char`\"{}\-You\char`\"{})
+\hyperlink{classGame_a584bfe348c8e1128dbb4b1fb40a05f0b}{\-Game} (int \&number\-Players, const string your\-Name=\char`\"{}\-You\char`\"{}, const bool automatic=false)
 \begin{DoxyCompactList}\small\item\em \-The unique constructor of \hyperlink{classGame}{\-Game}. \end{DoxyCompactList}\item 
 \hypertarget{classGame_a12f32ba70a35a0dcd1f527b4d4a0d2c4}{void \hyperlink{classGame_a12f32ba70a35a0dcd1f527b4d4a0d2c4}{new\-Game} ()}\label{classGame_a12f32ba70a35a0dcd1f527b4d4a0d2c4}
 
@@ -52,14 +52,15 @@ double \hyperlink{classGame_af3ae0695c2600b273e14d9fa93dd980a}{compute\-Score} (
 \hyperlink{classGame}{\-Game} is one of the main class of \-Tarot. \-Here are defined rules, games' turns, scores, etc. 
 
 \subsection{\-Constructor \& \-Destructor \-Documentation}
-\hypertarget{classGame_ad800214017e2813ed0dc77d95d5766aa}{\index{\-Game@{\-Game}!\-Game@{\-Game}}
+\hypertarget{classGame_a584bfe348c8e1128dbb4b1fb40a05f0b}{\index{\-Game@{\-Game}!\-Game@{\-Game}}
 \index{\-Game@{\-Game}!Game@{\-Game}}
 \subsubsection[{\-Game}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Game\-::\-Game} (
 \begin{DoxyParamCaption}
 \item[{int \&}]{number\-Players, }
-\item[{const string}]{your\-Name = {\ttfamily \char`\"{}\-You\char`\"{}}}
+\item[{const string}]{your\-Name = {\ttfamily \char`\"{}\-You\char`\"{}}, }
+\item[{const bool}]{automatic = {\ttfamily false}}
 \end{DoxyParamCaption}
-)}}\label{classGame_ad800214017e2813ed0dc77d95d5766aa}
+)}}\label{classGame_a584bfe348c8e1128dbb4b1fb40a05f0b}
 
 
 \-The unique constructor of \hyperlink{classGame}{\-Game}. 
@@ -69,6 +70,8 @@ double \hyperlink{classGame_af3ae0695c2600b273e14d9fa93dd980a}{compute\-Score} (
 {\em number\-Players} & \-The number of players. \\
 \hline
 {\em your\-Name} & \-The human player name. \\
+\hline
+{\em automatic} & \-A boolean set to true if and only if one wants to perform automatic tests (4 bots playing together). \-False by default. \\
 \hline
 \end{DoxyParams}
 

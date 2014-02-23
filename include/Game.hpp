@@ -51,6 +51,7 @@ public:
   /*!
     \param numberPlayers The number of players.
     \param yourName The human player name.
+    \param automatic A boolean set to true if and only if one wants to perform automatic tests (4 bots playing together). False by default.
   */
   Game( int& numberPlayers, const string yourName = "You", const bool automatic = false );
 
