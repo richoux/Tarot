@@ -1,14 +1,18 @@
 language: cpp
 
 compiler:
-  - gcc
   - clang
+  - gcc
 
 before_install:
+  - sudo add-get install valgrind
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
   - sudo apt-get install -qq libboost1.48-dev libboost-test1.48-dev libyajl-dev libxml2-dev libxqilla-dev
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
 
-script: make
+script: 
+  - make debug
+  - for i in `seq 1 1000`; do bin/tarot --auto done
+  - valgrind --leak-check=full bin/tarot
