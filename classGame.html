@@ -93,8 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ad800214017e2813ed0dc77d95d5766aa">Game</a> (int &amp;numberPlayers, const string yourName=&quot;You&quot;)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classGame.html" title="Game is one of the main class of Tarot. Here are defined rules, games&#39; turns, scores, etc.">Game</a>.  <a href="#ad800214017e2813ed0dc77d95d5766aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a584bfe348c8e1128dbb4b1fb40a05f0b">Game</a> (int &amp;numberPlayers, const string yourName=&quot;You&quot;, const bool automatic=false)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classGame.html" title="Game is one of the main class of Tarot. Here are defined rules, games&#39; turns, scores, etc.">Game</a>.  <a href="#a584bfe348c8e1128dbb4b1fb40a05f0b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12f32ba70a35a0dcd1f527b4d4a0d2c4"></a><!-- doxytag: member="Game::newGame" ref="a12f32ba70a35a0dcd1f527b4d4a0d2c4" args="()" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a12f32ba70a35a0dcd1f527b4d4a0d2c4">newGame</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new game. <br/></td></tr>
@@ -130,12 +130,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classGame.html" title="Game is one of the main class of Tarot. Here are defined rules, games&#39; turns, scores, etc.">Game</a> is one of the main class of Tarot. Here are defined rules, games' turns, scores, etc. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad800214017e2813ed0dc77d95d5766aa"></a><!-- doxytag: member="Game::Game" ref="ad800214017e2813ed0dc77d95d5766aa" args="(int &amp;numberPlayers, const string yourName=&quot;You&quot;)" -->
+<a class="anchor" id="a584bfe348c8e1128dbb4b1fb40a05f0b"></a><!-- doxytag: member="Game::Game" ref="a584bfe348c8e1128dbb4b1fb40a05f0b" args="(int &amp;numberPlayers, const string yourName=&quot;You&quot;, const bool automatic=false)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classGame.html#ad800214017e2813ed0dc77d95d5766aa">Game::Game</a> </td>
+          <td class="memname"><a class="el" href="classGame.html#a584bfe348c8e1128dbb4b1fb40a05f0b">Game::Game</a> </td>
           <td>(</td>
           <td class="paramtype">int &amp;&#160;</td>
           <td class="paramname"><em>numberPlayers</em>, </td>
@@ -144,7 +144,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const string&#160;</td>
-          <td class="paramname"><em>yourName</em> = <code>&quot;You&quot;</code>&#160;</td>
+          <td class="paramname"><em>yourName</em> = <code>&quot;You&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>automatic</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -160,6 +166,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <table class="params">
     <tr><td class="paramname">numberPlayers</td><td>The number of players. </td></tr>
     <tr><td class="paramname">yourName</td><td>The human player name. </td></tr>
+    <tr><td class="paramname">automatic</td><td>A boolean set to true if and only if one wants to perform automatic tests (4 bots playing together). False by default. </td></tr>
   </table>
   </dd>
 </dl>
@@ -252,7 +259,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 7 2014 17:11:37 for Mari's Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 23 2014 23:52:35 for Mari's Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

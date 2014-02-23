@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['game',['Game',['../classGame.html',1,'Game'],['../classGame.html#ad800214017e2813ed0dc77d95d5766aa',1,'Game::Game()']]],
+  ['game',['Game',['../classGame.html',1,'Game'],['../classGame.html#a584bfe348c8e1128dbb4b1fb40a05f0b',1,'Game::Game()']]],
   ['getallcards',['getAllCards',['../classTrick.html#a1db9b6c13def25e38b6604b56d97ddd2',1,'Trick']]],
   ['getannounced',['getAnnounced',['../classPlayer.html#a5573dd91ddb6fa8874d5a7f7a186f186',1,'Player']]],
   ['getcard',['getCard',['../classTrick.html#a1649b27628cb224f3eb98f56ea00f5ac',1,'Trick']]],
