@@ -40,6 +40,11 @@ int main( int argc, char **argv )
   {
     nberPlayers = 4;
     game = new Game( nberPlayers, playerName, true );
+
+    game->shuffleDeck();
+    game->showDeck();
+    game->dealCards();
+    game->showPlayersCards();
   }
   else
   {
@@ -51,13 +56,10 @@ int main( int argc, char **argv )
       game = new Game( nberPlayers, playerName );
     else
       game = new Game( nberPlayers );
+
+    game->shuffleDeck();
   }
   
-  //game->showDeck();
-  game->shuffleDeck();
-  //game->showDeck();
-  //game->dealCards();
-  //game->showPlayersCards();
   Team winners = game->play();
   
   game->printScores();  

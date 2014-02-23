@@ -14,5 +14,5 @@ before_install:
 
 script: 
   - make debug
-  - for i in `seq 1 1000`; do bin/tarot --auto; echo @@@@@@@@@@@@@@@@@@@; done
+  - for i in `seq 1 50`; do bin/tarot --auto; echo @@@@@@@@@@@@@@@@@@@; done
   - valgrind --leak-check=full --show-reachable=yes bin/tarot --auto
