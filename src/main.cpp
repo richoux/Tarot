@@ -43,7 +43,6 @@ int main( int argc, char **argv )
 
     game->shuffleDeck();
     game->showDeck();
-    game->dealCards();
     game->showPlayersCards();
   }
   else

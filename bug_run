@@ -1,0 +1,348 @@
+flo@Tassadar:Tarot$ ./bin/tarot --auto
+Dog: 7♠  Q♥  4♦  5♦  Kn♣  
+Charly takes a Small.
+Dave passes.
+Alice passes.
+Bob passes.
+Taker: Charly
+Defenders: Alice, Bob, Dave
+
+**************
+** Round 1 **
+**************
+Bob played 10♠  
+Charly played 7♠  
+Dave played Q♠  
+Alice played 3♠  
+Trick: 7♠   3♠   10♠   Q♠  => Won by Dave
+
+**************
+** Round 2 **
+**************
+Dave played A♥  
+Alice played 5♥  
+Bob played 3♥  
+Charly played Q♥  
+Trick: 3♥   5♥   Q♥   A♥  => Won by Charly
+
+**************
+** Round 3 **
+**************
+Charly played Kn♣  
+Dave played Q♣  
+Alice played 2♣  
+Bob played 5♣  
+Trick: 2♣   5♣   Kn♣   Q♣  => Won by Dave
+
+**************
+** Round 4 **
+**************
+Dave played 10♥  
+Alice played 2♥  
+Bob played 9T  
+Charly played F  
+Trick: 2♥   10♥   F   9T  => Won by Bob
+
+**************
+** Round 5 **
+**************
+Bob played 3♦  
+Charly played 4♦  
+Dave played Q♦  
+Alice played Kn♦  
+Trick: Kn♦   Q♦   3♦   4♦  => Won by Dave
+
+**************
+** Round 6 **
+**************
+Dave played 12T  
+Alice played 19T  
+Bob played 1T  
+Charly played 5T  
+Trick: 12T   19T   1T   5T  => Won by Alice
+
+**************
+** Round 7 **
+**************
+Alice played 7♣  
+Bob played 4T  
+Charly played K♣  
+Dave played 10♣  
+Trick: 7♣   10♣   K♣   4T  => Won by Bob
+
+**************
+** Round 8 **
+**************
+Bob played 7♦  
+Charly played 2T  
+Dave played 2♦  
+Alice played 6♦  
+Trick: 7♦   2♦   6♦   2T  => Won by Charly
+
+**************
+** Round 9 **
+**************
+Charly played 4♣  
+Dave played 3♣  
+Alice played 9♣  
+Bob played 6T  
+Trick: 3♣   4♣   9♣   6T  => Won by Bob
+
+**************
+** Round 10 **
+**************
+Bob played 16T  
+Charly played 10T  
+Dave played 18T  
+Alice played 20T  
+Trick: 10T   16T   18T   20T  => Won by Alice
+
+**************
+** Round 11 **
+**************
+Alice played J♦  
+Bob played K♦  
+Charly played J♥  
+Dave played 21T  
+Trick: J♥   J♦   K♦   21T  => Won by Dave
+
+**************
+** Round 12 **
+**************
+Dave played 9♥  
+Alice played 8♥  
+Bob played 13T  
+Charly played 6♠  
+Trick: 8♥   9♥   6♠   13T  => Won by Bob
+
+**************
+** Round 13 **
+**************
+Bob played 7T  
+Charly played A♣  
+Dave played 8T  
+Alice played 17T  
+Trick: 17T   A♣   7T   8T  => Won by Alice
+
+**************
+** Round 14 **
+**************
+Alice played 15T  
+Bob played 14T  
+Charly played 9♠  
+Dave played 7♥  
+Trick: 7♥   9♠   14T   15T  => Won by Alice
+
+**************
+** Round 15 **
+**************
+Alice played 6♥  
+Bob played 3T  
+Charly played 4♠  
+Dave played 4♥  
+Trick: 4♥   6♥   4♠   3T  => Won by Bob
+
+**************
+** Round 16 **
+**************
+Bob played K♠  
+Charly played 5♠  
+Dave played A♠  
+Alice played Kn♥  
+Trick: Kn♥   5♠   K♠   A♠  => Won by Bob
+
+**************
+** Round 17 **
+**************
+Bob played 10♦  
+Charly played J♣  
+Dave played Kn♠  
+Alice played 8♦  
+Trick: 8♦   10♦   Kn♠   J♣  => Won by Dave
+
+**************
+** Round 18 **
+**************
+Dave played 8♣  
+Alice played 9♦  
+Bob played 2♠  
+Exception en point flottant (core dumped)
+
+
+/////////////////////////////////////////////////////
+
+
+Dog: K♥  10♠  2♦  6♦  11T  
+Bob passes.
+Charly takes a Guard.
+Dave passes.
+Alice passes.
+Taker: Charly
+Defenders: Alice, Bob, Dave
+
+**************
+** Round 1 **
+**************
+Alice played 1T  
+Bob played 7T  
+Charly played 19T  
+Dave played 17T  
+Trick: 17T   19T   1T   7T  => Won by Charly
+
+**************
+** Round 2 **
+**************
+Charly played A♠  
+Dave played Q♠  
+Alice played 3♠  
+Bob played K♠  
+Trick: 3♠   Q♠   K♠   A♠  => Won by Bob
+
+**************
+** Round 3 **
+**************
+Bob played 14T  
+Charly played F  
+Dave played 18T  
+Alice played 13T  
+Trick: 13T   14T   18T   F  => Won by Dave
+
+**************
+** Round 4 **
+**************
+Dave played 4T  
+Alice played 16T  
+Bob played 20T  
+Charly played 21T  
+Trick: 16T   20T   21T   4T  => Won by Charly
+
+**************
+** Round 5 **
+**************
+Charly played 2T  
+Dave played 6T  
+Alice played 10T  
+Bob played 5T  
+Trick: 10T   2T   5T   6T  => Won by Alice
+
+**************
+** Round 6 **
+**************
+Alice played J♣  
+Bob played Q♣  
+Charly played 6♣  
+Dave played A♣  
+Trick: 6♣   J♣   Q♣   A♣  => Won by Bob
+
+**************
+** Round 7 **
+**************
+Bob played 9♠  
+Charly played 6♠  
+Dave played 4♠  
+Alice played 7♠  
+Trick: 6♠   7♠   4♠   9♠  => Won by Bob
+
+**************
+** Round 8 **
+**************
+Bob played K♣  
+Charly played 4♣  
+Dave played 10♣  
+Alice played 2♣  
+Trick: 2♣   4♣   10♣   K♣  => Won by Bob
+
+**************
+** Round 9 **
+**************
+Bob played Kn♦  
+Charly played 6♦  
+Dave played K♦  
+Alice played 8♦  
+Trick: 8♦   Kn♦   K♦   6♦  => Won by Dave
+
+**************
+** Round 10 **
+**************
+Dave played 8♠  
+Alice played J♥  
+Bob played J♠  
+Charly played 10♠  
+Trick: J♥   8♠   10♠   J♠  => Won by Alice
+
+**************
+** Round 11 **
+**************
+Alice played 7♣  
+Bob played 8♣  
+Charly played 3T  
+Dave played 9♣  
+Trick: 7♣   8♣   9♣   3T  => Won by Charly
+
+**************
+** Round 12 **
+**************
+Charly played 2♦  
+Dave played 10♦  
+Alice played 4♦  
+Bob played 7♦  
+Trick: 7♦   10♦   2♦   4♦  => Won by Dave
+
+**************
+** Round 13 **
+**************
+Dave played Kn♠  
+Alice played A♥  
+Bob played 9T  
+Charly played 9♦  
+Trick: A♥   9♦   Kn♠   9T  => Won by Bob
+
+**************
+** Round 14 **
+**************
+Bob played Kn♣  
+Charly played J♦  
+Dave played 5♣  
+Alice played Kn♥  
+Trick: Kn♥   J♦   5♣   Kn♣  => Won by Bob
+
+**************
+** Round 15 **
+**************
+Bob played 6♥  
+Charly played 8♥  
+Dave played 7♥  
+Alice played 5♥  
+Trick: 5♥   6♥   7♥   8♥  => Won by Charly
+
+**************
+** Round 16 **
+**************
+Charly played A♦  
+Dave played Q♦  
+Alice played 2♥  
+Bob played 3♣  
+Trick: 2♥   Q♦   A♦   3♣  => Won by Dave
+
+**************
+** Round 17 **
+**************
+Dave played 8T  
+Alice played Q♥  
+Bob played 4♥  
+Charly played K♥  
+Trick: 4♥   Q♥   K♥   8T  => Won by Dave
+
+**************
+** Round 18 **
+**************
+Dave played 5♠  
+Alice played 9♥  
+Bob played 10♥  
+tarot: Beginner.cpp:26: virtual std::shared_ptr<Card> Beginner::playCard(const std::vector<std::shared_ptr<Card> >&) const: Assertion `!cardsCanPlay.empty()' failed.
+Abandon (core dumped)
+
+
+/////////////////////////////////////////////////////
+
+
