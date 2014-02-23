@@ -21,13 +21,14 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <cstring>
 
 #include <Game.hpp>
 #include <getInt.hpp>
 
 using namespace std;
 
-int main()
+int main( int argc, char **argv )
 {
   srand ( unsigned ( time(0) ) );
 
@@ -35,15 +36,23 @@ int main()
   string playerName;
   int nberPlayers;
 
-  cout << "Please enter your name." << endl;
-  getline( cin, playerName );
-  nberPlayers = getInt( "Please enter the number of players.\n" );
-
-  if( playerName.compare("") != 0 )
-    game = new Game( nberPlayers, playerName );
+  if( strcmp( argv[1], "--auto") == 0 )
+  {
+    nberPlayers = 4;
+    game = new Game( nberPlayers, playerName, true );
+  }
   else
-    game = new Game( nberPlayers );
+  {
+    cout << "Please enter your name." << endl;
+    getline( cin, playerName );
+    nberPlayers = getInt( "Please enter the number of players.\n" );
 
+    if( playerName.compare("") != 0 )
+      game = new Game( nberPlayers, playerName );
+    else
+      game = new Game( nberPlayers );
+  }
+  
   //game->showDeck();
   game->shuffleDeck();
   //game->showDeck();

@@ -21,7 +21,7 @@
 
 #include <Game.hpp>
 
-Game::Game( int& numberPlayers, const string yourName )
+Game::Game( int& numberPlayers, const string yourName, const bool automatic )
   : indexToBid(-1), indexBidder(0), chelemAnnounced(false), addDogAtTheEnd(false), toSwap(false), foolGiver(nullptr), foolReceiver(nullptr)
 {
   vector<string> names;
@@ -50,16 +50,21 @@ Game::Game( int& numberPlayers, const string yourName )
     names.push_back("Charly");
     numberPlayers = 4;
   }
+  
+  if( !automatic )
+    players.push_back( make_shared<Human>( yourName ) );
 
-  players.push_back( make_shared<Human>( yourName ) );
   players.push_back( make_shared<AI>( "Alice", names ) );
   players.push_back( make_shared<AI>( "Bob", names ) );
+
+  if( automatic )
+    names.push_back("Dave");
   
   if( numberPlayers >= 4)
   {
 
     players.push_back( make_shared<AI>( "Charly", names ) );
-    if( numberPlayers == 5)
+    if( numberPlayers == 5 || automatic )
       players.push_back( make_shared<AI>( "Dave", names ) );
   }
 

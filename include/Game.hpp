@@ -52,7 +52,7 @@ public:
     \param numberPlayers The number of players.
     \param yourName The human player name.
   */
-  Game( int& numberPlayers, const string yourName = "You" );
+  Game( int& numberPlayers, const string yourName = "You", const bool automatic = false );
 
   //! Creates a new game.
   void newGame();
