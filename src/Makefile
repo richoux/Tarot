@@ -1,4 +1,4 @@
-CXX = g++
+# CXX = g++
 CXXFLAGS = -std=c++0x -O3 -W -Wall -Wno-sign-compare -I../include -c 
 CPP_FILES = main.cpp AI.cpp Card.cpp Deck.cpp\
  Game.cpp Human.cpp Player.cpp Team.cpp Trick.cpp\
