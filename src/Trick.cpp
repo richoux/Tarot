@@ -52,7 +52,7 @@ void Trick::setCard( shared_ptr<Player> player, shared_ptr<Card> card )
     foolPlayer = player;
   else
   {
-    if( leader == nullptr || *card > *trickCards[leader] )
+    if( leader == nullptr || ( *card > *trickCards[leader] && ( card->getSuit() == trickCards[leader]->getSuit() || card->isTrump() )  ) )
       leader = player;
       
     if( card->isTrump() && ( greaterTrump == nullptr || *card > *greaterTrump ) )
