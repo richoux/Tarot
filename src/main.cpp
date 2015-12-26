@@ -61,7 +61,13 @@ int main( int argc, char **argv )
 
   if( argc >= 3 && strcmp( argv[1], "--auto") == 0 && strcmp( argv[2], "--debug") == 0 )
   {
-    for( int i = 0 ; i < 1000 ; ++i )
+    int loop;
+    if( argc == 3 )
+      loop = 1000;
+    else
+      loop = atoi( argv[3] );
+    
+    for( int i = 0 ; i < loop ; ++i )
     {
       cout << "***********" << endl;
       cout << "*** " << i << " ***" << endl;

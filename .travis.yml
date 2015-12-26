@@ -45,6 +45,6 @@ script:
   - $CXX --version
   - make debug
   # - for i in `seq 1 50`; do bin/tarot --auto; echo @@@@@@@@@@@@@@@@@@@; done
-  - bin/tarot --auto --debug
+  - bin/tarot --auto --debug 50
   - valgrind --leak-check=full --show-reachable=yes bin/tarot --auto
   - valgrind --tool=cachegrind bin/tarot --auto
