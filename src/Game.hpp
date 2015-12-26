@@ -141,6 +141,7 @@ private:
   bool				addDogAtTheEnd;		//!< A boolean set to true iff the defender must keep the dog for them (in the case of a "guard against").
 
   bool				toSwap;			//!< True iff one must retakes its Fool card.
+  bool				botsOnly;		//!< For debugging purpose. True means bots are playing together. False allows printing human player cards at the beginning of the game.
   shared_ptr<Player>		foolGiver;		//!< The player from who one must retake the Fool card.
   shared_ptr<Player>		foolReceiver;		//!< The former owner of the Fool card.
 };

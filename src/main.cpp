@@ -49,8 +49,10 @@ int main( int argc, char **argv )
   {
     cout << "Please enter your name." << endl;
     getline( cin, playerName );
-    nberPlayers = getInt( "Please enter the number of players.\n" );
-
+    do {
+      nberPlayers = getInt( "Please enter the number of players: 3, 4 or 5.\n" );
+    } while( nberPlayers < 3 || nberPlayers > 5 );
+    
     if( playerName.compare("") != 0 )
       game = new Game( nberPlayers, playerName );
     else

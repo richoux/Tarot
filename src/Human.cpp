@@ -20,6 +20,8 @@
  */
 
 #include <Human.hpp>
+#include <algorithm>
+#include <iterator>
 
 Human::Human( const string& name ) : Player( name ) {}
 
@@ -120,11 +122,53 @@ Biddings Human::bid( const Biddings bestBid, const bool chelemAnnounced ) const
 set< shared_ptr<Card> >	Human::makeEcart( const int dogSize )
 {
   set< shared_ptr<Card> > ecart;
-
+  vector< int > mapIndex( initialCards.size() );
+    
   cout << "Make your ecart." << endl;
+
+  unsigned int cardCounter = 0;
+
+    // show trumps
+  for( shared_ptr<Card> card : trumps )
+  {
+    mapIndex[ cardCounter ] = distance( initialCards.begin(), find( initialCards.begin(), initialCards.end(), card ) );
+    cout << "(" << cardCounter++ << ") " << *card << " | ";
+  }
+
+  // show fool
+  if( fool.get() != nullptr )
+  {
+    mapIndex[ cardCounter ] = distance( initialCards.begin(), find( initialCards.begin(), initialCards.end(), fool ) );
+    cout << "(" << cardCounter++ << ") " << *fool << " | ";
+  }
   
-  for( unsigned int i = 0; i < getInitialCards().size(); i++ )
-    cout << "(" << i << ") " << *getInitialCards()[i] << " | ";
+  // show hearts
+  for( shared_ptr<Card> card : hearts )
+  {
+    mapIndex[ cardCounter ] = distance( initialCards.begin(), find( initialCards.begin(), initialCards.end(), card ) );
+    cout << "(" << cardCounter++ << ") " << *card << " | ";
+  }
+  
+  // show spades
+  for( shared_ptr<Card> card : spades )
+  {
+    mapIndex[ cardCounter ] = distance( initialCards.begin(), find( initialCards.begin(), initialCards.end(), card ) );
+    cout << "(" << cardCounter++ << ") " << *card << " | ";
+  }
+  
+  // show diamonds
+  for( shared_ptr<Card> card : diamonds )
+  {
+    mapIndex[ cardCounter ] = distance( initialCards.begin(), find( initialCards.begin(), initialCards.end(), card ) );
+    cout << "(" << cardCounter++ << ") " << *card << " | ";
+  }
+  
+  // show clubs
+  for( shared_ptr<Card> card : clubs )
+  {
+    mapIndex[ cardCounter ] = distance( initialCards.begin(), find( initialCards.begin(), initialCards.end(), card ) );
+    cout << "(" << cardCounter++ << ") " << *card << " | ";
+  }
 
   int index;
 
@@ -134,12 +178,12 @@ set< shared_ptr<Card> >	Human::makeEcart( const int dogSize )
     {
       index = getInt( "\nSelect a card: " );
     }
-    while( index < 0 || index >= getInitialCards().size() );
+    while( index < 0 || index >= initialCards.size() );
       
-    if( ecart.find( getInitialCards()[index] ) == ecart.end() )
-      ecart.insert( getInitialCards()[index] );
+    if( ecart.find( initialCards[ mapIndex[ index ] ] ) == ecart.end() )
+      ecart.insert( initialCards[ mapIndex[ index ] ] );
     else
-      cout << "You already choose this card. Please select a new one." << endl;
+      cout << "You already chose that card. Please select another one." << endl;
   }
 
   for( auto card : ecart)

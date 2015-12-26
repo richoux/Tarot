@@ -22,7 +22,7 @@
 #include <Game.hpp>
 
 Game::Game( int& numberPlayers, const string yourName, const bool automatic )
-  : indexToBid(-1), indexBidder(0), chelemAnnounced(false), addDogAtTheEnd(false), toSwap(false), foolGiver(nullptr), foolReceiver(nullptr)
+  : indexToBid(-1), indexBidder(0), chelemAnnounced(false), addDogAtTheEnd(false), toSwap(false), botsOnly(automatic), foolGiver(nullptr), foolReceiver(nullptr)
 {
   vector<string> names;
   names.push_back("Alice");
@@ -106,10 +106,20 @@ Team Game::play()
 {
   shared_ptr<Card> refCard; 
   dealCards();
-  showPlayersCards();
+
+  if( botsOnly )
+    showPlayersCards();
+  // else
+  // {
+  //   // If not botOnly, Player[0] is human
+  //   cout << players[0]->name << ": ";
+  //   players[0]->showCards();
+  //   cout << endl;
+  // }
+  
   takeBiddings();
   takeDog();
-  showPlayersCards();
+  //showPlayersCards();
 
   // takers.members[next->name] = next;
   cout << "Taker: " << takers << endl;
@@ -215,6 +225,7 @@ void Game::showPlayersCards() const
     cout << endl;
   }
 }
+
 void Game::shuffleDeck()
 {
   for( unsigned int i = 0; i < players.size(); ++i )
