@@ -125,6 +125,12 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
   // We can always play the Fool if we have it
   if( fool != nullptr )
     returnCards.push_back( fool );
+
+  if( returnCards.empty() )
+  {
+    cout << "Empty valid cards set!" << endl;
+    showCards();
+  }
   
   return returnCards;
 }

@@ -36,7 +36,7 @@ int main( int argc, char **argv )
   string playerName;
   int nberPlayers;
 
-  if( strcmp( argv[1], "--auto") == 0 )
+  if( argc >= 2 && strcmp( argv[1], "--auto") == 0 )
   {
     nberPlayers = 4;
     game = new Game( nberPlayers, playerName, true );
@@ -45,7 +45,7 @@ int main( int argc, char **argv )
     game->showDeck();
     game->showPlayersCards();
   }
-  else
+  else if( argc == 1 )
   {
     cout << "Please enter your name." << endl;
     getline( cin, playerName );
@@ -58,11 +58,29 @@ int main( int argc, char **argv )
 
     game->shuffleDeck();
   }
-  
-  Team winners = game->play();
-  
-  game->printScores();  
-  cout << "Winners: " << winners << endl;
 
+  if( argc >= 3 && strcmp( argv[1], "--auto") == 0 && strcmp( argv[2], "--debug") == 0 )
+  {
+    for( int i = 0 ; i < 1000 ; ++i )
+    {
+      cout << "***********" << endl;
+      cout << "*** " << i << " ***" << endl;
+      cout << "***********" << endl;
+
+      Team winners = game->play();
+  
+      game->printScores();  
+      cout << "Winners: " << winners << endl;
+
+      game->newGame();
+    }
+  }
+  else
+  {
+    Team winners = game->play();
+    
+    game->printScores();  
+    cout << "Winners: " << winners << endl;
+  }
   delete game;
 }

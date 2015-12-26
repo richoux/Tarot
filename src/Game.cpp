@@ -101,8 +101,10 @@ Team Game::play()
 {
   shared_ptr<Card> refCard; 
   dealCards();
+  showPlayersCards();
   takeBiddings();
   takeDog();
+  showPlayersCards();
 
   // takers.members[next->name] = next;
   cout << "Taker: " << takers << endl;
@@ -221,6 +223,7 @@ void Game::dealCards()
   int newIndex;
 
   // choose dogSize number of cards to compose the dog.
+
   do
   {
     newIndex = rand() % 78;
@@ -228,29 +231,26 @@ void Game::dealCards()
   }
   while( indexDog.size() < dogSize );
 
-  // deal cards to players and the dog
+  // deal cards to the dog
+  for( auto& dogCardIndex : indexDog )
+    dog.insert( deck.cards[ dogCardIndex ] );
+  
+  // deal cards to players
   for( int round = 0; round < cardsPerPlayer; round += consecutiveDealing )
-    for( unsigned int gamers = 0; gamers < players.size(); gamers++ )
+    for( unsigned int gamers = 0; gamers < players.size(); ++gamers )
     {
-      for( int card = 0; card < consecutiveDealing; card++ )
+      for( int card = 0 ; card < consecutiveDealing ; )
       {
-	// card for the dog
-	if( indexDog.find( indexCard ) != indexDog.end() )
+	if( indexDog.find( indexCard ) == indexDog.end() )
 	{
-	  dog.insert( deck.cards[ indexCard++ ] );
-	  card--;
+	  next->addCard( deck.cards[ indexCard ] );
+	  ++card;
 	}
-	// card for a player
-	else
-	  next->addCard( deck.cards[ indexCard++ ] );
+	
+	++indexCard;
       }
       nextPlayer();
     }
-  
-  cout << "Dog: ";
-  for( shared_ptr<Card> card : dog )
-    cout << *card;
-  cout << endl;
 }
 
 void Game::takeBiddings()

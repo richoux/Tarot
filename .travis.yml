@@ -43,5 +43,6 @@ install:
 script: 
   - $CXX --version
   - make debug
-  - for i in `seq 1 50`; do bin/tarot --auto; echo @@@@@@@@@@@@@@@@@@@; done
+  # - for i in `seq 1 50`; do bin/tarot --auto; echo @@@@@@@@@@@@@@@@@@@; done
+  - bin/tarot --auto --debug
   - valgrind --leak-check=full --show-reachable=yes bin/tarot --auto
