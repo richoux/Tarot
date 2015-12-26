@@ -76,8 +76,10 @@ Game::Game( int& numberPlayers, const string yourName, const bool automatic )
 void Game::newGame()
 {
   for( shared_ptr<Player> player : players )
-    player->newGame();
-
+  {
+    cardsPlayer[player->name].clear();
+    player->newGame();    
+  }
   while( !history.empty() )
     history.pop();
 
@@ -397,7 +399,7 @@ void Game::addWonCards( const string& name, const set<shared_ptr<Card> >& cards 
 
 void Game::swapFool()
 {
-  shared_ptr<Card> fromReceiver;
+  shared_ptr<Card> fromReceiver = nullptr;
   shared_ptr<Card> theFool;
 
   // for( auto player : players )
@@ -424,10 +426,13 @@ void Game::swapFool()
       break;
     }
   
-  // swap
-  cardsPlayer[foolReceiver->name].erase( fromReceiver );
-  cardsPlayer[foolGiver->name].erase( theFool );
-  
-  cardsPlayer[foolReceiver->name].insert( theFool );
-  cardsPlayer[foolGiver->name].insert( fromReceiver );
+  // swap if Receiver has something to swap
+  if( fromReceiver )
+  {
+    cardsPlayer[foolReceiver->name].erase( fromReceiver );
+    cardsPlayer[foolGiver->name].erase( theFool );
+    
+    cardsPlayer[foolReceiver->name].insert( theFool );
+    cardsPlayer[foolGiver->name].insert( fromReceiver );
+  }
 }

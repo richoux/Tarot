@@ -21,10 +21,11 @@
 
 #include <Team.hpp>
 
-void Team::newGame() const
+void Team::newGame() 
 {
-  for( auto it = members.begin(); it != members.end(); ++it )
-    it->second->newGame();
+  // for( auto it = members.begin(); it != members.end(); ++it )
+  //   it->second->newGame();
+  members.clear();
 }
 
 bool Team::operator<( const Team &team ) const

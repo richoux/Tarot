@@ -5,7 +5,7 @@ compiler:
   - gcc
 
 before_install:
-  - sudo apt-get install valgrind
+  - sudo apt-get install -qq valgrind
 
   # g++4.8.1
   - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
@@ -46,3 +46,4 @@ script:
   # - for i in `seq 1 50`; do bin/tarot --auto; echo @@@@@@@@@@@@@@@@@@@; done
   - bin/tarot --auto --debug
   - valgrind --leak-check=full --show-reachable=yes bin/tarot --auto
+  - valgrind --tool=cachegrind bin/tarot --auto

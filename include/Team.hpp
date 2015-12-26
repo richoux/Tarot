@@ -36,7 +36,7 @@ class Team
 
 public:
   //! To prepare a new game.
-  void newGame() const;
+  void newGame();
 
   //! To compare two teams regarding their score.
   bool operator>( const Team& t ) const;
