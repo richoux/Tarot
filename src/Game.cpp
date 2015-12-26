@@ -80,6 +80,9 @@ void Game::newGame()
     cardsPlayer[player->name].clear();
     player->newGame();    
   }
+
+  dog.clear();
+  
   while( !history.empty() )
     history.pop();
 
