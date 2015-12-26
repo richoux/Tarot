@@ -142,6 +142,9 @@ set< shared_ptr<Card> >	Human::makeEcart( const int dogSize )
       cout << "You already choose this card. Please select a new one." << endl;
   }
 
+  for( auto card : ecart)
+    delCard( card );
+
   return ecart;
 }
 
