@@ -1,60 +1,56 @@
-\hypertarget{classAI}{\section{\-A\-I \-Class \-Reference}
-\label{classAI}\index{\-A\-I@{\-A\-I}}
+\hypertarget{classAI}{\section{A\-I Class Reference}
+\label{classAI}\index{A\-I@{A\-I}}
 }
 
 
-\-This class defines \hyperlink{classAI}{\-A\-I} players.  
+This class defines \hyperlink{classAI}{A\-I} players.  
 
 
 
 
-{\ttfamily \#include $<$\-A\-I.\-hpp$>$}
+{\ttfamily \#include $<$A\-I.\-hpp$>$}
 
-\-Inheritance diagram for \-A\-I\-:\begin{figure}[H]
+Inheritance diagram for A\-I\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{classAI}
 \end{center}
 \end{figure}
-\subsection*{\-Classes}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-class {\bfseries \-Counting}
-\begin{DoxyCompactList}\small\item\em \-Inner class for counting cards. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Public \-Member \-Functions}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{classAI_a059fcf3ea09f908bca75567937f7e8a7}{\-A\-I} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}, const vector$<$ string $>$ \&known\-Partners)
-\begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{\-A\-I} constructor. \end{DoxyCompactList}\item 
+\hyperlink{classAI_a059fcf3ea09f908bca75567937f7e8a7}{A\-I} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}, const vector$<$ string $>$ \&known\-Partners)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAI}{A\-I} constructor. \end{DoxyCompactList}\item 
 bool \hyperlink{classAI_aec78eb8010bdcd99c899aaa7af79d9ea}{is\-Opponent} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}) const 
-\begin{DoxyCompactList}\small\item\em \-To know if someone is your opponent. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em To know if someone is your opponent. \end{DoxyCompactList}\item 
 bool \hyperlink{classAI_a0cd8c8e4a646c6c1ae51c7812eb1194e}{is\-Partner} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}) const 
-\begin{DoxyCompactList}\small\item\em \-To know if someone is your partner. \end{DoxyCompactList}\item 
-bool \hyperlink{classAI_a01cd7c1760412dde024605226591328c}{have\-Suit} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}, const \-Suits suit) const 
-\begin{DoxyCompactList}\small\item\em \-Given a \hyperlink{classPlayer}{\-Player} p, does p have at least one card on the asked suit? \end{DoxyCompactList}\item 
-bool \hyperlink{classAI_affad35d086fe81539b07a5626b19c1bb}{opponents\-Have\-Suit} (const \-Suits suit) const 
-\begin{DoxyCompactList}\small\item\em \-Do opponents have at least one card on the asked suit? \end{DoxyCompactList}\item 
-shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ \hyperlink{classAI_a3f5b2888e03634db701c66f82a4f03a8}{play\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ reference\-Card, shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ high\-Trump)
-\begin{DoxyCompactList}\small\item\em \-Choose what card one plays, given the first card and the highest trump of the trick. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em To know if someone is your partner. \end{DoxyCompactList}\item 
+bool \hyperlink{classAI_a01cd7c1760412dde024605226591328c}{have\-Suit} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}, const Suits suit) const 
+\begin{DoxyCompactList}\small\item\em Given a \hyperlink{classPlayer}{Player} p, does p have at least one card on the asked suit? \end{DoxyCompactList}\item 
+bool \hyperlink{classAI_affad35d086fe81539b07a5626b19c1bb}{opponents\-Have\-Suit} (const Suits suit) const 
+\begin{DoxyCompactList}\small\item\em Do opponents have at least one card on the asked suit? \end{DoxyCompactList}\item 
+shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ \hyperlink{classAI_a3f5b2888e03634db701c66f82a4f03a8}{play\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ reference\-Card, shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ high\-Trump)
+\begin{DoxyCompactList}\small\item\em Choose what card one plays, given the first card and the highest trump of the trick. \end{DoxyCompactList}\item 
 void \hyperlink{classAI_a6cda26d3bf7238b1a7ea3725bf4aabb7}{new\-Game} ()
-\begin{DoxyCompactList}\small\item\em \-Must be called when starting a new game. \end{DoxyCompactList}\item 
-\-Biddings \hyperlink{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{bid} (const \-Biddings best\-Bid, const bool chelem\-Announced) const 
-\begin{DoxyCompactList}\small\item\em \-Called to decide if one proposes a bid or not, and if any, what bid. \end{DoxyCompactList}\item 
-set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classAI_ad12a3efd1da4acc6e1855bd7262779e3}{make\-Ecart} (const int dog\-Size)
-\begin{DoxyCompactList}\small\item\em \-To make the ecart once one takes the dog. \end{DoxyCompactList}\item 
-void \hyperlink{classAI_a19cae044bb7f221819f61b017b6a7ffe}{set\-Difficulty} (shared\-\_\-ptr$<$ \hyperlink{classStratDiff}{\-Strat\-Diff} $>$ diff)
-\begin{DoxyCompactList}\small\item\em \-Inline function to set the difficulty (set a \-Strategy concrete class). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Must be called when starting a new game. \end{DoxyCompactList}\item 
+Biddings \hyperlink{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{bid} (const Biddings best\-Bid, const bool chelem\-Announced) const 
+\begin{DoxyCompactList}\small\item\em Called to decide if one proposes a bid or not, and if any, what bid. \end{DoxyCompactList}\item 
+set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classAI_ad12a3efd1da4acc6e1855bd7262779e3}{make\-Ecart} (const int dog\-Size)
+\begin{DoxyCompactList}\small\item\em To make the ecart once one takes the dog. \end{DoxyCompactList}\item 
+void \hyperlink{classAI_a19cae044bb7f221819f61b017b6a7ffe}{set\-Difficulty} (shared\-\_\-ptr$<$ \hyperlink{classStratDiff}{Strat\-Diff} $>$ diff)
+\begin{DoxyCompactList}\small\item\em Inline function to set the difficulty (set a Strategy concrete class). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
-\subsection{\-Detailed \-Description}
-\-This class defines \hyperlink{classAI}{\-A\-I} players. 
+\subsection{Detailed Description}
+This class defines \hyperlink{classAI}{A\-I} players. 
 
-\-The class \hyperlink{classAI}{\-A\-I} extends \hyperlink{classPlayer}{\-Player} and shows an interface for actions like play\-Card, make a bid, etc. \-Actions' implementation is decoupled from the class with a \-Strategy pattern, where concret classes correspond to a level of difficulty. 
+The class \hyperlink{classAI}{A\-I} extends \hyperlink{classPlayer}{Player} and shows an interface for actions like play\-Card, make a bid, etc. Actions' implementation is decoupled from the class with a Strategy pattern, where concret classes correspond to a level of difficulty. 
 
-\subsection{\-Constructor \& \-Destructor \-Documentation}
-\hypertarget{classAI_a059fcf3ea09f908bca75567937f7e8a7}{\index{\-A\-I@{\-A\-I}!\-A\-I@{\-A\-I}}
-\index{\-A\-I@{\-A\-I}!AI@{\-A\-I}}
-\subsubsection[{\-A\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-A\-I\-::\-A\-I} (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAI_a059fcf3ea09f908bca75567937f7e8a7}{\index{A\-I@{A\-I}!A\-I@{A\-I}}
+\index{A\-I@{A\-I}!AI@{A\-I}}
+\subsubsection[{A\-I}]{\setlength{\rightskip}{0pt plus 5cm}A\-I\-::\-A\-I (
 \begin{DoxyParamCaption}
 \item[{const string \&}]{name, }
 \item[{const vector$<$ string $>$ \&}]{known\-Partners}
@@ -62,206 +58,206 @@ void \hyperlink{classAI_a19cae044bb7f221819f61b017b6a7ffe}{set\-Difficulty} (sha
 )}}\label{classAI_a059fcf3ea09f908bca75567937f7e8a7}
 
 
-\hyperlink{classAI}{\-A\-I} constructor. 
+\hyperlink{classAI}{A\-I} constructor. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em name} & \-A string for the \hyperlink{classAI}{\-A\-I} name. \\
+\begin{DoxyParams}{Parameters}
+{\em name} & A string for the \hyperlink{classAI}{A\-I} name. \\
 \hline
-{\em known\-Partners} & \-A vector of strings composed of the name of its partners. \\
+{\em known\-Partners} & A vector of strings composed of the name of its partners. \\
 \hline
 \end{DoxyParams}
 
 
-\subsection{\-Member \-Function \-Documentation}
-\hypertarget{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{\index{\-A\-I@{\-A\-I}!bid@{bid}}
-\index{bid@{bid}!AI@{\-A\-I}}
-\subsubsection[{bid}]{\setlength{\rightskip}{0pt plus 5cm}\-Biddings {\bf \-A\-I\-::bid} (
+\subsection{Member Function Documentation}
+\hypertarget{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{\index{A\-I@{A\-I}!bid@{bid}}
+\index{bid@{bid}!AI@{A\-I}}
+\subsubsection[{bid}]{\setlength{\rightskip}{0pt plus 5cm}Biddings A\-I\-::bid (
 \begin{DoxyParamCaption}
-\item[{const \-Biddings}]{best\-Bid, }
+\item[{const Biddings}]{best\-Bid, }
 \item[{const bool}]{chelem\-Announced}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classAI_a9e2fd7ff440ada8339135c23b73e1a96}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAI_a9e2fd7ff440ada8339135c23b73e1a96}
 
 
-\-Called to decide if one proposes a bid or not, and if any, what bid. 
+Called to decide if one proposes a bid or not, and if any, what bid. 
 
-bid is delegated to the difficulty \-Strategy. 
-\begin{DoxyParams}{\-Parameters}
-{\em best\-Bid} & \-The best bid proposed so far. \\
+bid is delegated to the difficulty Strategy. 
+\begin{DoxyParams}{Parameters}
+{\em best\-Bid} & The best bid proposed so far. \\
 \hline
-{\em chelem\-Announced} & \-A \-Boolean to know if someone has declared a chelem. \\
+{\em chelem\-Announced} & A Boolean to know if someone has declared a chelem. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-Our bid (\-Biddings\-::none if one passes). 
+\begin{DoxyReturn}{Returns}
+Our bid (Biddings\-::none if one passes). 
 \end{DoxyReturn}
 
 
-\-Implements \hyperlink{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{\-Player}.
+Implements \hyperlink{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{Player}.
 
-\hypertarget{classAI_a01cd7c1760412dde024605226591328c}{\index{\-A\-I@{\-A\-I}!have\-Suit@{have\-Suit}}
-\index{have\-Suit@{have\-Suit}!AI@{\-A\-I}}
-\subsubsection[{have\-Suit}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-A\-I\-::have\-Suit} (
+\hypertarget{classAI_a01cd7c1760412dde024605226591328c}{\index{A\-I@{A\-I}!have\-Suit@{have\-Suit}}
+\index{have\-Suit@{have\-Suit}!AI@{A\-I}}
+\subsubsection[{have\-Suit}]{\setlength{\rightskip}{0pt plus 5cm}bool A\-I\-::have\-Suit (
 \begin{DoxyParamCaption}
 \item[{const string \&}]{name, }
-\item[{const \-Suits}]{suit}
+\item[{const Suits}]{suit}
 \end{DoxyParamCaption}
 ) const}}\label{classAI_a01cd7c1760412dde024605226591328c}
 
 
-\-Given a \hyperlink{classPlayer}{\-Player} p, does p have at least one card on the asked suit? 
+Given a \hyperlink{classPlayer}{Player} p, does p have at least one card on the asked suit? 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em name} & \-The \hyperlink{classPlayer}{\-Player}'s name in string. \\
+\begin{DoxyParams}{Parameters}
+{\em name} & The \hyperlink{classPlayer}{Player}'s name in string. \\
 \hline
-{\em suit} & \-The asked suit. \\
+{\em suit} & The asked suit. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-False iff one is sure p does not have any cards of the asked suit. 
+\begin{DoxyReturn}{Returns}
+False iff one is sure p does not have any cards of the asked suit. 
 \end{DoxyReturn}
-\hypertarget{classAI_aec78eb8010bdcd99c899aaa7af79d9ea}{\index{\-A\-I@{\-A\-I}!is\-Opponent@{is\-Opponent}}
-\index{is\-Opponent@{is\-Opponent}!AI@{\-A\-I}}
-\subsubsection[{is\-Opponent}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-A\-I\-::is\-Opponent} (
+\hypertarget{classAI_aec78eb8010bdcd99c899aaa7af79d9ea}{\index{A\-I@{A\-I}!is\-Opponent@{is\-Opponent}}
+\index{is\-Opponent@{is\-Opponent}!AI@{A\-I}}
+\subsubsection[{is\-Opponent}]{\setlength{\rightskip}{0pt plus 5cm}bool A\-I\-::is\-Opponent (
 \begin{DoxyParamCaption}
 \item[{const string \&}]{name}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classAI_aec78eb8010bdcd99c899aaa7af79d9ea}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classAI_aec78eb8010bdcd99c899aaa7af79d9ea}
 
 
-\-To know if someone is your opponent. 
+To know if someone is your opponent. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em name} & \-The \hyperlink{classPlayer}{\-Player}'s name in string. \\
+\begin{DoxyParams}{Parameters}
+{\em name} & The \hyperlink{classPlayer}{Player}'s name in string. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-If the given \hyperlink{classPlayer}{\-Player} is an opponent or not. 
+\begin{DoxyReturn}{Returns}
+If the given \hyperlink{classPlayer}{Player} is an opponent or not. 
 \end{DoxyReturn}
-\hypertarget{classAI_a0cd8c8e4a646c6c1ae51c7812eb1194e}{\index{\-A\-I@{\-A\-I}!is\-Partner@{is\-Partner}}
-\index{is\-Partner@{is\-Partner}!AI@{\-A\-I}}
-\subsubsection[{is\-Partner}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-A\-I\-::is\-Partner} (
+\hypertarget{classAI_a0cd8c8e4a646c6c1ae51c7812eb1194e}{\index{A\-I@{A\-I}!is\-Partner@{is\-Partner}}
+\index{is\-Partner@{is\-Partner}!AI@{A\-I}}
+\subsubsection[{is\-Partner}]{\setlength{\rightskip}{0pt plus 5cm}bool A\-I\-::is\-Partner (
 \begin{DoxyParamCaption}
 \item[{const string \&}]{name}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classAI_a0cd8c8e4a646c6c1ae51c7812eb1194e}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classAI_a0cd8c8e4a646c6c1ae51c7812eb1194e}
 
 
-\-To know if someone is your partner. 
+To know if someone is your partner. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em name} & \-The \hyperlink{classPlayer}{\-Player}'s name in string. \\
+\begin{DoxyParams}{Parameters}
+{\em name} & The \hyperlink{classPlayer}{Player}'s name in string. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-If the given \hyperlink{classPlayer}{\-Player} is an partner or not. 
+\begin{DoxyReturn}{Returns}
+If the given \hyperlink{classPlayer}{Player} is an partner or not. 
 \end{DoxyReturn}
-\hypertarget{classAI_ad12a3efd1da4acc6e1855bd7262779e3}{\index{\-A\-I@{\-A\-I}!make\-Ecart@{make\-Ecart}}
-\index{make\-Ecart@{make\-Ecart}!AI@{\-A\-I}}
-\subsubsection[{make\-Ecart}]{\setlength{\rightskip}{0pt plus 5cm}set$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$ {\bf \-A\-I\-::make\-Ecart} (
+\hypertarget{classAI_ad12a3efd1da4acc6e1855bd7262779e3}{\index{A\-I@{A\-I}!make\-Ecart@{make\-Ecart}}
+\index{make\-Ecart@{make\-Ecart}!AI@{A\-I}}
+\subsubsection[{make\-Ecart}]{\setlength{\rightskip}{0pt plus 5cm}set$<$ shared\-\_\-ptr$<$ {\bf Card} $>$ $>$ A\-I\-::make\-Ecart (
 \begin{DoxyParamCaption}
 \item[{const int}]{dog\-Size}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classAI_ad12a3efd1da4acc6e1855bd7262779e3}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAI_ad12a3efd1da4acc6e1855bd7262779e3}
 
 
-\-To make the ecart once one takes the dog. 
+To make the ecart once one takes the dog. 
 
-make\-Ecart is delegated to the difficulty \-Strategy. 
-\begin{DoxyParams}{\-Parameters}
-{\em dog\-Size} & \-The number of card one must include into the ecart. \\
+make\-Ecart is delegated to the difficulty Strategy. 
+\begin{DoxyParams}{Parameters}
+{\em dog\-Size} & The number of card one must include into the ecart. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-A set of \hyperlink{classCard}{\-Card} pointers for the cards one places into the ecart. 
+\begin{DoxyReturn}{Returns}
+A set of \hyperlink{classCard}{Card} pointers for the cards one places into the ecart. 
 \end{DoxyReturn}
 
 
-\-Implements \hyperlink{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}{\-Player}.
+Implements \hyperlink{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}{Player}.
 
-\hypertarget{classAI_a6cda26d3bf7238b1a7ea3725bf4aabb7}{\index{\-A\-I@{\-A\-I}!new\-Game@{new\-Game}}
-\index{new\-Game@{new\-Game}!AI@{\-A\-I}}
-\subsubsection[{new\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-A\-I\-::new\-Game} (
+\hypertarget{classAI_a6cda26d3bf7238b1a7ea3725bf4aabb7}{\index{A\-I@{A\-I}!new\-Game@{new\-Game}}
+\index{new\-Game@{new\-Game}!AI@{A\-I}}
+\subsubsection[{new\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void A\-I\-::new\-Game (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classAI_a6cda26d3bf7238b1a7ea3725bf4aabb7}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAI_a6cda26d3bf7238b1a7ea3725bf4aabb7}
 
 
-\-Must be called when starting a new game. 
+Must be called when starting a new game. 
 
-\-Flush to zero some variables and pointers. 
+Flush to zero some variables and pointers. 
 
-\-Implements \hyperlink{classPlayer_a76a707ceb6f24b0a2a801434ee5a60ad}{\-Player}.
+Implements \hyperlink{classPlayer_a76a707ceb6f24b0a2a801434ee5a60ad}{Player}.
 
-\hypertarget{classAI_affad35d086fe81539b07a5626b19c1bb}{\index{\-A\-I@{\-A\-I}!opponents\-Have\-Suit@{opponents\-Have\-Suit}}
-\index{opponents\-Have\-Suit@{opponents\-Have\-Suit}!AI@{\-A\-I}}
-\subsubsection[{opponents\-Have\-Suit}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-A\-I\-::opponents\-Have\-Suit} (
+\hypertarget{classAI_affad35d086fe81539b07a5626b19c1bb}{\index{A\-I@{A\-I}!opponents\-Have\-Suit@{opponents\-Have\-Suit}}
+\index{opponents\-Have\-Suit@{opponents\-Have\-Suit}!AI@{A\-I}}
+\subsubsection[{opponents\-Have\-Suit}]{\setlength{\rightskip}{0pt plus 5cm}bool A\-I\-::opponents\-Have\-Suit (
 \begin{DoxyParamCaption}
-\item[{const \-Suits}]{suit}
+\item[{const Suits}]{suit}
 \end{DoxyParamCaption}
 ) const}}\label{classAI_affad35d086fe81539b07a5626b19c1bb}
 
 
-\-Do opponents have at least one card on the asked suit? 
+Do opponents have at least one card on the asked suit? 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em suit} & \-The asked suit. \\
+\begin{DoxyParams}{Parameters}
+{\em suit} & The asked suit. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-False iff one is sure no opponent player has a card of the asked suit. 
+\begin{DoxyReturn}{Returns}
+False iff one is sure no opponent player has a card of the asked suit. 
 \end{DoxyReturn}
-\hypertarget{classAI_a3f5b2888e03634db701c66f82a4f03a8}{\index{\-A\-I@{\-A\-I}!play\-Card@{play\-Card}}
-\index{play\-Card@{play\-Card}!AI@{\-A\-I}}
-\subsubsection[{play\-Card}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf \-Card} $>$ {\bf \-A\-I\-::play\-Card} (
+\hypertarget{classAI_a3f5b2888e03634db701c66f82a4f03a8}{\index{A\-I@{A\-I}!play\-Card@{play\-Card}}
+\index{play\-Card@{play\-Card}!AI@{A\-I}}
+\subsubsection[{play\-Card}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Card} $>$ A\-I\-::play\-Card (
 \begin{DoxyParamCaption}
-\item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{reference\-Card, }
-\item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{high\-Trump}
+\item[{shared\-\_\-ptr$<$ {\bf Card} $>$}]{reference\-Card, }
+\item[{shared\-\_\-ptr$<$ {\bf Card} $>$}]{high\-Trump}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classAI_a3f5b2888e03634db701c66f82a4f03a8}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAI_a3f5b2888e03634db701c66f82a4f03a8}
 
 
-\-Choose what card one plays, given the first card and the highest trump of the trick. 
+Choose what card one plays, given the first card and the highest trump of the trick. 
 
-play\-Card is delegated to the difficulty \-Strategy. 
-\begin{DoxyParams}{\-Parameters}
-{\em reference\-Card} & \-A \hyperlink{classCard}{\-Card} pointer of the first played card of the trick. \\
+play\-Card is delegated to the difficulty Strategy. 
+\begin{DoxyParams}{Parameters}
+{\em reference\-Card} & A \hyperlink{classCard}{Card} pointer of the first played card of the trick. \\
 \hline
-{\em high\-Trump} & \-A \hyperlink{classCard}{\-Card} pointer of the highest trump of the trick. \\
+{\em high\-Trump} & A \hyperlink{classCard}{Card} pointer of the highest trump of the trick. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-The card the \hyperlink{classAI}{\-A\-I} plays. 
+\begin{DoxyReturn}{Returns}
+The card the \hyperlink{classAI}{A\-I} plays. 
 \end{DoxyReturn}
 
 
-\-Implements \hyperlink{classPlayer_aeba090a124bfd9a3666d2d793439cae0}{\-Player}.
+Implements \hyperlink{classPlayer_aeba090a124bfd9a3666d2d793439cae0}{Player}.
 
-\hypertarget{classAI_a19cae044bb7f221819f61b017b6a7ffe}{\index{\-A\-I@{\-A\-I}!set\-Difficulty@{set\-Difficulty}}
-\index{set\-Difficulty@{set\-Difficulty}!AI@{\-A\-I}}
-\subsubsection[{set\-Difficulty}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-A\-I\-::set\-Difficulty} (
+\hypertarget{classAI_a19cae044bb7f221819f61b017b6a7ffe}{\index{A\-I@{A\-I}!set\-Difficulty@{set\-Difficulty}}
+\index{set\-Difficulty@{set\-Difficulty}!AI@{A\-I}}
+\subsubsection[{set\-Difficulty}]{\setlength{\rightskip}{0pt plus 5cm}void A\-I\-::set\-Difficulty (
 \begin{DoxyParamCaption}
-\item[{shared\-\_\-ptr$<$ {\bf \-Strat\-Diff} $>$}]{diff}
+\item[{shared\-\_\-ptr$<$ {\bf Strat\-Diff} $>$}]{diff}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classAI_a19cae044bb7f221819f61b017b6a7ffe}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classAI_a19cae044bb7f221819f61b017b6a7ffe}
 
 
-\-Inline function to set the difficulty (set a \-Strategy concrete class). 
+Inline function to set the difficulty (set a Strategy concrete class). 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em diff} & \-A pointer on the difficulty to set. \\
+\begin{DoxyParams}{Parameters}
+{\em diff} & A pointer on the difficulty to set. \\
 \hline
 \end{DoxyParams}
 
 
-\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-include/\-A\-I.\-hpp\item 
-src/\-A\-I.\-cpp\end{DoxyCompactItemize}
+include/A\-I.\-hpp\item 
+src/A\-I.\-cpp\end{DoxyCompactItemize}

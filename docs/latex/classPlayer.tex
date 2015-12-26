@@ -1,265 +1,265 @@
-\hypertarget{classPlayer}{\section{\-Player \-Class \-Reference}
-\label{classPlayer}\index{\-Player@{\-Player}}
+\hypertarget{classPlayer}{\section{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
 }
 
 
-\hyperlink{classPlayer}{\-Player} is an abstract class presenting a common interface for \hyperlink{classAI}{\-A\-I} and \hyperlink{classHuman}{\-Human} players.  
+\hyperlink{classPlayer}{Player} is an abstract class presenting a common interface for \hyperlink{classAI}{A\-I} and \hyperlink{classHuman}{Human} players.  
 
 
 
 
-{\ttfamily \#include $<$\-Player.\-hpp$>$}
+{\ttfamily \#include $<$Player.\-hpp$>$}
 
-\-Inheritance diagram for \-Player\-:\begin{figure}[H]
+Inheritance diagram for Player\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{classPlayer}
 \end{center}
 \end{figure}
-\subsection*{\-Classes}
+\subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structPlayer_1_1cardOrder}{card\-Order}
-\begin{DoxyCompactList}\small\item\em \-A structure to automatically fix an insert order into cards' sets. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactList}\small\item\em A structure to automatically fix an insert order into cards' sets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPlayer_a5a2790fccf10c30106370d910c96d317}{\-Player} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name})
-\begin{DoxyCompactList}\small\item\em \-The unique constructor of \hyperlink{classPlayer}{\-Player}. \end{DoxyCompactList}\item 
-virtual shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ \hyperlink{classPlayer_aeba090a124bfd9a3666d2d793439cae0}{play\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ reference\-Card, shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ high\-Trump)=0
+\hyperlink{classPlayer_a5a2790fccf10c30106370d910c96d317}{Player} (const string \&\hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name})
+\begin{DoxyCompactList}\small\item\em The unique constructor of \hyperlink{classPlayer}{Player}. \end{DoxyCompactList}\item 
+virtual shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ \hyperlink{classPlayer_aeba090a124bfd9a3666d2d793439cae0}{play\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ reference\-Card, shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ high\-Trump)=0
 \begin{DoxyCompactList}\small\item\em play\-Card is a pure virtual function returning the card the player chooses to play. \end{DoxyCompactList}\item 
 \hypertarget{classPlayer_a76a707ceb6f24b0a2a801434ee5a60ad}{virtual void \hyperlink{classPlayer_a76a707ceb6f24b0a2a801434ee5a60ad}{new\-Game} ()=0}\label{classPlayer_a76a707ceb6f24b0a2a801434ee5a60ad}
 
-\begin{DoxyCompactList}\small\item\em \-Pure virtual function to prepare the player for a new game. \end{DoxyCompactList}\item 
-virtual \-Biddings \hyperlink{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{bid} (const \-Biddings best\-Bid, const bool chelem\-Announced) const =0
-\begin{DoxyCompactList}\small\item\em \-Pure virtual function to make a choice for biddings. \end{DoxyCompactList}\item 
-virtual set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}{make\-Ecart} (const int dog\-Size)=0
-\begin{DoxyCompactList}\small\item\em \-Pure virtual function to make the ecart when the player is the best bidder. \end{DoxyCompactList}\item 
-\hypertarget{classPlayer_a5573dd91ddb6fa8874d5a7f7a186f186}{set$<$ \-Announcements $>$ \hyperlink{classPlayer_a5573dd91ddb6fa8874d5a7f7a186f186}{get\-Announced} () const }\label{classPlayer_a5573dd91ddb6fa8874d5a7f7a186f186}
+\begin{DoxyCompactList}\small\item\em Pure virtual function to prepare the player for a new game. \end{DoxyCompactList}\item 
+virtual Biddings \hyperlink{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{bid} (const Biddings best\-Bid, const bool chelem\-Announced) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to make a choice for biddings. \end{DoxyCompactList}\item 
+virtual set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}{make\-Ecart} (const int dog\-Size)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to make the ecart when the player is the best bidder. \end{DoxyCompactList}\item 
+\hypertarget{classPlayer_a5573dd91ddb6fa8874d5a7f7a186f186}{set$<$ Announcements $>$ \hyperlink{classPlayer_a5573dd91ddb6fa8874d5a7f7a186f186}{get\-Announced} () const }\label{classPlayer_a5573dd91ddb6fa8874d5a7f7a186f186}
 
-\begin{DoxyCompactList}\small\item\em \-Inline assessor to the set of announcements. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inline assessor to the set of announcements. \end{DoxyCompactList}\item 
 \hypertarget{classPlayer_a4dc51cf2a773556eb26f3d47c4274b0a}{int \hyperlink{classPlayer_a4dc51cf2a773556eb26f3d47c4274b0a}{get\-Number\-Oudlers} () const }\label{classPlayer_a4dc51cf2a773556eb26f3d47c4274b0a}
 
-\begin{DoxyCompactList}\small\item\em \-Inline assessor to the number of oudlers the player has with his/her initial hand. \end{DoxyCompactList}\item 
-\hypertarget{classPlayer_aab2cfa2ce2e7a3903ff99ac5c7ef8db6}{vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classPlayer_aab2cfa2ce2e7a3903ff99ac5c7ef8db6}{get\-Initial\-Cards} () const }\label{classPlayer_aab2cfa2ce2e7a3903ff99ac5c7ef8db6}
+\begin{DoxyCompactList}\small\item\em Inline assessor to the number of oudlers the player has with his/her initial hand. \end{DoxyCompactList}\item 
+\hypertarget{classPlayer_aab2cfa2ce2e7a3903ff99ac5c7ef8db6}{vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classPlayer_aab2cfa2ce2e7a3903ff99ac5c7ef8db6}{get\-Initial\-Cards} () const }\label{classPlayer_aab2cfa2ce2e7a3903ff99ac5c7ef8db6}
 
-\begin{DoxyCompactList}\small\item\em \-Inline assessor to the player's initial cards. \end{DoxyCompactList}\item 
-vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classPlayer_ab89873d894a8e4e7e67a16feba4bf116}{valid\-Cards} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ ref\-Card, shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ greater\-Trump)
-\begin{DoxyCompactList}\small\item\em \-Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick. \end{DoxyCompactList}\item 
-void \hyperlink{classPlayer_a7c7b8325247c91ef255ca493de9f35eb}{add\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ card)
-\begin{DoxyCompactList}\small\item\em \-Add a card among player's initial cards. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inline assessor to the player's initial cards. \end{DoxyCompactList}\item 
+vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classPlayer_ab89873d894a8e4e7e67a16feba4bf116}{valid\-Cards} (shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ ref\-Card, shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ greater\-Trump)
+\begin{DoxyCompactList}\small\item\em Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_a7c7b8325247c91ef255ca493de9f35eb}{add\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ card)
+\begin{DoxyCompactList}\small\item\em Add a card among player's initial cards. \end{DoxyCompactList}\item 
 \hypertarget{classPlayer_a5216f487067dd79371af457f4b8f1769}{void \hyperlink{classPlayer_a5216f487067dd79371af457f4b8f1769}{show\-Cards} () const }\label{classPlayer_a5216f487067dd79371af457f4b8f1769}
 
-\begin{DoxyCompactList}\small\item\em \-To print all player's cards in his/her current hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactList}\small\item\em To print all player's cards in his/her current hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{string \hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}}\label{classPlayer_acf0355128a99ee20ad9931b760fb2de1}
 
-\begin{DoxyCompactList}\small\item\em \-The player's name. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The player's name. \end{DoxyCompactList}\item 
 \hypertarget{classPlayer_a55f7b5b674245c2e09f3c191a54d3542}{double \hyperlink{classPlayer_a55f7b5b674245c2e09f3c191a54d3542}{score}}\label{classPlayer_a55f7b5b674245c2e09f3c191a54d3542}
 
-\begin{DoxyCompactList}\small\item\em \-The player's score. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactList}\small\item\em The player's score. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classPlayer_a82c40ddca5214bbc9cc204ae9b789ca7}{del\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ card)
-\begin{DoxyCompactList}\small\item\em \-To delete a card from the player's current hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Protected \-Attributes}
+void \hyperlink{classPlayer_a82c40ddca5214bbc9cc204ae9b789ca7}{del\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ card)
+\begin{DoxyCompactList}\small\item\em To delete a card from the player's current hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classPlayer_afab8e372cfef87440bc42168d5fa0f6a}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$\*
+\hypertarget{classPlayer_afab8e372cfef87440bc42168d5fa0f6a}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$\\*
 , \hyperlink{structPlayer_1_1cardOrder}{card\-Order} $>$ \hyperlink{classPlayer_afab8e372cfef87440bc42168d5fa0f6a}{hearts}}\label{classPlayer_afab8e372cfef87440bc42168d5fa0f6a}
 
-\begin{DoxyCompactList}\small\item\em \-The set of \-Hearts owned by the player. \end{DoxyCompactList}\item 
-\hypertarget{classPlayer_a89177ee8076c1a3411a74b2b1d68156c}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$\*
+\begin{DoxyCompactList}\small\item\em The set of Hearts owned by the player. \end{DoxyCompactList}\item 
+\hypertarget{classPlayer_a89177ee8076c1a3411a74b2b1d68156c}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$\\*
 , \hyperlink{structPlayer_1_1cardOrder}{card\-Order} $>$ \hyperlink{classPlayer_a89177ee8076c1a3411a74b2b1d68156c}{spades}}\label{classPlayer_a89177ee8076c1a3411a74b2b1d68156c}
 
-\begin{DoxyCompactList}\small\item\em \-The set of \-Spades owned by the player. \end{DoxyCompactList}\item 
-\hypertarget{classPlayer_a3ad0f1545e0653635eac5ced5c31dc0b}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$\*
+\begin{DoxyCompactList}\small\item\em The set of Spades owned by the player. \end{DoxyCompactList}\item 
+\hypertarget{classPlayer_a3ad0f1545e0653635eac5ced5c31dc0b}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$\\*
 , \hyperlink{structPlayer_1_1cardOrder}{card\-Order} $>$ \hyperlink{classPlayer_a3ad0f1545e0653635eac5ced5c31dc0b}{diamonds}}\label{classPlayer_a3ad0f1545e0653635eac5ced5c31dc0b}
 
-\begin{DoxyCompactList}\small\item\em \-The set of \-Diamonds owned by the player. \end{DoxyCompactList}\item 
-\hypertarget{classPlayer_ad3f3acdaf6ee318ba528e82e1c188820}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$\*
+\begin{DoxyCompactList}\small\item\em The set of Diamonds owned by the player. \end{DoxyCompactList}\item 
+\hypertarget{classPlayer_ad3f3acdaf6ee318ba528e82e1c188820}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$\\*
 , \hyperlink{structPlayer_1_1cardOrder}{card\-Order} $>$ \hyperlink{classPlayer_ad3f3acdaf6ee318ba528e82e1c188820}{clubs}}\label{classPlayer_ad3f3acdaf6ee318ba528e82e1c188820}
 
-\begin{DoxyCompactList}\small\item\em \-The set of \-Clubs owned by the player. \end{DoxyCompactList}\item 
-\hypertarget{classPlayer_a66b3455fc8c6685a78eb193a015a07a0}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$\*
+\begin{DoxyCompactList}\small\item\em The set of Clubs owned by the player. \end{DoxyCompactList}\item 
+\hypertarget{classPlayer_a66b3455fc8c6685a78eb193a015a07a0}{set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$\\*
 , \hyperlink{structPlayer_1_1cardOrder}{card\-Order} $>$ \hyperlink{classPlayer_a66b3455fc8c6685a78eb193a015a07a0}{trumps}}\label{classPlayer_a66b3455fc8c6685a78eb193a015a07a0}
 
-\begin{DoxyCompactList}\small\item\em \-The set of trumps owned by the player. \end{DoxyCompactList}\item 
-\hypertarget{classPlayer_a9dfead246bd18b99398c89777290a162}{shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ \hyperlink{classPlayer_a9dfead246bd18b99398c89777290a162}{fool}}\label{classPlayer_a9dfead246bd18b99398c89777290a162}
+\begin{DoxyCompactList}\small\item\em The set of trumps owned by the player. \end{DoxyCompactList}\item 
+\hypertarget{classPlayer_a9dfead246bd18b99398c89777290a162}{shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ \hyperlink{classPlayer_a9dfead246bd18b99398c89777290a162}{fool}}\label{classPlayer_a9dfead246bd18b99398c89777290a162}
 
-\begin{DoxyCompactList}\small\item\em \-The pointer toward the \-Fool, if owned by the player. \end{DoxyCompactList}\item 
-\hypertarget{classPlayer_aac0d154d58a07310ee23c3c763f2cfa9}{vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{\-Card} $>$ $>$ \hyperlink{classPlayer_aac0d154d58a07310ee23c3c763f2cfa9}{initial\-Cards}}\label{classPlayer_aac0d154d58a07310ee23c3c763f2cfa9}
+\begin{DoxyCompactList}\small\item\em The pointer toward the Fool, if owned by the player. \end{DoxyCompactList}\item 
+\hypertarget{classPlayer_aac0d154d58a07310ee23c3c763f2cfa9}{vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classPlayer_aac0d154d58a07310ee23c3c763f2cfa9}{initial\-Cards}}\label{classPlayer_aac0d154d58a07310ee23c3c763f2cfa9}
 
-\begin{DoxyCompactList}\small\item\em \-The vector of player's initial cards, from his/her starting hand. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The vector of player's initial cards, from his/her starting hand. \end{DoxyCompactList}\item 
 \hypertarget{classPlayer_a9f218c1ff377eaeb7a336156410f7386}{int \hyperlink{classPlayer_a9f218c1ff377eaeb7a336156410f7386}{number\-Oudlers}}\label{classPlayer_a9f218c1ff377eaeb7a336156410f7386}
 
-\begin{DoxyCompactList}\small\item\em \-The number of oudlers the player has among his/her initial cards. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The number of oudlers the player has among his/her initial cards. \end{DoxyCompactList}\item 
 \hypertarget{classPlayer_af625acf7f8ad267630c7e3bd50d2683b}{double \hyperlink{classPlayer_af625acf7f8ad267630c7e3bd50d2683b}{initial\-Points}}\label{classPlayer_af625acf7f8ad267630c7e3bd50d2683b}
 
-\begin{DoxyCompactList}\small\item\em \-The number of points the player has with his/her initial cards. \end{DoxyCompactList}\item 
-\hypertarget{classPlayer_a90efe0cf8930297c7d30805d19763b65}{set$<$ \-Announcements $>$ \hyperlink{classPlayer_a90efe0cf8930297c7d30805d19763b65}{announced}}\label{classPlayer_a90efe0cf8930297c7d30805d19763b65}
+\begin{DoxyCompactList}\small\item\em The number of points the player has with his/her initial cards. \end{DoxyCompactList}\item 
+\hypertarget{classPlayer_a90efe0cf8930297c7d30805d19763b65}{set$<$ Announcements $>$ \hyperlink{classPlayer_a90efe0cf8930297c7d30805d19763b65}{announced}}\label{classPlayer_a90efe0cf8930297c7d30805d19763b65}
 
-\begin{DoxyCompactList}\small\item\em \-The set of announcements (for what?). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The set of announcements (for what?). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{\-Detailed \-Description}
-\hyperlink{classPlayer}{\-Player} is an abstract class presenting a common interface for \hyperlink{classAI}{\-A\-I} and \hyperlink{classHuman}{\-Human} players. 
+\subsection{Detailed Description}
+\hyperlink{classPlayer}{Player} is an abstract class presenting a common interface for \hyperlink{classAI}{A\-I} and \hyperlink{classHuman}{Human} players. 
 
-\subsection{\-Constructor \& \-Destructor \-Documentation}
-\hypertarget{classPlayer_a5a2790fccf10c30106370d910c96d317}{\index{\-Player@{\-Player}!\-Player@{\-Player}}
-\index{\-Player@{\-Player}!Player@{\-Player}}
-\subsubsection[{\-Player}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Player\-::\-Player} (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlayer_a5a2790fccf10c30106370d910c96d317}{\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\-::\-Player (
 \begin{DoxyParamCaption}
 \item[{const string \&}]{name}
 \end{DoxyParamCaption}
 )}}\label{classPlayer_a5a2790fccf10c30106370d910c96d317}
 
 
-\-The unique constructor of \hyperlink{classPlayer}{\-Player}. 
+The unique constructor of \hyperlink{classPlayer}{Player}. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em name} & \-The player name. \\
+\begin{DoxyParams}{Parameters}
+{\em name} & The player name. \\
 \hline
 \end{DoxyParams}
 
 
-\subsection{\-Member \-Function \-Documentation}
-\hypertarget{classPlayer_a7c7b8325247c91ef255ca493de9f35eb}{\index{\-Player@{\-Player}!add\-Card@{add\-Card}}
-\index{add\-Card@{add\-Card}!Player@{\-Player}}
-\subsubsection[{add\-Card}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Player\-::add\-Card} (
+\subsection{Member Function Documentation}
+\hypertarget{classPlayer_a7c7b8325247c91ef255ca493de9f35eb}{\index{Player@{Player}!add\-Card@{add\-Card}}
+\index{add\-Card@{add\-Card}!Player@{Player}}
+\subsubsection[{add\-Card}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::add\-Card (
 \begin{DoxyParamCaption}
-\item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{card}
+\item[{shared\-\_\-ptr$<$ {\bf Card} $>$}]{card}
 \end{DoxyParamCaption}
 )}}\label{classPlayer_a7c7b8325247c91ef255ca493de9f35eb}
 
 
-\-Add a card among player's initial cards. 
+Add a card among player's initial cards. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em card} & \-The card to add. \\
+\begin{DoxyParams}{Parameters}
+{\em card} & The card to add. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{\index{\-Player@{\-Player}!bid@{bid}}
-\index{bid@{bid}!Player@{\-Player}}
-\subsubsection[{bid}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Biddings {\bf \-Player\-::bid} (
+\hypertarget{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{\index{Player@{Player}!bid@{bid}}
+\index{bid@{bid}!Player@{Player}}
+\subsubsection[{bid}]{\setlength{\rightskip}{0pt plus 5cm}virtual Biddings Player\-::bid (
 \begin{DoxyParamCaption}
-\item[{const \-Biddings}]{best\-Bid, }
+\item[{const Biddings}]{best\-Bid, }
 \item[{const bool}]{chelem\-Announced}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}
 
 
-\-Pure virtual function to make a choice for biddings. 
+Pure virtual function to make a choice for biddings. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em best\-Bid} & \-The best bid proposed so far. \\
+\begin{DoxyParams}{Parameters}
+{\em best\-Bid} & The best bid proposed so far. \\
 \hline
-{\em chelem\-Announced} & \-A \-Boolean to know if someone has declared a chelem. \\
+{\em chelem\-Announced} & A Boolean to know if someone has declared a chelem. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-The chosen bid (\-Biddings\-::none if one passes). 
+\begin{DoxyReturn}{Returns}
+The chosen bid (Biddings\-::none if one passes). 
 \end{DoxyReturn}
 
 
-\-Implemented in \hyperlink{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{\-A\-I}, and \hyperlink{classHuman_a424bc9179b7036f22a694329b5f6fedf}{\-Human}.
+Implemented in \hyperlink{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{A\-I}, and \hyperlink{classHuman_a424bc9179b7036f22a694329b5f6fedf}{Human}.
 
-\hypertarget{classPlayer_a82c40ddca5214bbc9cc204ae9b789ca7}{\index{\-Player@{\-Player}!del\-Card@{del\-Card}}
-\index{del\-Card@{del\-Card}!Player@{\-Player}}
-\subsubsection[{del\-Card}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Player\-::del\-Card} (
+\hypertarget{classPlayer_a82c40ddca5214bbc9cc204ae9b789ca7}{\index{Player@{Player}!del\-Card@{del\-Card}}
+\index{del\-Card@{del\-Card}!Player@{Player}}
+\subsubsection[{del\-Card}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::del\-Card (
 \begin{DoxyParamCaption}
-\item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{card}
+\item[{shared\-\_\-ptr$<$ {\bf Card} $>$}]{card}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classPlayer_a82c40ddca5214bbc9cc204ae9b789ca7}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPlayer_a82c40ddca5214bbc9cc204ae9b789ca7}
 
 
-\-To delete a card from the player's current hand. 
+To delete a card from the player's current hand. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em card} & \-The card to delete from the player's hand. \\
+\begin{DoxyParams}{Parameters}
+{\em card} & The card to delete from the player's hand. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}{\index{\-Player@{\-Player}!make\-Ecart@{make\-Ecart}}
-\index{make\-Ecart@{make\-Ecart}!Player@{\-Player}}
-\subsubsection[{make\-Ecart}]{\setlength{\rightskip}{0pt plus 5cm}virtual set$<$ shared\-\_\-ptr$<${\bf \-Card}$>$ $>$ {\bf \-Player\-::make\-Ecart} (
+\hypertarget{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}{\index{Player@{Player}!make\-Ecart@{make\-Ecart}}
+\index{make\-Ecart@{make\-Ecart}!Player@{Player}}
+\subsubsection[{make\-Ecart}]{\setlength{\rightskip}{0pt plus 5cm}virtual set$<$ shared\-\_\-ptr$<${\bf Card}$>$ $>$ Player\-::make\-Ecart (
 \begin{DoxyParamCaption}
 \item[{const int}]{dog\-Size}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}
 
 
-\-Pure virtual function to make the ecart when the player is the best bidder. 
+Pure virtual function to make the ecart when the player is the best bidder. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em dog\-Size} & \-The number of card one must include into the ecart. \\
+\begin{DoxyParams}{Parameters}
+{\em dog\-Size} & The number of card one must include into the ecart. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-A set of \hyperlink{classCard}{\-Card} pointers for the cards one places into the ecart. 
+\begin{DoxyReturn}{Returns}
+A set of \hyperlink{classCard}{Card} pointers for the cards one places into the ecart. 
 \end{DoxyReturn}
 
 
-\-Implemented in \hyperlink{classAI_ad12a3efd1da4acc6e1855bd7262779e3}{\-A\-I}, and \hyperlink{classHuman_a02cdef89dde0adcb554f081e81f97896}{\-Human}.
+Implemented in \hyperlink{classAI_ad12a3efd1da4acc6e1855bd7262779e3}{A\-I}, and \hyperlink{classHuman_a02cdef89dde0adcb554f081e81f97896}{Human}.
 
-\hypertarget{classPlayer_aeba090a124bfd9a3666d2d793439cae0}{\index{\-Player@{\-Player}!play\-Card@{play\-Card}}
-\index{play\-Card@{play\-Card}!Player@{\-Player}}
-\subsubsection[{play\-Card}]{\setlength{\rightskip}{0pt plus 5cm}virtual shared\-\_\-ptr$<${\bf \-Card}$>$ {\bf \-Player\-::play\-Card} (
+\hypertarget{classPlayer_aeba090a124bfd9a3666d2d793439cae0}{\index{Player@{Player}!play\-Card@{play\-Card}}
+\index{play\-Card@{play\-Card}!Player@{Player}}
+\subsubsection[{play\-Card}]{\setlength{\rightskip}{0pt plus 5cm}virtual shared\-\_\-ptr$<${\bf Card}$>$ Player\-::play\-Card (
 \begin{DoxyParamCaption}
-\item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{reference\-Card, }
-\item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{high\-Trump}
+\item[{shared\-\_\-ptr$<$ {\bf Card} $>$}]{reference\-Card, }
+\item[{shared\-\_\-ptr$<$ {\bf Card} $>$}]{high\-Trump}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classPlayer_aeba090a124bfd9a3666d2d793439cae0}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPlayer_aeba090a124bfd9a3666d2d793439cae0}
 
 
 play\-Card is a pure virtual function returning the card the player chooses to play. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em reference\-Card} & \-The card fixing the ask suit for the trick. \\
+\begin{DoxyParams}{Parameters}
+{\em reference\-Card} & The card fixing the ask suit for the trick. \\
 \hline
-{\em high\-Trump} & \-The highest trump played so far for the trick, if any. \\
+{\em high\-Trump} & The highest trump played so far for the trick, if any. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-The chosen card to play. 
+\begin{DoxyReturn}{Returns}
+The chosen card to play. 
 \end{DoxyReturn}
 
 
-\-Implemented in \hyperlink{classAI_a3f5b2888e03634db701c66f82a4f03a8}{\-A\-I}, and \hyperlink{classHuman_a3258d3ce0eec7a5e393c639506ef28e5}{\-Human}.
+Implemented in \hyperlink{classAI_a3f5b2888e03634db701c66f82a4f03a8}{A\-I}, and \hyperlink{classHuman_a3258d3ce0eec7a5e393c639506ef28e5}{Human}.
 
-\hypertarget{classPlayer_ab89873d894a8e4e7e67a16feba4bf116}{\index{\-Player@{\-Player}!valid\-Cards@{valid\-Cards}}
-\index{valid\-Cards@{valid\-Cards}!Player@{\-Player}}
-\subsubsection[{valid\-Cards}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ shared\-\_\-ptr$<$ {\bf \-Card} $>$ $>$ {\bf \-Player\-::valid\-Cards} (
+\hypertarget{classPlayer_ab89873d894a8e4e7e67a16feba4bf116}{\index{Player@{Player}!valid\-Cards@{valid\-Cards}}
+\index{valid\-Cards@{valid\-Cards}!Player@{Player}}
+\subsubsection[{valid\-Cards}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ shared\-\_\-ptr$<$ {\bf Card} $>$ $>$ Player\-::valid\-Cards (
 \begin{DoxyParamCaption}
-\item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{ref\-Card, }
-\item[{shared\-\_\-ptr$<$ {\bf \-Card} $>$}]{greater\-Trump}
+\item[{shared\-\_\-ptr$<$ {\bf Card} $>$}]{ref\-Card, }
+\item[{shared\-\_\-ptr$<$ {\bf Card} $>$}]{greater\-Trump}
 \end{DoxyParamCaption}
 )}}\label{classPlayer_ab89873d894a8e4e7e67a16feba4bf116}
 
 
-\-Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick. 
+Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em ref\-Card} & \-A pointer of the card fixing the asked suit of the trick. \\
+\begin{DoxyParams}{Parameters}
+{\em ref\-Card} & A pointer of the card fixing the asked suit of the trick. \\
 \hline
-{\em greater\-Trump} & \-A pointer on the greater trump of the trick, if any. \\
+{\em greater\-Trump} & A pointer on the greater trump of the trick, if any. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{\-Returns}
-\-The vector of all cards the player can play in his/her situation. 
+\begin{DoxyReturn}{Returns}
+The vector of all cards the player can play in his/her situation. 
 \end{DoxyReturn}
 
 
-\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-include/\-Player.\-hpp\item 
-src/\-Player.\-cpp\end{DoxyCompactItemize}
+include/Player.\-hpp\item 
+src/Player.\-cpp\end{DoxyCompactItemize}
