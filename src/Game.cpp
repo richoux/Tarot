@@ -342,8 +342,13 @@ void Game::takeDog()
 {
   if( bidding <= Biddings::guard )
   {
+    cout << "Show dog: ";
     for( shared_ptr<Card> card : dog )
+    {
+      cout << *card << " ";
       players[indexBidder]->addCard( card );
+    }
+    cout << endl;
     dog.clear();
     addWonCards( players[indexBidder]->name, players[indexBidder]->makeEcart( dogSize ) );
   }
