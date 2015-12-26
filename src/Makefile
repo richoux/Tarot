@@ -1,5 +1,5 @@
 # CXX = g++
-CXXFLAGS = -std=c++0x -O3 -W -Wall -Wno-sign-compare -I../include -c 
+CXXFLAGS = -std=c++0x -O3 -W -Wall -Wno-sign-compare -c -I.  
 CPP_FILES = main.cpp AI.cpp Card.cpp Deck.cpp\
  Game.cpp Human.cpp Player.cpp Team.cpp Trick.cpp\
  Beginner.cpp getInt.cpp getChar.cpp
@@ -16,39 +16,39 @@ $(EXEC): $(OBJ)
 	$(CXX) $^ -o ../bin/$@
 	rm -f *.o
 
-main.o: ../include/Announcements.hpp ../include/AI.hpp ../include/Biddings.hpp\
- ../include/Card.hpp ../include/Suits.hpp ../include/Deck.hpp ../include/Game.hpp\
- ../include/Human.hpp ../include/Player.hpp ../include/StratLang.hpp\
- ../include/Team.hpp ../include/Trick.hpp ../include/getInt.hpp\
- ../include/getChar.hpp
+main.o: Announcements.hpp AI.hpp Biddings.hpp\
+ Card.hpp Suits.hpp Deck.hpp Game.hpp\
+ Human.hpp Player.hpp StratLang.hpp\
+ Team.hpp Trick.hpp getInt.hpp\
+ getChar.hpp
 
-Game.o: ../include/AI.hpp ../include/Biddings.hpp ../include/Card.hpp\
- ../include/Suits.hpp ../include/Deck.hpp ../include/Game.hpp\
- ../include/Human.hpp ../include/Player.hpp ../include/StratLang.hpp\
- ../include/Team.hpp ../include/Trick.hpp
+Game.o: AI.hpp Biddings.hpp Card.hpp\
+ Suits.hpp Deck.hpp Game.hpp\
+ Human.hpp Player.hpp StratLang.hpp\
+ Team.hpp Trick.hpp
 
-AI.o: ../include/AI.hpp ../include/Card.hpp ../include/Suits.hpp\
- ../include/Deck.hpp ../include/Player.hpp ../include/StratDiff.hpp\
- ../include/Beginner.hpp ../include/Biddings.hpp
+AI.o: AI.hpp Card.hpp Suits.hpp\
+ Deck.hpp Player.hpp StratDiff.hpp\
+ Beginner.hpp Biddings.hpp
 
-Beginner.o: ../include/Beginner.hpp ../include/Biddings.hpp\
- ../include/Card.hpp ../include/StratDiff.hpp
+Beginner.o: Beginner.hpp Biddings.hpp\
+ Card.hpp StratDiff.hpp
 
-getInt.o: ../include/getInt.hpp
-getChar.o: ../include/getChar.hpp
-Card.o: ../include/Card.hpp ../include/Suits.hpp
-Deck.o: ../include/Card.hpp ../include/Deck.hpp
-Human.o: ../include/Card.hpp ../include/Suits.hpp\
- ../include/Human.hpp ../include/Player.hpp ../include/getInt.hpp\
- ../include/getChar.hpp
+getInt.o: getInt.hpp
+getChar.o: getChar.hpp
+Card.o: Card.hpp Suits.hpp
+Deck.o: Card.hpp Deck.hpp
+Human.o: Card.hpp Suits.hpp\
+ Human.hpp Player.hpp getInt.hpp\
+ getChar.hpp
 
-Player.o: ../include/Card.hpp ../include/Player.hpp\
- ../include/Announcements.hpp ../include/Suits.hpp ../include/Biddings.hpp 
-StratLang.o: ../include/StratLang.hpp
-StratDiff.o: ../include/StratDiff.hpp ../include/Card.hpp\
- ../include/Biddings.hpp 
-Team.o: ../include/Player.hpp ../include/Team.hpp
-Trick.o: ../include/Card.hpp ../include/Player.hpp ../include/Trick.hpp
+Player.o: Card.hpp Player.hpp\
+ Announcements.hpp Suits.hpp Biddings.hpp 
+StratLang.o: StratLang.hpp
+StratDiff.o: StratDiff.hpp Card.hpp\
+ Biddings.hpp 
+Team.o: Player.hpp Team.hpp
+Trick.o: Card.hpp Player.hpp Trick.hpp
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@
@@ -56,4 +56,4 @@ Trick.o: ../include/Card.hpp ../include/Player.hpp ../include/Trick.hpp
 .PHONY: clean
 
 clean:
-	rm -f *.o *~ core ../include/*~ ../bin/$(EXEC)
+	rm -f *.o *~ core ../bin/$(EXEC)
