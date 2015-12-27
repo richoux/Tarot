@@ -129,6 +129,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a4bb658ca7b46f32a42578b884ad7fe82"><td class="memItemLeft" align="right" valign="top">virtual Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4bb658ca7b46f32a42578b884ad7fe82">bid</a> (const Biddings bestBid, const bool chelemAnnounced) const =0</td></tr>
 <tr class="memdesc:a4bb658ca7b46f32a42578b884ad7fe82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make a choice for biddings.  <a href="#a4bb658ca7b46f32a42578b884ad7fe82">More...</a><br/></td></tr>
 <tr class="separator:a4bb658ca7b46f32a42578b884ad7fe82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85ce39f638b28f13588e8957dc952ff"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ac85ce39f638b28f13588e8957dc952ff">chooseKing</a> (const <a class="el" href="classDeck.html">Deck</a> &amp;deck) const =0</td></tr>
+<tr class="memdesc:ac85ce39f638b28f13588e8957dc952ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make a choice for partnership in a 5-player game.  <a href="#ac85ce39f638b28f13588e8957dc952ff">More...</a><br/></td></tr>
+<tr class="separator:ac85ce39f638b28f13588e8957dc952ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c9e9f402c6a68d6e16caebdb93a33f"><td class="memItemLeft" align="right" valign="top">virtual set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a34c9e9f402c6a68d6e16caebdb93a33f">makeEcart</a> (const int dogSize)=0</td></tr>
 <tr class="memdesc:a34c9e9f402c6a68d6e16caebdb93a33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make the ecart when the player is the best bidder.  <a href="#a34c9e9f402c6a68d6e16caebdb93a33f">More...</a><br/></td></tr>
 <tr class="separator:a34c9e9f402c6a68d6e16caebdb93a33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,6 +174,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a82c40ddca5214bbc9cc204ae9b789ca7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a82c40ddca5214bbc9cc204ae9b789ca7">delCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
 <tr class="memdesc:a82c40ddca5214bbc9cc204ae9b789ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">To delete a card from the player's current hand.  <a href="#a82c40ddca5214bbc9cc204ae9b789ca7">More...</a><br/></td></tr>
 <tr class="separator:a82c40ddca5214bbc9cc204ae9b789ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2880662cb5f5cc2e778242c7a1477b30"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a2880662cb5f5cc2e778242c7a1477b30">callableCards</a> (const <a class="el" href="classDeck.html">Deck</a> &amp;deck) const </td></tr>
+<tr class="memdesc:a2880662cb5f5cc2e778242c7a1477b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">To compute the vector of cards we can call during a 5-player game.  <a href="#a2880662cb5f5cc2e778242c7a1477b30">More...</a><br/></td></tr>
+<tr class="separator:a2880662cb5f5cc2e778242c7a1477b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -315,6 +321,74 @@ set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a
 <dl class="section return"><dt>Returns</dt><dd>The chosen bid (Biddings::none if one passes). </dd></dl>
 
 <p>Implemented in <a class="el" href="classAI.html#a9e2fd7ff440ada8339135c23b73e1a96">AI</a>, and <a class="el" href="classHuman.html#a424bc9179b7036f22a694329b5f6fedf">Human</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2880662cb5f5cc2e778242c7a1477b30"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; Player::callableCards </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classDeck.html">Deck</a> &amp;&#160;</td>
+          <td class="paramname"><em>deck</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>To compute the vector of cards we can call during a 5-player game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deck</td><td>The deck used form the game. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the vector of cards the taker can call (usually, the four kings). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac85ce39f638b28f13588e8957dc952ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; Player::chooseKing </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classDeck.html">Deck</a> &amp;&#160;</td>
+          <td class="paramname"><em>deck</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual function to make a choice for partnership in a 5-player game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deck</td><td>The current deck used for the game </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The chosen king (or card). </dd></dl>
+
+<p>Implemented in <a class="el" href="classAI.html#a6d7eafe5efa20fd78ec91048ad7c1ae2">AI</a>, and <a class="el" href="classHuman.html#a7b465bef30158c2b5552f54651e48318">Human</a>.</p>
 
 </div>
 </div>
@@ -474,7 +548,7 @@ set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 26 2015 14:07:19 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 27 2015 15:11:21 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -130,6 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e2fd7ff440ada8339135c23b73e1a96"><td class="memItemLeft" align="right" valign="top">Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAI.html#a9e2fd7ff440ada8339135c23b73e1a96">bid</a> (const Biddings bestBid, const bool chelemAnnounced) const </td></tr>
 <tr class="memdesc:a9e2fd7ff440ada8339135c23b73e1a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to decide if one proposes a bid or not, and if any, what bid.  <a href="#a9e2fd7ff440ada8339135c23b73e1a96">More...</a><br/></td></tr>
 <tr class="separator:a9e2fd7ff440ada8339135c23b73e1a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d7eafe5efa20fd78ec91048ad7c1ae2"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAI.html#a6d7eafe5efa20fd78ec91048ad7c1ae2">chooseKing</a> (const <a class="el" href="classDeck.html">Deck</a> &amp;deck) const </td></tr>
+<tr class="memdesc:a6d7eafe5efa20fd78ec91048ad7c1ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">To make a choice for partnership in a 5-player game.  <a href="#a6d7eafe5efa20fd78ec91048ad7c1ae2">More...</a><br/></td></tr>
+<tr class="separator:a6d7eafe5efa20fd78ec91048ad7c1ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad12a3efd1da4acc6e1855bd7262779e3"><td class="memItemLeft" align="right" valign="top">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAI.html#ad12a3efd1da4acc6e1855bd7262779e3">makeEcart</a> (const int dogSize)</td></tr>
 <tr class="memdesc:ad12a3efd1da4acc6e1855bd7262779e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">To make the ecart once one takes the dog.  <a href="#ad12a3efd1da4acc6e1855bd7262779e3">More...</a><br/></td></tr>
 <tr class="separator:ad12a3efd1da4acc6e1855bd7262779e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,6 +181,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memitem:a82c40ddca5214bbc9cc204ae9b789ca7 inherit pro_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a82c40ddca5214bbc9cc204ae9b789ca7">delCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
 <tr class="memdesc:a82c40ddca5214bbc9cc204ae9b789ca7 inherit pro_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">To delete a card from the player's current hand.  <a href="#a82c40ddca5214bbc9cc204ae9b789ca7">More...</a><br/></td></tr>
 <tr class="separator:a82c40ddca5214bbc9cc204ae9b789ca7 inherit pro_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2880662cb5f5cc2e778242c7a1477b30 inherit pro_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a2880662cb5f5cc2e778242c7a1477b30">callableCards</a> (const <a class="el" href="classDeck.html">Deck</a> &amp;deck) const </td></tr>
+<tr class="memdesc:a2880662cb5f5cc2e778242c7a1477b30 inherit pro_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">To compute the vector of cards we can call during a 5-player game.  <a href="#a2880662cb5f5cc2e778242c7a1477b30">More...</a><br/></td></tr>
+<tr class="separator:a2880662cb5f5cc2e778242c7a1477b30 inherit pro_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classPlayer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classPlayer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classPlayer.html">Player</a></td></tr>
 <tr class="memitem:afab8e372cfef87440bc42168d5fa0f6a inherit pro_attribs_classPlayer"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afab8e372cfef87440bc42168d5fa0f6a"></a>
 set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;<br class="typebreak"/>
@@ -309,6 +315,41 @@ set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a
 <dl class="section return"><dt>Returns</dt><dd>Our bid (Biddings::none if one passes). </dd></dl>
 
 <p>Implements <a class="el" href="classPlayer.html#a4bb658ca7b46f32a42578b884ad7fe82">Player</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6d7eafe5efa20fd78ec91048ad7c1ae2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; AI::chooseKing </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classDeck.html">Deck</a> &amp;&#160;</td>
+          <td class="paramname"><em>deck</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>To make a choice for partnership in a 5-player game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deck</td><td>The current deck used for the game </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The chosen king (or card). </dd></dl>
+
+<p>Implements <a class="el" href="classPlayer.html#ac85ce39f638b28f13588e8957dc952ff">Player</a>.</p>
 
 </div>
 </div>
@@ -589,7 +630,7 @@ set&lt; Announcements &gt;&#160;</td><td class="memItemRight" valign="bottom"><a
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 26 2015 14:07:18 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 27 2015 15:11:20 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
