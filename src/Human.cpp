@@ -119,6 +119,20 @@ Biddings Human::bid( const Biddings bestBid, const bool chelemAnnounced ) const
   }  
 }
 
+shared_ptr<Card> Human::chooseKing( const Deck &deck ) const
+{
+  auto callable = callableCards( deck );
+
+  cout << "Cards you can call: ";
+  for( int i = 0 ; i < callable.size() ; ++i )
+    cout << "(" << i << ") " << *callable[i] << " | ";
+  cout << endl;
+  
+  int index = getInt( "\nSelect a card to call: " );
+
+  return callable[ index ];
+}
+
 set< shared_ptr<Card> >	Human::makeEcart( const int dogSize )
 {
   set< shared_ptr<Card> > ecart;

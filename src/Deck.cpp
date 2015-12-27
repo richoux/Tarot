@@ -21,7 +21,7 @@
 
 #include <Deck.hpp>
 
-Deck::Deck() 
+Deck::Deck()
 {
   newDeal();
 }
@@ -29,6 +29,7 @@ Deck::Deck()
 void Deck::newDeal()
 {
   cards.clear();
+  heads.clear();
   
   // Hearts
   cards.push_back( make_shared<Card>( Suits::heart, 2, 0.5, false ) );
@@ -117,6 +118,26 @@ void Deck::newDeal()
   cards.push_back( make_shared<Card>( Suits::trump, 20, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::trump, 21, 4.5, true ) );
 
+  heads.push_back( cards[12] );
+  heads.push_back( cards[26] );
+  heads.push_back( cards[40] );
+  heads.push_back( cards[54] );
+
+  heads.push_back( cards[11] );
+  heads.push_back( cards[25] );
+  heads.push_back( cards[39] );
+  heads.push_back( cards[53] );
+    
+  heads.push_back( cards[10] );
+  heads.push_back( cards[24] );
+  heads.push_back( cards[37] );
+  heads.push_back( cards[52] );
+      
+  heads.push_back( cards[9] );
+  heads.push_back( cards[24] );
+  heads.push_back( cards[38] );
+  heads.push_back( cards[51] );
+
   // Fool
   cards.push_back( make_shared<Card>( Suits::fool, 0, 4.5, true ) );
 
@@ -132,13 +153,13 @@ void Deck::shuffle()
   random_shuffle( cards.begin(), cards.end() );
 }
 
-bool Deck::isInDeck( shared_ptr<Card> card ) const
+int Deck::indexInDeck( shared_ptr<Card> card ) const
 {
-  for( auto it = cards.begin(); it != cards.end(); ++it )
-    if( *it == card)
-      return true;
-
-  return false;
+  auto index = find( cards.begin(), cards.end(), card );
+  if( index == cards.end() )
+    return -1;
+  else
+    return distance( cards.begin(), index );
 }
 
 bool Deck::hasStrongerThan( shared_ptr<Card> card ) const

@@ -28,6 +28,7 @@
 #include <algorithm>
 
 #include <Card.hpp>
+#include <Deck.hpp>
 #include <Suits.hpp>
 #include <Biddings.hpp>
 #include <Announcements.hpp>
@@ -62,6 +63,13 @@ public:
     \return The chosen bid (Biddings::none if one passes).
   */
   virtual Biddings bid( const Biddings bestBid, const bool chelemAnnounced ) const = 0;
+
+  //! Pure virtual function to make a choice for partnership in a 5-player game.
+  /*!
+    \param deck The current deck used for the game
+    \return The chosen king (or card).
+  */
+  virtual shared_ptr<Card> chooseKing( const Deck &deck ) const = 0;
 
   //! Pure virtual function to make the ecart when the player is the best bidder.
   /*!
@@ -104,7 +112,14 @@ protected:
   /*!
     \param card The card to delete from the player's hand.
   */
-  void	delCard	( shared_ptr<Card> card );
+  void delCard( shared_ptr<Card> card );
+
+  //! To compute the vector of cards we can call during a 5-player game.
+  /*!
+    \param deck The deck used form the game.
+    \return the vector of cards the taker can call (usually, the four kings).
+  */
+  vector< shared_ptr<Card> > callableCards( const Deck &deck ) const;  
 
   //! A structure to automatically fix an insert order into cards' sets. 
   struct cardOrder {
@@ -124,4 +139,7 @@ protected:
   int					numberOudlers;	//!< The number of oudlers the player has among his/her initial cards.
   double				initialPoints;	//!< The number of points the player has with his/her initial cards.
   set< Announcements >			announced;	//!< The set of announcements (for what?).
+
+private:
+  bool hasCard( shared_ptr<Card> card ) const;
 };

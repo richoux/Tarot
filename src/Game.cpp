@@ -22,7 +22,7 @@
 #include <Game.hpp>
 
 Game::Game( int& numberPlayers, const string yourName, const bool automatic )
-  : indexToBid(-1), indexBidder(0), chelemAnnounced(false), addDogAtTheEnd(false), toSwap(false), botsOnly(automatic), foolGiver(nullptr), foolReceiver(nullptr)
+  : indexToBid(-1), indexBidder(0), kingFound(false), chelemAnnounced(false), addDogAtTheEnd(false), toSwap(false), botsOnly(automatic), foolGiver(nullptr), foolReceiver(nullptr)
 {
   vector<string> names;
   names.push_back("Alice");
@@ -105,6 +105,7 @@ void Game::printScores() const
 Team Game::play()
 {
   shared_ptr<Card> refCard; 
+  shared_ptr<Card> playedCard; 
   dealCards();
 
   if( botsOnly )
@@ -118,21 +119,19 @@ Team Game::play()
   // }
   
   takeBiddings();
+  if( players.size() == 5 )
+    chooseKing();
+
   takeDog();
-  //showPlayersCards();
 
-  // takers.members[next->name] = next;
-  cout << "Taker: " << takers << endl;
-
-  // for( int gamer = 1; gamer < players.size(); ++gamer )
-  //   {
-  //     nextPlayer();
-  //     defenders.members[next->name] = next;
-  //   }
-
-  cout << "Defenders: " << defenders << endl;
-  // nextPlayer();
-
+  if( players.size() < 5 )
+  {
+    cout << "Taker: " << takers << endl;
+    cout << "Defenders: " << defenders << endl;
+  }
+  else
+    cout << "Taker: " << takers << endl;    
+  
   for( int round = 0; round < cardsPerPlayer; ++round )
   {
     cout << endl;
@@ -147,18 +146,24 @@ Team Game::play()
       if( gamer == 0)
       {
 	refCard = next->playCard( nullptr, nullptr );
+	playedCard = refCard;
 	currentTrick->setCard( next, refCard );
       }
       else if( gamer == 1 && refCard->isFool() )
       {
 	refCard = next->playCard( refCard, nullptr );
+	playedCard = refCard;
 	currentTrick->setCard( next, refCard );
       }
       else
-	currentTrick->setCard( next, 
-			       next->playCard( refCard, 
-					       currentTrick->getGreaterTrump() ) );
-	  
+      {
+	playedCard = next->playCard( refCard, currentTrick->getGreaterTrump() );
+	currentTrick->setCard( next, playedCard );
+      }
+
+      if( !kingFound )
+	isCardCalled( playedCard, next );
+	
       nextPlayer();
     }
       
@@ -361,6 +366,13 @@ void Game::takeDog()
     {
       cout << *card << " ";
       players[indexBidder]->addCard( card );
+      if( kingCalled == card )
+      {
+	//copy( unknown.members.begin(), unknown.members.end(), defenders.members.begin() );
+	defenders.members = unknown.members;
+	unknown.members.clear();
+	kingFound = true;
+      }
     }
     cout << endl;
     dog.clear();
@@ -375,6 +387,12 @@ void Game::takeDog()
   {
     addDogAtTheEnd = true;
   }
+}
+
+void Game::chooseKing()
+{
+  kingCalled = takers.members.begin()->second->chooseKing( deck );
+  cout << takers.members.begin()->first << " called " << *kingCalled << endl;
 }
 
 bool Game::sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const
@@ -414,6 +432,17 @@ void Game::setNext( shared_ptr<Player> player )
 void Game::addWonCards( const string& name, const set<shared_ptr<Card> >& cards )
 {
   cardsPlayer[name].insert(cards.begin(), cards.end());
+}
+
+void Game::isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player )
+{
+  if( kingCalled == card && !kingFound )
+  {
+    kingFound = true;
+    takers.members[ player->name ] = player;
+    unknown.members.erase( player->name );
+    defenders.members = unknown.members;
+  }
 }
 
 void Game::swapFool()

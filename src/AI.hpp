@@ -107,6 +107,13 @@ public:
   */
   Biddings bid( const Biddings bestBid, const bool chelemAnnounced) const;
 
+  //! To make a choice for partnership in a 5-player game.
+  /*!
+    \param deck The current deck used for the game
+    \return The chosen king (or card).
+  */
+  shared_ptr<Card> chooseKing( const Deck &deck ) const;
+
   //! To make the ecart once one takes the dog.
   /*!
     makeEcart is delegated to the difficulty Strategy.

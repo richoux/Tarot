@@ -60,7 +60,14 @@ public:
     \return The Human player's bid.
   */
   Biddings bid( const Biddings bestBid, const bool chelemAnnounced ) const;
-  
+
+  //! To make a choice for partnership in a 5-player game.
+  /*!
+    \param deck The current deck used for the game
+    \return The chosen king (or card).
+  */
+  shared_ptr<Card> chooseKing( const Deck &deck ) const;
+
   //! To let the Human player makes his/her ecart.
   /*!
     \param dogSize The number of cards to put into the ecart.

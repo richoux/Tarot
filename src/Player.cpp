@@ -195,6 +195,102 @@ void Player::delCard( shared_ptr<Card> card )
   }
 }
 
+vector< shared_ptr<Card> > Player::callableCards( const Deck &deck ) const
+{
+  vector< shared_ptr<Card> > callable; 
+
+  shared_ptr<Card> kingHeart = deck.heads[0];
+  shared_ptr<Card> kingSpade = deck.heads[1];
+  shared_ptr<Card> kingDiamond = deck.heads[2];
+  shared_ptr<Card> kingClub = deck.heads[3];
+
+  callable.push_back( kingHeart );
+  callable.push_back( kingSpade );
+  callable.push_back( kingDiamond );
+  callable.push_back( kingClub );
+
+  // if we have all four kings, we can ask for queens
+  if( hasCard( kingHeart ) &&
+      hasCard( kingSpade ) &&
+      hasCard( kingDiamond ) &&
+      hasCard( kingClub ) )
+  {
+    shared_ptr<Card> queenHeart = deck.heads[4];
+    shared_ptr<Card> queenSpade = deck.heads[5];
+    shared_ptr<Card> queenDiamond = deck.heads[6];
+    shared_ptr<Card> queenClub = deck.heads[7];
+    
+    callable.push_back( queenHeart );
+    callable.push_back( queenSpade );
+    callable.push_back( queenDiamond );
+    callable.push_back( queenClub );
+
+    // if we have all four kings and queens, we can ask for knights
+    if( hasCard( queenHeart ) &&
+	hasCard( queenSpade ) &&
+	hasCard( queenDiamond ) &&
+	hasCard( queenClub ) )
+    {
+      shared_ptr<Card> knightHeart = deck.heads[8];
+      shared_ptr<Card> knightSpade = deck.heads[9];
+      shared_ptr<Card> knightDiamond = deck.heads[10];
+      shared_ptr<Card> knightClub = deck.heads[11];
+      
+      callable.push_back( knightHeart );
+      callable.push_back( knightSpade );
+      callable.push_back( knightDiamond );
+      callable.push_back( knightClub );
+      
+      // if we have all four kings, queens and knights,
+      // we can ask for jacks
+      if( hasCard( knightHeart ) &&
+	  hasCard( knightSpade ) &&
+	  hasCard( knightDiamond ) &&
+	  hasCard( knightClub ) )
+      {
+	shared_ptr<Card> jackHeart = deck.heads[12];
+	shared_ptr<Card> jackSpade = deck.heads[13];
+	shared_ptr<Card> jackDiamond = deck.heads[14];
+	shared_ptr<Card> jackClub = deck.heads[15];
+	
+	callable.push_back( jackHeart );
+	callable.push_back( jackSpade );
+	callable.push_back( jackDiamond );
+	callable.push_back( jackClub );	
+      }
+    }
+  }
+
+  return callable;
+}
+
+bool Player::hasCard( shared_ptr<Card> card ) const 
+{
+  switch( card->getSuit() )
+  {
+  case Suits::heart:
+    return hearts.find( card ) != hearts.end();
+    
+  case Suits::spade:
+    return spades.find( card ) != spades.end();
+
+  case Suits::diamond:
+    return diamonds.find( card ) != diamonds.end();
+
+  case Suits::club:
+    return clubs.find( card ) != clubs.end();
+
+  case Suits::trump:
+    return trumps.find( card ) != trumps.end();
+
+  case Suits::fool:
+    return fool != nullptr;
+    
+  default:
+    return false;
+  }
+}
+
 void Player::showCards() const
 {
   // show trumps

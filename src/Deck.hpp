@@ -24,6 +24,7 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
+#include <iterator>
 #include <ctime>
 
 #include <Card.hpp>
@@ -37,12 +38,12 @@ public:
   //! The unique constructor of Deck.
   Deck();
 
-  //! isInDeck returns if a given card is in the deck or not.
+  //! indexInDeck returns the index of a card in the deck.
   /*!
     \param card A pointer of Card.
-    \return True iff the given card is in the deck.
+    \return The index of card in the Deck, or -1 if the deck does not contain it.
   */
-  bool isInDeck( shared_ptr<Card> card ) const;
+  int indexInDeck( shared_ptr<Card> card ) const;
 
   //! Tests if the current deck has a stronger card than to proposed one.
   /*!
@@ -58,6 +59,7 @@ public:
   void shuffle();
 
   vector< shared_ptr<Card> >	cards;		//!< The vector of all cards in the deck.
+  vector< shared_ptr<Card> >	heads;		//!< The vector of head cards (useful calling a card for 5-players games).  
   int				numberHearts;	//!< The number of Hearts in the deck.
   int				numberSpades;	//!< The number of Spades in the deck.	
   int				numberDiamonds;	//!< The number of Diamonds in the deck.

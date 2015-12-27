@@ -94,6 +94,12 @@ set< shared_ptr<Card> >	AI::makeEcart( const int dogSize )
   return ecart;
 }
 
+shared_ptr<Card> AI::chooseKing( const Deck &deck ) const
+{
+  auto callable = callableCards( deck );
+  return callable[ rand() % callable.size() ];
+}
+
 void AI::newGame() 
 {
   score = 0;

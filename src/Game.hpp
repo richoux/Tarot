@@ -82,6 +82,9 @@ public:
   //! To take the dog after biddings.
   void takeDog();
 
+  //! In a 5-player game, to choose as a partner the player having the called king (or card). 
+  void chooseKing();
+
   //! Determines if two players belong to the same team.
   /*!
     \param p1 A player.
@@ -117,6 +120,8 @@ private:
   //! Ensures to not lose the Fool, unless a very specific case: playing it at the very last trick without a chelem.
   void swapFool();
 
+  void isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player );
+  
   vector< shared_ptr<Player> >	players;		//!< The vector of players.
   map< string, set<shared_ptr<Card> > > cardsPlayer;	//!< Won cards of each player.
   // shared_ptr<StratLang>		language;
@@ -133,7 +138,8 @@ private:
   Team				defenders;		//!< The non-taking team.
   Team				unknown;		//!< In a 5-player game, we don't know in which team are players, except the best bidder.
   Biddings			bidding;		//!< The type of bidding for its game.
-  Suits				kingCalled;		//!< In a 5-player game, which king (or card) has been called.
+  shared_ptr<Card>		kingCalled;		//!< In a 5-player game, which king (or card) has been called.
+  bool				kingFound;		//!< True iff the king (or card) called is known.
   int				dogSize;		//!< The dog size, depending of the number of players.
   int				cardsPerPlayer;		//!< The number of cards each player has in its initial hand, depending also of the number of players.
   int				consecutiveDealing;	//!< How many cards the dealer must give to players consecutively.
