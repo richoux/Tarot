@@ -33,6 +33,8 @@ virtual shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ \hyperlink{classPlaye
 \begin{DoxyCompactList}\small\item\em Pure virtual function to prepare the player for a new game. \end{DoxyCompactList}\item 
 virtual Biddings \hyperlink{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{bid} (const Biddings best\-Bid, const bool chelem\-Announced) const =0
 \begin{DoxyCompactList}\small\item\em Pure virtual function to make a choice for biddings. \end{DoxyCompactList}\item 
+virtual shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ \hyperlink{classPlayer_ac85ce39f638b28f13588e8957dc952ff}{choose\-King} (const \hyperlink{classDeck}{Deck} \&deck) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to make a choice for partnership in a 5-\/player game. \end{DoxyCompactList}\item 
 virtual set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classPlayer_a34c9e9f402c6a68d6e16caebdb93a33f}{make\-Ecart} (const int dog\-Size)=0
 \begin{DoxyCompactList}\small\item\em Pure virtual function to make the ecart when the player is the best bidder. \end{DoxyCompactList}\item 
 \hypertarget{classPlayer_a5573dd91ddb6fa8874d5a7f7a186f186}{set$<$ Announcements $>$ \hyperlink{classPlayer_a5573dd91ddb6fa8874d5a7f7a186f186}{get\-Announced} () const }\label{classPlayer_a5573dd91ddb6fa8874d5a7f7a186f186}
@@ -64,7 +66,9 @@ void \hyperlink{classPlayer_a7c7b8325247c91ef255ca493de9f35eb}{add\-Card} (share
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classPlayer_a82c40ddca5214bbc9cc204ae9b789ca7}{del\-Card} (shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ card)
-\begin{DoxyCompactList}\small\item\em To delete a card from the player's current hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em To delete a card from the player's current hand. \end{DoxyCompactList}\item 
+vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classPlayer_a2880662cb5f5cc2e778242c7a1477b30}{callable\-Cards} (const \hyperlink{classDeck}{Deck} \&deck) const 
+\begin{DoxyCompactList}\small\item\em To compute the vector of cards we can call during a 5-\/player game. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -169,6 +173,48 @@ The chosen bid (Biddings\-::none if one passes).
 
 
 Implemented in \hyperlink{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{A\-I}, and \hyperlink{classHuman_a424bc9179b7036f22a694329b5f6fedf}{Human}.
+
+\hypertarget{classPlayer_a2880662cb5f5cc2e778242c7a1477b30}{\index{Player@{Player}!callable\-Cards@{callable\-Cards}}
+\index{callable\-Cards@{callable\-Cards}!Player@{Player}}
+\subsubsection[{callable\-Cards}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ shared\-\_\-ptr$<$ {\bf Card} $>$ $>$ Player\-::callable\-Cards (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deck} \&}]{deck}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPlayer_a2880662cb5f5cc2e778242c7a1477b30}
+
+
+To compute the vector of cards we can call during a 5-\/player game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deck} & The deck used form the game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vector of cards the taker can call (usually, the four kings). 
+\end{DoxyReturn}
+\hypertarget{classPlayer_ac85ce39f638b28f13588e8957dc952ff}{\index{Player@{Player}!choose\-King@{choose\-King}}
+\index{choose\-King@{choose\-King}!Player@{Player}}
+\subsubsection[{choose\-King}]{\setlength{\rightskip}{0pt plus 5cm}virtual shared\-\_\-ptr$<${\bf Card}$>$ Player\-::choose\-King (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deck} \&}]{deck}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPlayer_ac85ce39f638b28f13588e8957dc952ff}
+
+
+Pure virtual function to make a choice for partnership in a 5-\/player game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deck} & The current deck used for the game \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The chosen king (or card). 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classAI_a6d7eafe5efa20fd78ec91048ad7c1ae2}{A\-I}, and \hyperlink{classHuman_a7b465bef30158c2b5552f54651e48318}{Human}.
 
 \hypertarget{classPlayer_a82c40ddca5214bbc9cc204ae9b789ca7}{\index{Player@{Player}!del\-Card@{del\-Card}}
 \index{del\-Card@{del\-Card}!Player@{Player}}

@@ -101,9 +101,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a57ae1cb4ac6fd61c249cefb2db85eb99">Deck</a> ()</td></tr>
 <tr class="memdesc:a57ae1cb4ac6fd61c249cefb2db85eb99"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classDeck.html" title="Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a count...">Deck</a>. <br/></td></tr>
 <tr class="separator:a57ae1cb4ac6fd61c249cefb2db85eb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaafdac9dd57ada20cc78dd330c741963"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#aaafdac9dd57ada20cc78dd330c741963">isInDeck</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card) const </td></tr>
-<tr class="memdesc:aaafdac9dd57ada20cc78dd330c741963"><td class="mdescLeft">&#160;</td><td class="mdescRight">isInDeck returns if a given card is in the deck or not.  <a href="#aaafdac9dd57ada20cc78dd330c741963">More...</a><br/></td></tr>
-<tr class="separator:aaafdac9dd57ada20cc78dd330c741963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7b0b266ec9a30c271333d00a3b4168"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#afe7b0b266ec9a30c271333d00a3b4168">indexInDeck</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card) const </td></tr>
+<tr class="memdesc:afe7b0b266ec9a30c271333d00a3b4168"><td class="mdescLeft">&#160;</td><td class="mdescRight">indexInDeck returns the index of a card in the deck.  <a href="#afe7b0b266ec9a30c271333d00a3b4168">More...</a><br/></td></tr>
+<tr class="separator:afe7b0b266ec9a30c271333d00a3b4168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82a3371b10b8be7bc5fef6999a56bb88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a82a3371b10b8be7bc5fef6999a56bb88">hasStrongerThan</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card) const </td></tr>
 <tr class="memdesc:a82a3371b10b8be7bc5fef6999a56bb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if the current deck has a stronger card than to proposed one.  <a href="#a82a3371b10b8be7bc5fef6999a56bb88">More...</a><br/></td></tr>
 <tr class="separator:a82a3371b10b8be7bc5fef6999a56bb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +122,10 @@ Public Attributes</h2></td></tr>
 vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a6b1a1cb4731888fe92e381dd74eb1e16">cards</a></td></tr>
 <tr class="memdesc:a6b1a1cb4731888fe92e381dd74eb1e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector of all cards in the deck. <br/></td></tr>
 <tr class="separator:a6b1a1cb4731888fe92e381dd74eb1e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25fb7d0855d89be0f4f9928900b39ebc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25fb7d0855d89be0f4f9928900b39ebc"></a>
+vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a25fb7d0855d89be0f4f9928900b39ebc">heads</a></td></tr>
+<tr class="memdesc:a25fb7d0855d89be0f4f9928900b39ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector of head cards (useful calling a card for 5-players games). <br/></td></tr>
+<tr class="separator:a25fb7d0855d89be0f4f9928900b39ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac42ed01da688a430609cac03c00b2a5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac42ed01da688a430609cac03c00b2a5a"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#ac42ed01da688a430609cac03c00b2a5a">numberHearts</a></td></tr>
 <tr class="memdesc:ac42ed01da688a430609cac03c00b2a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of Hearts in the deck. <br/></td></tr>
@@ -171,12 +175,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
-<a class="anchor" id="aaafdac9dd57ada20cc78dd330c741963"></a>
+<a class="anchor" id="afe7b0b266ec9a30c271333d00a3b4168"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Deck::isInDeck </td>
+          <td class="memname">int Deck::indexInDeck </td>
           <td>(</td>
           <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>card</em></td><td>)</td>
@@ -185,14 +189,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
       </table>
 </div><div class="memdoc">
 
-<p>isInDeck returns if a given card is in the deck or not. </p>
+<p>indexInDeck returns the index of a card in the deck. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">card</td><td>A pointer of <a class="el" href="classCard.html" title="Card is the class compiling all useful information on cards: points, suit, value... ">Card</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True iff the given card is in the deck. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of card in the <a class="el" href="classDeck.html" title="Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a count...">Deck</a>, or -1 if the deck does not contain it. </dd></dl>
 
 </div>
 </div>
@@ -203,7 +207,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 26 2015 14:07:19 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 27 2015 15:11:20 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

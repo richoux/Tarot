@@ -35,6 +35,8 @@ void \hyperlink{classAI_a6cda26d3bf7238b1a7ea3725bf4aabb7}{new\-Game} ()
 \begin{DoxyCompactList}\small\item\em Must be called when starting a new game. \end{DoxyCompactList}\item 
 Biddings \hyperlink{classAI_a9e2fd7ff440ada8339135c23b73e1a96}{bid} (const Biddings best\-Bid, const bool chelem\-Announced) const 
 \begin{DoxyCompactList}\small\item\em Called to decide if one proposes a bid or not, and if any, what bid. \end{DoxyCompactList}\item 
+shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ \hyperlink{classAI_a6d7eafe5efa20fd78ec91048ad7c1ae2}{choose\-King} (const \hyperlink{classDeck}{Deck} \&deck) const 
+\begin{DoxyCompactList}\small\item\em To make a choice for partnership in a 5-\/player game. \end{DoxyCompactList}\item 
 set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classAI_ad12a3efd1da4acc6e1855bd7262779e3}{make\-Ecart} (const int dog\-Size)
 \begin{DoxyCompactList}\small\item\em To make the ecart once one takes the dog. \end{DoxyCompactList}\item 
 void \hyperlink{classAI_a19cae044bb7f221819f61b017b6a7ffe}{set\-Difficulty} (shared\-\_\-ptr$<$ \hyperlink{classStratDiff}{Strat\-Diff} $>$ diff)
@@ -95,6 +97,29 @@ Our bid (Biddings\-::none if one passes).
 
 
 Implements \hyperlink{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{Player}.
+
+\hypertarget{classAI_a6d7eafe5efa20fd78ec91048ad7c1ae2}{\index{A\-I@{A\-I}!choose\-King@{choose\-King}}
+\index{choose\-King@{choose\-King}!AI@{A\-I}}
+\subsubsection[{choose\-King}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Card} $>$ A\-I\-::choose\-King (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deck} \&}]{deck}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAI_a6d7eafe5efa20fd78ec91048ad7c1ae2}
+
+
+To make a choice for partnership in a 5-\/player game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deck} & The current deck used for the game \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The chosen king (or card). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classPlayer_ac85ce39f638b28f13588e8957dc952ff}{Player}.
 
 \hypertarget{classAI_a01cd7c1760412dde024605226591328c}{\index{A\-I@{A\-I}!have\-Suit@{have\-Suit}}
 \index{have\-Suit@{have\-Suit}!AI@{A\-I}}

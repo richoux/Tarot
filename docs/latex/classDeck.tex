@@ -16,8 +16,8 @@
 \hypertarget{classDeck_a57ae1cb4ac6fd61c249cefb2db85eb99}{\hyperlink{classDeck_a57ae1cb4ac6fd61c249cefb2db85eb99}{Deck} ()}\label{classDeck_a57ae1cb4ac6fd61c249cefb2db85eb99}
 
 \begin{DoxyCompactList}\small\item\em The unique constructor of \hyperlink{classDeck}{Deck}. \end{DoxyCompactList}\item 
-bool \hyperlink{classDeck_aaafdac9dd57ada20cc78dd330c741963}{is\-In\-Deck} (shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ card) const 
-\begin{DoxyCompactList}\small\item\em is\-In\-Deck returns if a given card is in the deck or not. \end{DoxyCompactList}\item 
+int \hyperlink{classDeck_afe7b0b266ec9a30c271333d00a3b4168}{index\-In\-Deck} (shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ card) const 
+\begin{DoxyCompactList}\small\item\em index\-In\-Deck returns the index of a card in the deck. \end{DoxyCompactList}\item 
 bool \hyperlink{classDeck_a82a3371b10b8be7bc5fef6999a56bb88}{has\-Stronger\-Than} (shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ card) const 
 \begin{DoxyCompactList}\small\item\em Tests if the current deck has a stronger card than to proposed one. \end{DoxyCompactList}\item 
 \hypertarget{classDeck_aec4d8d2a67f1c46a1a7f175b8848f5b6}{void \hyperlink{classDeck_aec4d8d2a67f1c46a1a7f175b8848f5b6}{new\-Deal} ()}\label{classDeck_aec4d8d2a67f1c46a1a7f175b8848f5b6}
@@ -32,6 +32,9 @@ bool \hyperlink{classDeck_a82a3371b10b8be7bc5fef6999a56bb88}{has\-Stronger\-Than
 \hypertarget{classDeck_a6b1a1cb4731888fe92e381dd74eb1e16}{vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classDeck_a6b1a1cb4731888fe92e381dd74eb1e16}{cards}}\label{classDeck_a6b1a1cb4731888fe92e381dd74eb1e16}
 
 \begin{DoxyCompactList}\small\item\em The vector of all cards in the deck. \end{DoxyCompactList}\item 
+\hypertarget{classDeck_a25fb7d0855d89be0f4f9928900b39ebc}{vector$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classDeck_a25fb7d0855d89be0f4f9928900b39ebc}{heads}}\label{classDeck_a25fb7d0855d89be0f4f9928900b39ebc}
+
+\begin{DoxyCompactList}\small\item\em The vector of head cards (useful calling a card for 5-\/players games). \end{DoxyCompactList}\item 
 \hypertarget{classDeck_ac42ed01da688a430609cac03c00b2a5a}{int \hyperlink{classDeck_ac42ed01da688a430609cac03c00b2a5a}{number\-Hearts}}\label{classDeck_ac42ed01da688a430609cac03c00b2a5a}
 
 \begin{DoxyCompactList}\small\item\em The number of Hearts in the deck. \end{DoxyCompactList}\item 
@@ -72,16 +75,16 @@ Tests if the current deck has a stronger card than to proposed one.
 \begin{DoxyReturn}{Returns}
 True iff the deck has a stronger card than the input. 
 \end{DoxyReturn}
-\hypertarget{classDeck_aaafdac9dd57ada20cc78dd330c741963}{\index{Deck@{Deck}!is\-In\-Deck@{is\-In\-Deck}}
-\index{is\-In\-Deck@{is\-In\-Deck}!Deck@{Deck}}
-\subsubsection[{is\-In\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}bool Deck\-::is\-In\-Deck (
+\hypertarget{classDeck_afe7b0b266ec9a30c271333d00a3b4168}{\index{Deck@{Deck}!index\-In\-Deck@{index\-In\-Deck}}
+\index{index\-In\-Deck@{index\-In\-Deck}!Deck@{Deck}}
+\subsubsection[{index\-In\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}int Deck\-::index\-In\-Deck (
 \begin{DoxyParamCaption}
 \item[{shared\-\_\-ptr$<$ {\bf Card} $>$}]{card}
 \end{DoxyParamCaption}
-) const}}\label{classDeck_aaafdac9dd57ada20cc78dd330c741963}
+) const}}\label{classDeck_afe7b0b266ec9a30c271333d00a3b4168}
 
 
-is\-In\-Deck returns if a given card is in the deck or not. 
+index\-In\-Deck returns the index of a card in the deck. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -89,7 +92,7 @@ is\-In\-Deck returns if a given card is in the deck or not.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True iff the given card is in the deck. 
+The index of card in the \hyperlink{classDeck}{Deck}, or -\/1 if the deck does not contain it. 
 \end{DoxyReturn}
 
 

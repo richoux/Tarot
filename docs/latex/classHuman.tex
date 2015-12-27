@@ -28,6 +28,8 @@ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ \hyperlink{classHuman_a3258d3
 \begin{DoxyCompactList}\small\item\em To get prepared for a new game. \end{DoxyCompactList}\item 
 Biddings \hyperlink{classHuman_a424bc9179b7036f22a694329b5f6fedf}{bid} (const Biddings best\-Bid, const bool chelem\-Announced) const 
 \begin{DoxyCompactList}\small\item\em To let the \hyperlink{classHuman}{Human} player bids. \end{DoxyCompactList}\item 
+shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ \hyperlink{classHuman_a7b465bef30158c2b5552f54651e48318}{choose\-King} (const \hyperlink{classDeck}{Deck} \&deck) const 
+\begin{DoxyCompactList}\small\item\em To make a choice for partnership in a 5-\/player game. \end{DoxyCompactList}\item 
 set$<$ shared\-\_\-ptr$<$ \hyperlink{classCard}{Card} $>$ $>$ \hyperlink{classHuman_a02cdef89dde0adcb554f081e81f97896}{make\-Ecart} (const int dog\-Size)
 \begin{DoxyCompactList}\small\item\em To let the \hyperlink{classHuman}{Human} player makes his/her ecart. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
@@ -81,6 +83,29 @@ The \hyperlink{classHuman}{Human} player's bid.
 
 
 Implements \hyperlink{classPlayer_a4bb658ca7b46f32a42578b884ad7fe82}{Player}.
+
+\hypertarget{classHuman_a7b465bef30158c2b5552f54651e48318}{\index{Human@{Human}!choose\-King@{choose\-King}}
+\index{choose\-King@{choose\-King}!Human@{Human}}
+\subsubsection[{choose\-King}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Card} $>$ Human\-::choose\-King (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deck} \&}]{deck}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classHuman_a7b465bef30158c2b5552f54651e48318}
+
+
+To make a choice for partnership in a 5-\/player game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deck} & The current deck used for the game \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The chosen king (or card). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classPlayer_ac85ce39f638b28f13588e8957dc952ff}{Player}.
 
 \hypertarget{classHuman_a02cdef89dde0adcb554f081e81f97896}{\index{Human@{Human}!make\-Ecart@{make\-Ecart}}
 \index{make\-Ecart@{make\-Ecart}!Human@{Human}}
