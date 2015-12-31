@@ -129,18 +129,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">double</span> getScore() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classTeam.html#ae3bc7f55a2204019bf393ccd110ce873">   55</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classTeam.html#ae3bc7f55a2204019bf393ccd110ce873">contains</a> ( <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> members.find( name ) != members.end(); }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classTeam.html#a5e2f0bd7b2f9885e7d99c0b1c612b5fa">   57</a></span>&#160;  map&lt;string, shared_ptr&lt;Player&gt; &gt; <a class="code" href="classTeam.html#a5e2f0bd7b2f9885e7d99c0b1c612b5fa">members</a>; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">bool</span> isEmpty() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classTeam.html#ae3bc7f55a2204019bf393ccd110ce873">   58</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classTeam.html#ae3bc7f55a2204019bf393ccd110ce873">contains</a> ( <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> members.find( name ) != members.end(); }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classTeam.html#a5e2f0bd7b2f9885e7d99c0b1c612b5fa">   60</a></span>&#160;  map&lt;string, shared_ptr&lt;Player&gt; &gt; <a class="code" href="classTeam.html#a5e2f0bd7b2f9885e7d99c0b1c612b5fa">members</a>; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
 <div class="ttc" id="classTeam_html"><div class="ttname"><a href="classTeam.html">Team</a></div><div class="ttdoc">Team is the class handling team management. </div><div class="ttdef"><b>Definition:</b> Team.hpp:32</div></div>
-<div class="ttc" id="classTeam_html_ae3bc7f55a2204019bf393ccd110ce873"><div class="ttname"><a href="classTeam.html#ae3bc7f55a2204019bf393ccd110ce873">Team::contains</a></div><div class="ttdeci">bool contains(const string &amp;name) const </div><div class="ttdoc">Inline function to test if a player belongs to this team. </div><div class="ttdef"><b>Definition:</b> Team.hpp:55</div></div>
-<div class="ttc" id="classTeam_html_a5e2f0bd7b2f9885e7d99c0b1c612b5fa"><div class="ttname"><a href="classTeam.html#a5e2f0bd7b2f9885e7d99c0b1c612b5fa">Team::members</a></div><div class="ttdeci">map&lt; string, shared_ptr&lt; Player &gt; &gt; members</div><div class="ttdoc">A map of team members, to quickly have an hand on the player object knowing his/her name...</div><div class="ttdef"><b>Definition:</b> Team.hpp:57</div></div>
+<div class="ttc" id="classTeam_html_ae3bc7f55a2204019bf393ccd110ce873"><div class="ttname"><a href="classTeam.html#ae3bc7f55a2204019bf393ccd110ce873">Team::contains</a></div><div class="ttdeci">bool contains(const string &amp;name) const </div><div class="ttdoc">Inline function to test if a player belongs to this team. </div><div class="ttdef"><b>Definition:</b> Team.hpp:58</div></div>
+<div class="ttc" id="classTeam_html_a5e2f0bd7b2f9885e7d99c0b1c612b5fa"><div class="ttname"><a href="classTeam.html#a5e2f0bd7b2f9885e7d99c0b1c612b5fa">Team::members</a></div><div class="ttdeci">map&lt; string, shared_ptr&lt; Player &gt; &gt; members</div><div class="ttdoc">A map of team members, to quickly have an hand on the player object knowing his/her name...</div><div class="ttdef"><b>Definition:</b> Team.hpp:60</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 27 2015 15:11:19 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 31 2015 05:38:22 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
