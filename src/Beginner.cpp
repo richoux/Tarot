@@ -76,7 +76,16 @@ Biddings Beginner::bid( const Biddings bestBid, const int numberOudlers, const b
 
 set< shared_ptr<Card> >	Beginner::makeEcart( const int dogSize, const vector< shared_ptr<Card> >& allCards ) const
 {
-  assert( allCards.size() >= 15 && allCards.size() <= 24 );
+#if defined DEBUG
+  if( ! (allCards.size() >= 18 && allCards.size() <= 30) )
+  {
+    cout << "Card size: " << allCards.size() << endl;
+    for( int i = 0 ; i < allCards.size() ; ++i )
+      cout << *allCards[i] << " ";
+    cout << endl;
+  }
+#endif
+  assert( allCards.size() >= 18 && allCards.size() <= 30 );
 
   set< shared_ptr<Card> > ecart;
   

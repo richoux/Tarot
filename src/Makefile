@@ -9,7 +9,7 @@ EXEC = tarot
 all: CXXFLAGS += -DNDEBUG
 all: $(EXEC)
 
-debug: CXXFLAGS += -g
+debug: CXXFLAGS += -g -DDEBUG
 debug: $(EXEC)
 
 $(EXEC): $(OBJ)
