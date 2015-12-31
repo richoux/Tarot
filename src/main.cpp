@@ -35,10 +35,26 @@ int main( int argc, char **argv )
   Game *game;
   string playerName;
   int nberPlayers;
+  int loop;
 
-  if( argc >= 2 && strcmp( argv[1], "--auto") == 0 )
+  if( argc >= 2 && strcmp( argv[1], "--debug") == 0 )
   {
-    nberPlayers = 4;
+    if( argc == 2 )
+    {
+      nberPlayers = 4;
+      loop = 1;
+    }
+    else if( argc == 3 )
+    {
+      nberPlayers = atoi( argv[2] );
+      loop = 1;
+    }
+    else
+    {
+      nberPlayers = atoi( argv[2] );
+      loop = atoi( argv[3] );
+    }
+
     game = new Game( nberPlayers, playerName, true );
 
     game->shuffleDeck();
@@ -61,14 +77,8 @@ int main( int argc, char **argv )
     game->shuffleDeck();
   }
 
-  if( argc >= 3 && strcmp( argv[1], "--auto") == 0 && strcmp( argv[2], "--debug") == 0 )
+  if( argc >= 2 && strcmp( argv[1], "--debug") == 0 )
   {
-    int loop;
-    if( argc == 3 )
-      loop = 1000;
-    else
-      loop = atoi( argv[3] );
-    
     for( int i = 0 ; i < loop ; ++i )
     {
       cout << "***********" << endl;

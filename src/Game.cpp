@@ -33,6 +33,8 @@ Game::Game( int& numberPlayers, const string yourName, const bool automatic )
     dogSize = 6;
     cardsPerPlayer = 24;
     consecutiveDealing = 4;
+    if( automatic )
+      names.push_back("Charly");      
   }
   else if( numberPlayers == 5 )
   {
@@ -41,6 +43,8 @@ Game::Game( int& numberPlayers, const string yourName, const bool automatic )
     consecutiveDealing = 3;
     names.push_back("Charly");
     names.push_back("Dave");
+    if( automatic )
+      names.push_back("Erin");      
   }
   else
   {
@@ -48,6 +52,8 @@ Game::Game( int& numberPlayers, const string yourName, const bool automatic )
     cardsPerPlayer = 18;
     consecutiveDealing = 3;
     names.push_back("Charly");
+    if( automatic )
+      names.push_back("Dave");      
     numberPlayers = 4;
   }
   
@@ -57,17 +63,13 @@ Game::Game( int& numberPlayers, const string yourName, const bool automatic )
   players.push_back( make_shared<AI>( "Alice", names ) );
   players.push_back( make_shared<AI>( "Bob", names ) );
 
-  if( automatic )
-    names.push_back("Dave");
-  
-  if( numberPlayers >= 4)
-  {
-
+  if( numberPlayers >= 4 || automatic )
     players.push_back( make_shared<AI>( "Charly", names ) );
-    if( numberPlayers == 5 || automatic )
-      players.push_back( make_shared<AI>( "Dave", names ) );
-  }
-
+  if( numberPlayers == 5 || ( numberPlayers == 4 && automatic ) )
+    players.push_back( make_shared<AI>( "Dave", names ) );
+  if( numberPlayers == 5 && automatic )
+    players.push_back( make_shared<AI>( "Erin", names ) );
+      
   indexNext = rand() % players.size();
   indexStarter = indexNext;
   next = players[ indexNext ];
@@ -100,6 +102,9 @@ void Game::printScores() const
 {
   for(shared_ptr<Player> player : players)
     cout << player->name << " " << player->score << endl;
+
+  cout << "Takers: " << takers.getScore() << endl;
+  cout << "Defenders: " << defenders.getScore() << endl;
 }
 
 Team Game::play()
@@ -110,13 +115,6 @@ Team Game::play()
 
   if( botsOnly )
     showPlayersCards();
-  // else
-  // {
-  //   // If not botOnly, Player[0] is human
-  //   cout << players[0]->name << ": ";
-  //   players[0]->showCards();
-  //   cout << endl;
-  // }
   
   if( takeBiddings() )
   {
@@ -132,7 +130,11 @@ Team Game::play()
     }
     else
       cout << "Taker: " << takers << endl;    
-  
+
+    // show cards after ecart
+    if( botsOnly )
+      showPlayersCards();
+
     for( int round = 0; round < cardsPerPlayer; ++round )
     {
       cout << endl;
@@ -382,10 +384,15 @@ void Game::takeDog()
       players[indexBidder]->addCard( card );
       if( kingCalled == card )
       {
-	//copy( unknown.members.begin(), unknown.members.end(), defenders.members.begin() );
 	defenders.members = unknown.members;
 	unknown.members.clear();
 	kingFound = true;
+	if( botsOnly )
+	{
+	  cout << "Player alone! Unlucky!" << endl;
+	  cout << "Taker: " << takers << endl;
+	  cout << "Defenders: " << defenders << endl;      
+	}
       }
     }
     cout << endl;
@@ -456,6 +463,12 @@ void Game::isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player )
     takers.members[ player->name ] = player;
     unknown.members.erase( player->name );
     defenders.members = unknown.members;
+    if( botsOnly )
+    {
+      cout << "Parter known!" << endl;
+      cout << "Taker: " << takers << endl;
+      cout << "Defenders: " << defenders << endl;      
+    }
   }
 }
 
