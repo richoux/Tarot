@@ -47,5 +47,5 @@ script:
   - bin/tarot --debug 3 10
   - bin/tarot --debug 4 10
   - bin/tarot --debug 5 10
-  - valgrind --leak-check=full --show-reachable=yes bin/tarot --auto
+  # - valgrind --leak-check=full --show-reachable=yes bin/tarot --auto
   # - valgrind --tool=cachegrind bin/tarot --auto
