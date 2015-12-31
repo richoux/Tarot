@@ -76,8 +76,8 @@ public:
   //! Deals cards.
   void dealCards();
 
-  //! Makes all players bidding.
-  void takeBiddings();
+  //! Makes all players bidding. Returns false iff all players passed.
+  bool takeBiddings();
 
   //! To take the dog after biddings.
   void takeDog();

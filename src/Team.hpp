@@ -47,6 +47,9 @@ public:
   //! Assessor returning the team's score.
   double getScore() const;
 
+  //! Return if the Team is empty
+  bool isEmpty() const;
+
   //! Inline function to test if a player belongs to this team
   /*!
     \param name The considered player name.

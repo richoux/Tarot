@@ -118,101 +118,108 @@ Team Game::play()
   //   cout << endl;
   // }
   
-  takeBiddings();
-  if( players.size() == 5 )
-    chooseKing();
-
-  takeDog();
-
-  if( players.size() < 5 )
+  if( takeBiddings() )
   {
-    cout << "Taker: " << takers << endl;
-    cout << "Defenders: " << defenders << endl;
-  }
-  else
-    cout << "Taker: " << takers << endl;    
+    if( players.size() == 5 )
+      chooseKing();
+
+    takeDog();
+
+    if( players.size() < 5 )
+    {
+      cout << "Taker: " << takers << endl;
+      cout << "Defenders: " << defenders << endl;
+    }
+    else
+      cout << "Taker: " << takers << endl;    
   
-  for( int round = 0; round < cardsPerPlayer; ++round )
-  {
-    cout << endl;
-    cout << "**************" << endl;
-    cout << "** Round " << round+1 << " **" << endl;
-    cout << "**************" << endl;
-
-    currentTrick = make_shared<Trick>( nullptr );
-      
-    for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
+    for( int round = 0; round < cardsPerPlayer; ++round )
     {
-      if( gamer == 0)
-      {
-	refCard = next->playCard( nullptr, nullptr );
-	playedCard = refCard;
-	currentTrick->setCard( next, refCard );
-      }
-      else if( gamer == 1 && refCard->isFool() )
-      {
-	refCard = next->playCard( refCard, nullptr );
-	playedCard = refCard;
-	currentTrick->setCard( next, refCard );
-      }
-      else
-      {
-	playedCard = next->playCard( refCard, currentTrick->getGreaterTrump() );
-	currentTrick->setCard( next, playedCard );
-      }
+      cout << endl;
+      cout << "**************" << endl;
+      cout << "** Round " << round+1 << " **" << endl;
+      cout << "**************" << endl;
 
-      if( !kingFound )
-	isCardCalled( playedCard, next );
+      currentTrick = make_shared<Trick>( nullptr );
+      
+      for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
+      {
+	if( gamer == 0)
+	{
+	  refCard = next->playCard( nullptr, nullptr );
+	  playedCard = refCard;
+	  currentTrick->setCard( next, refCard );
+	}
+	else if( gamer == 1 && refCard->isFool() )
+	{
+	  refCard = next->playCard( refCard, nullptr );
+	  playedCard = refCard;
+	  currentTrick->setCard( next, refCard );
+	}
+	else
+	{
+	  playedCard = next->playCard( refCard, currentTrick->getGreaterTrump() );
+	  currentTrick->setCard( next, playedCard );
+	}
+
+	if( !kingFound )
+	  isCardCalled( playedCard, next );
 	
-      nextPlayer();
-    }
+	nextPlayer();
+      }
       
-    cout << "Trick: ";
-    currentTrick->showAllCards();
-    cout << "=> Won by " << currentTrick->getLeader()->name << endl;
+      cout << "Trick: ";
+      currentTrick->showAllCards();
+      cout << "=> Won by " << currentTrick->getLeader()->name << endl;
 
-    addWonCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
+      addWonCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
 
-    // if the Fool has been played, decide who must keep it.
-    if( currentTrick->getFoolPlayer() != nullptr 
-	&& 
-	!sameTeam(currentTrick->getFoolPlayer(), currentTrick->getLeader() ) )
-    {
-      toSwap = true;
-      foolGiver = currentTrick->getLeader();
-      foolReceiver = currentTrick->getFoolPlayer();
+      // if the Fool has been played, decide who must keep it.
+      if( currentTrick->getFoolPlayer() != nullptr 
+	  && 
+	  !sameTeam(currentTrick->getFoolPlayer(), currentTrick->getLeader() ) )
+      {
+	toSwap = true;
+	foolGiver = currentTrick->getLeader();
+	foolReceiver = currentTrick->getFoolPlayer();
+      }
+
+      setNext( currentTrick->getLeader() );
+      //currentTrick->getLeader()->score = currentTrick->getScore();
+      history.push( currentTrick );
     }
 
-    setNext( currentTrick->getLeader() );
-    //currentTrick->getLeader()->score = currentTrick->getScore();
-    history.push( currentTrick );
+    if( toSwap )
+      swapFool();
+
+    if( addDogAtTheEnd )
+      addWonCards( defenders.members.begin()->first, dog );
+
+    cout << "Won cards:" << endl;
+    for( auto player : players )
+    {
+      cout << player->name << ": ";
+      for( auto card : cardsPlayer[player->name])
+	cout << *card << " ";
+      cout << endl;
+    }
+
+    // Compute score for each player
+    for( shared_ptr<Player> player : players )
+      player->score = computeScore( player->name );
+
+    if( takers > defenders )
+      return takers;
+    else
+      return defenders;
   }
-
-  if( toSwap )
-    swapFool();
-
-  if( addDogAtTheEnd )
-    addWonCards( defenders.members.begin()->first, dog );
-
-  cout << "Won cards:" << endl;
-  for( auto player : players )
-  {
-    cout << player->name << ": ";
-    for( auto card : cardsPlayer[player->name])
-      cout << *card << " ";
-    cout << endl;
-  }
-
-  // Compute score for each player
-  for( shared_ptr<Player> player : players )
-    player->score = computeScore( player->name );
-
-  if( takers > defenders )
-    return takers;
   else
-    return defenders;
+  {
+    cout << "All players passed." << endl;
+    return takers; // fake return
+  }
 }
-
+  
 void Game::showDeck() const
 {
   cout << "Deck: ";
@@ -274,7 +281,7 @@ void Game::dealCards()
     }
 }
 
-void Game::takeBiddings()
+bool Game::takeBiddings()
 {
   if( indexToBid != -1 )
   {
@@ -334,26 +341,33 @@ void Game::takeBiddings()
     index++;
   }
 
-  bidding = bestBid;
-
-  takers.members[ players[indexBidder]->name ] = players[indexBidder];
-  if( players.size() < 5 )
-  {
-    for( unsigned int i = 0; i < players.size(); i++ )
-      if( i != indexBidder )
-	defenders.members[ players[i]->name ] = players[i];
-  }
+  if( bestBid == Biddings::none )
+    return false;
   else
   {
-    for( unsigned int i = 0; i < players.size(); i++ )
-      if( i != indexBidder )
-	unknown.members[ players[i]->name ] = players[i];
-  }
+    bidding = bestBid;
 
-  if( !chelemAnnounced )
-  {
-    indexNext = indexToBid;
-    next = players[indexToBid];
+    takers.members[ players[indexBidder]->name ] = players[indexBidder];
+    if( players.size() < 5 )
+    {
+      for( unsigned int i = 0; i < players.size(); i++ )
+	if( i != indexBidder )
+	  defenders.members[ players[i]->name ] = players[i];
+    }
+    else
+    {
+      for( unsigned int i = 0; i < players.size(); i++ )
+	if( i != indexBidder )
+	  unknown.members[ players[i]->name ] = players[i];
+    }
+    
+    if( !chelemAnnounced )
+    {
+      indexNext = indexToBid;
+      next = players[indexToBid];
+    }
+
+    return true;
   }
 }
 

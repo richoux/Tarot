@@ -48,6 +48,11 @@ double Team::getScore() const
   return score;
 }
 
+bool Team::isEmpty() const
+{
+  return members.empty();
+}
+
 ostream& operator<<( ostream& os, const Team& team )
 {
   string names = "";

@@ -76,10 +76,13 @@ int main( int argc, char **argv )
       cout << "***********" << endl;
 
       Team winners = game->play();
-  
-      game->printScores();  
-      cout << "Winners: " << winners << endl;
 
+      if( !winners.isEmpty() )
+      {
+	game->printScores();  
+	cout << "Winners: " << winners << endl;
+      }
+      
       game->newGame();
     }
   }
@@ -87,8 +90,11 @@ int main( int argc, char **argv )
   {
     Team winners = game->play();
     
-    game->printScores();  
-    cout << "Winners: " << winners << endl;
+    if( !winners.isEmpty() )
+    {
+      game->printScores();  
+      cout << "Winners: " << winners << endl;
+    }
   }
   delete game;
 }
