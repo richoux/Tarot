@@ -50,7 +50,6 @@ int main( int argc, char **argv )
   QGraphicsView view(&scene);
   view.setWindowTitle("Mari's Tarot");
   view.show();
-  return app.exec();
 
   if( argc >= 2 && strcmp( argv[1], "--debug") == 0 )
   {
@@ -121,5 +120,7 @@ int main( int argc, char **argv )
       cout << "Winners: " << winners << endl;
     }
   }
-  delete game;
+
+  return app.exec();
+  // delete game;
 }

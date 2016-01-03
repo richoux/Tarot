@@ -5,6 +5,7 @@ TarotScene::TarotScene() : QGraphicsScene()
   this->setBackgroundBrush( QImage( "img/bg.png" ) );
   array< QPixmap, 78 > pixmaps;
   QTransform matrix;
+  matrix.scale(0.5, 0.5);
 
   for( int i = 0 ; i < 78 ; ++i )
   {
@@ -15,15 +16,15 @@ TarotScene::TarotScene() : QGraphicsScene()
     pixmaps[i].load( path );
     cardImages[i].setPixmap( pixmaps[i] );
     
-    matrix.reset();
-    matrix.scale(0.5, 0.5);
+    // matrix.reset();
+    // matrix.scale(0.5, 0.5);
     
-    if( i < 26 )
-      matrix.translate( i*90 - 250, 1000 );
-    else if( i < 52 )
-      matrix.translate( (i-26)*90 - 250, 1100 );
-    else
-      matrix.translate( (i-52)*90 - 250, 1200 );
+    // if( i < 26 )
+    //   matrix.translate( i*90 - 250, 1200 );
+    // else if( i < 52 )
+    //   matrix.translate( (i-26)*90 - 250, 1300 );
+    // else
+    //   matrix.translate( (i-52)*90 - 250, 1400 );
     
     cardImages[i].setTransform( matrix );
 
