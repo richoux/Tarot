@@ -26,8 +26,10 @@
 #include <QApplication>
 #include <QtGui>
 
-#include <Game.hpp>
-#include <getInt.hpp>
+#include "Game.hpp"
+#include "CardPixmap.hpp"
+#include "TarotScene.hpp"
+#include "getInt.hpp"
 
 using namespace std;
 
@@ -38,7 +40,7 @@ int main( int argc, char **argv )
   srand ( unsigned ( time(0) ) );
 
   TarotScene scene;
-  scene.setSceneRect(0, 0, 1024, 800);
+  scene.setSceneRect(0, 0, 1024, 768);
 
   Game *game;
   string playerName;

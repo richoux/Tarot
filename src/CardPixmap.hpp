@@ -1,3 +1,5 @@
+#pragma once
+
 #include <QGraphicsPixmapItem>
 
 class CardPixmap : public QGraphicsPixmapItem

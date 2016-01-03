@@ -1,4 +1,5 @@
 #include "TarotScene.hpp"
+#include <iostream>
 
 TarotScene::TarotScene() : QGraphicsScene()
 {
@@ -6,11 +7,20 @@ TarotScene::TarotScene() : QGraphicsScene()
   array< QPixmap, 78 > cardPixmaps;
   for( int i = 0 ; i < 78 ; ++i )
   {
-    QString path = "img/cards/" + (i+1) + ".png";
+    QString path( "img/cards/" );
+    path.append( QString("%1").arg( i+1 ) );
+    path.append( ".png" );
+    std::cout << path.toStdString() << std::endl;
     cardPixmaps[i].load( path );
-    card.setPixmap( cardPixmaps[i] );
-    cardImages[i]->setPos( 300, 0 + i*10 );
-    this->addItem( cardImages[i] );
+    cardImages[i].setPixmap( cardPixmaps[i] );
+    if( i < 26 )
+      cardImages[i].setPos( i*30, 50 );
+    else if( i < 52 )
+      cardImages[i].setPos( (i-26)*30, 150 );
+    else
+      cardImages[i].setPos( (i-52)*30, 250 );
+      
+    this->addItem( &cardImages[i] );
   }
   
   // QTransform matrix;
