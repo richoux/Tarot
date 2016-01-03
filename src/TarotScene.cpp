@@ -1,25 +1,32 @@
 #include "TarotScene.hpp"
-#include <iostream>
 
 TarotScene::TarotScene() : QGraphicsScene()
 {
   this->setBackgroundBrush( QImage( "img/bg.png" ) );
-  array< QPixmap, 78 > cardPixmaps;
+  array< QPixmap, 78 > pixmaps;
+  QTransform matrix;
+
   for( int i = 0 ; i < 78 ; ++i )
   {
     QString path( "img/cards/" );
     path.append( QString("%1").arg( i+1 ) );
     path.append( ".png" );
-    std::cout << path.toStdString() << std::endl;
-    cardPixmaps[i].load( path );
-    cardImages[i].setPixmap( cardPixmaps[i] );
+
+    pixmaps[i].load( path );
+    cardImages[i].setPixmap( pixmaps[i] );
+    
+    matrix.reset();
+    matrix.scale(0.5, 0.5);
+    
     if( i < 26 )
-      cardImages[i].setPos( i*30, 50 );
+      matrix.translate( i*90 - 250, 200 );
     else if( i < 52 )
-      cardImages[i].setPos( (i-26)*30, 150 );
+      matrix.translate( (i-26)*90 - 250, 300 );
     else
-      cardImages[i].setPos( (i-52)*30, 250 );
-      
+      matrix.translate( (i-52)*90 - 250, 400 );
+    
+    cardImages[i].setTransform( matrix );
+
     this->addItem( &cardImages[i] );
   }
   
