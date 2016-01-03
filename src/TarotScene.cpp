@@ -3,13 +3,19 @@
 TarotScene::TarotScene() : QGraphicsScene()
 {
   this->setBackgroundBrush( QImage( "img/bg.png" ) );
-  vector<QPixmap cardImage( "figs/21.png" );
-  card = new CardPixmap( cardImage );
-  card->setPos( 300, 50 );
-  QTransform matrix;
-  matrix.scale(0.25, 0.25);
-  card->setTransform( matrix );
-  this->addItem( card );
+  array< QPixmap, 78 > cardPixmaps;
+  for( int i = 0 ; i < 78 ; ++i )
+  {
+    QString path = "img/cards/" + (i+1) + ".png";
+    cardPixmaps[i].load( path );
+    card.setPixmap( cardPixmaps[i] );
+    cardImages[i]->setPos( 300, 0 + i*10 );
+    this->addItem( cardImages[i] );
+  }
+  
+  // QTransform matrix;
+  // matrix.scale(0.25, 0.25);
+  // card->setTransform( matrix );
 }
 
 void TarotScene::mouseMoveEvent( QGraphicsSceneMouseEvent *e )
@@ -26,16 +32,16 @@ void TarotScene::mouseMoveEvent( QGraphicsSceneMouseEvent *e )
   //   card->setTransform( matrix );
   // }
 
-  if( card->isUnderMouse() )
-  {
-    QTransform matrix;
-    if( card->scale() == 0.25 )
-      card->setScale( 0.3 );
-    else
-      card->setScale( 0.25 );      
-    matrix.scale( card->scale(), card->scale() );
-    card->setTransform( matrix );    
-  }
+  // if( card->isUnderMouse() )
+  // {
+  //   QTransform matrix;
+  //   if( card->scale() == 0.25 )
+  //     card->setScale( 0.3 );
+  //   else
+  //     card->setScale( 0.25 );      
+  //   matrix.scale( card->scale(), card->scale() );
+  //   card->setTransform( matrix );    
+  // }
 
 }
 

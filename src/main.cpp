@@ -37,10 +37,18 @@ int main( int argc, char **argv )
 
   srand ( unsigned ( time(0) ) );
 
+  TarotScene scene;
+  scene.setSceneRect(0, 0, 1024, 800);
+
   Game *game;
   string playerName;
   int nberPlayers;
   int loop;
+
+  QGraphicsView view(&scene);
+  view.setWindowTitle("Mari's Tarot");
+  view.show();
+  return app.exec();
 
   if( argc >= 2 && strcmp( argv[1], "--debug") == 0 )
   {
