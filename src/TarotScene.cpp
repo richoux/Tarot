@@ -19,20 +19,16 @@ TarotScene::TarotScene() : QGraphicsScene()
     matrix.scale(0.5, 0.5);
     
     if( i < 26 )
-      matrix.translate( i*90 - 250, 200 );
+      matrix.translate( i*90 - 250, 1000 );
     else if( i < 52 )
-      matrix.translate( (i-26)*90 - 250, 300 );
+      matrix.translate( (i-26)*90 - 250, 1100 );
     else
-      matrix.translate( (i-52)*90 - 250, 400 );
+      matrix.translate( (i-52)*90 - 250, 1200 );
     
     cardImages[i].setTransform( matrix );
 
     this->addItem( &cardImages[i] );
   }
-  
-  // QTransform matrix;
-  // matrix.scale(0.25, 0.25);
-  // card->setTransform( matrix );
 }
 
 void TarotScene::mouseMoveEvent( QGraphicsSceneMouseEvent *e )
