@@ -23,6 +23,9 @@
 #include <cstdlib>
 #include <cstring>
 
+#include <QApplication>
+#include <QtGui>
+
 #include <Game.hpp>
 #include <getInt.hpp>
 
@@ -30,6 +33,8 @@ using namespace std;
 
 int main( int argc, char **argv )
 {
+  QApplication app(argc, argv);
+
   srand ( unsigned ( time(0) ) );
 
   Game *game;
