@@ -102,6 +102,12 @@ DESTDIR       = bin/
 TARGET        = bin/tarotQt
 
 first: all
+
+nogui:
+	cd src ; make
+nogui-debug:
+	cd src ; make debug
+
 ####### Implicit rules
 
 .SUFFIXES: .o .c .cpp .cc .cxx .C
