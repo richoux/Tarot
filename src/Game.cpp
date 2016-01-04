@@ -394,8 +394,10 @@ bool Game::sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const
 double Game::computeScore( const string& name ) const
 {
   double score = 0;
+
+  cout << name << endl;
   
-  for( shared_ptr<Card> card : cardsPlayer.at(name) )
+  for( shared_ptr<Card> card : cardsPlayer[ name ] )
     score += card->getPoints();
 
   return score;
