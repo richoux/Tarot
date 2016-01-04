@@ -65,6 +65,9 @@ public:
   //! Inline function returning true iif the card is a face card.
   inline bool	isFaceCard	() const { return value > 10; }
 
+  //! Returns the card index in the deck before shuffle. Used for the GUI. 
+  int computeIndex() const;
+
   //! A greater-than comparator to make easier the comparison between cards.
   /*! 
     \param card The card one's compared with.
