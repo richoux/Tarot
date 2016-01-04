@@ -142,33 +142,7 @@ Team Game::play()
       cout << "** Round " << round+1 << " **" << endl;
       cout << "**************" << endl;
 
-      currentTrick = make_shared<Trick>( nullptr );
-      
-      for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
-      {
-	if( gamer == 0)
-	{
-	  refCard = next->playCard( nullptr, nullptr );
-	  playedCard = refCard;
-	  currentTrick->setCard( next, refCard );
-	}
-	else if( gamer == 1 && refCard->isFool() )
-	{
-	  refCard = next->playCard( refCard, nullptr );
-	  playedCard = refCard;
-	  currentTrick->setCard( next, refCard );
-	}
-	else
-	{
-	  playedCard = next->playCard( refCard, currentTrick->getGreaterTrump() );
-	  currentTrick->setCard( next, playedCard );
-	}
-
-	if( !kingFound )
-	  isCardCalled( playedCard, next );
-	
-	nextPlayer();
-      }
+      playTrick();
       
       cout << "Trick: ";
       currentTrick->showAllCards();
@@ -221,7 +195,40 @@ Team Game::play()
     return takers; // fake return
   }
 }
-  
+
+shared_ptr<Trick> Game::playTrick()
+{
+  currentTrick = make_shared<Trick>( nullptr );
+      
+  for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
+  {
+    if( gamer == 0)
+    {
+      refCard = next->playCard( nullptr, nullptr );
+      playedCard = refCard;
+      currentTrick->setCard( next, refCard );
+    }
+    else if( gamer == 1 && refCard->isFool() )
+    {
+      refCard = next->playCard( refCard, nullptr );
+      playedCard = refCard;
+      currentTrick->setCard( next, refCard );
+    }
+    else
+    {
+      playedCard = next->playCard( refCard, currentTrick->getGreaterTrump() );
+      currentTrick->setCard( next, playedCard );
+    }
+
+    if( !kingFound )
+      isCardCalled( playedCard, next );
+	
+    nextPlayer();
+  }
+
+  return currentTrick;
+}
+
 void Game::showDeck() const
 {
   cout << "Deck: ";
@@ -455,7 +462,7 @@ void Game::addWonCards( const string& name, const set<shared_ptr<Card> >& cards 
   cardsPlayer[name].insert(cards.begin(), cards.end());
 }
 
-void Game::isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player )
+bool Game::isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player )
 {
   if( kingCalled == card && !kingFound )
   {
@@ -470,6 +477,7 @@ void Game::isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player )
       cout << "Defenders: " << defenders << endl;      
     }
   }
+  return kingFound;
 }
 
 void Game::swapFool()

@@ -64,10 +64,13 @@ public:
   //! Plays all turns of a game and returns the winner team.
   Team play();
 
+  //! Plays one turn of a game and returns the current trick.
+  shared_ptr<Trick> playTrick();
+  
   //! Shows the deck on the screen.
   void showDeck() const;
 
-  //! Shows players' cards on the screen
+  //! Shows players' cards on the screen.
   void showPlayersCards() const;
 
   //! Shuffles (three time) the deck.
@@ -100,6 +103,38 @@ public:
   */
   double computeScore( const string& name ) const;
 
+  //! Inline function returning the current trick.
+  inline shared_ptr<Trick> getCurrentTrick() const { return currentTrick; }
+
+  //! Inline function returning if it is a game without any human players.
+  inline bool isBotsOnly() const { return botsOnly; }
+
+  //! Inline function returning the players vector.
+  inline vector< shared_ptr<Player> > getPlayers() { return players; }
+
+  //! Inline function returning the number of cards players have to play in the game.
+  inline int getCardsPerPlayer const { return cardsPerPlayer; }
+
+  //! Inline function returning if it the called king is known.
+  inline bool isKingFound() const { return kingFound; }
+
+  //! Check if a played card is the called king in a 5-player game.
+  /*!
+    \param card The played card to check.
+    \param player The player who played card.
+    \return True iff card is the called king.
+  */
+  bool isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player );
+
+  //! Inline function returning the taker team.
+  inline Team getTakers() const { return takers; }
+
+  //! Inline function returning the defender team.
+  inline Team getDefenders() const { return defenders; }
+
+  //! Inline function returning the unknown team (only in a 5-player game).
+  inline Team getUnknownTeam() const { return unknown; }
+
 private:
   //! To change the value of the current player's pointer.
   void nextPlayer();
@@ -119,8 +154,6 @@ private:
 
   //! Ensures to not lose the Fool, unless a very specific case: playing it at the very last trick without a chelem.
   void swapFool();
-
-  void isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player );
   
   vector< shared_ptr<Player> >	players;		//!< The vector of players.
   map< string, set<shared_ptr<Card> > > cardsPlayer;	//!< Won cards of each player.
