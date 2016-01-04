@@ -1,6 +1,6 @@
 # CXX = g++
 CXXFLAGS = -std=c++0x -O3 -W -Wall -Wno-sign-compare -c -I.  
-CPP_FILES = main.cpp AI.cpp Card.cpp Deck.cpp\
+CPP_FILES = main-nogui.cpp AI.cpp Card.cpp Deck.cpp\
  Game.cpp Human.cpp Player.cpp Team.cpp Trick.cpp\
  Beginner.cpp getInt.cpp getChar.cpp
 OBJ = $(patsubst %.cpp,%.o,$(CPP_FILES))
@@ -16,7 +16,7 @@ $(EXEC): $(OBJ)
 	$(CXX) $^ -o ../bin/$@
 	rm -f *.o
 
-main.o: Announcements.hpp AI.hpp Biddings.hpp\
+main-nogui.o: Announcements.hpp AI.hpp Biddings.hpp\
  Card.hpp Suits.hpp Deck.hpp Game.hpp\
  Human.hpp Player.hpp StratLang.hpp\
  Team.hpp Trick.hpp getInt.hpp\

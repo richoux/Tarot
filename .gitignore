@@ -1,3 +1,4 @@
-bin/tarot
+bin/
 html/
+obj/
 cachegrind*
