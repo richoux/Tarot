@@ -1,12 +1,12 @@
 # CXX = g++
-CXXFLAGS = -std=c++0x -O3 -W -Wall -Wno-sign-compare -c -I.  
+CXXFLAGS = -std=c++0x -W -Wall -Wno-sign-compare -c -I.  
 CPP_FILES = main-nogui.cpp AI.cpp Card.cpp Deck.cpp\
  Game.cpp Human.cpp Player.cpp Team.cpp Trick.cpp\
  Beginner.cpp getInt.cpp getChar.cpp
 OBJ = $(patsubst %.cpp,%.o,$(CPP_FILES))
 EXEC = tarot
 
-all: CXXFLAGS += -DNDEBUG
+all: CXXFLAGS += -O2 -DNDEBUG
 all: $(EXEC)
 
 debug: CXXFLAGS += -g -DDEBUG

@@ -82,7 +82,7 @@ public:
     \param players The player we want won cards from.
     \return the set containing his/her won cards.
   */
-  inline set<shared_ptr<Card> >getPlayerWonCards( shared_ptr<Player> player ) { return cardsPlayer[player->name]; }
+  inline set<shared_ptr<Card> >getPlayerWonCards( shared_ptr<Player> player ) const { return cardsPlayer.at( player->name ); }
 
   //! Shuffles (three time) the deck.
   void shuffleDeck();
