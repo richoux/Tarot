@@ -27,6 +27,25 @@ Card::Card( const Suits suit, const int value, const double points, const bool o
   : suit(suit), value(value), points(points), oudler(oudler)
 {}
 
+int Card::computeIndex() const
+{
+  switch( suit )
+  {
+  case heart:
+    return value;
+  case spade:
+    return 13 + value;
+  case diamond:
+    return 27 + value;
+  case club:
+    return 41 + value;
+  case trump:
+    return 55 + value;
+  default: // fool
+    return 77;
+  }
+}
+
 bool Card::operator>( const Card& card ) const 
 { 
   if( this->suit == 4 && card.suit < 4)

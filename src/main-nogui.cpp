@@ -21,24 +21,103 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <cstring>
+#include <string>
 
 #include <Game.hpp>
 #include <getInt.hpp>
 
 using namespace std;
 
+void usage()
+{
+  cout << "tarot [--debug [ #players [ #games ] ] ]" << endl;
+}
+
+void printRound( string toPrint )
+{
+  string stars;
+  for( int i = 0 ; i < toPrint.size(); ++i )
+    stars += "*";
+  
+  cout << endl
+       << "****" << stars << "****" << endl
+       << "*** " << toPrint << " ***" << endl
+       << "****" << stars << "****" << endl;
+}
+
+void gameLoop( Game &game )
+{
+  game.dealCards();
+  
+  if( game.isBotsOnly() )
+    game.showPlayersCards();
+
+  if( !game.takeBiddings() )
+  {
+    cout << "All players passed." << endl;
+    exit(0);
+  }
+
+  if( game.getNumberPlayers() == 5 )
+    game.chooseKing();
+  
+  game.takeDog();
+
+  cout << "Taker: " << game.getTakers() << endl;
+  if( game.getNumberPlayers() <= 5 )
+    cout << "Defenders: " << game.getDefenders() << endl;
+
+  if( game.isBotsOnly() )
+    game.showPlayersCards();
+
+  for( int round = 0; round < game.getCardsPerPlayer(); ++round )
+  {
+    string roundString("Round ");
+    roundString += to_string( round + 1 );
+    printRound( roundString );
+
+    auto trick = game.playTrick();
+    cout << "Trick: ";
+    trick->showAllCards();
+    cout << "=> Won by " << trick->getLeader()->name << endl;
+  }
+
+  Team winners = game.endGame();
+
+  cout << "Won cards:" << endl;
+  for( auto player : game.getPlayers() )
+  {
+    cout << player->name << ": ";
+    for( auto card : game.getPlayerWonCards( player ) )
+      cout << *card << " ";
+    cout << endl;
+  }
+
+  if( !winners.isEmpty() )
+  {
+    game.printScores();  
+    cout << "Winners: " << winners << endl;
+  }
+}
+
 int main( int argc, char **argv )
 {
   srand ( unsigned ( time(0) ) );
 
-  Game *game;
+  Game game;
   string playerName;
   int nberPlayers;
   int loop;
 
-  if( argc >= 2 && strcmp( argv[1], "--debug") == 0 )
+  if( argc >= 2 )
   {
+    string arg( argv[1] );
+    if( arg.compare( "--debug" ) != 0 || argc > 4 )
+    {
+      usage();
+      exit(1);
+    }
+    
     if( argc == 2 )
     {
       nberPlayers = 4;
@@ -55,13 +134,13 @@ int main( int argc, char **argv )
       loop = atoi( argv[3] );
     }
 
-    game = new Game( nberPlayers, playerName, true );
+    game.setGame( nberPlayers, playerName, true );
 
-    game->shuffleDeck();
-    game->showDeck();
-    game->showPlayersCards();
+    game.shuffleDeck();
+    game.showDeck();
+    game.showPlayersCards();
   }
-  else if( argc == 1 )
+  else
   {
     cout << "Please enter your name." << endl;
     getline( cin, playerName );
@@ -69,42 +148,25 @@ int main( int argc, char **argv )
       nberPlayers = getInt( "Please enter the number of players: 3, 4 or 5.\n" );
     } while( nberPlayers < 3 || nberPlayers > 5 );
     
-    if( playerName.compare("") != 0 )
-      game = new Game( nberPlayers, playerName );
+    if( !playerName.empty() )
+      game.setGame( nberPlayers, playerName );
     else
-      game = new Game( nberPlayers );
+      game.setGame( nberPlayers );
 
-    game->shuffleDeck();
+    game.shuffleDeck();
   }
 
-  if( argc >= 2 && strcmp( argv[1], "--debug") == 0 )
+  if( game.isBotsOnly() )
   {
     for( int i = 0 ; i < loop ; ++i )
     {
-      cout << "***********" << endl;
-      cout << "*** " << i << " ***" << endl;
-      cout << "***********" << endl;
-
-      Team winners = game->play();
-
-      if( !winners.isEmpty() )
-      {
-	game->printScores();  
-	cout << "Winners: " << winners << endl;
-      }
+      string numberGames( to_string( i ) );
+      printRound( numberGames );
       
-      game->newGame();
+      gameLoop( game );
+      game.newGame();
     }
   }
   else
-  {
-    Team winners = game->play();
-    
-    if( !winners.isEmpty() )
-    {
-      game->printScores();  
-      cout << "Winners: " << winners << endl;
-    }
-  }
-  delete game;
+    gameLoop( game );
 }

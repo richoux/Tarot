@@ -46,23 +46,27 @@ using namespace std;
 class Game
 {
 public:
+
+  //! The default constructor
+  Game();
   
-  //! The unique constructor of Game.
+  //! The complete constructor of Game.
   /*!
     \param numberPlayers The number of players.
     \param yourName The human player name.
-    \param automatic A boolean set to true if and only if one wants to perform automatic tests (4 bots playing together). False by default.
+    \param automatic A boolean set to true if and only if one wants to perform automatic tests. False by default.
   */
   Game( int& numberPlayers, const string yourName = "You", const bool automatic = false );
 
+  //! Set a game, like the equivalent constructor does.
+  void setGame( int& numberPlayers, const string yourName = "You", const bool automatic = false );
+
+  
   //! Creates a new game.
   void newGame();
 
   //! Prints players' / teams' scores.
   void printScores() const;
-
-  //! Plays all turns of a game and returns the winner team.
-  Team play();
 
   //! Plays one turn of a game and returns the current trick.
   shared_ptr<Trick> playTrick();
@@ -72,6 +76,13 @@ public:
 
   //! Shows players' cards on the screen.
   void showPlayersCards() const;
+
+  //! Inline function returning won cards of a given player.
+  /*!
+    \param players The player we want won cards from.
+    \return the set containing his/her won cards.
+  */
+  inline set<shared_ptr<Card> >getPlayerWonCards( shared_ptr<Player> player ) { return cardsPlayer[player->name]; }
 
   //! Shuffles (three time) the deck.
   void shuffleDeck();
@@ -84,6 +95,9 @@ public:
 
   //! To take the dog after biddings.
   void takeDog();
+
+  //! Close a game and returns winners.
+  Team endGame();
 
   //! In a 5-player game, to choose as a partner the player having the called king (or card). 
   void chooseKing();
@@ -113,7 +127,7 @@ public:
   inline vector< shared_ptr<Player> > getPlayers() { return players; }
 
   //! Inline function returning the number of cards players have to play in the game.
-  inline int getCardsPerPlayer const { return cardsPerPlayer; }
+  inline int getCardsPerPlayer() const { return cardsPerPlayer; }
 
   //! Inline function returning if it the called king is known.
   inline bool isKingFound() const { return kingFound; }
@@ -126,6 +140,9 @@ public:
   */
   bool isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player );
 
+  //! Inline function returning the number of players.
+  inline int getNumberPlayers() const { return players.size(); }
+
   //! Inline function returning the taker team.
   inline Team getTakers() const { return takers; }
 
@@ -136,6 +153,9 @@ public:
   inline Team getUnknownTeam() const { return unknown; }
 
 private:
+  //! Update Game fields after each trick.
+  void update();
+
   //! To change the value of the current player's pointer.
   void nextPlayer();
 
