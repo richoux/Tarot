@@ -395,11 +395,9 @@ double Game::computeScore( const string& name ) const
 {
   double score = 0;
 
-  cout << name << endl;
-  
-  for( shared_ptr<Card> card : cardsPlayer[ name ] )
+  for( shared_ptr<Card> card : cardsPlayer.at( name ) )
     score += card->getPoints();
-
+  
   return score;
 }
 
