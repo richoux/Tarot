@@ -13,8 +13,7 @@ debug: CXXFLAGS += -g -DDEBUG
 debug: $(EXEC)
 
 $(EXEC): $(OBJ)
-	$(CXX) $^ -o ../bin/$@
-	rm -f *.o
+	cd ../obj/ ; $(CXX) $^ -o ../bin/$@
 
 main-nogui.o: Announcements.hpp AI.hpp Biddings.hpp\
  Card.hpp Suits.hpp Deck.hpp Game.hpp\
@@ -51,9 +50,9 @@ Team.o: Player.hpp Team.hpp
 Trick.o: Card.hpp Player.hpp Trick.hpp
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) $< -o $@
+	$(CXX) $(CXXFLAGS) $< -o ../obj/$@
 
 .PHONY: clean
 
 clean:
-	rm -f *.o *~ core ../bin/$(EXEC)
+	rm -f ../obj/*.o *~ core ../bin/$(EXEC)
