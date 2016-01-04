@@ -55,7 +55,7 @@ void gameLoop( Game &game )
   if( !game.takeBiddings() )
   {
     cout << "All players passed." << endl;
-    exit(0);
+    return;
   }
 
   if( game.getNumberPlayers() == 5 )
