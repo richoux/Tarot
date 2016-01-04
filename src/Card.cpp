@@ -29,18 +29,18 @@ Card::Card( const Suits suit, const int value, const double points, const bool o
 
 int Card::computeIndex() const
 {
-  switch( card.suit )
+  switch( suit )
   {
   case heart:
-    return card.value;
+    return value;
   case spade:
-    return 13 + card.value;
+    return 13 + value;
   case diamond:
-    return 27 + card.value;
+    return 27 + value;
   case club:
-    return 41 + card.value;
+    return 41 + value;
   case trump:
-    return 55 + card.value;
+    return 55 + value;
   default: // fool
     return 77;
   }
