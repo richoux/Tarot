@@ -69,7 +69,11 @@ public:
   void printScores() const;
 
   //! Plays one turn of a game and returns the current trick.
-  shared_ptr<Trick> playTrick();
+  /*!
+    \param kingJustFound A Boolean value set to true if the called king is played this turn.
+    \return The played trick.
+  */
+  shared_ptr<Trick> playTrick( bool &kingJustFound );
   
   //! Shows the deck on the screen.
   void showDeck() const;
@@ -77,12 +81,12 @@ public:
   //! Shows players' cards on the screen.
   void showPlayersCards() const;
 
-  //! Inline function returning won cards of a given player.
+  //! Returns won cards of a given player.
   /*!
     \param players The player we want won cards from.
     \return the set containing his/her won cards.
   */
-  inline set<shared_ptr<Card> >getPlayerWonCards( shared_ptr<Player> player ) const { return cardsPlayer.at( player->name ); }
+  set<shared_ptr<Card> >getPlayerWonCards( shared_ptr<Player> player ) const;
 
   //! Shuffles (three time) the deck.
   void shuffleDeck();
@@ -90,8 +94,12 @@ public:
   //! Deals cards.
   void dealCards();
 
-  //! Makes all players bidding. Returns false iff all players passed.
-  bool takeBiddings();
+  //! Makes all players bidding.
+  /*!
+    \param quitGame A boolean value set to false iff all players pass.
+    \return the map with players as keys and their bid as values.
+  */
+  map< shared_ptr<Player>, Biddings > takeBiddings( bool &quitGame );
 
   //! To take the dog after biddings.
   void takeDog();
@@ -131,6 +139,15 @@ public:
 
   //! Inline function returning if it the called king is known.
   inline bool isKingFound() const { return kingFound; }
+
+  //! Inline function returning the called king.
+  inline shared_ptr<Card> getKingCalled() const { return kingCalled; }
+
+  //! Inline function returning the game bid.
+  inline Biddings getBidding() const { return bidding; }
+
+  //! Inline function returning the dog.
+  inline set< shared_ptr<Card> >getDog() const { return dog; }
 
   //! Check if a played card is the called king in a 5-player game.
   /*!

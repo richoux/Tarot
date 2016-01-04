@@ -52,17 +52,64 @@ void gameLoop( Game &game )
   if( game.isBotsOnly() )
     game.showPlayersCards();
 
-  if( !game.takeBiddings() )
+  bool allPassed;
+  auto bids = game.takeBiddings( allPassed );
+
+  for( auto &tuple : bids )
+  {
+    if( tuple.second == Biddings::none )
+      cout << tuple.first->name << " passes." << endl;
+    else
+    {
+      cout << tuple.first->name << " takes a ";
+      switch( tuple.second )
+      {
+      case Biddings::small:
+	cout << "Small." << endl;
+	break;
+      case Biddings::guard:
+	cout << "Guard." << endl;
+	break;
+      case Biddings::guard_w:
+	cout << "Guard Without." << endl;
+	break;
+      case Biddings::guard_a:
+	cout << "Guard Against." << endl;
+	break;
+      default:
+	break;
+      }
+    }
+  }
+    
+  if( allPassed )
   {
     cout << "All players passed." << endl;
     return;
   }
 
   if( game.getNumberPlayers() == 5 )
+  {
     game.chooseKing();
+    cout << game.getTakers().members.begin()->first << " called " << *game.getKingCalled() << endl;
+  }
+  
+  if( game.getBidding() <= Biddings::guard )
+  {
+    cout << "Show dog: ";
+    for( shared_ptr<Card> card : game.getDog() )
+      cout << *card << " ";
+    cout << endl;
+  }
   
   game.takeDog();
-
+  if( game.isKingFound() && game.isBotsOnly() )
+  {
+    cout << "Player alone! Unlucky!" << endl
+	 << "Taker: " << game.getTakers() << endl
+	 << "Defenders: " << game.getDefenders() << endl;      
+  }
+  
   cout << "Taker: " << game.getTakers() << endl;
   if( game.getNumberPlayers() <= 5 )
     cout << "Defenders: " << game.getDefenders() << endl;
@@ -70,16 +117,26 @@ void gameLoop( Game &game )
   if( game.isBotsOnly() )
     game.showPlayersCards();
 
+  bool kingJustFound;
+  
   for( int round = 0; round < game.getCardsPerPlayer(); ++round )
   {
     string roundString("Round ");
     roundString += to_string( round + 1 );
     printRound( roundString );
 
-    auto trick = game.playTrick();
+    auto trick = game.playTrick( kingJustFound );
     cout << "Trick: ";
     trick->showAllCards();
     cout << "=> Won by " << trick->getLeader()->name << endl;
+
+    if( kingJustFound && game.isBotsOnly() )
+    {
+      cout << "Parter known!" << endl
+	   << "Taker: " << game.getTakers() << endl
+	   << "Defenders: " << game.getDefenders() << endl;      
+    }
+
   }
 
   Team winners = game.endGame();

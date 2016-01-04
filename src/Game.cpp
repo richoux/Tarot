@@ -79,7 +79,10 @@ void Game::setGame( int& numberPlayers, const string yourName, const bool automa
     players.push_back( make_shared<AI>( "Dave", names ) );
   if( numberPlayers == 5 && botsOnly )
     players.push_back( make_shared<AI>( "Erin", names ) );
-      
+
+  for( shared_ptr<Player> player : players )
+    cardsPlayer[player->name].clear();
+  
   indexNext = rand() % players.size();
   indexStarter = indexNext;
   next = players[ indexNext ];
@@ -101,8 +104,11 @@ void Game::newGame()
   takers.newGame();
   defenders.newGame();
   if( players.size() == 5 )
+  {
     unknown.newGame();
-
+    kingFound = false;
+  }
+  
   foolGiver = foolReceiver = nullptr;
   toSwap = false;
   chelemAnnounced = false;
@@ -154,12 +160,13 @@ Team Game::endGame()
     return defenders;
 }
 
-shared_ptr<Trick> Game::playTrick()
+shared_ptr<Trick> Game::playTrick( bool &kingJustFound )
 {
   shared_ptr<Card> refCard; 
   shared_ptr<Card> playedCard; 
 
   currentTrick = make_shared<Trick>( nullptr );
+  kingJustFound = false;
       
   for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
   {
@@ -182,7 +189,7 @@ shared_ptr<Trick> Game::playTrick()
     }
 
     if( !kingFound )
-      isCardCalled( playedCard, next );
+      kingJustFound = isCardCalled( playedCard, next ) || kingJustFound;
 	
     nextPlayer();
   }
@@ -252,7 +259,7 @@ void Game::dealCards()
     }
 }
 
-bool Game::takeBiddings()
+map< shared_ptr<Player>, Biddings > Game::takeBiddings( bool &quitGame )
 {
   if( indexToBid != -1 )
   {
@@ -266,37 +273,16 @@ bool Game::takeBiddings()
 
   int index = indexToBid;
   Biddings bestBid = Biddings::none;  
-
+  map< shared_ptr<Player>, Biddings > playerBids;
+  
   for( unsigned int i = 0; i < players.size(); i++ )
   {
     if( index == players.size() )
       index = 0;
 
-    Biddings bid = players[index]->bid( bestBid, chelemAnnounced ); 
-    if( bid == Biddings::none )
-      cout << players[index]->name << " passes." << endl;
-    else
-    {
-      cout << players[index]->name << " takes a ";
-      switch( bid )
-      {
-      case Biddings::small:
-	cout << "Small." << endl;
-	break;
-      case Biddings::guard:
-	cout << "Guard." << endl;
-	break;
-      case Biddings::guard_w:
-	cout << "Guard Without." << endl;
-	break;
-      case Biddings::guard_a:
-	cout << "Guard Against." << endl;
-	break;
-      default:
-	break;
-      }
-    }
-
+    Biddings bid = players[index]->bid( bestBid, chelemAnnounced );
+    playerBids[ players[index] ] = bid;
+    
     if( players[index]->getAnnounced().find( Announcements::chelem ) != players[index]->getAnnounced().end() )
     {
       indexNext = index;
@@ -313,7 +299,7 @@ bool Game::takeBiddings()
   }
 
   if( bestBid == Biddings::none )
-    return false;
+    quitGame = true;
   else
   {
     bidding = bestBid;
@@ -338,33 +324,27 @@ bool Game::takeBiddings()
       next = players[indexToBid];
     }
 
-    return true;
+    quitGame = false;
   }
+
+  return playerBids;
 }
 
 void Game::takeDog()
 {
   if( bidding <= Biddings::guard )
   {
-    cout << "Show dog: ";
     for( shared_ptr<Card> card : dog )
     {
-      cout << *card << " ";
       players[indexBidder]->addCard( card );
       if( kingCalled == card )
       {
 	defenders.members = unknown.members;
 	unknown.members.clear();
 	kingFound = true;
-	if( botsOnly )
-	{
-	  cout << "Player alone! Unlucky!" << endl;
-	  cout << "Taker: " << takers << endl;
-	  cout << "Defenders: " << defenders << endl;      
-	}
       }
     }
-    cout << endl;
+
     dog.clear();
     addWonCards( players[indexBidder]->name, players[indexBidder]->makeEcart( dogSize ) );
   }
@@ -382,7 +362,6 @@ void Game::takeDog()
 void Game::chooseKing()
 {
   kingCalled = takers.members.begin()->second->chooseKing( deck );
-  cout << takers.members.begin()->first << " called " << *kingCalled << endl;
 }
 
 bool Game::sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const
@@ -399,6 +378,11 @@ double Game::computeScore( const string& name ) const
     score += card->getPoints();
   
   return score;
+}
+
+set<shared_ptr<Card> > Game::getPlayerWonCards( shared_ptr<Player> player ) const
+{
+  return cardsPlayer.at( player->name );
 }
 
 void Game::nextPlayer()
@@ -432,13 +416,8 @@ bool Game::isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player )
     takers.members[ player->name ] = player;
     unknown.members.erase( player->name );
     defenders.members = unknown.members;
-    if( botsOnly )
-    {
-      cout << "Parter known!" << endl;
-      cout << "Taker: " << takers << endl;
-      cout << "Defenders: " << defenders << endl;      
-    }
   }
+  
   return kingFound;
 }
 
@@ -446,14 +425,6 @@ void Game::swapFool()
 {
   shared_ptr<Card> fromReceiver = nullptr;
   shared_ptr<Card> theFool;
-
-  // for( auto player : players )
-  //   {
-  //     cout << player->name << ": ";
-  //     for( auto card : cardsPlayer[player->name])
-  // 	cout << *card << " ";
-  //     cout << endl;
-  //   }
 
   // search a dummy card
   for( shared_ptr<Card> card : cardsPlayer[foolReceiver->name] )
