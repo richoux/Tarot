@@ -45,25 +45,10 @@ bool AI::opponentsHaveSuit( const Suits suit ) const
   return any_of(opponents.cbegin(), 
 		opponents.cend(), 
 		[&]( const map<string, shared_ptr<Counting> >::value_type counting){ return counting.second->hasSuit( suit ); } );
-
-  // for( auto it = opponents.begin(); it != opponents.end(); ++it )
-  //   if( it->second.hasSuit( suit ) )
-  //     return true;
-
-  // return false;
 }
 
 shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
 {
-  // cout << "Cards of " << name << ": ";
-  // showCards();
-  // cout << endl;
-
-  // cout << "Player " << name << " valid cards: ";
-  // for( shared_ptr<Card> card : validCards( referenceCard, highTrump ) )
-  //   cout << *card;
-  // cout << endl;
-
   shared_ptr<Card> theCard = difficulty->playCard( validCards( referenceCard, highTrump ) );
   
   assert( theCard != nullptr );
