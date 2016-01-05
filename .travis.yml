@@ -43,7 +43,8 @@ install:
 
 script: 
   - $CXX --version
-  - make nogui-debug
+  - cd src
+  - make debug
   - bin/tarot --debug 3 10
   - bin/tarot --debug 4 10
   - bin/tarot --debug 5 10
