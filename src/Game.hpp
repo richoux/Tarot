@@ -28,6 +28,7 @@
 #include <map>
 #include <memory>
 #include <cstdlib>
+#include <utility>
 
 #include <Suits.hpp>
 #include <Biddings.hpp>
@@ -94,12 +95,15 @@ public:
   //! Deals cards.
   void dealCards();
 
-  //! Makes all players bidding.
+  //! Makes the current player bidding, then turns to the next player.
   /*!
-    \param quitGame A boolean value set to false iff all players pass.
-    \return the map with players as keys and their bid as values.
+    \param bestBid the reference to the best bid made so far.
+    \return the pair <player, bid>.
   */
-  map< shared_ptr<Player>, Biddings > takeBiddings( bool &quitGame );
+  pair< shared_ptr<Player>, Biddings > takeBiddings( Biddings &bestBid );
+
+  //! To call once bids are over.
+  void closeBiddings();
 
   //! To take the dog after biddings.
   void takeDog();
@@ -168,6 +172,9 @@ public:
 
   //! Inline function returning the unknown team (only in a 5-player game).
   inline Team getUnknownTeam() const { return unknown; }
+
+  //! Inline function setting indexBidder to the value of indexToBid.
+  inline void updateIndexBidder() { indexBidder = indexToBid; }
 
 private:
   //! Update Game fields after each trick.

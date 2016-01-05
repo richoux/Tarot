@@ -112,6 +112,10 @@ void Game::newGame()
   foolGiver = foolReceiver = nullptr;
   toSwap = false;
   chelemAnnounced = false;
+  if( indexToBid == players.size() - 1 )
+    indexToBid = 0;
+  else
+    ++indexToBid;
 }
 
 void Game::printScores() const
@@ -259,75 +263,54 @@ void Game::dealCards()
     }
 }
 
-map< shared_ptr<Player>, Biddings > Game::takeBiddings( bool &quitGame )
+pair< shared_ptr<Player>, Biddings > Game::takeBiddings( Biddings &bestBid )
 {
   if( indexToBid != -1 )
   {
     if( indexToBid == players.size() - 1 )
       indexToBid = 0;
     else
-      indexToBid++;
+      ++indexToBid;
   }
   else
     indexToBid = rand() % players.size();
-
-  int index = indexToBid;
-  Biddings bestBid = Biddings::none;  
-  map< shared_ptr<Player>, Biddings > playerBids;
   
-  for( unsigned int i = 0; i < players.size(); i++ )
+  pair< shared_ptr<Player>, Biddings > playerBid;
+  
+  Biddings bid = players[indexToBid]->bid( bestBid, chelemAnnounced );
+  playerBid = make_pair( players[indexToBid], bid );
+  
+  if( players[indexToBid]->getAnnounced().find( Announcements::chelem ) != players[indexToBid]->getAnnounced().end() )
   {
-    if( index == players.size() )
-      index = 0;
-
-    Biddings bid = players[index]->bid( bestBid, chelemAnnounced );
-    playerBids[ players[index] ] = bid;
-    
-    if( players[index]->getAnnounced().find( Announcements::chelem ) != players[index]->getAnnounced().end() )
-    {
-      indexNext = index;
-      next = players[index];
-      chelemAnnounced = true;
-    }
-
-    if( bestBid < bid )
-    {
-      indexBidder = index;
-      bestBid = bid;
-    }
-    index++;
+    indexNext = indexToBid;
+    next = players[indexToBid];
+    chelemAnnounced = true;
   }
+  
+  return playerBid;
+}
 
-  if( bestBid == Biddings::none )
-    quitGame = true;
+void Game::closeBiddings()
+{
+  takers.members[ players[indexBidder]->name ] = players[indexBidder];
+  if( players.size() < 5 )
+  {
+    for( unsigned int i = 0; i < players.size(); i++ )
+      if( i != indexBidder )
+	defenders.members[ players[i]->name ] = players[i];
+  }
   else
   {
-    bidding = bestBid;
-
-    takers.members[ players[indexBidder]->name ] = players[indexBidder];
-    if( players.size() < 5 )
-    {
-      for( unsigned int i = 0; i < players.size(); i++ )
-	if( i != indexBidder )
-	  defenders.members[ players[i]->name ] = players[i];
-    }
-    else
-    {
-      for( unsigned int i = 0; i < players.size(); i++ )
-	if( i != indexBidder )
-	  unknown.members[ players[i]->name ] = players[i];
-    }
-    
-    if( !chelemAnnounced )
-    {
-      indexNext = indexToBid;
-      next = players[indexToBid];
-    }
-
-    quitGame = false;
+    for( unsigned int i = 0; i < players.size(); i++ )
+      if( i != indexBidder )
+	unknown.members[ players[i]->name ] = players[i];
   }
-
-  return playerBids;
+  
+  if( !chelemAnnounced )
+  {
+    indexNext = indexBidder;
+    next = players[indexBidder];
+  }
 }
 
 void Game::takeDog()

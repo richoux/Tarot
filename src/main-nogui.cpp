@@ -52,17 +52,24 @@ void gameLoop( Game &game )
   if( game.isBotsOnly() )
     game.showPlayersCards();
 
-  bool allPassed;
-  auto bids = game.takeBiddings( allPassed );
-
-  for( auto &tuple : bids )
+  bool allPassed = true;
+  Biddings bestBid = Biddings::none;  
+  for( int p = 0 ; p < game.getNumberPlayers() ; ++p )
   {
-    if( tuple.second == Biddings::none )
-      cout << tuple.first->name << " passes." << endl;
+    auto bid = game.takeBiddings( bestBid );
+    if( bid.second == Biddings::none )
+      cout << bid.first->name << " passes." << endl;
     else
     {
-      cout << tuple.first->name << " takes a ";
-      switch( tuple.second )
+      allPassed = false;
+      if( bestBid < bid.second )
+      {
+	game.updateIndexBidder();
+	bestBid = bid.second;
+      }
+      
+      cout << bid.first->name << " takes a ";
+      switch( bid.second )
       {
       case Biddings::small:
 	cout << "Small." << endl;
@@ -88,6 +95,8 @@ void gameLoop( Game &game )
     return;
   }
 
+  game.closeBiddings();
+  
   if( game.getNumberPlayers() == 5 )
   {
     game.chooseKing();
