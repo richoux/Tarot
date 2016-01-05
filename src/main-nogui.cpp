@@ -45,6 +45,14 @@ void printRound( string toPrint )
        << "****" << stars << "****" << endl;
 }
 
+void printDog( Game &game )
+{
+  cout << "Show dog: ";
+  for( shared_ptr<Card> card : game.getDog() )
+    cout << *card << " ";
+  cout << endl;
+}
+
 void gameLoop( Game &game )
 {
   game.dealCards();
@@ -104,13 +112,8 @@ void gameLoop( Game &game )
   }
   
   if( game.getBidding() <= Biddings::guard )
-  {
-    cout << "Show dog: ";
-    for( shared_ptr<Card> card : game.getDog() )
-      cout << *card << " ";
-    cout << endl;
-  }
-  
+    printDog( game );
+    
   game.takeDog();
   if( game.isKingFound() && game.isBotsOnly() )
   {
@@ -158,6 +161,9 @@ void gameLoop( Game &game )
       cout << *card << " ";
     cout << endl;
   }
+
+  if( game.getBidding() > Biddings::guard )
+    printDog( game );
 
   if( !winners.isEmpty() )
   {
