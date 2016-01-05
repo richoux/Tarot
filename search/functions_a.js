@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['play',['play',['../classGame.html#a6a76e181e24425eb361960d5b5d184bd',1,'Game']]],
-  ['playcard',['playCard',['../classAI.html#a3f5b2888e03634db701c66f82a4f03a8',1,'AI::playCard()'],['../classBeginner.html#a73e2bf8d807166c994c42fd3b6bfc7bf',1,'Beginner::playCard()'],['../classHuman.html#a3258d3ce0eec7a5e393c639506ef28e5',1,'Human::playCard()'],['../classPlayer.html#aeba090a124bfd9a3666d2d793439cae0',1,'Player::playCard()'],['../classStratDiff.html#a550903bf95e6a897f346debab972f33a',1,'StratDiff::playCard()']]],
-  ['player',['Player',['../classPlayer.html#a5a2790fccf10c30106370d910c96d317',1,'Player']]],
-  ['printscores',['printScores',['../classGame.html#acb39f55a7b0b1d0d35b06d305a508dd4',1,'Game']]]
+  ['operator_3c',['operator&lt;',['../classCard.html#a0210e809d9ec749824716ec1f5ebbf8a',1,'Card::operator&lt;()'],['../classTeam.html#a1811d6b7e660181d8209b455cb9d92e0',1,'Team::operator&lt;()']]],
+  ['operator_3d_3d',['operator==',['../classCard.html#a54a1553ca40e32768ee09465447b8090',1,'Card']]],
+  ['operator_3e',['operator&gt;',['../classCard.html#a50bd8a1a5d5bdfce5727718844f87ce8',1,'Card::operator&gt;()'],['../classTeam.html#a3164302f1fd5d70db2e85994488f8054',1,'Team::operator&gt;()']]],
+  ['opponentshavesuit',['opponentsHaveSuit',['../classAI.html#affad35d086fe81539b07a5626b19c1bb',1,'AI']]]
 ];

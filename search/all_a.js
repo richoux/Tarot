@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['operator_3c',['operator&lt;',['../classCard.html#a0210e809d9ec749824716ec1f5ebbf8a',1,'Card::operator&lt;()'],['../classTeam.html#a1811d6b7e660181d8209b455cb9d92e0',1,'Team::operator&lt;()']]],
-  ['operator_3c_3c',['operator&lt;&lt;',['../classCard.html#a19eb35e24a8f6368e34575698fca9008',1,'Card::operator&lt;&lt;()'],['../classTeam.html#a6a20eb26a63a224b3970386af40bfb2b',1,'Team::operator&lt;&lt;()']]],
-  ['operator_3d_3d',['operator==',['../classCard.html#a54a1553ca40e32768ee09465447b8090',1,'Card']]],
-  ['operator_3e',['operator&gt;',['../classCard.html#a50bd8a1a5d5bdfce5727718844f87ce8',1,'Card::operator&gt;()'],['../classTeam.html#a3164302f1fd5d70db2e85994488f8054',1,'Team::operator&gt;()']]],
-  ['opponentshavesuit',['opponentsHaveSuit',['../classAI.html#affad35d086fe81539b07a5626b19c1bb',1,'AI']]]
+  ['name',['name',['../classPlayer.html#acf0355128a99ee20ad9931b760fb2de1',1,'Player']]],
+  ['newdeal',['newDeal',['../classDeck.html#aec4d8d2a67f1c46a1a7f175b8848f5b6',1,'Deck']]],
+  ['newgame',['newGame',['../classAI.html#a6cda26d3bf7238b1a7ea3725bf4aabb7',1,'AI::newGame()'],['../classGame.html#a12f32ba70a35a0dcd1f527b4d4a0d2c4',1,'Game::newGame()'],['../classHuman.html#aae5efb6945fdbcda9c9a4d9e72d4a60e',1,'Human::newGame()'],['../classPlayer.html#a76a707ceb6f24b0a2a801434ee5a60ad',1,'Player::newGame()'],['../classTeam.html#af7fdc812a83e0e8c0bb24bc1c50b30ca',1,'Team::newGame()']]],
+  ['numberclubs',['numberClubs',['../classDeck.html#af3ff1d8bc6de0cc05a1fe64b5c70b38a',1,'Deck']]],
+  ['numberdiamonds',['numberDiamonds',['../classDeck.html#ac36c6f248cf951b54580d6eba0734e3b',1,'Deck']]],
+  ['numberhearts',['numberHearts',['../classDeck.html#ac42ed01da688a430609cac03c00b2a5a',1,'Deck']]],
+  ['numberoudlers',['numberOudlers',['../classPlayer.html#a9f218c1ff377eaeb7a336156410f7386',1,'Player']]],
+  ['numberspades',['numberSpades',['../classDeck.html#a3f3e1163d62a3e6136d2a1104b93f80d',1,'Deck']]],
+  ['numbertrumps',['numberTrumps',['../classDeck.html#a7ddd8527b161887e1ae4023e371c1093',1,'Deck']]]
 ];

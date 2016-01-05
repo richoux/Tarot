@@ -96,9 +96,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ad59df6562a58a614fda24622d3715b65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad59df6562a58a614fda24622d3715b65"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ad59df6562a58a614fda24622d3715b65">Game</a> ()</td></tr>
+<tr class="memdesc:ad59df6562a58a614fda24622d3715b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default constructor. <br/></td></tr>
+<tr class="separator:ad59df6562a58a614fda24622d3715b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a584bfe348c8e1128dbb4b1fb40a05f0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a584bfe348c8e1128dbb4b1fb40a05f0b">Game</a> (int &amp;numberPlayers, const string yourName=&quot;You&quot;, const bool automatic=false)</td></tr>
-<tr class="memdesc:a584bfe348c8e1128dbb4b1fb40a05f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classGame.html" title="Game is one of the main class of Tarot. Here are defined rules, games&#39; turns, scores, etc. ">Game</a>.  <a href="#a584bfe348c8e1128dbb4b1fb40a05f0b">More...</a><br/></td></tr>
+<tr class="memdesc:a584bfe348c8e1128dbb4b1fb40a05f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The complete constructor of <a class="el" href="classGame.html" title="Game is one of the main class of Tarot. Here are defined rules, games&#39; turns, scores, etc. ">Game</a>.  <a href="#a584bfe348c8e1128dbb4b1fb40a05f0b">More...</a><br/></td></tr>
 <tr class="separator:a584bfe348c8e1128dbb4b1fb40a05f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1690785b0e8dd9ddc41e8ae16c3c51c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1690785b0e8dd9ddc41e8ae16c3c51c2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a1690785b0e8dd9ddc41e8ae16c3c51c2">setGame</a> (int &amp;numberPlayers, const string yourName=&quot;You&quot;, const bool automatic=false)</td></tr>
+<tr class="memdesc:a1690785b0e8dd9ddc41e8ae16c3c51c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a game, like the equivalent constructor does. <br/></td></tr>
+<tr class="separator:a1690785b0e8dd9ddc41e8ae16c3c51c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12f32ba70a35a0dcd1f527b4d4a0d2c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12f32ba70a35a0dcd1f527b4d4a0d2c4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a12f32ba70a35a0dcd1f527b4d4a0d2c4">newGame</a> ()</td></tr>
 <tr class="memdesc:a12f32ba70a35a0dcd1f527b4d4a0d2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new game. <br/></td></tr>
@@ -107,10 +115,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#acb39f55a7b0b1d0d35b06d305a508dd4">printScores</a> () const </td></tr>
 <tr class="memdesc:acb39f55a7b0b1d0d35b06d305a508dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints players' / teams' scores. <br/></td></tr>
 <tr class="separator:acb39f55a7b0b1d0d35b06d305a508dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a76e181e24425eb361960d5b5d184bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a76e181e24425eb361960d5b5d184bd"></a>
-<a class="el" href="classTeam.html">Team</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a6a76e181e24425eb361960d5b5d184bd">play</a> ()</td></tr>
-<tr class="memdesc:a6a76e181e24425eb361960d5b5d184bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays all turns of a game and returns the winner team. <br/></td></tr>
-<tr class="separator:a6a76e181e24425eb361960d5b5d184bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a403227b09b331182e56d46bfda54fdc6"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classTrick.html">Trick</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a403227b09b331182e56d46bfda54fdc6">playTrick</a> (bool &amp;kingJustFound)</td></tr>
+<tr class="memdesc:a403227b09b331182e56d46bfda54fdc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays one turn of a game and returns the current trick.  <a href="#a403227b09b331182e56d46bfda54fdc6">More...</a><br/></td></tr>
+<tr class="separator:a403227b09b331182e56d46bfda54fdc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e9e48c10a9ca4bc66b69e05b983e3ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e9e48c10a9ca4bc66b69e05b983e3ab"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a1e9e48c10a9ca4bc66b69e05b983e3ab">showDeck</a> () const </td></tr>
 <tr class="memdesc:a1e9e48c10a9ca4bc66b69e05b983e3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows the deck on the screen. <br/></td></tr>
@@ -119,6 +126,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aed6d30748ef9db0a89fba543fa4b5dfb">showPlayersCards</a> () const </td></tr>
 <tr class="memdesc:aed6d30748ef9db0a89fba543fa4b5dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows players' cards on the screen. <br/></td></tr>
 <tr class="separator:aed6d30748ef9db0a89fba543fa4b5dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1eb0e16a5ed6ff4b363779b109fb063"><td class="memItemLeft" align="right" valign="top">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#af1eb0e16a5ed6ff4b363779b109fb063">getPlayerWonCards</a> (shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; player) const </td></tr>
+<tr class="memdesc:af1eb0e16a5ed6ff4b363779b109fb063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns won cards of a given player.  <a href="#af1eb0e16a5ed6ff4b363779b109fb063">More...</a><br/></td></tr>
+<tr class="separator:af1eb0e16a5ed6ff4b363779b109fb063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8eb0a092d23b426a8b4b03c4083b7afe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8eb0a092d23b426a8b4b03c4083b7afe"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a8eb0a092d23b426a8b4b03c4083b7afe">shuffleDeck</a> ()</td></tr>
 <tr class="memdesc:a8eb0a092d23b426a8b4b03c4083b7afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffles (three time) the deck. <br/></td></tr>
@@ -127,14 +137,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a234bc66c5663548d90368ecd142591b2">dealCards</a> ()</td></tr>
 <tr class="memdesc:a234bc66c5663548d90368ecd142591b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deals cards. <br/></td></tr>
 <tr class="separator:a234bc66c5663548d90368ecd142591b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa134078b2c960b77dc2eaa16e3455141"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa134078b2c960b77dc2eaa16e3455141"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aa134078b2c960b77dc2eaa16e3455141">takeBiddings</a> ()</td></tr>
-<tr class="memdesc:aa134078b2c960b77dc2eaa16e3455141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes all players bidding. Returns false iff all players passed. <br/></td></tr>
-<tr class="separator:aa134078b2c960b77dc2eaa16e3455141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c5a63731a1e2e5229e4d9a004d3735"><td class="memItemLeft" align="right" valign="top">pair&lt; shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;<br class="typebreak"/>
+, Biddings &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aa7c5a63731a1e2e5229e4d9a004d3735">takeBiddings</a> (Biddings &amp;bestBid)</td></tr>
+<tr class="memdesc:aa7c5a63731a1e2e5229e4d9a004d3735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes the current player bidding, then turns to the next player.  <a href="#aa7c5a63731a1e2e5229e4d9a004d3735">More...</a><br/></td></tr>
+<tr class="separator:aa7c5a63731a1e2e5229e4d9a004d3735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a478f381d19d7a18af7633cbaad3bab98"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a478f381d19d7a18af7633cbaad3bab98"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a478f381d19d7a18af7633cbaad3bab98">closeBiddings</a> ()</td></tr>
+<tr class="memdesc:a478f381d19d7a18af7633cbaad3bab98"><td class="mdescLeft">&#160;</td><td class="mdescRight">To call once bids are over. <br/></td></tr>
+<tr class="separator:a478f381d19d7a18af7633cbaad3bab98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab725d07327db4dfb836e90eb08c83393"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab725d07327db4dfb836e90eb08c83393"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ab725d07327db4dfb836e90eb08c83393">takeDog</a> ()</td></tr>
 <tr class="memdesc:ab725d07327db4dfb836e90eb08c83393"><td class="mdescLeft">&#160;</td><td class="mdescRight">To take the dog after biddings. <br/></td></tr>
 <tr class="separator:ab725d07327db4dfb836e90eb08c83393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c3c4bfb78508234cf2c5e7c4ef0c52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7c3c4bfb78508234cf2c5e7c4ef0c52"></a>
+<a class="el" href="classTeam.html">Team</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#af7c3c4bfb78508234cf2c5e7c4ef0c52">endGame</a> ()</td></tr>
+<tr class="memdesc:af7c3c4bfb78508234cf2c5e7c4ef0c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a game and returns winners. <br/></td></tr>
+<tr class="separator:af7c3c4bfb78508234cf2c5e7c4ef0c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68d2c56aaaa1b3d2c01bc9968f0166b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68d2c56aaaa1b3d2c01bc9968f0166b2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a68d2c56aaaa1b3d2c01bc9968f0166b2">chooseKing</a> ()</td></tr>
 <tr class="memdesc:a68d2c56aaaa1b3d2c01bc9968f0166b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">In a 5-player game, to choose as a partner the player having the called king (or card). <br/></td></tr>
@@ -145,6 +163,61 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:af3ae0695c2600b273e14d9fa93dd980a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#af3ae0695c2600b273e14d9fa93dd980a">computeScore</a> (const string &amp;name) const </td></tr>
 <tr class="memdesc:af3ae0695c2600b273e14d9fa93dd980a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the score of a given player (refered by his/her name).  <a href="#af3ae0695c2600b273e14d9fa93dd980a">More...</a><br/></td></tr>
 <tr class="separator:af3ae0695c2600b273e14d9fa93dd980a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd76a99634dc6e9930561b9beb6c0e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadd76a99634dc6e9930561b9beb6c0e8"></a>
+shared_ptr&lt; <a class="el" href="classTrick.html">Trick</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aadd76a99634dc6e9930561b9beb6c0e8">getCurrentTrick</a> () const </td></tr>
+<tr class="memdesc:aadd76a99634dc6e9930561b9beb6c0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the current trick. <br/></td></tr>
+<tr class="separator:aadd76a99634dc6e9930561b9beb6c0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a56ee5adaeb93428763cf99a581028a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a56ee5adaeb93428763cf99a581028a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a7a56ee5adaeb93428763cf99a581028a">isBotsOnly</a> () const </td></tr>
+<tr class="memdesc:a7a56ee5adaeb93428763cf99a581028a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning if it is a game without any human players. <br/></td></tr>
+<tr class="separator:a7a56ee5adaeb93428763cf99a581028a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadb9a4b5a747542b337c93b6f887e2c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadb9a4b5a747542b337c93b6f887e2c6"></a>
+vector&lt; shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aadb9a4b5a747542b337c93b6f887e2c6">getPlayers</a> ()</td></tr>
+<tr class="memdesc:aadb9a4b5a747542b337c93b6f887e2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the players vector. <br/></td></tr>
+<tr class="separator:aadb9a4b5a747542b337c93b6f887e2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc2622666c1040a6b31374aa99d7ab9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fc2622666c1040a6b31374aa99d7ab9"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a4fc2622666c1040a6b31374aa99d7ab9">getCardsPerPlayer</a> () const </td></tr>
+<tr class="memdesc:a4fc2622666c1040a6b31374aa99d7ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the number of cards players have to play in the game. <br/></td></tr>
+<tr class="separator:a4fc2622666c1040a6b31374aa99d7ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48a0cb284241d88d1593ebb12402b3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae48a0cb284241d88d1593ebb12402b3c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ae48a0cb284241d88d1593ebb12402b3c">isKingFound</a> () const </td></tr>
+<tr class="memdesc:ae48a0cb284241d88d1593ebb12402b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning if it the called king is known. <br/></td></tr>
+<tr class="separator:ae48a0cb284241d88d1593ebb12402b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4282b32177fc681f8c5b1454b87d6b96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4282b32177fc681f8c5b1454b87d6b96"></a>
+shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a4282b32177fc681f8c5b1454b87d6b96">getKingCalled</a> () const </td></tr>
+<tr class="memdesc:a4282b32177fc681f8c5b1454b87d6b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the called king. <br/></td></tr>
+<tr class="separator:a4282b32177fc681f8c5b1454b87d6b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace04e437ab83e14d0355466cf9ee0501"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace04e437ab83e14d0355466cf9ee0501"></a>
+Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#ace04e437ab83e14d0355466cf9ee0501">getBidding</a> () const </td></tr>
+<tr class="memdesc:ace04e437ab83e14d0355466cf9ee0501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the game bid. <br/></td></tr>
+<tr class="separator:ace04e437ab83e14d0355466cf9ee0501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87db493f655dad2f5c49957c7cb25c6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87db493f655dad2f5c49957c7cb25c6e"></a>
+set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a87db493f655dad2f5c49957c7cb25c6e">getDog</a> () const </td></tr>
+<tr class="memdesc:a87db493f655dad2f5c49957c7cb25c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the dog. <br/></td></tr>
+<tr class="separator:a87db493f655dad2f5c49957c7cb25c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a469c5155b0c24401514e072af4fbbb53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a469c5155b0c24401514e072af4fbbb53">isCardCalled</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card, shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; player)</td></tr>
+<tr class="memdesc:a469c5155b0c24401514e072af4fbbb53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a played card is the called king in a 5-player game.  <a href="#a469c5155b0c24401514e072af4fbbb53">More...</a><br/></td></tr>
+<tr class="separator:a469c5155b0c24401514e072af4fbbb53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a887371d74b2b9083e8b8df3c51e5efbb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a887371d74b2b9083e8b8df3c51e5efbb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a887371d74b2b9083e8b8df3c51e5efbb">getNumberPlayers</a> () const </td></tr>
+<tr class="memdesc:a887371d74b2b9083e8b8df3c51e5efbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the number of players. <br/></td></tr>
+<tr class="separator:a887371d74b2b9083e8b8df3c51e5efbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df3d65019a8370adb0ac42f788403e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1df3d65019a8370adb0ac42f788403e4"></a>
+<a class="el" href="classTeam.html">Team</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a1df3d65019a8370adb0ac42f788403e4">getTakers</a> () const </td></tr>
+<tr class="memdesc:a1df3d65019a8370adb0ac42f788403e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the taker team. <br/></td></tr>
+<tr class="separator:a1df3d65019a8370adb0ac42f788403e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1308f0eb31f6bf572788efbc3428a7b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1308f0eb31f6bf572788efbc3428a7b2"></a>
+<a class="el" href="classTeam.html">Team</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a1308f0eb31f6bf572788efbc3428a7b2">getDefenders</a> () const </td></tr>
+<tr class="memdesc:a1308f0eb31f6bf572788efbc3428a7b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the defender team. <br/></td></tr>
+<tr class="separator:a1308f0eb31f6bf572788efbc3428a7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a293d27f6ea1e5efcf117594f4d19110d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a293d27f6ea1e5efcf117594f4d19110d"></a>
+<a class="el" href="classTeam.html">Team</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a293d27f6ea1e5efcf117594f4d19110d">getUnknownTeam</a> () const </td></tr>
+<tr class="memdesc:a293d27f6ea1e5efcf117594f4d19110d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the unknown team (only in a 5-player game). <br/></td></tr>
+<tr class="separator:a293d27f6ea1e5efcf117594f4d19110d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33dfa4147825127f44dac56a07a38ef0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33dfa4147825127f44dac56a07a38ef0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a33dfa4147825127f44dac56a07a38ef0">updateIndexBidder</a> ()</td></tr>
+<tr class="memdesc:a33dfa4147825127f44dac56a07a38ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function setting indexBidder to the value of indexToBid. <br/></td></tr>
+<tr class="separator:a33dfa4147825127f44dac56a07a38ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classGame.html" title="Game is one of the main class of Tarot. Here are defined rules, games&#39; turns, scores, etc. ">Game</a> is one of the main class of Tarot. Here are defined rules, games' turns, scores, etc. </p>
@@ -179,12 +252,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>The unique constructor of <a class="el" href="classGame.html" title="Game is one of the main class of Tarot. Here are defined rules, games&#39; turns, scores, etc. ">Game</a>. </p>
+<p>The complete constructor of <a class="el" href="classGame.html" title="Game is one of the main class of Tarot. Here are defined rules, games&#39; turns, scores, etc. ">Game</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">numberPlayers</td><td>The number of players. </td></tr>
     <tr><td class="paramname">yourName</td><td>The human player name. </td></tr>
-    <tr><td class="paramname">automatic</td><td>A boolean set to true if and only if one wants to perform automatic tests (4 bots playing together). False by default. </td></tr>
+    <tr><td class="paramname">automatic</td><td>A boolean set to true if and only if one wants to perform automatic tests. False by default. </td></tr>
   </table>
   </dd>
 </dl>
@@ -214,6 +287,92 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The score of the given player. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af1eb0e16a5ed6ff4b363779b109fb063"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; Game::getPlayerWonCards </td>
+          <td>(</td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns won cards of a given player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">players</td><td>The player we want won cards from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the set containing his/her won cards. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a469c5155b0c24401514e072af4fbbb53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::isCardCalled </td>
+          <td>(</td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramname"><em>card</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a played card is the called king in a 5-player game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">card</td><td>The played card to check. </td></tr>
+    <tr><td class="paramname">player</td><td>The player who played card. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True iff card is the called king. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a403227b09b331182e56d46bfda54fdc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt; <a class="el" href="classTrick.html">Trick</a> &gt; Game::playTrick </td>
+          <td>(</td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>kingJustFound</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Plays one turn of a game and returns the current trick. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kingJustFound</td><td>A Boolean value set to true if the called king is played this turn. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The played trick. </dd></dl>
 
 </div>
 </div>
@@ -253,6 +412,31 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a class="anchor" id="aa7c5a63731a1e2e5229e4d9a004d3735"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pair&lt; shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;, Biddings &gt; Game::takeBiddings </td>
+          <td>(</td>
+          <td class="paramtype">Biddings &amp;&#160;</td>
+          <td class="paramname"><em>bestBid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Makes the current player bidding, then turns to the next player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bestBid</td><td>the reference to the best bid made so far. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the pair &lt;player, bid&gt;. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="Game_8hpp_source.html">Game.hpp</a></li>
 <li>src/Game.cpp</li>
@@ -260,7 +444,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2015 05:45:32 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 5 2016 04:44:08 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

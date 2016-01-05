@@ -1,8 +1,25 @@
 var searchData=
 [
-  ['hasstrongerthan',['hasStrongerThan',['../classDeck.html#a82a3371b10b8be7bc5fef6999a56bb88',1,'Deck']]],
-  ['havesuit',['haveSuit',['../classAI.html#a01cd7c1760412dde024605226591328c',1,'AI']]],
-  ['heads',['heads',['../classDeck.html#a25fb7d0855d89be0f4f9928900b39ebc',1,'Deck']]],
-  ['hearts',['hearts',['../classPlayer.html#afab8e372cfef87440bc42168d5fa0f6a',1,'Player']]],
-  ['human',['Human',['../classHuman.html',1,'Human'],['../classHuman.html#abfd57b90d90f9222384c76b44346ba7b',1,'Human::Human()']]]
+  ['game',['Game',['../classGame.html',1,'Game'],['../classGame.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()'],['../classGame.html#a584bfe348c8e1128dbb4b1fb40a05f0b',1,'Game::Game(int &amp;numberPlayers, const string yourName=&quot;You&quot;, const bool automatic=false)']]],
+  ['getallcards',['getAllCards',['../classTrick.html#a1db9b6c13def25e38b6604b56d97ddd2',1,'Trick']]],
+  ['getannounced',['getAnnounced',['../classPlayer.html#a5573dd91ddb6fa8874d5a7f7a186f186',1,'Player']]],
+  ['getbidding',['getBidding',['../classGame.html#ace04e437ab83e14d0355466cf9ee0501',1,'Game']]],
+  ['getcard',['getCard',['../classTrick.html#a1649b27628cb224f3eb98f56ea00f5ac',1,'Trick']]],
+  ['getcardsperplayer',['getCardsPerPlayer',['../classGame.html#a4fc2622666c1040a6b31374aa99d7ab9',1,'Game']]],
+  ['getcurrenttrick',['getCurrentTrick',['../classGame.html#aadd76a99634dc6e9930561b9beb6c0e8',1,'Game']]],
+  ['getdefenders',['getDefenders',['../classGame.html#a1308f0eb31f6bf572788efbc3428a7b2',1,'Game']]],
+  ['getdog',['getDog',['../classGame.html#a87db493f655dad2f5c49957c7cb25c6e',1,'Game']]],
+  ['getinitialcards',['getInitialCards',['../classPlayer.html#aab2cfa2ce2e7a3903ff99ac5c7ef8db6',1,'Player']]],
+  ['getkingcalled',['getKingCalled',['../classGame.html#a4282b32177fc681f8c5b1454b87d6b96',1,'Game']]],
+  ['getnumberoudlers',['getNumberOudlers',['../classPlayer.html#a4dc51cf2a773556eb26f3d47c4274b0a',1,'Player']]],
+  ['getnumberplayers',['getNumberPlayers',['../classGame.html#a887371d74b2b9083e8b8df3c51e5efbb',1,'Game']]],
+  ['getplayers',['getPlayers',['../classGame.html#aadb9a4b5a747542b337c93b6f887e2c6',1,'Game']]],
+  ['getplayerwoncards',['getPlayerWonCards',['../classGame.html#af1eb0e16a5ed6ff4b363779b109fb063',1,'Game']]],
+  ['getpoints',['getPoints',['../classCard.html#adf11e6396788e2e832d3bdf29880593f',1,'Card']]],
+  ['getscore',['getScore',['../classTeam.html#a57a775ba38aaf35510e412a01d6a3062',1,'Team::getScore()'],['../classTrick.html#a63625303ef93e30fec915b8cd039e6af',1,'Trick::getScore()']]],
+  ['getsuit',['getSuit',['../classCard.html#a77f39ecaee335e62e267e44e07a15ebe',1,'Card']]],
+  ['gettakers',['getTakers',['../classGame.html#a1df3d65019a8370adb0ac42f788403e4',1,'Game']]],
+  ['getunknownteam',['getUnknownTeam',['../classGame.html#a293d27f6ea1e5efcf117594f4d19110d',1,'Game']]],
+  ['getvalue',['getValue',['../classCard.html#ab70c98dd7bfc44f87c5914990737e79d',1,'Card']]],
+  ['getwincard',['getWinCard',['../classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b',1,'Trick']]]
 ];

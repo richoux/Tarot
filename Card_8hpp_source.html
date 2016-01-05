@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Tarot is an application for Android system to play to French Tarot.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Please visit https://github.com/richoux/Tarot for further information.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright (C) 2013-2014 Florian Richoux</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright (C) 2013-2016 Florian Richoux</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * This file is part of Tarot.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Tarot is free software: you can redistribute it and/or modify</span></div>
@@ -138,28 +138,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classCard.html#ac8978fa4de9e59246381ebd2f9c5ecfc">   66</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span>   <a class="code" href="classCard.html#ac8978fa4de9e59246381ebd2f9c5ecfc">isFaceCard</a>      ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> value &gt; 10; }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">bool</span> operator&gt;( <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; card ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">bool</span> operator&lt;( <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; card ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">bool</span> operator==( <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; card ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">   98</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">isComparable</a>( <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; card )<span class="keyword"> const </span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">    </span>{ </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordflow">return</span> this-&gt;suit == card.suit || this-&gt;suit == 4 || card.suit == 4;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  Suits         suit;   </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">int</span>           value;  </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">double</span>        points; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">bool</span>          oudler; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
-<div class="ttc" id="classCard_html_a2c531d32de5e76e758254b9d03689ae5"><div class="ttname"><a href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">Card::isComparable</a></div><div class="ttdeci">bool isComparable(const Card &amp;card) const </div><div class="ttdoc">A function to decide if two cards are comparable. </div><div class="ttdef"><b>Definition:</b> Card.hpp:98</div></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">int</span> computeIndex() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">bool</span> operator&gt;( <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; card ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">bool</span> operator&lt;( <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; card ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">bool</span> operator==( <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; card ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">  101</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">isComparable</a>( <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; card )<span class="keyword"> const </span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">    </span>{ </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keywordflow">return</span> this-&gt;suit == card.suit || this-&gt;suit == 4 || card.suit == 4;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  Suits         suit;   </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">int</span>           value;  </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">double</span>        points; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">bool</span>          oudler; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
+<div class="ttc" id="classCard_html_a2c531d32de5e76e758254b9d03689ae5"><div class="ttname"><a href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">Card::isComparable</a></div><div class="ttdeci">bool isComparable(const Card &amp;card) const </div><div class="ttdoc">A function to decide if two cards are comparable. </div><div class="ttdef"><b>Definition:</b> Card.hpp:101</div></div>
 <div class="ttc" id="classCard_html_ac8978fa4de9e59246381ebd2f9c5ecfc"><div class="ttname"><a href="classCard.html#ac8978fa4de9e59246381ebd2f9c5ecfc">Card::isFaceCard</a></div><div class="ttdeci">bool isFaceCard() const </div><div class="ttdoc">Inline function returning true iif the card is a face card. </div><div class="ttdef"><b>Definition:</b> Card.hpp:66</div></div>
 <div class="ttc" id="classCard_html_aa05732992ee8352a205a15d89f4edda4"><div class="ttname"><a href="classCard.html#aa05732992ee8352a205a15d89f4edda4">Card::isFool</a></div><div class="ttdeci">bool isFool() const </div><div class="ttdoc">Inline function returning true iif the card is the Fool. </div><div class="ttdef"><b>Definition:</b> Card.hpp:57</div></div>
 <div class="ttc" id="classCard_html_adf11e6396788e2e832d3bdf29880593f"><div class="ttname"><a href="classCard.html#adf11e6396788e2e832d3bdf29880593f">Card::getPoints</a></div><div class="ttdeci">double getPoints() const </div><div class="ttdoc">Inline assessor to get the card&#39;s points. </div><div class="ttdef"><b>Definition:</b> Card.hpp:48</div></div>
@@ -171,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2015 05:45:32 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 5 2016 04:44:07 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

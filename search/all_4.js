@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fool',['fool',['../classPlayer.html#a9dfead246bd18b99398c89777290a162',1,'Player']]]
+  ['endgame',['endGame',['../classGame.html#af7c3c4bfb78508234cf2c5e7c4ef0c52',1,'Game']]]
 ];
