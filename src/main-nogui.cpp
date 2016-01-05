@@ -173,7 +173,7 @@ int main( int argc, char **argv )
   Game game;
   string playerName;
   int nberPlayers;
-  int loop;
+  int loop = 1;
 
   if( argc >= 2 )
   {
@@ -185,15 +185,9 @@ int main( int argc, char **argv )
     }
     
     if( argc == 2 )
-    {
       nberPlayers = 4;
-      loop = 1;
-    }
     else if( argc == 3 )
-    {
       nberPlayers = atoi( argv[2] );
-      loop = 1;
-    }
     else
     {
       nberPlayers = atoi( argv[2] );
