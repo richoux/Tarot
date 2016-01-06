@@ -30,34 +30,6 @@ AI::AI( const string& name, const vector<string>& knownPartners ) : Player( name
   difficulty = make_shared<Beginner>();
 }
 
-bool AI::haveSuit( const string& name, const Suits suit ) const
-{
-  if( isOpponent( name ) )
-    return opponents.at( name )->hasSuit( suit );
-  else if( isPartner( name ) )
-    return partners.at( name )->hasSuit( suit );
-  else
-    return true;
-}
-
-bool AI::opponentsHaveSuit( const Suits suit ) const
-{
-  return any_of(opponents.cbegin(), 
-		opponents.cend(), 
-		[&]( const map<string, shared_ptr<Counting> >::value_type counting){ return counting.second->hasSuit( suit ); } );
-}
-
-shared_ptr<Card> AI::playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump )
-{
-  shared_ptr<Card> theCard = difficulty->playCard( validCards( referenceCard, highTrump ) );
-  
-  assert( theCard != nullptr );
-  
-  cout << name << " played " << *theCard << endl;
-  delCard( theCard );
-  return theCard;
-}
-
 Biddings AI::bid( const Biddings bestBid, const bool chelemAnnounced ) const
 {
   if( bestBid == Biddings::guard_a )
@@ -66,6 +38,22 @@ Biddings AI::bid( const Biddings bestBid, const bool chelemAnnounced ) const
   // manage chelem announcement here
 
   return difficulty->bid( bestBid, getNumberOudlers(), chelemAnnounced );
+}
+
+shared_ptr<Card> AI::chooseKing( const Deck &deck ) const
+{
+  auto callable = callableCards( deck );
+  return callable[ rand() % callable.size() ];
+}
+
+bool AI::haveSuit( const string& name, const Suits suit ) const
+{
+  if( isOpponent( name ) )
+    return opponents.at( name )->hasSuit( suit );
+  else if( isPartner( name ) )
+    return partners.at( name )->hasSuit( suit );
+  else
+    return true;
 }
 
 set< shared_ptr<Card> >	AI::makeEcart( const int dogSize )
@@ -77,12 +65,6 @@ set< shared_ptr<Card> >	AI::makeEcart( const int dogSize )
   for( auto card : ecart)
     delCard( card );
   return ecart;
-}
-
-shared_ptr<Card> AI::chooseKing( const Deck &deck ) const
-{
-  auto callable = callableCards( deck );
-  return callable[ rand() % callable.size() ];
 }
 
 void AI::newGame() 
@@ -102,4 +84,22 @@ void AI::newGame()
   partners.clear();
   opponents.clear();
   cardCounting.newDeal();
+}
+
+shared_ptr<Card> AI::playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump )
+{
+  shared_ptr<Card> theCard = difficulty->playCard( validCards( referenceCard, highTrump ) );
+  
+  assert( theCard != nullptr );
+  
+  cout << name << " played " << *theCard << endl;
+  delCard( theCard );
+  return theCard;
+}
+
+bool AI::opponentsHaveSuit( const Suits suit ) const
+{
+  return any_of(opponents.cbegin(), 
+		opponents.cend(), 
+		[&]( const map<string, shared_ptr<Counting> >::value_type counting){ return counting.second->hasSuit( suit ); } );
 }
