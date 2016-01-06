@@ -21,7 +21,10 @@
 
 // From a dude on stackoverflow.com
 
-#include <getInt.hpp>
+#include <iostream>
+#include <sstream>
+
+#include "getInt.hpp"
 
 using namespace std;
 

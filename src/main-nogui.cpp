@@ -23,8 +23,8 @@
 #include <cstdlib>
 #include <string>
 
-#include <Game.hpp>
-#include <getInt.hpp>
+#include "Game.hpp"
+#include "getInt.hpp"
 
 using namespace std;
 
@@ -111,8 +111,6 @@ void gameLoop( Game &game )
     cout << game.getTakers().members.begin()->first << " called " << *game.getKingCalled() << endl;
   }
 
-  cout << game.getBidding() << endl;
-  
   if( game.getBidding() <= Biddings::guard )
     printDog( game );
     

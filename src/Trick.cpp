@@ -19,7 +19,9 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Trick.hpp>
+#include <iostream>
+
+#include "Trick.hpp"
 
 Trick::Trick() : leader(nullptr), foolPlayer(nullptr), greaterTrump(nullptr), referenceSuit(Suits::unknown) 
 {}
@@ -54,7 +56,7 @@ double Trick::getScore() const
   return score;
 }
 
-void Trick::setCard( shared_ptr<Player> player, shared_ptr<Card> card )
+void Trick::setCard( const shared_ptr<Player> player, const shared_ptr<Card> card )
 {
   trickCards[player] = card;
   if( card->isFool() )

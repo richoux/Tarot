@@ -19,11 +19,33 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Deck.hpp>
+#include <algorithm>
+#include <iterator>
+#include <ctime>
+
+#include "Deck.hpp"
 
 Deck::Deck()
 {
   newDeal();
+}
+
+bool Deck::hasStrongerThan( const shared_ptr<Card> card ) const
+{
+  for( auto it = cards.cbegin(); it != cards.cend(); ++it )
+    if( *(*it) > *card)
+      return true;
+
+  return false;  
+}
+
+int Deck::indexInDeck( const shared_ptr<Card> card ) const
+{
+  auto index = find( cards.cbegin(), cards.cend(), card );
+  if( index == cards.cend() )
+    return -1;
+  else
+    return distance( cards.cbegin(), index );
 }
 
 void Deck::newDeal()
@@ -155,22 +177,4 @@ void Deck::newDeal()
 void Deck::shuffle()
 {
   random_shuffle( cards.begin(), cards.end() );
-}
-
-int Deck::indexInDeck( shared_ptr<Card> card ) const
-{
-  auto index = find( cards.begin(), cards.end(), card );
-  if( index == cards.end() )
-    return -1;
-  else
-    return distance( cards.begin(), index );
-}
-
-bool Deck::hasStrongerThan( shared_ptr<Card> card ) const
-{
-  for( auto it = cards.begin(); it != cards.end(); ++it )
-    if( *(*it) > *card)
-      return true;
-
-  return false;  
 }

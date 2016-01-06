@@ -21,7 +21,7 @@
 
 #include <sstream>
 
-#include <Card.hpp>
+#include "Card.hpp"
 
 Card::Card( const Suits suit, const int value, const double points, const bool oudler )
   : suit(suit), value(value), points(points), oudler(oudler)

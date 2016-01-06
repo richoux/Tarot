@@ -24,11 +24,9 @@
 #include <memory>
 #include <vector>
 
-#include <Player.hpp>
-#include <Suits.hpp>
-#include <Card.hpp>
-#include <getInt.hpp>
-#include <getChar.hpp>
+#include "Player.hpp"
+#include "Suits.hpp"
+#include "Card.hpp"
 
 using namespace std;
 

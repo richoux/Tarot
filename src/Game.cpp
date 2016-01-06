@@ -19,7 +19,11 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Game.hpp>
+#include <iostream>
+#include <cstdlib>
+#include <utility>
+
+#include "Game.hpp"
 
 Game::Game()
   : currentTrick(make_shared<Trick>()),
@@ -56,7 +60,7 @@ void Game::chooseKing()
   kingCalled = takers.members.begin()->second->chooseKing( deck );
 }
 
-void Game::closeBiddings( Biddings bestBid )
+void Game::closeBiddings( const Biddings bestBid )
 {
   bidding = bestBid;
   
@@ -146,7 +150,7 @@ Team Game::endGame()
     return defenders;
 }
 
-set<shared_ptr<Card> > Game::getPlayerWonCards( shared_ptr<Player> player ) const
+set<shared_ptr<Card> > Game::getPlayerWonCards( const shared_ptr<Player> player ) const
 {
   return cardsPlayer.at( player->name );
 }
@@ -214,7 +218,7 @@ void Game::printScores() const
   cout << "Defenders: " << defenders.getScore() << endl;
 }
 
-bool Game::sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const
+bool Game::sameTeam( const shared_ptr<Player> p1, const shared_ptr<Player> p2 ) const
 {
   return ( takers.contains(p1->name) && takers.contains(p2->name) ) 
     || ( defenders.contains(p1->name) && defenders.contains(p2->name) );
@@ -301,7 +305,7 @@ void Game::shuffleDeck()
     deck.shuffle();
 }
 
-pair< shared_ptr<Player>, Biddings > Game::takeBiddings( Biddings &bestBid )
+pair< shared_ptr<Player>, Biddings > Game::takeBiddings( const Biddings &bestBid )
 {
   if( indexToBid != -1 )
   {
@@ -357,25 +361,6 @@ void Game::takeDog()
   }
 }
 
-void Game::update()
-{
-  addWonCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
-
-  // if the Fool has been played, decide who must keep it.
-  if( currentTrick->getFoolPlayer() != nullptr 
-      && 
-      !sameTeam(currentTrick->getFoolPlayer(), currentTrick->getLeader() ) )
-  {
-    toSwap = true;
-    foolGiver = currentTrick->getLeader();
-    foolReceiver = currentTrick->getFoolPlayer();
-  }
-
-  setNext( currentTrick->getLeader() );
-  //currentTrick->getLeader()->score = currentTrick->getScore();
-  history.push( currentTrick );
-}
-
 
 //////////
 // private
@@ -385,7 +370,7 @@ void Game::addWonCards( const string& name, const set<shared_ptr<Card> >& cards 
   cardsPlayer[name].insert(cards.begin(), cards.end());
 }
 
-bool Game::isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player )
+bool Game::isCardCalled( const shared_ptr<Card> card, const shared_ptr<Player> player )
 {
   if( kingCalled == card && !kingFound )
   {
@@ -408,7 +393,7 @@ void Game::nextPlayer()
   next = players[ indexNext ];
 }
 
-void Game::setNext( shared_ptr<Player> player )
+void Game::setNext( const shared_ptr<Player> player )
 {
   next = player;
   for( unsigned int i = 0; i < players.size(); ++i )
@@ -446,4 +431,23 @@ void Game::swapFool()
     cardsPlayer[foolReceiver->name].insert( theFool );
     cardsPlayer[foolGiver->name].insert( fromReceiver );
   }
+}
+
+void Game::update()
+{
+  addWonCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
+
+  // if the Fool has been played, decide who must keep it.
+  if( currentTrick->getFoolPlayer() != nullptr 
+      && 
+      !sameTeam(currentTrick->getFoolPlayer(), currentTrick->getLeader() ) )
+  {
+    toSwap = true;
+    foolGiver = currentTrick->getLeader();
+    foolReceiver = currentTrick->getFoolPlayer();
+  }
+
+  setNext( currentTrick->getLeader() );
+  //currentTrick->getLeader()->score = currentTrick->getScore();
+  history.push( currentTrick );
 }

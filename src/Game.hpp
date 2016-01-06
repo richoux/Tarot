@@ -21,25 +21,22 @@
 
 #pragma once
 
-#include <iostream>
 #include <vector>
 #include <stack>
 #include <set>
 #include <map>
 #include <memory>
-#include <cstdlib>
-#include <utility>
 
-#include <Suits.hpp>
-#include <Biddings.hpp>
-#include <Team.hpp>
-#include <Player.hpp>
-#include <Human.hpp>
-#include <AI.hpp>
-#include <Card.hpp>
-// #include <StratLang.hpp>
-#include <Trick.hpp>
-#include <Deck.hpp>
+#include "Suits.hpp"
+#include "Biddings.hpp"
+#include "Team.hpp"
+#include "Player.hpp"
+#include "Human.hpp"
+#include "AI.hpp"
+#include "Card.hpp"
+// #include "StratLang.hpp"
+#include "Trick.hpp"
+#include "Deck.hpp"
 
 using namespace std; 
 
@@ -67,7 +64,7 @@ public:
     \param bestBig The best bid among players.
     \return The score of the given player.
   */
-  void closeBiddings( Biddings bestBid );
+  void closeBiddings( const Biddings bestBid );
 
   //! Computes the score of a given player (refered by his/her name).
   /*!
@@ -101,29 +98,29 @@ public:
   inline shared_ptr<Card> getKingCalled() const { return kingCalled; }
 
   //! Inline function returning bidder's index.
-  inline int getIndexBidder() { return indexBidder; }
+  inline int getIndexBidder() const { return indexBidder; }
 
   //! Inline function returning next player's index.
-  inline int getIndexNext() { return indexNext; }
+  inline int getIndexNext() const { return indexNext; }
 
   //! Inline function returning starter player's index.
-  inline int getIndexStarter() { return indexStarter; }
+  inline int getIndexStarter() const { return indexStarter; }
 
   //! Inline function returning the index of the next player to bid.
-  inline int getIndexToBid() { return indexToBid; }
+  inline int getIndexToBid() const { return indexToBid; }
 
   //! Inline function returning the number of players.
   inline int getNumberPlayers() const { return players.size(); }
 
   //! Inline function returning the players vector.
-  inline vector< shared_ptr<Player> > getPlayers() { return players; }
+  inline vector< shared_ptr<Player> > getPlayers() const { return players; }
 
   //! Returns won cards of a given player.
   /*!
     \param players The player we want won cards from.
     \return The set containing his/her won cards.
   */
-  set<shared_ptr<Card> >getPlayerWonCards( shared_ptr<Player> player ) const;
+  set<shared_ptr<Card> >getPlayerWonCards( const shared_ptr<Player> player ) const;
 
   //! Inline function returning the taker team.
   inline Team getTakers() const { return takers; }
@@ -136,14 +133,6 @@ public:
 
   //! Inline function returning if it is a game without any human players.
   inline bool isBotsOnly() const { return botsOnly; }
-
-  //! Check if a played card is the called king in a 5-player game.
-  /*!
-    \param card The played card to check.
-    \param player The player who played card.
-    \return True iff card is the called king.
-  */
-  bool isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player );
 
   //! Inline function returning if it the called king is known.
   inline bool isKingFound() const { return kingFound; }
@@ -167,7 +156,7 @@ public:
     \param p2 Another player.
     \return True iff p1 and p2 belong to the same team.
   */
-  bool sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const;
+  bool sameTeam( const shared_ptr<Player> p1, const shared_ptr<Player> p2 ) const;
 
   //! Set a game, like the equivalent constructor does.
   void setGame( int& numberPlayers, const string yourName = "You", const bool automatic = false );
@@ -186,7 +175,7 @@ public:
     \param bestBid the reference to the best bid made so far.
     \return The pair <player, bid>.
   */
-  pair< shared_ptr<Player>, Biddings > takeBiddings( Biddings &bestBid );
+  pair< shared_ptr<Player>, Biddings > takeBiddings( const Biddings &bestBid );
 
   //! To take the dog after biddings.
   void takeDog();
@@ -202,6 +191,14 @@ private:
   */
   void addWonCards( const string& name, const set<shared_ptr<Card> >& cards );
 
+  //! Check if a played card is the called king in a 5-player game.
+  /*!
+    \param card The played card to check.
+    \param player The player who played card.
+    \return True iff card is the called king.
+  */
+  bool isCardCalled( const shared_ptr<Card> card, const shared_ptr<Player> player );
+
   //! To change the value of the current player's pointer.
   void nextPlayer();
 
@@ -209,7 +206,7 @@ private:
   /*!
     \param player The player assigned to be the next to play.
   */
-  void setNext( shared_ptr<Player> player );
+  void setNext( const shared_ptr<Player> player );
 
   //! Ensures to not lose the Fool, unless a very specific case: playing it at the very last trick without a chelem.
   void swapFool();

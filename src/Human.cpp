@@ -19,9 +19,12 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Human.hpp>
 #include <algorithm>
 #include <iterator>
+
+#include "Human.hpp"
+#include "getInt.hpp"
+#include "getChar.hpp"
 
 Human::Human( const string& name ) : Player( name ) {}
 

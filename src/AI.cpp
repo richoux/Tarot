@@ -19,7 +19,11 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <AI.hpp>
+#include <cstdlib>
+#include <cassert>
+#include <algorithm>
+
+#include "AI.hpp"
 
 AI::AI( const string& name, const vector<string>& knownPartners ) : Player( name )
 {

@@ -24,7 +24,7 @@
 #include <map>
 #include <memory>
 
-#include <Player.hpp>
+#include "Player.hpp"
 
 using namespace std;
 
@@ -35,6 +35,19 @@ class Team
   friend ostream& operator<<	( ostream&, const Team& );
 
 public:
+  //! Inline function to test if a player belongs to this team
+  /*!
+    \param name The considered player name.
+    \reutrn True iff the team contains the given player.
+  */
+  inline bool contains ( const string& name ) const { return members.find( name ) != members.end(); }
+
+  //! Assessor returning the team's score.
+  double getScore() const;
+
+  //! Return if the Team is empty
+  bool isEmpty() const;
+
   //! To prepare a new game.
   void newGame();
 
@@ -43,19 +56,7 @@ public:
 
   //! To compare two teams regarding their score.
   bool operator<( const Team& t ) const;
-
-  //! Assessor returning the team's score.
-  double getScore() const;
-
-  //! Return if the Team is empty
-  bool isEmpty() const;
-
-  //! Inline function to test if a player belongs to this team
-  /*!
-    \param name The considered player name.
-    \reutrn True iff the team contains the given player.
-  */
-  inline bool contains ( const string& name ) const { return members.find( name ) != members.end(); }
+  
 
   map<string, shared_ptr<Player> > members; //!< A map of team members, to quickly have an hand on the player object knowing his/her name.
 };

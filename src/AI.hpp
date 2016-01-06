@@ -24,17 +24,14 @@
 #include <memory>
 #include <map>
 #include <vector>
-#include <cstdlib>
-#include <cassert>
-#include <algorithm>
 
-#include <Player.hpp>
-#include <Suits.hpp>
-#include <Card.hpp>
-#include <Deck.hpp>
-#include <StratDiff.hpp>
-#include <Beginner.hpp>
-#include <Biddings.hpp>
+#include "Player.hpp"
+#include "Suits.hpp"
+#include "Card.hpp"
+#include "Deck.hpp"
+#include "StratDiff.hpp"
+#include "Beginner.hpp"
+#include "Biddings.hpp"
 
 using namespace std;
 
@@ -126,7 +123,7 @@ public:
   /*!
     \param diff A pointer on the difficulty to set.
   */
-  inline void setDifficulty ( shared_ptr<StratDiff> diff ) {difficulty = diff;}
+  inline void setDifficulty ( const shared_ptr<StratDiff> diff ) { difficulty = diff; }
 
 private:
 

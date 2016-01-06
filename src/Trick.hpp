@@ -24,10 +24,9 @@
 #include <map>
 #include <set>
 #include <memory>
-#include <iostream>
 
-#include <Player.hpp>
-#include <Card.hpp>
+#include "Player.hpp"
+#include "Card.hpp"
 
 using namespace std;
 
@@ -46,7 +45,7 @@ public:
     \param player A pointer on the player who just played.
     \param card A point on the card the player just played.
   */
-  void setCard( shared_ptr<Player> player, shared_ptr<Card> card );
+  void setCard( const shared_ptr<Player> player, const shared_ptr<Card> card );
 
   //! To get the cumulative points of the current trick.
   double getScore() const;
@@ -61,7 +60,7 @@ public:
   void clearTrick();
 
   //! Inline assessor to the card played of the given player during the current trick.
-  inline shared_ptr<Card>	getCard		( shared_ptr<Player> player )	const { return trickCards.at(player); }
+  inline shared_ptr<Card>	getCard		( const shared_ptr<Player> player )	const { return trickCards.at(player); }
 
   //! Inline function returning the card which takes the trick.
   inline shared_ptr<Card>	getWinCard	()				const { return trickCards.at(leader); }
