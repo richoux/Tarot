@@ -25,30 +25,6 @@
 
 Human::Human( const string& name ) : Player( name ) {}
 
-shared_ptr<Card> Human::playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump )
-{
-  vector< shared_ptr<Card> > valids = validCards( referenceCard, highTrump );
-
-  cout << "My cards: ";
-  showCards();
-  cout << endl;
-  
-  for( unsigned int i = 0; i < valids.size(); i++ )
-    cout << "(" << i << ") " << *valids[i] << " | ";
-  
-  int index;
-  
-  do
-  {
-    index = getInt( "\nSelect your card: " );
-  }
-  while( index < 0 || index >= valids.size() );
-
-  cout << "You played " << *valids[index] << endl;
-  delCard( valids[index] );
-  return valids[index];
-}
-
 Biddings Human::bid( const Biddings bestBid, const bool chelemAnnounced ) const
 {
   cout << "My cards: ";
@@ -221,3 +197,26 @@ void Human::newGame()
   initialCards.clear();
 }
 
+shared_ptr<Card> Human::playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump )
+{
+  vector< shared_ptr<Card> > valids = validCards( referenceCard, highTrump );
+
+  cout << "My cards: ";
+  showCards();
+  cout << endl;
+  
+  for( unsigned int i = 0; i < valids.size(); i++ )
+    cout << "(" << i << ") " << *valids[i] << " | ";
+  
+  int index;
+  
+  do
+  {
+    index = getInt( "\nSelect your card: " );
+  }
+  while( index < 0 || index >= valids.size() );
+
+  cout << "You played " << *valids[index] << endl;
+  delCard( valids[index] );
+  return valids[index];
+}
