@@ -67,6 +67,20 @@ void Player::addCard( const shared_ptr<Card> card )
   initialCards.push_back( card );
 }
 
+set< shared_ptr<Card> > Player::getAllCards() const
+{
+  set< shared_ptr<Card> > allCards;
+  allCards.insert( hearts.cbegin(), hearts.cend() );
+  allCards.insert( spades.cbegin(), spades.cend() );
+  allCards.insert( diamonds.cbegin(), diamonds.cend() );
+  allCards.insert( clubs.cbegin(), clubs.cend() );
+  allCards.insert( trumps.cbegin(), trumps.cend() );
+  if( fool != nullptr )
+    allCards.insert( fool );
+
+  return allCards;
+}
+
 void Player::showCards() const
 {
   // show trumps

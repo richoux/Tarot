@@ -63,6 +63,12 @@ public:
   */
   virtual shared_ptr<Card> chooseKing( const Deck &deck ) const = 0;
 
+  //! Returns all cards in player's hand.
+  /*!
+    \return The union of hearts, spades, etc, sets.
+  */
+  set< shared_ptr<Card> > getAllCards() const;
+
   //! Inline assessor to the set of announcements.
   inline  set< Announcements > getAnnounced() const { return announced; }
 
@@ -88,7 +94,7 @@ public:
     \param highTrump The highest trump played so far for the trick, if any.
     \return The chosen card to play.
   */
-  virtual shared_ptr<Card> playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump ) = 0;
+  virtual shared_ptr<Card> playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump ) = 0;
 
   //! To print all player's cards in his/her current hand. 
   void showCards() const;
@@ -108,7 +114,7 @@ protected:
   //! To compute the vector of cards we can call during a 5-player game.
   /*!
     \param deck The deck used form the game.
-    \return the vector of cards the taker can call (usually, the four kings).
+    \return The vector of cards the taker can call (usually, the four kings).
   */
   vector< shared_ptr<Card> > callableCards( const Deck &deck ) const;  
 

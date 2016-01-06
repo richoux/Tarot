@@ -47,7 +47,7 @@ bool AI::opponentsHaveSuit( const Suits suit ) const
 		[&]( const map<string, shared_ptr<Counting> >::value_type counting){ return counting.second->hasSuit( suit ); } );
 }
 
-shared_ptr<Card> AI::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
+shared_ptr<Card> AI::playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump )
 {
   shared_ptr<Card> theCard = difficulty->playCard( validCards( referenceCard, highTrump ) );
   

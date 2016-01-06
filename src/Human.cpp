@@ -25,7 +25,7 @@
 
 Human::Human( const string& name ) : Player( name ) {}
 
-shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
+shared_ptr<Card> Human::playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump )
 {
   vector< shared_ptr<Card> > valids = validCards( referenceCard, highTrump );
 

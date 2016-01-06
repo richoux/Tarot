@@ -90,7 +90,7 @@ public:
     \param highTrump A Card pointer of the highest trump of the trick.
     \return The card the AI plays.
   */
-  shared_ptr<Card> playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump);
+  shared_ptr<Card> playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump);
 
   //! Must be called when starting a new game.
   /*!
