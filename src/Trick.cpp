@@ -21,8 +21,17 @@
 
 #include <Trick.hpp>
 
-Trick::Trick( shared_ptr<Card> kingCalled) : leader(nullptr), foolPlayer(nullptr), kingCalled(kingCalled), greaterTrump(nullptr) 
+Trick::Trick() : leader(nullptr), foolPlayer(nullptr), greaterTrump(nullptr), referenceSuit(Suits::unknown) 
 {}
+
+void Trick::clearTrick()
+{
+  leader = nullptr;
+  foolPlayer = nullptr;
+  greaterTrump = nullptr;
+  referenceSuit = Suits::unknown;
+  trickCards.clear();
+}
 
 set< shared_ptr<Card> > Trick::getAllCards() const
 {
@@ -52,21 +61,15 @@ void Trick::setCard( shared_ptr<Player> player, shared_ptr<Card> card )
     foolPlayer = player;
   else
   {
+    if( referenceSuit == Suits::unknown )
+      referenceSuit = card->getSuit();
+    
     if( leader == nullptr || ( *card > *trickCards[leader] && ( card->getSuit() == trickCards[leader]->getSuit() || card->isTrump() )  ) )
       leader = player;
       
     if( card->isTrump() && ( greaterTrump == nullptr || *card > *greaterTrump ) )
       greaterTrump = card;
   }
-}
-
-shared_ptr<Player> Trick::asCalledKing() const
-{
-  for( auto it = trickCards.begin(); it != trickCards.end(); ++it)
-    if( it->second == kingCalled )
-      return it->first;
-
-  return nullptr;
 }
 
 void Trick::showAllCards() const

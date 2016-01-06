@@ -36,13 +36,7 @@ class Trick
 {
 public:
   //! The unique constructor of Trick.
-  /*!
-    \param kingCalled A pointer on the king called for a 5-player game.
-  */
-  Trick( shared_ptr<Card> kingCalled );
-
-  //! Determine if a player has played the called king in the current trick, and returns a pointer on this player, if any.
-  shared_ptr<Player> asCalledKing() const;
+  Trick();
 
   //! Get all cards in the current trick.
   set< shared_ptr<Card> > getAllCards() const;
@@ -57,8 +51,14 @@ public:
   //! To get the cumulative points of the current trick.
   double getScore() const;
 
+  //! Inline function returning the number of cards composing the trick.
+  inline int getNumberOfCards() const { return trickCards.empty() ? 0 : trickCards.size(); }
+
   //! Show all card of the current trick
   void showAllCards() const;
+
+  //! Clear trick data (cards, leader, ...).
+  void clearTrick();
 
   //! Inline assessor to the card played of the given player during the current trick.
   inline shared_ptr<Card>	getCard		( shared_ptr<Player> player )	const { return trickCards.at(player); }
@@ -75,10 +75,13 @@ public:
   // Inline assessor to get the pointer on the greatest trump of the current trick.
   inline shared_ptr<Card>	getGreaterTrump	()				const { return greaterTrump; }
 
+  // Inline assessor to get the pointer on the greatest trump of the current trick.
+  inline Suits			getReferenceSuit()				const { return referenceSuit; }
+
 private:
   shared_ptr<Player>				leader;		//!< A pointer on the actual leader (i.e., current winner) of the trick.
   shared_ptr<Player>				foolPlayer;	//!< A pointer on the player who played the Fool.
-  shared_ptr<Card>				kingCalled;	//!< A pointer on the king (or others) card asked at the beginning of a 5-player game.
   shared_ptr<Card>				greaterTrump;	//!< A pointer on the greatest trump played so far in the trick.
+  Suits						referenceSuit;	//!< The suit of the first card played (second if the fool has been played first).
   map< shared_ptr<Player>, shared_ptr<Card> >	trickCards;	//!< A map of all cards composing the trick.
 };

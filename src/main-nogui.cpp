@@ -103,13 +103,15 @@ void gameLoop( Game &game )
     return;
   }
 
-  game.closeBiddings();
+  game.closeBiddings( bestBid );
   
   if( game.getNumberPlayers() == 5 )
   {
     game.chooseKing();
     cout << game.getTakers().members.begin()->first << " called " << *game.getKingCalled() << endl;
   }
+
+  cout << game.getBidding() << endl;
   
   if( game.getBidding() <= Biddings::guard )
     printDog( game );
@@ -130,6 +132,8 @@ void gameLoop( Game &game )
     game.showPlayersCards();
 
   bool kingJustFound;
+  string playerName;
+  int indexPlayer;
   
   for( int round = 0; round < game.getCardsPerPlayer(); ++round )
   {
@@ -137,7 +141,24 @@ void gameLoop( Game &game )
     roundString += to_string( round + 1 );
     printRound( roundString );
 
-    auto trick = game.playTrick( kingJustFound );
+    kingJustFound = false;
+      
+    for( int p = 0 ; p < game.getNumberPlayers() ; ++p )
+    {
+      indexPlayer = game.getIndexNext();
+      // The human player has the index 0 in the players vector.
+      if( !game.isBotsOnly() && indexPlayer == 0 )
+      {
+	
+      }
+      
+      playerName = game.getPlayers()[ indexPlayer ]->name;
+      auto playedCard = game.playCard( kingJustFound );
+      if( game.isBotsOnly() || indexPlayer != 0 )
+	cout << playerName << " played " << *playedCard << endl;
+    }
+    
+    auto trick = game.getTrick();
     cout << "Trick: ";
     trick->showAllCards();
     cout << "=> Won by " << trick->getLeader()->name << endl;
@@ -148,7 +169,6 @@ void gameLoop( Game &game )
 	   << "Taker: " << game.getTakers() << endl
 	   << "Defenders: " << game.getDefenders() << endl;      
     }
-
   }
 
   Team winners = game.endGame();

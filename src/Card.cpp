@@ -132,6 +132,9 @@ ostream& operator<<( ostream& os, const Card& card )
     col = "F";
     val = "";
     break;
+  default:
+    col = "Unkwown card";
+    val = "";
   }
 
   os << val + col + "  ";

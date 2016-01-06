@@ -72,5 +72,5 @@ public:
     \param highTrump The highest trump played so far for the trick, if any.
     \return The card the player plays.
   */
-  shared_ptr<Card> playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump );
+  shared_ptr<Card> playCard( const Suits referenceCard, const shared_ptr<Card> highTrump );
 };

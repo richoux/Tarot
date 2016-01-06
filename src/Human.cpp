@@ -197,7 +197,7 @@ void Human::newGame()
   initialCards.clear();
 }
 
-shared_ptr<Card> Human::playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump )
+shared_ptr<Card> Human::playCard( const Suits referenceCard, const shared_ptr<Card> highTrump )
 {
   vector< shared_ptr<Card> > valids = validCards( referenceCard, highTrump );
 

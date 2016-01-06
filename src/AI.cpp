@@ -86,13 +86,12 @@ void AI::newGame()
   cardCounting.newDeal();
 }
 
-shared_ptr<Card> AI::playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump )
+shared_ptr<Card> AI::playCard( const Suits referenceCard, const shared_ptr<Card> highTrump )
 {
   shared_ptr<Card> theCard = difficulty->playCard( validCards( referenceCard, highTrump ) );
   
   assert( theCard != nullptr );
   
-  cout << name << " played " << *theCard << endl;
   delCard( theCard );
   return theCard;
 }

@@ -90,22 +90,22 @@ public:
 
   //! playCard is a pure virtual function returning the card the player chooses to play.  
   /*!
-    \param referenceCard The card fixing the ask suit for the trick.
+    \param referenceSuit The asked suit for the trick.
     \param highTrump The highest trump played so far for the trick, if any.
     \return The chosen card to play.
   */
-  virtual shared_ptr<Card> playCard( const shared_ptr<Card> referenceCard, const shared_ptr<Card> highTrump ) = 0;
+  virtual shared_ptr<Card> playCard( const Suits referenceSuit, const shared_ptr<Card> highTrump ) = 0;
 
   //! To print all player's cards in his/her current hand. 
   void showCards() const;
 
   //! Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick.
   /*!
-    \param refCard A pointer of the card fixing the asked suit of the trick.
+    \param referenceSuit The asked suit for the trick.
     \param greaterTrump A pointer on the greater trump of the trick, if any.
     \return The vector of all cards the player can play in his/her situation. 
   */
-  vector< shared_ptr<Card> > validCards	( const shared_ptr<Card> refCard, const shared_ptr<Card> greaterTrump ) const;
+  vector< shared_ptr<Card> > validCards	( const Suits referenceSuit, const shared_ptr<Card> greaterTrump ) const;
 
   string name; //!< The player's name. 
   double score; //!< The player's score.

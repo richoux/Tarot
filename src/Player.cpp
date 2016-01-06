@@ -21,6 +21,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <cassert>
 
 #include "Player.hpp"
 
@@ -108,11 +109,11 @@ void Player::showCards() const
     cout << *card;
 }
 
-vector< shared_ptr<Card> > Player::validCards( const shared_ptr<Card> refCard, const shared_ptr<Card> greaterTrump ) const
+vector< shared_ptr<Card> > Player::validCards( const Suits referenceSuit, const shared_ptr<Card> greaterTrump ) const
 {
   vector< shared_ptr<Card> > returnCards;
 
-  if( refCard == nullptr || refCard->isFool() )
+  if( referenceSuit == Suits::unknown || referenceSuit == Suits::fool )
   {
     for( shared_ptr<Card> card : trumps )
       returnCards.push_back( card );
@@ -127,7 +128,7 @@ vector< shared_ptr<Card> > Player::validCards( const shared_ptr<Card> refCard, c
   }
   else
   {
-    switch( refCard->getSuit() )
+    switch( referenceSuit )
     {
     case Suits::heart:
       if( !hearts.empty() )
@@ -207,11 +208,14 @@ vector< shared_ptr<Card> > Player::validCards( const shared_ptr<Card> refCard, c
   if( fool != nullptr )
     returnCards.push_back( fool );
 
+#if defined DEBUG
   if( returnCards.empty() )
   {
     cout << "Empty valid cards set!" << endl;
     showCards();
   }
+#endif
+  assert( !returnCards.empty() );
   
   return returnCards;
 }

@@ -59,68 +59,15 @@ public:
   */
   Game( int& numberPlayers, const string yourName = "You", const bool automatic = false );
 
-  //! Set a game, like the equivalent constructor does.
-  void setGame( int& numberPlayers, const string yourName = "You", const bool automatic = false );
-
-  
-  //! Creates a new game.
-  void newGame();
-
-  //! Prints players' / teams' scores.
-  void printScores() const;
-
-  //! Plays one turn of a game and returns the current trick.
-  /*!
-    \param kingJustFound A Boolean value set to true if the called king is played this turn.
-    \return The played trick.
-  */
-  shared_ptr<Trick> playTrick( bool &kingJustFound );
-  
-  //! Shows the deck on the screen.
-  void showDeck() const;
-
-  //! Shows players' cards on the screen.
-  void showPlayersCards() const;
-
-  //! Returns won cards of a given player.
-  /*!
-    \param players The player we want won cards from.
-    \return the set containing his/her won cards.
-  */
-  set<shared_ptr<Card> >getPlayerWonCards( shared_ptr<Player> player ) const;
-
-  //! Shuffles (three time) the deck.
-  void shuffleDeck();
-
-  //! Deals cards.
-  void dealCards();
-
-  //! Makes the current player bidding, then turns to the next player.
-  /*!
-    \param bestBid the reference to the best bid made so far.
-    \return the pair <player, bid>.
-  */
-  pair< shared_ptr<Player>, Biddings > takeBiddings( Biddings &bestBid );
-
-  //! To call once bids are over.
-  void closeBiddings();
-
-  //! To take the dog after biddings.
-  void takeDog();
-
-  //! Close a game and returns winners.
-  Team endGame();
-
   //! In a 5-player game, to choose as a partner the player having the called king (or card). 
   void chooseKing();
 
-  //! Determines if two players belong to the same team.
+  //! To call once bids are over.
   /*!
-    \param p1 A player.
-    \param p2 Another player.
-    \return True iff p1 and p2 belong to the same team.
+    \param bestBig The best bid among players.
+    \return The score of the given player.
   */
-  bool sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const;
+  void closeBiddings( Biddings bestBid );
 
   //! Computes the score of a given player (refered by his/her name).
   /*!
@@ -129,29 +76,66 @@ public:
   */
   double computeScore( const string& name ) const;
 
-  //! Inline function returning the current trick.
-  inline shared_ptr<Trick> getCurrentTrick() const { return currentTrick; }
+  //! Deals cards.
+  void dealCards();
 
-  //! Inline function returning if it is a game without any human players.
-  inline bool isBotsOnly() const { return botsOnly; }
-
-  //! Inline function returning the players vector.
-  inline vector< shared_ptr<Player> > getPlayers() { return players; }
-
-  //! Inline function returning the number of cards players have to play in the game.
-  inline int getCardsPerPlayer() const { return cardsPerPlayer; }
-
-  //! Inline function returning if it the called king is known.
-  inline bool isKingFound() const { return kingFound; }
-
-  //! Inline function returning the called king.
-  inline shared_ptr<Card> getKingCalled() const { return kingCalled; }
+  //! Close a game and returns winners.
+  Team endGame();
 
   //! Inline function returning the game bid.
   inline Biddings getBidding() const { return bidding; }
 
+  //! Inline function returning the number of cards players have to play in the game.
+  inline int getCardsPerPlayer() const { return cardsPerPlayer; }
+
+  //! Inline function returning the current trick.
+  inline shared_ptr<Trick> getCurrentTrick() const { return currentTrick; }
+
+  //! Inline function returning the defender team.
+  inline Team getDefenders() const { return defenders; }
+
   //! Inline function returning the dog.
   inline set< shared_ptr<Card> >getDog() const { return dog; }
+
+  //! Inline function returning the called king.
+  inline shared_ptr<Card> getKingCalled() const { return kingCalled; }
+
+  //! Inline function returning bidder's index.
+  inline int getIndexBidder() { return indexBidder; }
+
+  //! Inline function returning next player's index.
+  inline int getIndexNext() { return indexNext; }
+
+  //! Inline function returning starter player's index.
+  inline int getIndexStarter() { return indexStarter; }
+
+  //! Inline function returning the index of the next player to bid.
+  inline int getIndexToBid() { return indexToBid; }
+
+  //! Inline function returning the number of players.
+  inline int getNumberPlayers() const { return players.size(); }
+
+  //! Inline function returning the players vector.
+  inline vector< shared_ptr<Player> > getPlayers() { return players; }
+
+  //! Returns won cards of a given player.
+  /*!
+    \param players The player we want won cards from.
+    \return The set containing his/her won cards.
+  */
+  set<shared_ptr<Card> >getPlayerWonCards( shared_ptr<Player> player ) const;
+
+  //! Inline function returning the taker team.
+  inline Team getTakers() const { return takers; }
+
+  //! Update some fields and returns the current trick.
+  shared_ptr<Trick> getTrick();
+  
+  //! Inline function returning the unknown team (only in a 5-player game).
+  inline Team getUnknownTeam() const { return unknown; }
+
+  //! Inline function returning if it is a game without any human players.
+  inline bool isBotsOnly() const { return botsOnly; }
 
   //! Check if a played card is the called king in a 5-player game.
   /*!
@@ -161,24 +145,62 @@ public:
   */
   bool isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player );
 
-  //! Inline function returning the number of players.
-  inline int getNumberPlayers() const { return players.size(); }
+  //! Inline function returning if it the called king is known.
+  inline bool isKingFound() const { return kingFound; }
 
-  //! Inline function returning the taker team.
-  inline Team getTakers() const { return takers; }
+  //! Creates a new game.
+  void newGame();
 
-  //! Inline function returning the defender team.
-  inline Team getDefenders() const { return defenders; }
+  //! Prints players' / teams' scores.
+  void printScores() const;
 
-  //! Inline function returning the unknown team (only in a 5-player game).
-  inline Team getUnknownTeam() const { return unknown; }
+  //! Plays one player turn part of the current trick and returns the played card.
+  /*!
+    \param kingJustFound The reference to a Boolean value set to true iff the played card is the called king. 
+    \return The played card.
+  */
+  shared_ptr< Card > playCard( bool &kingJustFound );
+
+  //! Determines if two players belong to the same team.
+  /*!
+    \param p1 A player.
+    \param p2 Another player.
+    \return True iff p1 and p2 belong to the same team.
+  */
+  bool sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const;
+
+  //! Set a game, like the equivalent constructor does.
+  void setGame( int& numberPlayers, const string yourName = "You", const bool automatic = false );
+  
+  //! Shows the deck on the screen.
+  void showDeck() const;
+
+  //! Shows players' cards on the screen.
+  void showPlayersCards() const;
+
+  //! Shuffles (three time) the deck.
+  void shuffleDeck();
+
+  //! Makes the current player bidding, then turns to the next player.
+  /*!
+    \param bestBid the reference to the best bid made so far.
+    \return The pair <player, bid>.
+  */
+  pair< shared_ptr<Player>, Biddings > takeBiddings( Biddings &bestBid );
+
+  //! To take the dog after biddings.
+  void takeDog();
 
   //! Inline function setting indexBidder to the value of indexToBid.
   inline void updateIndexBidder() { indexBidder = indexToBid; }
 
 private:
-  //! Update Game fields after each trick.
-  void update();
+  //! At the end of a trick, add it to the heap of won cards by the winner of the trick.
+  /*!
+    \param name The name of the trick winner.
+    \param cards The set of cards from the won trick.
+  */
+  void addWonCards( const string& name, const set<shared_ptr<Card> >& cards );
 
   //! To change the value of the current player's pointer.
   void nextPlayer();
@@ -189,16 +211,12 @@ private:
   */
   void setNext( shared_ptr<Player> player );
 
-  //! At the end of a trick, add it to the heap of won cards by the winner of the trick.
-  /*!
-    \param name The name of the trick winner.
-    \param cards The set of cards from the won trick.
-  */
-  void addWonCards( const string& name, const set<shared_ptr<Card> >& cards );
-
   //! Ensures to not lose the Fool, unless a very specific case: playing it at the very last trick without a chelem.
   void swapFool();
   
+  //! Update Game fields after each trick.
+  void update();
+
   vector< shared_ptr<Player> >	players;		//!< The vector of players.
   map< string, set<shared_ptr<Card> > > cardsPlayer;	//!< Won cards of each player.
   // shared_ptr<StratLang>		language;
