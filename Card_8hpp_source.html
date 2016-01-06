@@ -60,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Card.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="Card_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Tarot is an application for Android system to play to French Tarot.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Please visit https://github.com/richoux/Tarot for further information.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * </span></div>
@@ -112,27 +113,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;Suits.hpp&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Suits_8hpp.html">Suits.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classCard.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCard.html">Card</a></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">friend</span> ostream&amp; operator&lt;&lt; ( ostream&amp;, <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">friend</span> ostream&amp; <a class="code" href="Card_8cpp.html#afa438b25875a78bf6f606d9eda149f2d">operator&lt;&lt; </a>( ostream&amp;, <span class="keyword">const</span> <a class="code" href="classCard.html">Card</a>&amp; );</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classCard.html">Card</a>( <span class="keyword">const</span> Suits suit, <span class="keyword">const</span> <span class="keywordtype">int</span> value, <span class="keyword">const</span> <span class="keywordtype">double</span> points, <span class="keyword">const</span> <span class="keywordtype">bool</span> oudler );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classCard.html">Card</a>( <span class="keyword">const</span> <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a> suit, <span class="keyword">const</span> <span class="keywordtype">int</span> value, <span class="keyword">const</span> <span class="keywordtype">double</span> points, <span class="keyword">const</span> <span class="keywordtype">bool</span> oudler );</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classCard.html#adf11e6396788e2e832d3bdf29880593f">   48</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="classCard.html#adf11e6396788e2e832d3bdf29880593f">getPoints</a>       ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> points; }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classCard.html#a77f39ecaee335e62e267e44e07a15ebe">   51</a></span>&#160;  <span class="keyword">inline</span> Suits  <a class="code" href="classCard.html#a77f39ecaee335e62e267e44e07a15ebe">getSuit</a>         ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> suit; }</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classCard.html#a77f39ecaee335e62e267e44e07a15ebe">   51</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>  <a class="code" href="classCard.html#a77f39ecaee335e62e267e44e07a15ebe">getSuit</a>         ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> suit; }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classCard.html#ab70c98dd7bfc44f87c5914990737e79d">   54</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">int</span>    <a class="code" href="classCard.html#ab70c98dd7bfc44f87c5914990737e79d">getValue</a>        ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> value; }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classCard.html#aa05732992ee8352a205a15d89f4edda4">   57</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span>   <a class="code" href="classCard.html#aa05732992ee8352a205a15d89f4edda4">isFool</a>          ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> suit == Suits::fool; }</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classCard.html#aa05732992ee8352a205a15d89f4edda4">   57</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span>   <a class="code" href="classCard.html#aa05732992ee8352a205a15d89f4edda4">isFool</a>          ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> suit == <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba544b52316c362ef4c00f3b5625724f78">Suits::fool</a>; }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classCard.html#ad9674d010674d0a536994147696abc6d">   60</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span>   <a class="code" href="classCard.html#ad9674d010674d0a536994147696abc6d">isTrump</a>         ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> suit == Suits::trump; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classCard.html#ad9674d010674d0a536994147696abc6d">   60</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span>   <a class="code" href="classCard.html#ad9674d010674d0a536994147696abc6d">isTrump</a>         ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> suit == <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbab2fbc0ef80326e186f6e7abe46c5200d">Suits::trump</a>; }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classCard.html#a8ac4b04ac18721afdff8d504a7621a97">   63</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span>   <a class="code" href="classCard.html#a8ac4b04ac18721afdff8d504a7621a97">isOudler</a>        ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> oudler; }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
@@ -156,24 +157,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  Suits         suit;   </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>         suit;   </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">int</span>           value;  </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">double</span>        points; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">bool</span>          oudler; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
 <div class="ttc" id="classCard_html_a2c531d32de5e76e758254b9d03689ae5"><div class="ttname"><a href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">Card::isComparable</a></div><div class="ttdeci">bool isComparable(const Card &amp;card) const </div><div class="ttdoc">A function to decide if two cards are comparable. </div><div class="ttdef"><b>Definition:</b> Card.hpp:101</div></div>
 <div class="ttc" id="classCard_html_ac8978fa4de9e59246381ebd2f9c5ecfc"><div class="ttname"><a href="classCard.html#ac8978fa4de9e59246381ebd2f9c5ecfc">Card::isFaceCard</a></div><div class="ttdeci">bool isFaceCard() const </div><div class="ttdoc">Inline function returning true iif the card is a face card. </div><div class="ttdef"><b>Definition:</b> Card.hpp:66</div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bba544b52316c362ef4c00f3b5625724f78"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba544b52316c362ef4c00f3b5625724f78">fool</a></div><div class="ttdef"><b>Definition:</b> Suits.hpp:32</div></div>
 <div class="ttc" id="classCard_html_aa05732992ee8352a205a15d89f4edda4"><div class="ttname"><a href="classCard.html#aa05732992ee8352a205a15d89f4edda4">Card::isFool</a></div><div class="ttdeci">bool isFool() const </div><div class="ttdoc">Inline function returning true iif the card is the Fool. </div><div class="ttdef"><b>Definition:</b> Card.hpp:57</div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bb"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a></div><div class="ttdeci">Suits</div><div class="ttdoc">The enum containing all suits, plus the Fool as a special suit. </div><div class="ttdef"><b>Definition:</b> Suits.hpp:25</div></div>
 <div class="ttc" id="classCard_html_adf11e6396788e2e832d3bdf29880593f"><div class="ttname"><a href="classCard.html#adf11e6396788e2e832d3bdf29880593f">Card::getPoints</a></div><div class="ttdeci">double getPoints() const </div><div class="ttdoc">Inline assessor to get the card&#39;s points. </div><div class="ttdef"><b>Definition:</b> Card.hpp:48</div></div>
 <div class="ttc" id="classCard_html"><div class="ttname"><a href="classCard.html">Card</a></div><div class="ttdoc">Card is the class compiling all useful information on cards: points, suit, value... </div><div class="ttdef"><b>Definition:</b> Card.hpp:32</div></div>
+<div class="ttc" id="Card_8cpp_html_afa438b25875a78bf6f606d9eda149f2d"><div class="ttname"><a href="Card_8cpp.html#afa438b25875a78bf6f606d9eda149f2d">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;os, const Card &amp;card)</div><div class="ttdef"><b>Definition:</b> Card.cpp:74</div></div>
 <div class="ttc" id="classCard_html_ab70c98dd7bfc44f87c5914990737e79d"><div class="ttname"><a href="classCard.html#ab70c98dd7bfc44f87c5914990737e79d">Card::getValue</a></div><div class="ttdeci">int getValue() const </div><div class="ttdoc">Inline assessor to get the card&#39;s value. </div><div class="ttdef"><b>Definition:</b> Card.hpp:54</div></div>
 <div class="ttc" id="classCard_html_ad9674d010674d0a536994147696abc6d"><div class="ttname"><a href="classCard.html#ad9674d010674d0a536994147696abc6d">Card::isTrump</a></div><div class="ttdeci">bool isTrump() const </div><div class="ttdoc">Inline function returning true iif the card is a trump. </div><div class="ttdef"><b>Definition:</b> Card.hpp:60</div></div>
+<div class="ttc" id="Suits_8hpp_html"><div class="ttname"><a href="Suits_8hpp.html">Suits.hpp</a></div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bbab2fbc0ef80326e186f6e7abe46c5200d"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbab2fbc0ef80326e186f6e7abe46c5200d">trump</a></div><div class="ttdef"><b>Definition:</b> Suits.hpp:31</div></div>
 <div class="ttc" id="classCard_html_a8ac4b04ac18721afdff8d504a7621a97"><div class="ttname"><a href="classCard.html#a8ac4b04ac18721afdff8d504a7621a97">Card::isOudler</a></div><div class="ttdeci">bool isOudler() const </div><div class="ttdoc">Inline function returning true iif the card is an oudler. </div><div class="ttdef"><b>Definition:</b> Card.hpp:63</div></div>
 <div class="ttc" id="classCard_html_a77f39ecaee335e62e267e44e07a15ebe"><div class="ttname"><a href="classCard.html#a77f39ecaee335e62e267e44e07a15ebe">Card::getSuit</a></div><div class="ttdeci">Suits getSuit() const </div><div class="ttdoc">Inline assessor to get the card&#39;s suit. </div><div class="ttdef"><b>Definition:</b> Card.hpp:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 5 2016 04:44:07 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

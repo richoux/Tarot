@@ -61,7 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,43 +94,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="classCard.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Card_8hpp_source.html">Card.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Card:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCard__coll__graph.png" border="0" usemap="#Card_coll__map" alt="Collaboration graph"/></div>
+<map name="Card_coll__map" id="Card_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a113a46b46e64efe0fd98a42df301db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a113a46b46e64efe0fd98a42df301db9a">Card</a> (const Suits suit, const int value, const double points, const bool oudler)</td></tr>
+<tr class="memitem:a113a46b46e64efe0fd98a42df301db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a113a46b46e64efe0fd98a42df301db9a">Card</a> (const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a> suit, const int value, const double points, const bool oudler)</td></tr>
 <tr class="memdesc:a113a46b46e64efe0fd98a42df301db9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor for <a class="el" href="classCard.html" title="Card is the class compiling all useful information on cards: points, suit, value... ">Card</a>.  <a href="#a113a46b46e64efe0fd98a42df301db9a">More...</a><br/></td></tr>
 <tr class="separator:a113a46b46e64efe0fd98a42df301db9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf11e6396788e2e832d3bdf29880593f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf11e6396788e2e832d3bdf29880593f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#adf11e6396788e2e832d3bdf29880593f">getPoints</a> () const </td></tr>
-<tr class="memdesc:adf11e6396788e2e832d3bdf29880593f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to get the card's points. <br/></td></tr>
+<tr class="memitem:adf11e6396788e2e832d3bdf29880593f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#adf11e6396788e2e832d3bdf29880593f">getPoints</a> () const </td></tr>
+<tr class="memdesc:adf11e6396788e2e832d3bdf29880593f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to get the card's points.  <a href="#adf11e6396788e2e832d3bdf29880593f">More...</a><br/></td></tr>
 <tr class="separator:adf11e6396788e2e832d3bdf29880593f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77f39ecaee335e62e267e44e07a15ebe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77f39ecaee335e62e267e44e07a15ebe"></a>
-Suits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a77f39ecaee335e62e267e44e07a15ebe">getSuit</a> () const </td></tr>
-<tr class="memdesc:a77f39ecaee335e62e267e44e07a15ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to get the card's suit. <br/></td></tr>
+<tr class="memitem:a77f39ecaee335e62e267e44e07a15ebe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a77f39ecaee335e62e267e44e07a15ebe">getSuit</a> () const </td></tr>
+<tr class="memdesc:a77f39ecaee335e62e267e44e07a15ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to get the card's suit.  <a href="#a77f39ecaee335e62e267e44e07a15ebe">More...</a><br/></td></tr>
 <tr class="separator:a77f39ecaee335e62e267e44e07a15ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab70c98dd7bfc44f87c5914990737e79d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab70c98dd7bfc44f87c5914990737e79d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ab70c98dd7bfc44f87c5914990737e79d">getValue</a> () const </td></tr>
-<tr class="memdesc:ab70c98dd7bfc44f87c5914990737e79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to get the card's value. <br/></td></tr>
+<tr class="memitem:ab70c98dd7bfc44f87c5914990737e79d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ab70c98dd7bfc44f87c5914990737e79d">getValue</a> () const </td></tr>
+<tr class="memdesc:ab70c98dd7bfc44f87c5914990737e79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to get the card's value.  <a href="#ab70c98dd7bfc44f87c5914990737e79d">More...</a><br/></td></tr>
 <tr class="separator:ab70c98dd7bfc44f87c5914990737e79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa05732992ee8352a205a15d89f4edda4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa05732992ee8352a205a15d89f4edda4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#aa05732992ee8352a205a15d89f4edda4">isFool</a> () const </td></tr>
-<tr class="memdesc:aa05732992ee8352a205a15d89f4edda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is the Fool. <br/></td></tr>
+<tr class="memitem:aa05732992ee8352a205a15d89f4edda4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#aa05732992ee8352a205a15d89f4edda4">isFool</a> () const </td></tr>
+<tr class="memdesc:aa05732992ee8352a205a15d89f4edda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is the Fool.  <a href="#aa05732992ee8352a205a15d89f4edda4">More...</a><br/></td></tr>
 <tr class="separator:aa05732992ee8352a205a15d89f4edda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9674d010674d0a536994147696abc6d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9674d010674d0a536994147696abc6d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ad9674d010674d0a536994147696abc6d">isTrump</a> () const </td></tr>
-<tr class="memdesc:ad9674d010674d0a536994147696abc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is a trump. <br/></td></tr>
+<tr class="memitem:ad9674d010674d0a536994147696abc6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ad9674d010674d0a536994147696abc6d">isTrump</a> () const </td></tr>
+<tr class="memdesc:ad9674d010674d0a536994147696abc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is a trump.  <a href="#ad9674d010674d0a536994147696abc6d">More...</a><br/></td></tr>
 <tr class="separator:ad9674d010674d0a536994147696abc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ac4b04ac18721afdff8d504a7621a97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ac4b04ac18721afdff8d504a7621a97"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a8ac4b04ac18721afdff8d504a7621a97">isOudler</a> () const </td></tr>
-<tr class="memdesc:a8ac4b04ac18721afdff8d504a7621a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is an oudler. <br/></td></tr>
+<tr class="memitem:a8ac4b04ac18721afdff8d504a7621a97"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a8ac4b04ac18721afdff8d504a7621a97">isOudler</a> () const </td></tr>
+<tr class="memdesc:a8ac4b04ac18721afdff8d504a7621a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is an oudler.  <a href="#a8ac4b04ac18721afdff8d504a7621a97">More...</a><br/></td></tr>
 <tr class="separator:a8ac4b04ac18721afdff8d504a7621a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8978fa4de9e59246381ebd2f9c5ecfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8978fa4de9e59246381ebd2f9c5ecfc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ac8978fa4de9e59246381ebd2f9c5ecfc">isFaceCard</a> () const </td></tr>
-<tr class="memdesc:ac8978fa4de9e59246381ebd2f9c5ecfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is a face card. <br/></td></tr>
+<tr class="memitem:ac8978fa4de9e59246381ebd2f9c5ecfc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ac8978fa4de9e59246381ebd2f9c5ecfc">isFaceCard</a> () const </td></tr>
+<tr class="memdesc:ac8978fa4de9e59246381ebd2f9c5ecfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is a face card.  <a href="#ac8978fa4de9e59246381ebd2f9c5ecfc">More...</a><br/></td></tr>
 <tr class="separator:ac8978fa4de9e59246381ebd2f9c5ecfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70251edbcc704aef4f42b150ba5ea869"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70251edbcc704aef4f42b150ba5ea869"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a70251edbcc704aef4f42b150ba5ea869">computeIndex</a> () const </td></tr>
-<tr class="memdesc:a70251edbcc704aef4f42b150ba5ea869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the card index in the deck before shuffle. Used for the GUI. <br/></td></tr>
+<tr class="memitem:a70251edbcc704aef4f42b150ba5ea869"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a70251edbcc704aef4f42b150ba5ea869">computeIndex</a> () const </td></tr>
+<tr class="memdesc:a70251edbcc704aef4f42b150ba5ea869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the card index in the deck before shuffle. Used for the GUI.  <a href="#a70251edbcc704aef4f42b150ba5ea869">More...</a><br/></td></tr>
 <tr class="separator:a70251edbcc704aef4f42b150ba5ea869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50bd8a1a5d5bdfce5727718844f87ce8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a50bd8a1a5d5bdfce5727718844f87ce8">operator&gt;</a> (const <a class="el" href="classCard.html">Card</a> &amp;card) const </td></tr>
 <tr class="memdesc:a50bd8a1a5d5bdfce5727718844f87ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A greater-than comparator to make easier the comparison between cards.  <a href="#a50bd8a1a5d5bdfce5727718844f87ce8">More...</a><br/></td></tr>
@@ -147,9 +146,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a19eb35e24a8f6368e34575698fca9008"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19eb35e24a8f6368e34575698fca9008"></a>
-ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a19eb35e24a8f6368e34575698fca9008">operator&lt;&lt;</a> (ostream &amp;, const <a class="el" href="classCard.html">Card</a> &amp;)</td></tr>
-<tr class="memdesc:a19eb35e24a8f6368e34575698fca9008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharging &lt;&lt; to make std::cout easier. <br/></td></tr>
+<tr class="memitem:a19eb35e24a8f6368e34575698fca9008"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a19eb35e24a8f6368e34575698fca9008">operator&lt;&lt;</a> (ostream &amp;, const <a class="el" href="classCard.html">Card</a> &amp;)</td></tr>
+<tr class="memdesc:a19eb35e24a8f6368e34575698fca9008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharging &lt;&lt; to make std::cout easier.  <a href="#a19eb35e24a8f6368e34575698fca9008">More...</a><br/></td></tr>
 <tr class="separator:a19eb35e24a8f6368e34575698fca9008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -162,7 +160,7 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
         <tr>
           <td class="memname">Card::Card </td>
           <td>(</td>
-          <td class="paramtype">const Suits&#160;</td>
+          <td class="paramtype">const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>&#160;</td>
           <td class="paramname"><em>suit</em>, </td>
         </tr>
         <tr>
@@ -205,6 +203,98 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a70251edbcc704aef4f42b150ba5ea869"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Card::computeIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the card index in the deck before shuffle. Used for the GUI. </p>
+
+</div>
+</div>
+<a class="anchor" id="adf11e6396788e2e832d3bdf29880593f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Card::getPoints </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline assessor to get the card's points. </p>
+
+</div>
+</div>
+<a class="anchor" id="a77f39ecaee335e62e267e44e07a15ebe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a> Card::getSuit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline assessor to get the card's suit. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab70c98dd7bfc44f87c5914990737e79d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Card::getValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline assessor to get the card's value. </p>
+
+</div>
+</div>
 <a class="anchor" id="a2c531d32de5e76e758254b9d03689ae5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -236,6 +326,106 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True iff the two cards are comparable. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac8978fa4de9e59246381ebd2f9c5ecfc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Card::isFaceCard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline function returning true iif the card is a face card. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa05732992ee8352a205a15d89f4edda4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Card::isFool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline function returning true iif the card is the Fool. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8ac4b04ac18721afdff8d504a7621a97"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Card::isOudler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline function returning true iif the card is an oudler. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad9674d010674d0a536994147696abc6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Card::isTrump </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline function returning true iif the card is a trump. </p>
 
 </div>
 </div>
@@ -314,14 +504,51 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="a19eb35e24a8f6368e34575698fca9008"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCard.html">Card</a> &amp;&#160;</td>
+          <td class="paramname"><em>card</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Surcharging &lt;&lt; to make std::cout easier. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="Card_8hpp_source.html">Card.hpp</a></li>
-<li>src/Card.cpp</li>
+<li>src/<a class="el" href="Card_8cpp.html">Card.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 5 2016 04:44:07 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -60,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,34 +87,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">CardPixmap.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="CardPixmap_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QGraphicsPixmapItem&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classCardPixmap.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCardPixmap.html">CardPixmap</a> : <span class="keyword">public</span> QGraphicsPixmapItem</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="classCardPixmap.html">CardPixmap</a>();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="classCardPixmap.html">CardPixmap</a>( <span class="keyword">const</span> QPixmap &amp;pixmap );</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="classCardPixmap.html#a554294aafed23281465287c7ceef36ba">CardPixmap</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="classCardPixmap.html#a554294aafed23281465287c7ceef36ba">CardPixmap</a>( <span class="keyword">const</span> QPixmap &amp;pixmap );</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">inline</span> qreal rotationY() { <span class="keywordflow">return</span> _rotationY; }</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> setRotationY( qreal rotation ) { _rotationY = rotation; }</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classCardPixmap.html#a77c306a4c0a48f0af095b55604e2eaad">   11</a></span>&#160;  <span class="keyword">inline</span> qreal <a class="code" href="classCardPixmap.html#a77c306a4c0a48f0af095b55604e2eaad">rotationY</a>() { <span class="keywordflow">return</span> _rotationY; }</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classCardPixmap.html#af1a326207aea7aea0fae00a6a04687cb">   12</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classCardPixmap.html#af1a326207aea7aea0fae00a6a04687cb">setRotationY</a>( qreal rotation ) { _rotationY = rotation; }</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">inline</span> qreal scale() { <span class="keywordflow">return</span> _scale; }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> setScale( qreal scale ) { _scale = scale; }</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classCardPixmap.html#a274541bbd3421455d8657e7a9e53d017">   14</a></span>&#160;  <span class="keyword">inline</span> qreal <a class="code" href="classCardPixmap.html#a274541bbd3421455d8657e7a9e53d017">scale</a>() { <span class="keywordflow">return</span> _scale; }</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classCardPixmap.html#ad72dbde83b417bd604b5f65d3a119f57">   15</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classCardPixmap.html#ad72dbde83b417bd604b5f65d3a119f57">setScale</a>( qreal <a class="code" href="classCardPixmap.html#a274541bbd3421455d8657e7a9e53d017">scale</a> ) { _scale = <a class="code" href="classCardPixmap.html#a274541bbd3421455d8657e7a9e53d017">scale</a>; }</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">inline</span> QPointF center() { <span class="keywordflow">return</span> _center; }</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classCardPixmap.html#a887e2f91a3ec108e869a231830574795">   17</a></span>&#160;  <span class="keyword">inline</span> QPointF <a class="code" href="classCardPixmap.html#a887e2f91a3ec108e869a231830574795">center</a>() { <span class="keywordflow">return</span> _center; }</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  qreal _rotationY; <span class="comment">// enregistre la rotation autour de l&#39;axe Y</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  QPointF _center; <span class="comment">// contient la position du centre du widget</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  qreal _scale;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="ttc" id="classCardPixmap_html_ad72dbde83b417bd604b5f65d3a119f57"><div class="ttname"><a href="classCardPixmap.html#ad72dbde83b417bd604b5f65d3a119f57">CardPixmap::setScale</a></div><div class="ttdeci">void setScale(qreal scale)</div><div class="ttdef"><b>Definition:</b> CardPixmap.hpp:15</div></div>
+<div class="ttc" id="classCardPixmap_html_a554294aafed23281465287c7ceef36ba"><div class="ttname"><a href="classCardPixmap.html#a554294aafed23281465287c7ceef36ba">CardPixmap::CardPixmap</a></div><div class="ttdeci">CardPixmap()</div><div class="ttdef"><b>Definition:</b> CardPixmap.cpp:3</div></div>
+<div class="ttc" id="classCardPixmap_html_af1a326207aea7aea0fae00a6a04687cb"><div class="ttname"><a href="classCardPixmap.html#af1a326207aea7aea0fae00a6a04687cb">CardPixmap::setRotationY</a></div><div class="ttdeci">void setRotationY(qreal rotation)</div><div class="ttdef"><b>Definition:</b> CardPixmap.hpp:12</div></div>
+<div class="ttc" id="classCardPixmap_html_a77c306a4c0a48f0af095b55604e2eaad"><div class="ttname"><a href="classCardPixmap.html#a77c306a4c0a48f0af095b55604e2eaad">CardPixmap::rotationY</a></div><div class="ttdeci">qreal rotationY()</div><div class="ttdef"><b>Definition:</b> CardPixmap.hpp:11</div></div>
 <div class="ttc" id="classCardPixmap_html"><div class="ttname"><a href="classCardPixmap.html">CardPixmap</a></div><div class="ttdef"><b>Definition:</b> CardPixmap.hpp:5</div></div>
+<div class="ttc" id="classCardPixmap_html_a274541bbd3421455d8657e7a9e53d017"><div class="ttname"><a href="classCardPixmap.html#a274541bbd3421455d8657e7a9e53d017">CardPixmap::scale</a></div><div class="ttdeci">qreal scale()</div><div class="ttdef"><b>Definition:</b> CardPixmap.hpp:14</div></div>
+<div class="ttc" id="classCardPixmap_html_a887e2f91a3ec108e869a231830574795"><div class="ttname"><a href="classCardPixmap.html#a887e2f91a3ec108e869a231830574795">CardPixmap::center</a></div><div class="ttdeci">QPointF center()</div><div class="ttdef"><b>Definition:</b> CardPixmap.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 5 2016 04:44:07 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

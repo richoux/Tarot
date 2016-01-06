@@ -61,7 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,19 +96,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for Beginner:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classBeginner.png" usemap="#Beginner_map" alt=""/>
-  <map id="Beginner_map" name="Beginner_map">
-<area href="classStratDiff.html" title="StratDiff is the abstract class handling the Strategy pattern for applying different AI difficulties..." alt="StratDiff" shape="rect" coords="0,0,63,24"/>
-</map>
- </div></div>
+<div class="center"><img src="classBeginner__inherit__graph.png" border="0" usemap="#Beginner_inherit__map" alt="Inheritance graph"/></div>
+<map name="Beginner_inherit__map" id="Beginner_inherit__map">
+<area shape="rect" id="node2" href="classStratDiff.html" title="StratDiff is the abstract class handling the Strategy pattern for applying different AI difficulties..." alt="" coords="5,5,109,112"/></map>
+</div>
+<div class="dynheader">
+Collaboration diagram for Beginner:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBeginner__coll__graph.png" border="0" usemap="#Beginner_coll__map" alt="Collaboration graph"/></div>
+<map name="Beginner_coll__map" id="Beginner_coll__map">
+<area shape="rect" id="node2" href="classStratDiff.html" title="StratDiff is the abstract class handling the Strategy pattern for applying different AI difficulties..." alt="" coords="5,5,109,112"/></map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a73e2bf8d807166c994c42fd3b6bfc7bf"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#a73e2bf8d807166c994c42fd3b6bfc7bf">playCard</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;cardsCanPlay) const </td></tr>
 <tr class="memdesc:a73e2bf8d807166c994c42fd3b6bfc7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose what card we play, given the first card and the highest trump of the trick.  <a href="#a73e2bf8d807166c994c42fd3b6bfc7bf">More...</a><br/></td></tr>
 <tr class="separator:a73e2bf8d807166c994c42fd3b6bfc7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad051797028f352b16df271fb24c435f6"><td class="memItemLeft" align="right" valign="top">Biddings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#ad051797028f352b16df271fb24c435f6">bid</a> (const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced) const </td></tr>
+<tr class="memitem:ad051797028f352b16df271fb24c435f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#ad051797028f352b16df271fb24c435f6">bid</a> (const <a class="el" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a> bestBid, const int numberOudlers, const bool chelemAnnounced) const </td></tr>
 <tr class="memdesc:ad051797028f352b16df271fb24c435f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to decide if we propose a bid or not, and if any, what bid.  <a href="#ad051797028f352b16df271fb24c435f6">More...</a><br/></td></tr>
 <tr class="separator:ad051797028f352b16df271fb24c435f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7817d38e018ac5e1d9dbb42923ef0752"><td class="memItemLeft" align="right" valign="top">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBeginner.html#a7817d38e018ac5e1d9dbb42923ef0752">makeEcart</a> (const int dogSize, const vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; &amp;allCards) const </td></tr>
@@ -127,9 +132,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Biddings Beginner::bid </td>
+          <td class="memname"><a class="el" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a> Beginner::bid </td>
           <td>(</td>
-          <td class="paramtype">const Biddings&#160;</td>
+          <td class="paramtype">const <a class="el" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a>&#160;</td>
           <td class="paramname"><em>bestBid</em>, </td>
         </tr>
         <tr>
@@ -257,12 +262,12 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="Beginner_8hpp_source.html">Beginner.hpp</a></li>
-<li>src/Beginner.cpp</li>
+<li>src/<a class="el" href="Beginner_8cpp.html">Beginner.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 5 2016 04:44:07 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

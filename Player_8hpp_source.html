@@ -60,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Player.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="Player_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Tarot is an application for Android system to play to French Tarot.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Please visit https://github.com/richoux/Tarot for further information.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * </span></div>
@@ -115,11 +116,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;Card.hpp&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;Deck.hpp&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;Suits.hpp&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;Biddings.hpp&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;Announcements.hpp&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Card_8hpp.html">Card.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Deck_8hpp.html">Deck.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Suits_8hpp.html">Suits.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Biddings_8hpp.html">Biddings.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Announcements_8hpp.html">Announcements.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
@@ -135,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> newGame() = 0;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> Biddings bid( <span class="keyword">const</span> Biddings bestBid, <span class="keyword">const</span> <span class="keywordtype">bool</span> chelemAnnounced ) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a> bid( <span class="keyword">const</span> <a class="code" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a> bestBid, <span class="keyword">const</span> <span class="keywordtype">bool</span> chelemAnnounced ) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">virtual</span> shared_ptr&lt;Card&gt; chooseKing( <span class="keyword">const</span> <a class="code" href="classDeck.html">Deck</a> &amp;deck ) <span class="keyword">const</span> = 0;</div>
@@ -168,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  vector&lt; shared_ptr&lt;Card&gt; &gt; callableCards( <span class="keyword">const</span> <a class="code" href="classDeck.html">Deck</a> &amp;deck ) <span class="keyword">const</span>;  </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
 <div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="structPlayer_1_1cardOrder.html">  125</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structPlayer_1_1cardOrder.html">cardOrder</a> {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">bool</span> operator() (shared_ptr&lt;Card&gt; <span class="keyword">const</span> lhs, shared_ptr&lt;Card&gt; <span class="keyword">const</span> rhs)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structPlayer_1_1cardOrder.html#a1992ec2fb8b64e0749dcbbf997a56846">  126</a></span>&#160;    <span class="keywordtype">bool</span> operator() (shared_ptr&lt;Card&gt; <span class="keyword">const</span> lhs, shared_ptr&lt;Card&gt; <span class="keyword">const</span> rhs)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">      </span>{</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">return</span> lhs-&gt;getValue() &lt; rhs-&gt;getValue();</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      }</div>
@@ -193,13 +194,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classPlayer_html_afab8e372cfef87440bc42168d5fa0f6a"><div class="ttname"><a href="classPlayer.html#afab8e372cfef87440bc42168d5fa0f6a">Player::hearts</a></div><div class="ttdeci">set&lt; shared_ptr&lt; Card &gt;, cardOrder &gt; hearts</div><div class="ttdoc">The set of Hearts owned by the player. </div><div class="ttdef"><b>Definition:</b> Player.hpp:132</div></div>
 <div class="ttc" id="classPlayer_html_a55f7b5b674245c2e09f3c191a54d3542"><div class="ttname"><a href="classPlayer.html#a55f7b5b674245c2e09f3c191a54d3542">Player::score</a></div><div class="ttdeci">double score</div><div class="ttdoc">The player&#39;s score. </div><div class="ttdef"><b>Definition:</b> Player.hpp:108</div></div>
 <div class="ttc" id="classDeck_html"><div class="ttname"><a href="classDeck.html">Deck</a></div><div class="ttdoc">Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a count...</div><div class="ttdef"><b>Definition:</b> Deck.hpp:35</div></div>
+<div class="ttc" id="Biddings_8hpp_html"><div class="ttname"><a href="Biddings_8hpp.html">Biddings.hpp</a></div></div>
 <div class="ttc" id="classPlayer_html_a5573dd91ddb6fa8874d5a7f7a186f186"><div class="ttname"><a href="classPlayer.html#a5573dd91ddb6fa8874d5a7f7a186f186">Player::getAnnounced</a></div><div class="ttdeci">set&lt; Announcements &gt; getAnnounced() const </div><div class="ttdoc">Inline assessor to the set of announcements. </div><div class="ttdef"><b>Definition:</b> Player.hpp:82</div></div>
 <div class="ttc" id="classPlayer_html_a89177ee8076c1a3411a74b2b1d68156c"><div class="ttname"><a href="classPlayer.html#a89177ee8076c1a3411a74b2b1d68156c">Player::spades</a></div><div class="ttdeci">set&lt; shared_ptr&lt; Card &gt;, cardOrder &gt; spades</div><div class="ttdoc">The set of Spades owned by the player. </div><div class="ttdef"><b>Definition:</b> Player.hpp:133</div></div>
+<div class="ttc" id="Biddings_8hpp_html_a22a8f3d77d582e8ce796583bc67dc9db"><div class="ttname"><a href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a></div><div class="ttdeci">Biddings</div><div class="ttdoc">The enum containing all official biddings. </div><div class="ttdef"><b>Definition:</b> Biddings.hpp:35</div></div>
+<div class="ttc" id="Announcements_8hpp_html"><div class="ttname"><a href="Announcements_8hpp.html">Announcements.hpp</a></div></div>
 <div class="ttc" id="classPlayer_html_ad3f3acdaf6ee318ba528e82e1c188820"><div class="ttname"><a href="classPlayer.html#ad3f3acdaf6ee318ba528e82e1c188820">Player::clubs</a></div><div class="ttdeci">set&lt; shared_ptr&lt; Card &gt;, cardOrder &gt; clubs</div><div class="ttdoc">The set of Clubs owned by the player. </div><div class="ttdef"><b>Definition:</b> Player.hpp:135</div></div>
 <div class="ttc" id="classPlayer_html_a9f218c1ff377eaeb7a336156410f7386"><div class="ttname"><a href="classPlayer.html#a9f218c1ff377eaeb7a336156410f7386">Player::numberOudlers</a></div><div class="ttdeci">int numberOudlers</div><div class="ttdoc">The number of oudlers the player has among his/her initial cards. </div><div class="ttdef"><b>Definition:</b> Player.hpp:139</div></div>
+<div class="ttc" id="Deck_8hpp_html"><div class="ttname"><a href="Deck_8hpp.html">Deck.hpp</a></div></div>
 <div class="ttc" id="structPlayer_1_1cardOrder_html"><div class="ttname"><a href="structPlayer_1_1cardOrder.html">Player::cardOrder</a></div><div class="ttdoc">A structure to automatically fix an insert order into cards&#39; sets. </div><div class="ttdef"><b>Definition:</b> Player.hpp:125</div></div>
+<div class="ttc" id="Card_8hpp_html"><div class="ttname"><a href="Card_8hpp.html">Card.hpp</a></div></div>
 <div class="ttc" id="classPlayer_html_aac0d154d58a07310ee23c3c763f2cfa9"><div class="ttname"><a href="classPlayer.html#aac0d154d58a07310ee23c3c763f2cfa9">Player::initialCards</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; Card &gt; &gt; initialCards</div><div class="ttdoc">The vector of player&#39;s initial cards, from his/her starting hand. </div><div class="ttdef"><b>Definition:</b> Player.hpp:138</div></div>
 <div class="ttc" id="classPlayer_html_a3ad0f1545e0653635eac5ced5c31dc0b"><div class="ttname"><a href="classPlayer.html#a3ad0f1545e0653635eac5ced5c31dc0b">Player::diamonds</a></div><div class="ttdeci">set&lt; shared_ptr&lt; Card &gt;, cardOrder &gt; diamonds</div><div class="ttdoc">The set of Diamonds owned by the player. </div><div class="ttdef"><b>Definition:</b> Player.hpp:134</div></div>
+<div class="ttc" id="Suits_8hpp_html"><div class="ttname"><a href="Suits_8hpp.html">Suits.hpp</a></div></div>
 <div class="ttc" id="classPlayer_html_acf0355128a99ee20ad9931b760fb2de1"><div class="ttname"><a href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">Player::name</a></div><div class="ttdeci">string name</div><div class="ttdoc">The player&#39;s name. </div><div class="ttdef"><b>Definition:</b> Player.hpp:107</div></div>
 <div class="ttc" id="classPlayer_html_a90efe0cf8930297c7d30805d19763b65"><div class="ttname"><a href="classPlayer.html#a90efe0cf8930297c7d30805d19763b65">Player::announced</a></div><div class="ttdeci">set&lt; Announcements &gt; announced</div><div class="ttdoc">The set of announcements (for what?). </div><div class="ttdef"><b>Definition:</b> Player.hpp:141</div></div>
 <div class="ttc" id="classPlayer_html_aab2cfa2ce2e7a3903ff99ac5c7ef8db6"><div class="ttname"><a href="classPlayer.html#aab2cfa2ce2e7a3903ff99ac5c7ef8db6">Player::getInitialCards</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; Card &gt; &gt; getInitialCards() const </div><div class="ttdoc">Inline assessor to the player&#39;s initial cards. </div><div class="ttdef"><b>Definition:</b> Player.hpp:88</div></div>
@@ -209,7 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 5 2016 04:44:07 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

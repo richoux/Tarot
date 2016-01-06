@@ -2,6 +2,8 @@ var searchData=
 [
   ['callablecards',['callableCards',['../classPlayer.html#a2880662cb5f5cc2e778242c7a1477b30',1,'Player']]],
   ['card',['Card',['../classCard.html#a113a46b46e64efe0fd98a42df301db9a',1,'Card']]],
+  ['cardpixmap',['CardPixmap',['../classCardPixmap.html#a554294aafed23281465287c7ceef36ba',1,'CardPixmap::CardPixmap()'],['../classCardPixmap.html#acea869a82feb357da46271461f13ba8b',1,'CardPixmap::CardPixmap(const QPixmap &amp;pixmap)']]],
+  ['center',['center',['../classCardPixmap.html#a887e2f91a3ec108e869a231830574795',1,'CardPixmap']]],
   ['chooseking',['chooseKing',['../classAI.html#a6d7eafe5efa20fd78ec91048ad7c1ae2',1,'AI::chooseKing()'],['../classGame.html#a68d2c56aaaa1b3d2c01bc9968f0166b2',1,'Game::chooseKing()'],['../classHuman.html#a7b465bef30158c2b5552f54651e48318',1,'Human::chooseKing()'],['../classPlayer.html#ac85ce39f638b28f13588e8957dc952ff',1,'Player::chooseKing()']]],
   ['closebiddings',['closeBiddings',['../classGame.html#a478f381d19d7a18af7633cbaad3bab98',1,'Game']]],
   ['computeindex',['computeIndex',['../classCard.html#a70251edbcc704aef4f42b150ba5ea869',1,'Card']]],

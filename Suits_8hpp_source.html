@@ -60,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Suits.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="Suits_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Tarot is an application for Android system to play to French Tarot.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Please visit https://github.com/richoux/Tarot for further information.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * </span></div>
@@ -109,19 +110,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">enum</span> Suits</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">   25</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  heart,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  spade,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  diamond,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  club,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  trump,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  fool</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba4990e18095797583a200092df10f8afb">   27</a></span>&#160;  <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba4990e18095797583a200092df10f8afb">heart</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba3e43abd911f9a86592bc626e17dc286d">   28</a></span>&#160;  <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba3e43abd911f9a86592bc626e17dc286d">spade</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbae606c83f380a1e756ea09a94c1f55be9">   29</a></span>&#160;  <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbae606c83f380a1e756ea09a94c1f55be9">diamond</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbac59436da293b12d7985bb30cc95eb92c">   30</a></span>&#160;  <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbac59436da293b12d7985bb30cc95eb92c">club</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbab2fbc0ef80326e186f6e7abe46c5200d">   31</a></span>&#160;  <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbab2fbc0ef80326e186f6e7abe46c5200d">trump</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba544b52316c362ef4c00f3b5625724f78">   32</a></span>&#160;  <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba544b52316c362ef4c00f3b5625724f78">fool</a></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bba544b52316c362ef4c00f3b5625724f78"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba544b52316c362ef4c00f3b5625724f78">fool</a></div><div class="ttdef"><b>Definition:</b> Suits.hpp:32</div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bb"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a></div><div class="ttdeci">Suits</div><div class="ttdoc">The enum containing all suits, plus the Fool as a special suit. </div><div class="ttdef"><b>Definition:</b> Suits.hpp:25</div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bbae606c83f380a1e756ea09a94c1f55be9"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbae606c83f380a1e756ea09a94c1f55be9">diamond</a></div><div class="ttdef"><b>Definition:</b> Suits.hpp:29</div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bba4990e18095797583a200092df10f8afb"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba4990e18095797583a200092df10f8afb">heart</a></div><div class="ttdef"><b>Definition:</b> Suits.hpp:27</div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bbac59436da293b12d7985bb30cc95eb92c"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbac59436da293b12d7985bb30cc95eb92c">club</a></div><div class="ttdef"><b>Definition:</b> Suits.hpp:30</div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bba3e43abd911f9a86592bc626e17dc286d"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba3e43abd911f9a86592bc626e17dc286d">spade</a></div><div class="ttdef"><b>Definition:</b> Suits.hpp:28</div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bbab2fbc0ef80326e186f6e7abe46c5200d"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bbab2fbc0ef80326e186f6e7abe46c5200d">trump</a></div><div class="ttdef"><b>Definition:</b> Suits.hpp:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 5 2016 04:44:07 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

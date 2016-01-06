@@ -61,7 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,47 +93,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="classTrick.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Trick_8hpp_source.html">Trick.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Trick:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTrick__coll__graph.png" border="0" usemap="#Trick_coll__map" alt="Collaboration graph"/></div>
+<map name="Trick_coll__map" id="Trick_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2d52be4c67d65793531d2dc96122ae72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a2d52be4c67d65793531d2dc96122ae72">Trick</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; kingCalled)</td></tr>
 <tr class="memdesc:a2d52be4c67d65793531d2dc96122ae72"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classTrick.html" title="This class manages the current and previously played tricks. ">Trick</a>.  <a href="#a2d52be4c67d65793531d2dc96122ae72">More...</a><br/></td></tr>
 <tr class="separator:a2d52be4c67d65793531d2dc96122ae72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d196a8097feccd87f1aca65ea4e80c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d196a8097feccd87f1aca65ea4e80c8"></a>
-shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a4d196a8097feccd87f1aca65ea4e80c8">asCalledKing</a> () const </td></tr>
-<tr class="memdesc:a4d196a8097feccd87f1aca65ea4e80c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a player has played the called king in the current trick, and returns a pointer on this player, if any. <br/></td></tr>
+<tr class="memitem:a4d196a8097feccd87f1aca65ea4e80c8"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a4d196a8097feccd87f1aca65ea4e80c8">asCalledKing</a> () const </td></tr>
+<tr class="memdesc:a4d196a8097feccd87f1aca65ea4e80c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a player has played the called king in the current trick, and returns a pointer on this player, if any.  <a href="#a4d196a8097feccd87f1aca65ea4e80c8">More...</a><br/></td></tr>
 <tr class="separator:a4d196a8097feccd87f1aca65ea4e80c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1db9b6c13def25e38b6604b56d97ddd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1db9b6c13def25e38b6604b56d97ddd2"></a>
-set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a1db9b6c13def25e38b6604b56d97ddd2">getAllCards</a> () const </td></tr>
-<tr class="memdesc:a1db9b6c13def25e38b6604b56d97ddd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all cards in the current trick. <br/></td></tr>
+<tr class="memitem:a1db9b6c13def25e38b6604b56d97ddd2"><td class="memItemLeft" align="right" valign="top">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a1db9b6c13def25e38b6604b56d97ddd2">getAllCards</a> () const </td></tr>
+<tr class="memdesc:a1db9b6c13def25e38b6604b56d97ddd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all cards in the current trick.  <a href="#a1db9b6c13def25e38b6604b56d97ddd2">More...</a><br/></td></tr>
 <tr class="separator:a1db9b6c13def25e38b6604b56d97ddd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d2b4c09c8d7c255ff34bde5fe29532a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a4d2b4c09c8d7c255ff34bde5fe29532a">setCard</a> (shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; player, shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
 <tr class="memdesc:a4d2b4c09c8d7c255ff34bde5fe29532a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the trickCards map, and determine also the value of other variables like foolPlayer, greaterTrump and leader.  <a href="#a4d2b4c09c8d7c255ff34bde5fe29532a">More...</a><br/></td></tr>
 <tr class="separator:a4d2b4c09c8d7c255ff34bde5fe29532a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63625303ef93e30fec915b8cd039e6af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63625303ef93e30fec915b8cd039e6af"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a63625303ef93e30fec915b8cd039e6af">getScore</a> () const </td></tr>
-<tr class="memdesc:a63625303ef93e30fec915b8cd039e6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get the cumulative points of the current trick. <br/></td></tr>
+<tr class="memitem:a63625303ef93e30fec915b8cd039e6af"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a63625303ef93e30fec915b8cd039e6af">getScore</a> () const </td></tr>
+<tr class="memdesc:a63625303ef93e30fec915b8cd039e6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get the cumulative points of the current trick.  <a href="#a63625303ef93e30fec915b8cd039e6af">More...</a><br/></td></tr>
 <tr class="separator:a63625303ef93e30fec915b8cd039e6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af156d49d692f5168320ebc30aa084da1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af156d49d692f5168320ebc30aa084da1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#af156d49d692f5168320ebc30aa084da1">showAllCards</a> () const </td></tr>
-<tr class="memdesc:af156d49d692f5168320ebc30aa084da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show all card of the current trick. <br/></td></tr>
+<tr class="memitem:af156d49d692f5168320ebc30aa084da1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#af156d49d692f5168320ebc30aa084da1">showAllCards</a> () const </td></tr>
+<tr class="memdesc:af156d49d692f5168320ebc30aa084da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show all card of the current trick.  <a href="#af156d49d692f5168320ebc30aa084da1">More...</a><br/></td></tr>
 <tr class="separator:af156d49d692f5168320ebc30aa084da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1649b27628cb224f3eb98f56ea00f5ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1649b27628cb224f3eb98f56ea00f5ac"></a>
-shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a1649b27628cb224f3eb98f56ea00f5ac">getCard</a> (shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; player) const </td></tr>
-<tr class="memdesc:a1649b27628cb224f3eb98f56ea00f5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the card played of the given player during the current trick. <br/></td></tr>
+<tr class="memitem:a1649b27628cb224f3eb98f56ea00f5ac"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a1649b27628cb224f3eb98f56ea00f5ac">getCard</a> (shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; player) const </td></tr>
+<tr class="memdesc:a1649b27628cb224f3eb98f56ea00f5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the card played of the given player during the current trick.  <a href="#a1649b27628cb224f3eb98f56ea00f5ac">More...</a><br/></td></tr>
 <tr class="separator:a1649b27628cb224f3eb98f56ea00f5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5e65fbe08d6df0ca71224e465424c6b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5e65fbe08d6df0ca71224e465424c6b"></a>
-shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b">getWinCard</a> () const </td></tr>
-<tr class="memdesc:ae5e65fbe08d6df0ca71224e465424c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the card which takes the trick. <br/></td></tr>
+<tr class="memitem:ae5e65fbe08d6df0ca71224e465424c6b"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b">getWinCard</a> () const </td></tr>
+<tr class="memdesc:ae5e65fbe08d6df0ca71224e465424c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the card which takes the trick.  <a href="#ae5e65fbe08d6df0ca71224e465424c6b">More...</a><br/></td></tr>
 <tr class="separator:ae5e65fbe08d6df0ca71224e465424c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87cf6697a5f9f417e19c2749e73ae2be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87cf6697a5f9f417e19c2749e73ae2be"></a>
-shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getLeader</b> () const </td></tr>
+<tr class="memitem:a87cf6697a5f9f417e19c2749e73ae2be"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a87cf6697a5f9f417e19c2749e73ae2be">getLeader</a> () const </td></tr>
 <tr class="separator:a87cf6697a5f9f417e19c2749e73ae2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d43afa1ae8417094be02494852f7c56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d43afa1ae8417094be02494852f7c56"></a>
-shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getFoolPlayer</b> () const </td></tr>
+<tr class="memitem:a4d43afa1ae8417094be02494852f7c56"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a4d43afa1ae8417094be02494852f7c56">getFoolPlayer</a> () const </td></tr>
 <tr class="separator:a4d43afa1ae8417094be02494852f7c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21f11527bb41c8a9a5ad3706c220ba4c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21f11527bb41c8a9a5ad3706c220ba4c"></a>
-shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGreaterTrump</b> () const </td></tr>
+<tr class="memitem:a21f11527bb41c8a9a5ad3706c220ba4c"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a21f11527bb41c8a9a5ad3706c220ba4c">getGreaterTrump</a> () const </td></tr>
 <tr class="separator:a21f11527bb41c8a9a5ad3706c220ba4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -164,6 +162,177 @@ shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td c
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a4d196a8097feccd87f1aca65ea4e80c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; Trick::asCalledKing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determine if a player has played the called king in the current trick, and returns a pointer on this player, if any. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1db9b6c13def25e38b6604b56d97ddd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; Trick::getAllCards </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all cards in the current trick. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1649b27628cb224f3eb98f56ea00f5ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; Trick::getCard </td>
+          <td>(</td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline assessor to the card played of the given player during the current trick. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4d43afa1ae8417094be02494852f7c56"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="classPlayer.html">Player</a>&gt; Trick::getFoolPlayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a21f11527bb41c8a9a5ad3706c220ba4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; Trick::getGreaterTrump </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a87cf6697a5f9f417e19c2749e73ae2be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="classPlayer.html">Player</a>&gt; Trick::getLeader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a63625303ef93e30fec915b8cd039e6af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Trick::getScore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>To get the cumulative points of the current trick. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae5e65fbe08d6df0ca71224e465424c6b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; Trick::getWinCard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline function returning the card which takes the trick. </p>
+
+</div>
+</div>
 <a class="anchor" id="a4d2b4c09c8d7c255ff34bde5fe29532a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -199,14 +368,31 @@ shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td c
 
 </div>
 </div>
+<a class="anchor" id="af156d49d692f5168320ebc30aa084da1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Trick::showAllCards </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Show all card of the current trick. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="Trick_8hpp_source.html">Trick.hpp</a></li>
-<li>src/Trick.cpp</li>
+<li>src/<a class="el" href="Trick_8cpp.html">Trick.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 5 2016 04:44:08 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
