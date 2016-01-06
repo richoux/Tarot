@@ -1,0 +1,23 @@
+<map id="src/Suits.hpp" name="src/Suits.hpp">
+<area shape="rect" id="node2" href="$AI_8hpp.html" title="src/AI.hpp" alt="" coords="80,304,162,331"/>
+<area shape="rect" id="node4" href="$Game_8hpp.html" title="src/Game.hpp" alt="" coords="368,379,472,405"/>
+<area shape="rect" id="node8" href="$Card_8hpp.html" title="src/Card.hpp" alt="" coords="380,80,476,107"/>
+<area shape="rect" id="node14" href="$Player_8hpp.html" title="src/Player.hpp" alt="" coords="606,229,712,256"/>
+<area shape="rect" id="node15" href="$Human_8hpp.html" title="src/Human.hpp" alt="" coords="865,304,975,331"/>
+<area shape="rect" id="node3" href="$AI_8cpp.html" title="src/AI.cpp" alt="" coords="80,379,162,405"/>
+<area shape="rect" id="node5" href="$Game_8cpp.html" title="src/Game.cpp" alt="" coords="226,453,330,480"/>
+<area shape="rect" id="node6" href="$main-nogui_8cpp.html" title="src/main&#45;nogui.cpp" alt="" coords="354,453,486,480"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="510,453,607,480"/>
+<area shape="rect" id="node9" href="$Beginner_8hpp.html" title="src/Beginner.hpp" alt="" coords="184,229,304,256"/>
+<area shape="rect" id="node11" href="$Card_8cpp.html" title="src/Card.cpp" alt="" coords="380,155,476,181"/>
+<area shape="rect" id="node12" href="$Deck_8hpp.html" title="src/Deck.hpp" alt="" coords="501,155,600,181"/>
+<area shape="rect" id="node20" href="$Trick_8hpp.html" title="src/Trick.hpp" alt="" coords="742,304,840,331"/>
+<area shape="rect" id="node22" href="$StratDiff_8hpp.html" title="src/StratDiff.hpp" alt="" coords="134,155,252,181"/>
+<area shape="rect" id="node10" href="$Beginner_8cpp.html" title="src/Beginner.cpp" alt="" coords="187,304,307,331"/>
+<area shape="rect" id="node13" href="$Deck_8cpp.html" title="src/Deck.cpp" alt="" coords="430,229,530,256"/>
+<area shape="rect" id="node17" href="$Player_8cpp.html" title="src/Player.cpp" alt="" coords="483,304,590,331"/>
+<area shape="rect" id="node18" href="$Team_8hpp.html" title="src/Team.hpp" alt="" coords="614,304,716,331"/>
+<area shape="rect" id="node16" href="$Human_8cpp.html" title="src/Human.cpp" alt="" coords="865,379,975,405"/>
+<area shape="rect" id="node19" href="$Team_8cpp.html" title="src/Team.cpp" alt="" coords="614,379,716,405"/>
+<area shape="rect" id="node21" href="$Trick_8cpp.html" title="src/Trick.cpp" alt="" coords="742,379,840,405"/>
+</map>

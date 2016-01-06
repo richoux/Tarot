@@ -1,0 +1,4 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node2" href="$classAI.html" title="This class defines AI players. " alt="" coords="5,483,160,707"/>
+<area shape="rect" id="node3" href="$classHuman.html" title="Human is the class implementing Human player actions, like playing a card. " alt="" coords="185,519,295,670"/>
+</map>

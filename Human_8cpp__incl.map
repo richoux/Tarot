@@ -1,0 +1,11 @@
+<map id="src/Human.cpp" name="src/Human.cpp">
+<area shape="rect" id="node2" href="$Human_8hpp.html" title="Human.hpp" alt="" coords="810,80,899,107"/>
+<area shape="rect" id="node5" href="$Player_8hpp.html" title="Player.hpp" alt="" coords="459,155,543,181"/>
+<area shape="rect" id="node9" href="$Card_8hpp.html" title="Card.hpp" alt="" coords="211,304,284,331"/>
+<area shape="rect" id="node10" href="$Suits_8hpp.html" title="Suits.hpp" alt="" coords="5,379,81,405"/>
+<area shape="rect" id="node16" href="$getInt_8hpp.html" title="getInt.hpp" alt="" coords="1044,155,1123,181"/>
+<area shape="rect" id="node18" href="$getChar_8hpp.html" title="getChar.hpp" alt="" coords="1148,155,1241,181"/>
+<area shape="rect" id="node11" href="$Deck_8hpp.html" title="Deck.hpp" alt="" coords="285,229,363,256"/>
+<area shape="rect" id="node14" href="$Biddings_8hpp.html" title="Biddings.hpp" alt="" coords="453,229,549,256"/>
+<area shape="rect" id="node15" href="$Announcements_8hpp.html" title="Announcements.hpp" alt="" coords="575,229,715,256"/>
+</map>
