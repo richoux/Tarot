@@ -27,18 +27,33 @@
 #include <QtGui>
 
 #include "Game.hpp"
-#include "CardPixmap.hpp"
+#include "CardItem.hpp"
 #include "TarotScene.hpp"
 #include "getInt.hpp"
 
 using namespace std;
 
-void gameLoop( Game &game )
+void gameLoop( Game &game, TarotScene &scene )
 {
   game.dealCards();
   
   if( game.isBotsOnly() )
     game.showPlayersCards();
+  else
+  {
+    int x = 300;
+    int y = 1300;
+    for( auto& card : game.getPlayers()[0]->getAllCards() )
+    {
+      scene.placeCard( card->computeIndex(), x, y );
+      x += 90;
+      if( x >= 2000 )
+      {
+  	x = 300;
+  	y = 1400;
+      }
+    }
+  }
 
   bool allPassed = true;
   Biddings bestBid = Biddings::none;  
@@ -83,16 +98,16 @@ void gameLoop( Game &game )
     return;
   }
 
-  game.closeBiddings();
+  game.closeBiddings( bestBid );
   
   if( game.getNumberPlayers() == 5 )
   {
     game.chooseKing();
     cout << game.getTakers().members.begin()->first << " called " << *game.getKingCalled() << endl;
   }
-  
+
   if( game.getBidding() <= Biddings::guard )
-    printDog( game );
+    // printDog( game );
     
   game.takeDog();
   if( game.isKingFound() && game.isBotsOnly() )
@@ -110,14 +125,33 @@ void gameLoop( Game &game )
     game.showPlayersCards();
 
   bool kingJustFound;
+  string playerName;
+  int indexPlayer;
   
   for( int round = 0; round < game.getCardsPerPlayer(); ++round )
   {
     string roundString("Round ");
     roundString += to_string( round + 1 );
-    printRound( roundString );
+    // printRound( roundString );
 
-    auto trick = game.playTrick( kingJustFound );
+    kingJustFound = false;
+      
+    for( int p = 0 ; p < game.getNumberPlayers() ; ++p )
+    {
+      indexPlayer = game.getIndexNext();
+      // The human player has the index 0 in the players vector.
+      if( !game.isBotsOnly() && indexPlayer == 0 )
+      {
+	
+      }
+      
+      playerName = game.getPlayers()[ indexPlayer ]->name;
+      auto playedCard = game.playCard( kingJustFound );
+      if( game.isBotsOnly() || indexPlayer != 0 )
+	cout << playerName << " played " << *playedCard << endl;
+    }
+    
+    auto trick = game.getTrick();
     cout << "Trick: ";
     trick->showAllCards();
     cout << "=> Won by " << trick->getLeader()->name << endl;
@@ -128,7 +162,6 @@ void gameLoop( Game &game )
 	   << "Taker: " << game.getTakers() << endl
 	   << "Defenders: " << game.getDefenders() << endl;      
     }
-
   }
 
   Team winners = game.endGame();
@@ -143,7 +176,7 @@ void gameLoop( Game &game )
   }
 
   if( game.getBidding() > Biddings::guard )
-    printDog( game );
+    // printDog( game );
 
   if( !winners.isEmpty() )
   {
@@ -161,17 +194,21 @@ int main( int argc, char **argv )
   TarotScene scene;
   scene.setSceneRect(0, 0, 1024, 768);
 
-  Game *game;
+  Game game;
   string playerName;
   int nberPlayers;
   int loop = 1;
+
+  QGraphicsView view( &scene );
+  view.setWindowTitle( "Mari's Tarot" );
+  view.show();
 
   if( argc >= 2 )
   {
     string arg( argv[1] );
     if( arg.compare( "--debug" ) != 0 || argc > 4 )
     {
-      usage();
+      // usage();
       exit(1);
     }
     
@@ -212,13 +249,53 @@ int main( int argc, char **argv )
     for( int i = 0 ; i < loop ; ++i )
     {
       string numberGames( to_string( i ) );
-      printRound( numberGames );
+      // printRound( numberGames );
       
-      gameLoop( game );
+      // gameLoop( game, scene );
+      game.dealCards();
+      
+      int x = 300;
+      int y = 1300;
+      for( auto& card : game.getPlayers()[0]->getAllCards() )
+      {
+	scene.placeCard( card->computeIndex(), x, y );
+	x += 90;
+	if( x >= 2000 )
+	{
+	  x = 300;
+	  y = 1400;
+	}
+      }
+      
       game.newGame();
     }
   }
   else
-    gameLoop( game );
+  {
+    // gameLoop( game, scene );
+    game.dealCards();
+    cout << "My cards: " << endl;
+    game.getPlayers()[0]->showCards();      
+    cout << endl
+	 << game.getPlayers()[0]->getAllCards().size() << endl
+	 << "Graphic cards (hoho)." << endl;
+      
+    int x = 300;
+    int y = 1300;
+    for( auto& card : game.getPlayers()[0]->getAllCards() )
+    {
+      cout << *card << " "
+	   << card->computeIndex()
+	   << " (" << x << "," << y << ")" << endl;
+      scene.placeCard( card->computeIndex(), x, y );
+      x += 90;
+      if( x >= 1400 )
+      {
+	x = 300;
+	y = 1400;
+      }
+    }
+  }
+  
   return app.exec();
 }

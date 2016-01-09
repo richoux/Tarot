@@ -4,7 +4,6 @@ TarotScene::TarotScene() : QGraphicsScene()
 {
   this->setBackgroundBrush( QImage( "img/bg.png" ) );
   array< QPixmap, 78 > pixmaps;
-  QTransform matrix;
   matrix.scale(0.5, 0.5);
 
   for( int i = 0 ; i < 78 ; ++i )
@@ -14,7 +13,7 @@ TarotScene::TarotScene() : QGraphicsScene()
     path.append( ".png" );
 
     pixmaps[i].load( path );
-    cardImages[i].setPixmap( pixmaps[i] );
+    cardItems[i].setPixmap( pixmaps[i] );
     
     // matrix.reset();
     // matrix.scale(0.5, 0.5);
@@ -25,10 +24,11 @@ TarotScene::TarotScene() : QGraphicsScene()
     //   matrix.translate( (i-26)*90 - 250, 1300 );
     // else
     //   matrix.translate( (i-52)*90 - 250, 1400 );
-    
-    cardImages[i].setTransform( matrix );
 
-    this->addItem( &cardImages[i] );
+    cardItems[i].setPos( -1000, -1000 );
+    cardItems[i].setTransform( matrix );
+
+    this->addItem( &cardItems[i] );
   }
 }
 
@@ -61,4 +61,9 @@ void TarotScene::mouseMoveEvent( QGraphicsSceneMouseEvent *e )
 
 void TarotScene::mousePressEvent( QGraphicsSceneMouseEvent *e )
 {
+}
+
+void TarotScene::placeCard( const int cardIndex, const int x, const int y )
+{
+  cardItems[ cardIndex ].setPos( x/2, y/2 );
 }

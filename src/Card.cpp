@@ -32,7 +32,7 @@ int Card::computeIndex() const
   switch( suit )
   {
   case heart:
-    return value;
+    return value - 1;
   case spade:
     return 13 + value;
   case diamond:

@@ -16,7 +16,7 @@ HEADERS += src/AI.hpp \
            src/Beginner.hpp \
            src/Biddings.hpp \
            src/Card.hpp \
-           src/CardPixmap.hpp \
+           src/CardItem.hpp \
            src/Deck.hpp \
            src/Game.hpp \
            src/getChar.hpp \
@@ -32,7 +32,7 @@ HEADERS += src/AI.hpp \
 SOURCES += src/AI.cpp \
            src/Beginner.cpp \
            src/Card.cpp \
-           src/CardPixmap.cpp \
+           src/CardItem.cpp \
            src/Deck.cpp \
            src/Game.cpp \
            src/getChar.cpp \

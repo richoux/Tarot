@@ -63,11 +63,11 @@ public:
   */
   virtual shared_ptr<Card> chooseKing( const Deck &deck ) const = 0;
 
-  //! Returns all cards in player's hand.
+  //! Returns the vector of all cards in player's hand.
   /*!
     \return The union of hearts, spades, etc, sets.
   */
-  set< shared_ptr<Card> > getAllCards() const;
+  vector< shared_ptr<Card> > getAllCards() const;
 
   //! Inline assessor to the set of announcements.
   inline  set< Announcements > getAnnounced() const { return announced; }
