@@ -41,16 +41,16 @@ void gameLoop( Game &game, TarotScene &scene )
     game.showPlayersCards();
   else
   {
-    int x = 300;
-    int y = 1300;
+    int x = 200;
+    int y = 1150;
     for( auto& card : game.getPlayers()[0]->getAllCards() )
     {
       scene.placeCard( card->computeIndex(), x, y );
-      x += 90;
-      if( x >= 2000 )
+      x += 180;
+      if( x >= 1500 )
       {
-  	x = 300;
-  	y = 1400;
+	x = 200;
+	y = 1350;
       }
     }
   }
@@ -195,7 +195,6 @@ int main( int argc, char **argv )
   scene.setSceneRect(0, 0, 1024, 768);
 
   Game game;
-  string playerName;
   int nberPlayers;
   int loop = 1;
 
@@ -222,7 +221,7 @@ int main( int argc, char **argv )
       loop = atoi( argv[3] );
     }
 
-    game.setGame( nberPlayers, playerName, true );
+    game.setGame( nberPlayers, true );
 
     game.shuffleDeck();
     game.showDeck();
@@ -230,17 +229,11 @@ int main( int argc, char **argv )
   }
   else
   {
-    cout << "Please enter your name." << endl;
-    getline( cin, playerName );
     do {
       nberPlayers = getInt( "Please enter the number of players: 3, 4 or 5.\n" );
     } while( nberPlayers < 3 || nberPlayers > 5 );
     
-    if( !playerName.empty() )
-      game.setGame( nberPlayers, playerName );
-    else
-      game.setGame( nberPlayers );
-
+    game.setGame( nberPlayers );
     game.shuffleDeck();
   }
 
@@ -277,22 +270,22 @@ int main( int argc, char **argv )
     cout << "My cards: " << endl;
     game.getPlayers()[0]->showCards();      
     cout << endl
-	 << game.getPlayers()[0]->getAllCards().size() << endl
-	 << "Graphic cards (hoho)." << endl;
+    	 << game.getPlayers()[0]->getAllCards().size() << endl
+    	 << "Graphic cards (hoho)." << endl;
       
-    int x = 300;
-    int y = 1300;
+    int x = 200;
+    int y = 1150;
     for( auto& card : game.getPlayers()[0]->getAllCards() )
     {
       cout << *card << " "
-	   << card->computeIndex()
-	   << " (" << x << "," << y << ")" << endl;
+    	   << card->computeIndex()
+    	   << " (" << x << "," << y << ")" << endl;
       scene.placeCard( card->computeIndex(), x, y );
-      x += 90;
-      if( x >= 1400 )
+      x += 180;
+      if( x >= 1500 )
       {
-	x = 300;
-	y = 1400;
+    	x = 200;
+    	y = 1350;
       }
     }
   }

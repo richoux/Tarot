@@ -54,7 +54,7 @@ public:
     \param yourName The human player name.
     \param automatic A boolean set to true if and only if one wants to perform automatic tests. False by default.
   */
-  Game( int& numberPlayers, const string yourName = "You", const bool automatic = false );
+  Game( int& numberPlayers, const bool automatic = false );
 
   //! In a 5-player game, to choose as a partner the player having the called king (or card). 
   void chooseKing();
@@ -159,7 +159,7 @@ public:
   bool sameTeam( const shared_ptr<Player> p1, const shared_ptr<Player> p2 ) const;
 
   //! Set a game, like the equivalent constructor does.
-  void setGame( int& numberPlayers, const string yourName = "You", const bool automatic = false );
+  void setGame( int& numberPlayers, const bool automatic = false );
   
   //! Shows the deck on the screen.
   void showDeck() const;

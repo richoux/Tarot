@@ -38,7 +38,7 @@ Game::Game()
     foolReceiver(nullptr)
 {}
 
-Game::Game( int& numberPlayers, const string yourName, const bool automatic )
+Game::Game( int& numberPlayers, const bool automatic )
   : currentTrick(make_shared<Trick>()),
     indexToBid(-1),
     indexBidder(0),
@@ -49,7 +49,7 @@ Game::Game( int& numberPlayers, const string yourName, const bool automatic )
     foolGiver(nullptr),
     foolReceiver(nullptr)
 {
-  setGame( numberPlayers, yourName, automatic );
+  setGame( numberPlayers, automatic );
 }
 
 /////////
@@ -224,7 +224,7 @@ bool Game::sameTeam( const shared_ptr<Player> p1, const shared_ptr<Player> p2 ) 
     || ( defenders.contains(p1->name) && defenders.contains(p2->name) );
 }
 
-void Game::setGame( int& numberPlayers, const string yourName, const bool automatic )
+void Game::setGame( int& numberPlayers, const bool automatic )
 {
   botsOnly = automatic;
   vector<string> names;
@@ -261,7 +261,7 @@ void Game::setGame( int& numberPlayers, const string yourName, const bool automa
   }
   
   if( !botsOnly )
-    players.push_back( make_shared<Human>( yourName ) );
+    players.push_back( make_shared<Human>( "You" ) );
 
   players.push_back( make_shared<AI>( "Alice", names ) );
   players.push_back( make_shared<AI>( "Bob", names ) );
