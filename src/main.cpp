@@ -189,8 +189,6 @@ int main( int argc, char **argv )
 {
   QApplication app(argc, argv);
 
-  srand ( unsigned ( time(0) ) );
-
   TarotScene scene;
   scene.setSceneRect(0, 0, 1024, 768);
 

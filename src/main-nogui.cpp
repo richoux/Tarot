@@ -192,8 +192,6 @@ void gameLoop( Game &game )
 
 int main( int argc, char **argv )
 {
-  srand ( unsigned ( time(0) ) );
-
   Game game;
   string playerName;
   int nberPlayers;
