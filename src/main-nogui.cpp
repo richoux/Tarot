@@ -218,7 +218,7 @@ int main( int argc, char **argv )
       loop = atoi( argv[3] );
     }
 
-    game.setGame( nberPlayers, playerName, true );
+    game.setGame( nberPlayers, true );
 
     game.shuffleDeck();
     game.showDeck();
@@ -232,10 +232,7 @@ int main( int argc, char **argv )
       nberPlayers = getInt( "Please enter the number of players: 3, 4 or 5.\n" );
     } while( nberPlayers < 3 || nberPlayers > 5 );
     
-    if( !playerName.empty() )
-      game.setGame( nberPlayers, playerName );
-    else
-      game.setGame( nberPlayers );
+    game.setGame( nberPlayers );
 
     game.shuffleDeck();
   }
