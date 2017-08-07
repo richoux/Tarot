@@ -60,7 +60,7 @@ bool AI::haveSuit( const string& name, const Suits suit ) const
     return true;
 }
 
-set< shared_ptr<Card> >	AI::makeEcart( const int dogSize )
+set< shared_ptr<Card> >	AI::makeEcart( const size_t dogSize )
 {
   set< shared_ptr<Card> > ecart = difficulty->makeEcart( dogSize, getInitialCards() );
 

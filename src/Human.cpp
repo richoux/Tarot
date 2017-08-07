@@ -103,7 +103,7 @@ shared_ptr<Card> Human::chooseKing( const Deck &deck ) const
   auto callable = callableCards( deck );
 
   cout << "Cards you can call: ";
-  for( int i = 0 ; i < callable.size() ; ++i )
+  for( size_t i = 0 ; i < callable.size() ; ++i )
     cout << "(" << i << ") " << *callable[i] << " | ";
   cout << endl;
   
@@ -112,7 +112,7 @@ shared_ptr<Card> Human::chooseKing( const Deck &deck ) const
   return callable[ index ];
 }
 
-set< shared_ptr<Card> >	Human::makeEcart( const int dogSize )
+set< shared_ptr<Card> >	Human::makeEcart( const size_t dogSize )
 {
   set< shared_ptr<Card> > ecart;
   vector< int > mapIndex( initialCards.size() );
@@ -171,7 +171,7 @@ set< shared_ptr<Card> >	Human::makeEcart( const int dogSize )
     {
       index = getInt( "\nSelect a card: " );
     }
-    while( index < 0 || index >= initialCards.size() );
+    while( index < 0 || index >= (int)initialCards.size() );
       
     if( ecart.find( initialCards[ mapIndex[ index ] ] ) == ecart.end() )
       ecart.insert( initialCards[ mapIndex[ index ] ] );
@@ -208,7 +208,7 @@ shared_ptr<Card> Human::playCard( const Suits referenceCard, const shared_ptr<Ca
   showCards();
   cout << endl;
   
-  for( unsigned int i = 0; i < valids.size(); i++ )
+  for( size_t i = 0; i < valids.size(); i++ )
     cout << "(" << i << ") " << *valids[i] << " | ";
   
   int index;
@@ -217,7 +217,7 @@ shared_ptr<Card> Human::playCard( const Suits referenceCard, const shared_ptr<Ca
   {
     index = getInt( "\nSelect your card: " );
   }
-  while( index < 0 || index >= valids.size() );
+  while( index < 0 || index >= (int)valids.size() );
 
   cout << "You played " << *valids[index] << endl;
   delCard( valids[index] );

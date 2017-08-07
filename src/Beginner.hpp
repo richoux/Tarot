@@ -56,7 +56,7 @@ public:
     \param allCards The vector of all our cards, including the dog.
     \return A set of Card pointers for the cards we place into the ecart.
   */
-  set< shared_ptr<Card> > makeEcart( const int dogSize, const vector< shared_ptr<Card> >& allCards) const;
+  set< shared_ptr<Card> > makeEcart( const size_t dogSize, const vector< shared_ptr<Card> >& allCards) const;
   
   //! Choose what card we play, given the first card and the highest trump of the trick.
   /*!

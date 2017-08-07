@@ -232,7 +232,7 @@ private:
   Biddings			bidding;		//!< The type of bidding for its game.
   shared_ptr<Card>		kingCalled;		//!< In a 5-player game, which king (or card) has been called.
   bool				kingFound;		//!< True iff the king (or card) called is known.
-  int				dogSize;		//!< The dog size, depending of the number of players.
+  size_t			dogSize;		//!< The dog size, depending of the number of players.
   int				cardsPerPlayer;		//!< The number of cards each player has in its initial hand, depending also of the number of players.
   int				consecutiveDealing;	//!< How many cards the dealer must give to players consecutively.
   bool				chelemAnnounced;	//!< A boolean set to true iff a chelem has been announced.

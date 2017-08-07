@@ -67,13 +67,13 @@ void Game::closeBiddings( const Biddings bestBid )
   takers.members[ players[indexBidder]->name ] = players[indexBidder];
   if( players.size() < 5 )
   {
-    for( unsigned int i = 0; i < players.size(); i++ )
+    for( int i = 0; i < (int)players.size(); i++ )
       if( i != indexBidder )
 	defenders.members[ players[i]->name ] = players[i];
   }
   else
   {
-    for( unsigned int i = 0; i < players.size(); i++ )
+    for( int i = 0; i < (int)players.size(); i++ )
       if( i != indexBidder )
 	unknown.members[ players[i]->name ] = players[i];
   }
@@ -185,7 +185,7 @@ void Game::newGame()
   foolGiver = foolReceiver = nullptr;
   toSwap = false;
   chelemAnnounced = false;
-  if( indexToBid == players.size() - 1 )
+  if( indexToBid == (int)players.size() - 1 )
     indexToBid = 0;
   else
     ++indexToBid;
@@ -301,7 +301,7 @@ void Game::showPlayersCards() const
 
 void Game::shuffleDeck()
 {
-  for( unsigned int i = 0; i < players.size(); ++i )
+  for( size_t i = 0; i < players.size(); ++i )
     deck.shuffle();
 }
 
@@ -309,13 +309,13 @@ pair< shared_ptr<Player>, Biddings > Game::takeBiddings( const Biddings &bestBid
 {
   if( indexToBid != -1 )
   {
-    if( indexToBid == players.size() - 1 )
+    if( indexToBid == (int)players.size() - 1 )
       indexToBid = 0;
     else
       ++indexToBid;
   }
   else
-    indexToBid = rand() % players.size();
+    indexToBid = rand() % (int)players.size();
   
   pair< shared_ptr<Player>, Biddings > playerBid;
   
@@ -385,7 +385,7 @@ bool Game::isCardCalled( const shared_ptr<Card> card, const shared_ptr<Player> p
 
 void Game::nextPlayer()
 {
-  if( indexNext == players.size() - 1 )
+  if( indexNext == (int)players.size() - 1 )
     indexNext = 0;
   else
     indexNext++;
@@ -396,7 +396,7 @@ void Game::nextPlayer()
 void Game::setNext( const shared_ptr<Player> player )
 {
   next = player;
-  for( unsigned int i = 0; i < players.size(); ++i )
+  for( int i = 0; i < (int)players.size(); ++i )
     if( players[i] == player )
       indexNext = i;
 }

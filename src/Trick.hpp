@@ -51,7 +51,7 @@ public:
   double getScore() const;
 
   //! Inline function returning the number of cards composing the trick.
-  inline int getNumberOfCards() const { return trickCards.empty() ? 0 : trickCards.size(); }
+  inline size_t getNumberOfCards() const { return trickCards.empty() ? 0 : trickCards.size(); }
 
   //! Show all card of the current trick
   void showAllCards() const;

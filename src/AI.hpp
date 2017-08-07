@@ -95,7 +95,7 @@ public:
     \param dogSize The number of card one must include into the ecart.
     \return A set of Card pointers for the cards one places into the ecart.
   */
-  set< shared_ptr<Card> > makeEcart( const int dogSize );
+  set< shared_ptr<Card> > makeEcart( const size_t dogSize );
 
   //! Must be called when starting a new game.
   /*!

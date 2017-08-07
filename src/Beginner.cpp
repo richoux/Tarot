@@ -70,7 +70,7 @@ Biddings Beginner::bid( const Biddings bestBid, const int numberOudlers, const b
   }
 }
 
-set< shared_ptr<Card> >	Beginner::makeEcart( const int dogSize, const vector< shared_ptr<Card> >& allCards ) const
+set< shared_ptr<Card> >	Beginner::makeEcart( const size_t dogSize, const vector< shared_ptr<Card> >& allCards ) const
 {
 #if defined DEBUG
   if( ! (allCards.size() >= 18 && allCards.size() <= 30) )

@@ -59,7 +59,7 @@ public:
   /*!
     \param dogSize The number of cards to put into the ecart.
   */
-  set< shared_ptr<Card> > makeEcart( const int dogSize );
+  set< shared_ptr<Card> > makeEcart( const size_t dogSize );
 
   //! To get prepared for a new game.
   void newGame();

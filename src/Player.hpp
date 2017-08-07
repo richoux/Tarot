@@ -83,7 +83,7 @@ public:
     \param dogSize The number of card one must include into the ecart.
     \return A set of Card pointers for the cards one places into the ecart.
   */
-  virtual set< shared_ptr<Card> > makeEcart( const int dogSize ) = 0;
+  virtual set< shared_ptr<Card> > makeEcart( const size_t dogSize ) = 0;
 
   //! Pure virtual function to prepare the player for a new game. 
   virtual void newGame() = 0;
