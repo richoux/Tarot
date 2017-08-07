@@ -19,14 +19,10 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Beginner.hpp>
+#include <cstdlib>
+#include <cassert>
 
-shared_ptr<Card> Beginner::playCard( const vector< shared_ptr<Card> >& cardsCanPlay ) const
-{
-  assert( !cardsCanPlay.empty() );
-  // play random
-  return cardsCanPlay[ rand() % cardsCanPlay.size() ]; 
-}
+#include "Beginner.hpp"
 
 Biddings Beginner::bid( const Biddings bestBid, const int numberOudlers, const bool chelemAnnounced ) const
 {
@@ -74,7 +70,7 @@ Biddings Beginner::bid( const Biddings bestBid, const int numberOudlers, const b
   }
 }
 
-set< shared_ptr<Card> >	Beginner::makeEcart( const int dogSize, const vector< shared_ptr<Card> >& allCards ) const
+set< shared_ptr<Card> >	Beginner::makeEcart( const size_t dogSize, const vector< shared_ptr<Card> >& allCards ) const
 {
 #if defined DEBUG
   if( ! (allCards.size() >= 18 && allCards.size() <= 30) )
@@ -93,4 +89,11 @@ set< shared_ptr<Card> >	Beginner::makeEcart( const int dogSize, const vector< sh
     ecart.insert( allCards[rand() % allCards.size()]);
   
   return ecart;
+}
+
+shared_ptr<Card> Beginner::playCard( const vector< shared_ptr<Card> >& cardsCanPlay ) const
+{
+  assert( !cardsCanPlay.empty() );
+  // play random
+  return cardsCanPlay[ rand() % cardsCanPlay.size() ]; 
 }

@@ -24,14 +24,11 @@
 #include <set>
 #include <vector>
 #include <memory>
-#include <iostream>
-#include <algorithm>
 
-#include <Card.hpp>
-#include <Deck.hpp>
-#include <Suits.hpp>
-#include <Biddings.hpp>
-#include <Announcements.hpp>
+#include "Card.hpp"
+#include "Deck.hpp"
+#include "Biddings.hpp"
+#include "Announcements.hpp"
 
 using namespace std;
 
@@ -45,16 +42,11 @@ public:
   */
   Player( const string& name );
 
-  //! playCard is a pure virtual function returning the card the player chooses to play.  
+  //! Add a card among player's initial cards.
   /*!
-    \param referenceCard The card fixing the ask suit for the trick.
-    \param highTrump The highest trump played so far for the trick, if any.
-    \return The chosen card to play.
+    \param card The card to add.
   */
-  virtual shared_ptr<Card> playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump ) = 0;
-
-  //! Pure virtual function to prepare the player for a new game. 
-  virtual void newGame() = 0;
+  void addCard( const shared_ptr<Card> card );
 
   //! Pure virtual function to make a choice for biddings.
   /*!
@@ -71,59 +63,70 @@ public:
   */
   virtual shared_ptr<Card> chooseKing( const Deck &deck ) const = 0;
 
+  //! Returns the vector of all cards in player's hand.
+  /*!
+    \return The union of hearts, spades, etc, sets.
+  */
+  vector< shared_ptr<Card> > getAllCards() const;
+
+  //! Inline assessor to the set of announcements.
+  inline  set< Announcements > getAnnounced() const { return announced; }
+
+  //! Inline assessor to the player's initial cards.
+  inline  vector< shared_ptr<Card> > getInitialCards() const { return initialCards; }
+
+  //! Inline assessor to the number of oudlers the player has with his/her initial hand.
+  inline  int getNumberOudlers() const { return numberOudlers; }
+
   //! Pure virtual function to make the ecart when the player is the best bidder.
   /*!
     \param dogSize The number of card one must include into the ecart.
     \return A set of Card pointers for the cards one places into the ecart.
   */
-  virtual set< shared_ptr<Card> > makeEcart( const int dogSize ) = 0;
+  virtual set< shared_ptr<Card> > makeEcart( const size_t dogSize ) = 0;
 
-  //! Inline assessor to the set of announcements.
-  inline  set< Announcements > getAnnounced() const { return announced; }
+  //! Pure virtual function to prepare the player for a new game. 
+  virtual void newGame() = 0;
 
-  //! Inline assessor to the number of oudlers the player has with his/her initial hand.
-  inline  int getNumberOudlers() const { return numberOudlers; }
-
-  //! Inline assessor to the player's initial cards.
-  inline  vector< shared_ptr<Card> > getInitialCards() const { return initialCards; }
-
-  //! Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick.
+  //! playCard is a pure virtual function returning the card the player chooses to play.  
   /*!
-    \param refCard A pointer of the card fixing the asked suit of the trick.
-    \param greaterTrump A pointer on the greater trump of the trick, if any.
-    \return The vector of all cards the player can play in his/her situation. 
+    \param referenceSuit The asked suit for the trick.
+    \param highTrump The highest trump played so far for the trick, if any.
+    \return The chosen card to play.
   */
-  vector< shared_ptr<Card> > validCards	( shared_ptr<Card> refCard, shared_ptr<Card> greaterTrump );
-
-  //! Add a card among player's initial cards.
-  /*!
-    \param card The card to add.
-  */
-  void addCard( shared_ptr<Card> card );
+  virtual shared_ptr<Card> playCard( const Suits referenceSuit, const shared_ptr<Card> highTrump ) = 0;
 
   //! To print all player's cards in his/her current hand. 
   void showCards() const;
+
+  //! Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick.
+  /*!
+    \param referenceSuit The asked suit for the trick.
+    \param greaterTrump A pointer on the greater trump of the trick, if any.
+    \return The vector of all cards the player can play in his/her situation. 
+  */
+  vector< shared_ptr<Card> > validCards	( const Suits referenceSuit, const shared_ptr<Card> greaterTrump ) const;
 
   string name; //!< The player's name. 
   double score; //!< The player's score.
 
 protected:
+  //! To compute the vector of cards we can call during a 5-player game.
+  /*!
+    \param deck The deck used form the game.
+    \return The vector of cards the taker can call (usually, the four kings).
+  */
+  vector< shared_ptr<Card> > callableCards( const Deck &deck ) const;  
+
   //! To delete a card from the player's current hand.
   /*!
     \param card The card to delete from the player's hand.
   */
-  void delCard( shared_ptr<Card> card );
-
-  //! To compute the vector of cards we can call during a 5-player game.
-  /*!
-    \param deck The deck used form the game.
-    \return the vector of cards the taker can call (usually, the four kings).
-  */
-  vector< shared_ptr<Card> > callableCards( const Deck &deck ) const;  
+  void delCard( const shared_ptr<Card> card );
 
   //! A structure to automatically fix an insert order into cards' sets. 
   struct cardOrder {
-    bool operator() (shared_ptr<Card> const lhs, shared_ptr<Card> const rhs) const
+    bool operator() ( const shared_ptr<Card> lhs, const shared_ptr<Card> rhs) const
       {
 	return lhs->getValue() < rhs->getValue();
       }
@@ -141,5 +144,5 @@ protected:
   set< Announcements >			announced;	//!< The set of announcements (for what?).
 
 private:
-  bool hasCard( shared_ptr<Card> card ) const;
+  bool hasCard( const shared_ptr<Card> card ) const;
 };

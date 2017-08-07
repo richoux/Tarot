@@ -23,88 +23,270 @@
 #include <cstdlib>
 #include <cstring>
 
-#include <Game.hpp>
-#include <getInt.hpp>
+#include <QApplication>
+#include <QtGui>
+
+#include "Game.hpp"
+#include "CardItem.hpp"
+#include "TarotScene.hpp"
+#include "getInt.hpp"
 
 using namespace std;
 
+void gameLoop( Game &game, TarotScene &scene )
+{
+  game.dealCards();
+  
+  if( game.isBotsOnly() )
+    game.showPlayersCards();
+  else
+  {
+    int x = 200;
+    int y = 1150;
+    for( auto& card : game.getPlayers()[0]->getAllCards() )
+    {
+      scene.placeCard( card->computeIndex(), x, y );
+      x += 180;
+      if( x >= 1500 )
+      {
+	x = 200;
+	y = 1350;
+      }
+    }
+  }
+
+  bool allPassed = true;
+  Biddings bestBid = Biddings::none;  
+  for( int p = 0 ; p < game.getNumberPlayers() ; ++p )
+  {
+    auto bid = game.takeBiddings( bestBid );
+    if( bid.second == Biddings::none )
+      cout << bid.first->name << " passes." << endl;
+    else
+    {
+      allPassed = false;
+      if( bestBid < bid.second )
+      {
+	game.updateIndexBidder();
+	bestBid = bid.second;
+      }
+      
+      cout << bid.first->name << " takes a ";
+      switch( bid.second )
+      {
+      case Biddings::small:
+	cout << "Small." << endl;
+	break;
+      case Biddings::guard:
+	cout << "Guard." << endl;
+	break;
+      case Biddings::guard_w:
+	cout << "Guard Without." << endl;
+	break;
+      case Biddings::guard_a:
+	cout << "Guard Against." << endl;
+	break;
+      default:
+	break;
+      }
+    }
+  }
+    
+  if( allPassed )
+  {
+    cout << "All players passed." << endl;
+    return;
+  }
+
+  game.closeBiddings( bestBid );
+  
+  if( game.getNumberPlayers() == 5 )
+  {
+    game.chooseKing();
+    cout << game.getTakers().members.begin()->first << " called " << *game.getKingCalled() << endl;
+  }
+
+  if( game.getBidding() <= Biddings::guard )
+    // printDog( game );
+    
+  game.takeDog();
+  if( game.isKingFound() && game.isBotsOnly() )
+  {
+    cout << "Player alone! Unlucky!" << endl
+	 << "Taker: " << game.getTakers() << endl
+	 << "Defenders: " << game.getDefenders() << endl;      
+  }
+  
+  cout << "Taker: " << game.getTakers() << endl;
+  if( game.getNumberPlayers() <= 5 )
+    cout << "Defenders: " << game.getDefenders() << endl;
+
+  if( game.isBotsOnly() )
+    game.showPlayersCards();
+
+  bool kingJustFound;
+  string playerName;
+  int indexPlayer;
+  
+  for( int round = 0; round < game.getCardsPerPlayer(); ++round )
+  {
+    string roundString("Round ");
+    roundString += to_string( round + 1 );
+    // printRound( roundString );
+
+    kingJustFound = false;
+      
+    for( int p = 0 ; p < game.getNumberPlayers() ; ++p )
+    {
+      indexPlayer = game.getIndexNext();
+      // The human player has the index 0 in the players vector.
+      if( !game.isBotsOnly() && indexPlayer == 0 )
+      {
+	
+      }
+      
+      playerName = game.getPlayers()[ indexPlayer ]->name;
+      auto playedCard = game.playCard( kingJustFound );
+      if( game.isBotsOnly() || indexPlayer != 0 )
+	cout << playerName << " played " << *playedCard << endl;
+    }
+    
+    auto trick = game.getTrick();
+    cout << "Trick: ";
+    trick->showAllCards();
+    cout << "=> Won by " << trick->getLeader()->name << endl;
+
+    if( kingJustFound && game.isBotsOnly() )
+    {
+      cout << "Parter known!" << endl
+	   << "Taker: " << game.getTakers() << endl
+	   << "Defenders: " << game.getDefenders() << endl;      
+    }
+  }
+
+  Team winners = game.endGame();
+
+  cout << "Won cards:" << endl;
+  for( auto player : game.getPlayers() )
+  {
+    cout << player->name << ": ";
+    for( auto card : game.getPlayerWonCards( player ) )
+      cout << *card << " ";
+    cout << endl;
+  }
+
+  if( game.getBidding() > Biddings::guard )
+    // printDog( game );
+
+  if( !winners.isEmpty() )
+  {
+    game.printScores();  
+    cout << "Winners: " << winners << endl;
+  }
+}
+
 int main( int argc, char **argv )
 {
-  srand ( unsigned ( time(0) ) );
+  QApplication app(argc, argv);
 
-  Game *game;
-  string playerName;
+  TarotScene scene;
+  scene.setSceneRect(0, 0, 1024, 768);
+
+  Game game;
   int nberPlayers;
-  int loop;
+  int loop = 1;
 
-  if( argc >= 2 && strcmp( argv[1], "--debug") == 0 )
+  QGraphicsView view( &scene );
+  view.setWindowTitle( "Mari's Tarot" );
+  view.show();
+
+  if( argc >= 2 )
   {
+    string arg( argv[1] );
+    if( arg.compare( "--debug" ) != 0 || argc > 4 )
+    {
+      // usage();
+      exit(1);
+    }
+    
     if( argc == 2 )
-    {
       nberPlayers = 4;
-      loop = 1;
-    }
     else if( argc == 3 )
-    {
       nberPlayers = atoi( argv[2] );
-      loop = 1;
-    }
     else
     {
       nberPlayers = atoi( argv[2] );
       loop = atoi( argv[3] );
     }
 
-    game = new Game( nberPlayers, playerName, true );
+    game.setGame( nberPlayers, true );
 
-    game->shuffleDeck();
-    game->showDeck();
-    game->showPlayersCards();
+    game.shuffleDeck();
+    game.showDeck();
+    game.showPlayersCards();
   }
-  else if( argc == 1 )
+  else
   {
-    cout << "Please enter your name." << endl;
-    getline( cin, playerName );
     do {
       nberPlayers = getInt( "Please enter the number of players: 3, 4 or 5.\n" );
     } while( nberPlayers < 3 || nberPlayers > 5 );
     
-    if( playerName.compare("") != 0 )
-      game = new Game( nberPlayers, playerName );
-    else
-      game = new Game( nberPlayers );
-
-    game->shuffleDeck();
+    game.setGame( nberPlayers );
+    game.shuffleDeck();
   }
 
-  if( argc >= 2 && strcmp( argv[1], "--debug") == 0 )
+  if( game.isBotsOnly() )
   {
     for( int i = 0 ; i < loop ; ++i )
     {
-      cout << "***********" << endl;
-      cout << "*** " << i << " ***" << endl;
-      cout << "***********" << endl;
-
-      Team winners = game->play();
-
-      if( !winners.isEmpty() )
+      string numberGames( to_string( i ) );
+      // printRound( numberGames );
+      
+      // gameLoop( game, scene );
+      game.dealCards();
+      
+      int x = 300;
+      int y = 1300;
+      for( auto& card : game.getPlayers()[0]->getAllCards() )
       {
-	game->printScores();  
-	cout << "Winners: " << winners << endl;
+	scene.placeCard( card->computeIndex(), x, y );
+	x += 90;
+	if( x >= 2000 )
+	{
+	  x = 300;
+	  y = 1400;
+	}
       }
       
-      game->newGame();
+      game.newGame();
     }
   }
   else
   {
-    Team winners = game->play();
-    
-    if( !winners.isEmpty() )
+    // gameLoop( game, scene );
+    game.dealCards();
+    cout << "My cards: " << endl;
+    game.getPlayers()[0]->showCards();      
+    cout << endl
+    	 << game.getPlayers()[0]->getAllCards().size() << endl
+    	 << "Graphic cards (hoho)." << endl;
+      
+    int x = 200;
+    int y = 1150;
+    for( auto& card : game.getPlayers()[0]->getAllCards() )
     {
-      game->printScores();  
-      cout << "Winners: " << winners << endl;
+      cout << *card << " "
+    	   << card->computeIndex()
+    	   << " (" << x << "," << y << ")" << endl;
+      scene.placeCard( card->computeIndex(), x, y );
+      x += 180;
+      if( x >= 1500 )
+      {
+    	x = 200;
+    	y = 1350;
+      }
     }
   }
-  delete game;
+  
+  return app.exec();
 }

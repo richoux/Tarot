@@ -24,12 +24,10 @@
 #include <vector>
 #include <set>
 #include <memory>
-#include <cstdlib>
-#include <cassert>
 
-#include <Biddings.hpp>
-#include <Card.hpp>
-#include <StratDiff.hpp>
+#include "Biddings.hpp"
+#include "Card.hpp"
+#include "StratDiff.hpp"
 
 using namespace std;
 
@@ -41,13 +39,6 @@ using namespace std;
 class Beginner : public StratDiff
 {
 public:
-  //! Choose what card we play, given the first card and the highest trump of the trick.
-  /*!
-    \param cardCanPlay The vector of cards one is allowed to play.
-    \return The card we play.
-  */
-  shared_ptr<Card> playCard( const vector< shared_ptr<Card> >& cardsCanPlay) const;
-
   //! Called to decide if we propose a bid or not, and if any, what bid.
   /*!
     bid is delegated to the difficulty Strategy.
@@ -65,5 +56,12 @@ public:
     \param allCards The vector of all our cards, including the dog.
     \return A set of Card pointers for the cards we place into the ecart.
   */
-  set< shared_ptr<Card> > makeEcart( const int dogSize, const vector< shared_ptr<Card> >& allCards) const;
+  set< shared_ptr<Card> > makeEcart( const size_t dogSize, const vector< shared_ptr<Card> >& allCards) const;
+  
+  //! Choose what card we play, given the first card and the highest trump of the trick.
+  /*!
+    \param cardCanPlay The vector of cards one is allowed to play.
+    \return The card we play.
+  */
+  shared_ptr<Card> playCard( const vector< shared_ptr<Card> >& cardsCanPlay) const;
 };

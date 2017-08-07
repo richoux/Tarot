@@ -19,7 +19,11 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Player.hpp>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+
+#include "Player.hpp"
 
 Player::Player( const string& name ) 
   : name( name ), 
@@ -27,11 +31,89 @@ Player::Player( const string& name )
     initialPoints( 0 ) 
 {}
 
-vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_ptr<Card> greaterTrump )
+
+/////////
+// public
+
+void Player::addCard( const shared_ptr<Card> card )
+{
+  switch( card->getSuit() )
+  {
+  case heart:
+    hearts.insert( card );
+    break;
+  case spade:
+    spades.insert( card );
+    break;
+  case diamond:
+    diamonds.insert( card );
+    break;
+  case club:
+    clubs.insert( card );
+    break;
+  case trump:
+    trumps.insert( card );
+    break;
+  case Suits::fool:
+    fool = card;
+    break;
+  default:
+    break;
+  }
+
+  if( card->isOudler() )
+    numberOudlers++;
+
+  initialPoints += card->getPoints();
+  initialCards.push_back( card );
+}
+
+vector< shared_ptr<Card> > Player::getAllCards() const
+{
+  vector< shared_ptr<Card> > allCards;
+  allCards.insert( allCards.begin(), hearts.cbegin(), hearts.cend() );
+  allCards.insert( allCards.begin(), spades.cbegin(), spades.cend() );
+  allCards.insert( allCards.begin(), diamonds.cbegin(), diamonds.cend() );
+  allCards.insert( allCards.begin(), clubs.cbegin(), clubs.cend() );
+  allCards.insert( allCards.begin(), trumps.cbegin(), trumps.cend() );
+  if( fool != nullptr )
+    allCards.push_back( fool );
+
+  return allCards;
+}
+
+void Player::showCards() const
+{
+  // show trumps
+  for( shared_ptr<Card> card : trumps )
+    cout << *card;
+
+  // show fool
+  if( fool.get() != nullptr )
+    cout << *fool;
+
+  // show hearts
+  for( shared_ptr<Card> card : hearts )
+    cout << *card;
+
+  // show spades
+  for( shared_ptr<Card> card : spades )
+    cout << *card;
+
+  // show diamonds
+  for( shared_ptr<Card> card : diamonds )
+    cout << *card;
+
+  // show clubs
+  for( shared_ptr<Card> card : clubs )
+    cout << *card;
+}
+
+vector< shared_ptr<Card> > Player::validCards( const Suits referenceSuit, const shared_ptr<Card> greaterTrump ) const
 {
   vector< shared_ptr<Card> > returnCards;
 
-  if( refCard == nullptr || refCard->isFool() )
+  if( referenceSuit == Suits::unknown || referenceSuit == Suits::fool )
   {
     for( shared_ptr<Card> card : trumps )
       returnCards.push_back( card );
@@ -46,7 +128,7 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
   }
   else
   {
-    switch( refCard->getSuit() )
+    switch( referenceSuit )
     {
     case Suits::heart:
       if( !hearts.empty() )
@@ -126,74 +208,21 @@ vector< shared_ptr<Card> > Player::validCards( shared_ptr<Card> refCard, shared_
   if( fool != nullptr )
     returnCards.push_back( fool );
 
+#if defined DEBUG
   if( returnCards.empty() )
   {
     cout << "Empty valid cards set!" << endl;
     showCards();
   }
+#endif
+  assert( !returnCards.empty() );
   
   return returnCards;
 }
 
-void Player::addCard( shared_ptr<Card> card )
-{
-  switch( card->getSuit() )
-  {
-  case heart:
-    hearts.insert( card );
-    break;
-  case spade:
-    spades.insert( card );
-    break;
-  case diamond:
-    diamonds.insert( card );
-    break;
-  case club:
-    clubs.insert( card );
-    break;
-  case trump:
-    trumps.insert( card );
-    break;
-  case Suits::fool:
-    fool = card;
-    break;
-  default:
-    break;
-  }
 
-  if( card->isOudler() )
-    numberOudlers++;
-
-  initialPoints += card->getPoints();
-  initialCards.push_back( card );
-}
-
-void Player::delCard( shared_ptr<Card> card )
-{
-  switch( card->getSuit() )
-  {
-  case heart:
-    hearts.erase( card );
-    break;
-  case spade:
-    spades.erase( card );
-    break;
-  case diamond:
-    diamonds.erase( card );
-    break;
-  case club:
-    clubs.erase( card );
-    break;
-  case trump:
-    trumps.erase( card );
-    break;
-  case Suits::fool:
-    fool = nullptr;
-    break;
-  default:
-    break;
-  }
-}
+////////////
+// protected
 
 vector< shared_ptr<Card> > Player::callableCards( const Deck &deck ) const
 {
@@ -264,7 +293,38 @@ vector< shared_ptr<Card> > Player::callableCards( const Deck &deck ) const
   return callable;
 }
 
-bool Player::hasCard( shared_ptr<Card> card ) const 
+void Player::delCard( const shared_ptr<Card> card )
+{
+  switch( card->getSuit() )
+  {
+  case heart:
+    hearts.erase( card );
+    break;
+  case spade:
+    spades.erase( card );
+    break;
+  case diamond:
+    diamonds.erase( card );
+    break;
+  case club:
+    clubs.erase( card );
+    break;
+  case trump:
+    trumps.erase( card );
+    break;
+  case Suits::fool:
+    fool = nullptr;
+    break;
+  default:
+    break;
+  }
+}
+
+
+//////////
+// private
+
+bool Player::hasCard( const shared_ptr<Card> card ) const 
 {
   switch( card->getSuit() )
   {
@@ -291,29 +351,3 @@ bool Player::hasCard( shared_ptr<Card> card ) const
   }
 }
 
-void Player::showCards() const
-{
-  // show trumps
-  for( shared_ptr<Card> card : trumps )
-    cout << *card;
-
-  // show fool
-  if( fool.get() != nullptr )
-    cout << *fool;
-
-  // show hearts
-  for( shared_ptr<Card> card : hearts )
-    cout << *card;
-
-  // show spades
-  for( shared_ptr<Card> card : spades )
-    cout << *card;
-
-  // show diamonds
-  for( shared_ptr<Card> card : diamonds )
-    cout << *card;
-
-  // show clubs
-  for( shared_ptr<Card> card : clubs )
-    cout << *card;
-}

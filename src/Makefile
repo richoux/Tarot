@@ -1,5 +1,5 @@
 # CXX = g++
-CXXFLAGS = -std=c++0x -W -Wall -Wno-sign-compare -c -I.  
+CXXFLAGS = -std=c++11 -W -Wall -Wno-sign-compare -c -I.  
 CPP_FILES = main-nogui.cpp AI.cpp Card.cpp Deck.cpp\
  Game.cpp Human.cpp Player.cpp Team.cpp Trick.cpp\
  Beginner.cpp getInt.cpp getChar.cpp

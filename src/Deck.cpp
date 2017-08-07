@@ -19,19 +19,47 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Deck.hpp>
+#include <algorithm>
+#include <random>
+#include <iterator>
+#include <ctime>
+#include <chrono>
+
+#include "Deck.hpp"
 
 Deck::Deck()
 {
   newDeal();
 }
 
+bool Deck::hasStrongerThan( const shared_ptr<Card> card ) const
+{
+  for( auto it = cards.cbegin(); it != cards.cend(); ++it )
+    if( *(*it) > *card)
+      return true;
+
+  return false;  
+}
+
+int Deck::indexInDeck( const shared_ptr<Card> card ) const
+{
+  auto index = find( cards.cbegin(), cards.cend(), card );
+  if( index == cards.cend() )
+    return -1;
+  else
+    return distance( cards.cbegin(), index );
+}
+
 void Deck::newDeal()
 {
+  if( _seed == 0 )
+    _seed = chrono::system_clock::now().time_since_epoch().count();
+  
   cards.clear();
   heads.clear();
   
   // Hearts
+  cards.push_back( make_shared<Card>( Suits::heart, 1, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::heart, 2, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::heart, 3, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::heart, 4, 0.5, false ) );
@@ -45,9 +73,9 @@ void Deck::newDeal()
   cards.push_back( make_shared<Card>( Suits::heart, 12, 2.5, false ) );
   cards.push_back( make_shared<Card>( Suits::heart, 13, 3.5, false ) );
   cards.push_back( make_shared<Card>( Suits::heart, 14, 4.5, false ) );
-  cards.push_back( make_shared<Card>( Suits::heart, 1, 0.5, false ) );
 
   // Spades
+  cards.push_back( make_shared<Card>( Suits::spade, 1, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::spade, 2, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::spade, 3, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::spade, 4, 0.5, false ) );
@@ -61,9 +89,9 @@ void Deck::newDeal()
   cards.push_back( make_shared<Card>( Suits::spade, 12, 2.5, false ) );
   cards.push_back( make_shared<Card>( Suits::spade, 13, 3.5, false ) );
   cards.push_back( make_shared<Card>( Suits::spade, 14, 4.5, false ) );
-  cards.push_back( make_shared<Card>( Suits::spade, 1, 0.5, false ) );
 
   // Diamonds
+  cards.push_back( make_shared<Card>( Suits::diamond, 1, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::diamond, 2, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::diamond, 3, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::diamond, 4, 0.5, false ) );
@@ -77,9 +105,9 @@ void Deck::newDeal()
   cards.push_back( make_shared<Card>( Suits::diamond, 12, 2.5, false ) );
   cards.push_back( make_shared<Card>( Suits::diamond, 13, 3.5, false ) );
   cards.push_back( make_shared<Card>( Suits::diamond, 14, 4.5, false ) );
-  cards.push_back( make_shared<Card>( Suits::diamond, 1, 0.5, false ) );
 
   // Clubs
+  cards.push_back( make_shared<Card>( Suits::club, 1, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::club, 2, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::club, 3, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::club, 4, 0.5, false ) );
@@ -93,7 +121,6 @@ void Deck::newDeal()
   cards.push_back( make_shared<Card>( Suits::club, 12, 2.5, false ) );
   cards.push_back( make_shared<Card>( Suits::club, 13, 3.5, false ) );
   cards.push_back( make_shared<Card>( Suits::club, 14, 4.5, false ) );
-  cards.push_back( make_shared<Card>( Suits::club, 1, 0.5, false ) );
 
   // Trumps
   cards.push_back( make_shared<Card>( Suits::trump, 1, 4.5, true ) );
@@ -118,28 +145,32 @@ void Deck::newDeal()
   cards.push_back( make_shared<Card>( Suits::trump, 20, 0.5, false ) );
   cards.push_back( make_shared<Card>( Suits::trump, 21, 4.5, true ) );
 
+  // Fool
+  cards.push_back( make_shared<Card>( Suits::fool, 0, 4.5, true ) );
+
+  // kings
+  heads.push_back( cards[13] );
+  heads.push_back( cards[27] );
+  heads.push_back( cards[41] );
+  heads.push_back( cards[55] );
+
+  // queens
   heads.push_back( cards[12] );
   heads.push_back( cards[26] );
   heads.push_back( cards[40] );
   heads.push_back( cards[54] );
 
+  // knights
   heads.push_back( cards[11] );
   heads.push_back( cards[25] );
   heads.push_back( cards[39] );
   heads.push_back( cards[53] );
-    
+
+  // jacks
   heads.push_back( cards[10] );
   heads.push_back( cards[24] );
-  heads.push_back( cards[37] );
-  heads.push_back( cards[52] );
-      
-  heads.push_back( cards[9] );
-  heads.push_back( cards[24] );
   heads.push_back( cards[38] );
-  heads.push_back( cards[51] );
-
-  // Fool
-  cards.push_back( make_shared<Card>( Suits::fool, 0, 4.5, true ) );
+  heads.push_back( cards[52] );
 
   numberHearts		= 14;
   numberSpades		= 14;
@@ -150,23 +181,6 @@ void Deck::newDeal()
 
 void Deck::shuffle()
 {
-  random_shuffle( cards.begin(), cards.end() );
-}
-
-int Deck::indexInDeck( shared_ptr<Card> card ) const
-{
-  auto index = find( cards.begin(), cards.end(), card );
-  if( index == cards.end() )
-    return -1;
-  else
-    return distance( cards.begin(), index );
-}
-
-bool Deck::hasStrongerThan( shared_ptr<Card> card ) const
-{
-  for( auto it = cards.begin(); it != cards.end(); ++it )
-    if( *(*it) > *card)
-      return true;
-
-  return false;  
+  // random_shuffle( cards.begin(), cards.end() );
+  std::shuffle( cards.begin(), cards.end(), default_random_engine( _seed ) );
 }

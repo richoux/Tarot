@@ -24,7 +24,7 @@
 #include <iostream>
 #include <memory>
 
-#include <Suits.hpp>
+#include "Suits.hpp"
 
 using namespace std;
 
@@ -44,6 +44,9 @@ public:
   */
   Card( const Suits suit, const int value, const double points, const bool oudler );
 
+  //! Returns the card index in the deck before shuffle. Used for the GUI. 
+  int computeIndex() const;
+  
   //! Inline assessor to get the card's points.
   inline double	getPoints	() const { return points; }
 
@@ -53,20 +56,29 @@ public:
   //! Inline assessor to get the card's value.
   inline int	getValue	() const { return value; }
 
-  //! Inline function returning true iif the card is the Fool.
-  inline bool	isFool		() const { return suit == Suits::fool; }
-
-  //! Inline function returning true iif the card is a trump.
-  inline bool	isTrump		() const { return suit == Suits::trump; }
-
-  //! Inline function returning true iif the card is an oudler.
-  inline bool	isOudler	() const { return oudler; }
+  //! A function to decide if two cards are comparable
+  /*! 
+    Decides if the two involved cards are comparable, i.e., from the same 
+    suit or be trump.
+    \param card Another card.
+    \return True iff the two cards are comparable.
+  */
+  inline bool isComparable( const Card& card ) const 
+  { 
+    return this->suit == card.suit || this->suit == 4 || card.suit == 4;
+  }
 
   //! Inline function returning true iif the card is a face card.
   inline bool	isFaceCard	() const { return value > 10; }
 
-  //! Returns the card index in the deck before shuffle. Used for the GUI. 
-  int computeIndex() const;
+  //! Inline function returning true iif the card is the Fool.
+  inline bool	isFool		() const { return suit == Suits::fool; }
+
+  //! Inline function returning true iif the card is an oudler.
+  inline bool	isOudler	() const { return oudler; }
+
+  //! Inline function returning true iif the card is a trump.
+  inline bool	isTrump		() const { return suit == Suits::trump; }
 
   //! A greater-than comparator to make easier the comparison between cards.
   /*! 
@@ -90,18 +102,6 @@ public:
     \return true iff the two cards are the same.
   */ 
   bool operator==( const Card& card ) const;
-
-  //! A function to decide if two cards are comparable
-  /*! 
-    Decides if the two involved cards are comparable, i.e., from the same 
-    suit or be trump.
-    \param card Another card.
-    \return True iff the two cards are comparable.
-  */
-  inline bool isComparable( const Card& card ) const 
-    { 
-      return this->suit == card.suit || this->suit == 4 || card.suit == 4;
-    }
 
 private:
   Suits		suit;	//!< The card's suit.

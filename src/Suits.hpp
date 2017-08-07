@@ -29,5 +29,6 @@ enum Suits
   diamond,
   club,
   trump,
-  fool
+  fool,
+  unknown
 };

@@ -24,17 +24,14 @@
 #include <memory>
 #include <map>
 #include <vector>
-#include <cstdlib>
-#include <cassert>
-#include <algorithm>
 
-#include <Player.hpp>
-#include <Suits.hpp>
-#include <Card.hpp>
-#include <Deck.hpp>
-#include <StratDiff.hpp>
-#include <Beginner.hpp>
-#include <Biddings.hpp>
+#include "Player.hpp"
+#include "Suits.hpp"
+#include "Card.hpp"
+#include "Deck.hpp"
+#include "StratDiff.hpp"
+#include "Beginner.hpp"
+#include "Biddings.hpp"
 
 using namespace std;
 
@@ -54,50 +51,6 @@ public:
   */
   AI( const string& name, const vector<string>& knownPartners);
 
-  //! To know if someone is your opponent.
-  /*!
-    \param name The Player's name in string.
-    \return If the given Player is an opponent or not. 
-  */
-  inline bool isOpponent( const string& name ) const { return opponents.find( name ) == opponents.end() ? false : true; }
-
-  //! To know if someone is your partner.
-  /*!
-    \param name The Player's name in string.
-    \return If the given Player is an partner or not. 
-  */
-  inline bool isPartner( const string& name ) const { return partners.find( name ) == partners.end() ? false : true; }
-
-  //! Given a Player p, does p have at least one card on the asked suit?
-  /*!
-    \param name The Player's name in string.
-    \param suit The asked suit.
-    \return False iff one is sure p does not have any cards of the asked suit.
-  */
-  bool haveSuit( const string& name, const Suits suit) const;
-
-  //! Do opponents have at least one card on the asked suit?
-  /*!
-    \param suit The asked suit.
-    \return False iff one is sure no opponent player has a card of the asked suit.
-  */
-  bool opponentsHaveSuit( const Suits suit ) const;
-
-  //! Choose what card one plays, given the first card and the highest trump of the trick.
-  /*!
-    playCard is delegated to the difficulty Strategy.
-    \param referenceCard A Card pointer of the first played card of the trick.
-    \param highTrump A Card pointer of the highest trump of the trick.
-    \return The card the AI plays.
-  */
-  shared_ptr<Card> playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump);
-
-  //! Must be called when starting a new game.
-  /*!
-    Flush to zero some variables and pointers.
-  */
-  void newGame();
-
   //! Called to decide if one proposes a bid or not, and if any, what bid.
   /*!
     bid is delegated to the difficulty Strategy.
@@ -114,19 +67,63 @@ public:
   */
   shared_ptr<Card> chooseKing( const Deck &deck ) const;
 
+  //! Given a Player p, does p have at least one card on the asked suit?
+  /*!
+    \param name The Player's name in string.
+    \param suit The asked suit.
+    \return False iff one is sure p does not have any cards of the asked suit.
+  */
+  bool haveSuit( const string& name, const Suits suit) const;
+
+  //! To know if someone is your opponent.
+  /*!
+    \param name The Player's name in string.
+    \return If the given Player is an opponent or not. 
+  */
+  inline bool isOpponent( const string& name ) const { return opponents.find( name ) == opponents.end() ? false : true; }
+
+  //! To know if someone is your partner.
+  /*!
+    \param name The Player's name in string.
+    \return If the given Player is an partner or not. 
+  */
+  inline bool isPartner( const string& name ) const { return partners.find( name ) == partners.end() ? false : true; }
+
   //! To make the ecart once one takes the dog.
   /*!
     makeEcart is delegated to the difficulty Strategy.
     \param dogSize The number of card one must include into the ecart.
     \return A set of Card pointers for the cards one places into the ecart.
   */
-  set< shared_ptr<Card> > makeEcart( const int dogSize );
+  set< shared_ptr<Card> > makeEcart( const size_t dogSize );
+
+  //! Must be called when starting a new game.
+  /*!
+    Flush to zero some variables and pointers.
+  */
+  void newGame();
+
+  //! Do opponents have at least one card on the asked suit?
+  /*!
+    \param suit The asked suit.
+    \return False iff one is sure no opponent player has a card of the asked suit.
+  */
+  bool opponentsHaveSuit( const Suits suit ) const;
+
+  //! Choose what card one plays, given the first card and the highest trump of the trick.
+  /*!
+    playCard is delegated to the difficulty Strategy.
+    \param referenceCard A Card pointer of the first played card of the trick.
+    \param highTrump A Card pointer of the highest trump of the trick.
+    \return The card the AI plays.
+  */
+  shared_ptr<Card> playCard( const Suits referenceCard, const shared_ptr<Card> highTrump);
 
   //! Inline function to set the difficulty (set a Strategy concrete class).
   /*!
     \param diff A pointer on the difficulty to set.
   */
-  inline void setDifficulty ( shared_ptr<StratDiff> diff ) {difficulty = diff;}
+  inline void setDifficulty ( const shared_ptr<StratDiff> diff ) { difficulty = diff; }
 
 private:
 

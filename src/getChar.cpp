@@ -21,7 +21,10 @@
 
 // From a dude on stackoverflow.com
 
-#include <getChar.hpp>
+#include <iostream>
+#include <sstream>
+
+#include "getChar.hpp"
 
 using namespace std;
 

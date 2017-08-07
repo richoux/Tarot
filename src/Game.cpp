@@ -19,200 +19,80 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Game.hpp>
+#include <iostream>
+#include <cstdlib>
+#include <utility>
+
+#include "Game.hpp"
 
 Game::Game()
-  : indexToBid(-1), indexBidder(0), kingFound(false), chelemAnnounced(false), addDogAtTheEnd(false), toSwap(false), botsOnly(false), foolGiver(nullptr), foolReceiver(nullptr)
+  : currentTrick(make_shared<Trick>()),
+    indexToBid(-1),
+    indexBidder(0),
+    kingFound(false),
+    chelemAnnounced(false),
+    addDogAtTheEnd(false),
+    toSwap(false),
+    botsOnly(false),
+    foolGiver(nullptr),
+    foolReceiver(nullptr)
 {}
 
-Game::Game( int& numberPlayers, const string yourName, const bool automatic )
-  : indexToBid(-1), indexBidder(0), kingFound(false), chelemAnnounced(false), addDogAtTheEnd(false), toSwap(false), foolGiver(nullptr), foolReceiver(nullptr)
+Game::Game( int& numberPlayers, const bool automatic )
+  : currentTrick(make_shared<Trick>()),
+    indexToBid(-1),
+    indexBidder(0),
+    kingFound(false),
+    chelemAnnounced(false),
+    addDogAtTheEnd(false),
+    toSwap(false),
+    foolGiver(nullptr),
+    foolReceiver(nullptr)
 {
-  setGame( numberPlayers, yourName, automatic );
+  setGame( numberPlayers, automatic );
 }
 
-void Game::setGame( int& numberPlayers, const string yourName, const bool automatic )
+/////////
+// public
+
+void Game::chooseKing()
 {
-  botsOnly = automatic;
-  vector<string> names;
-  names.push_back("Alice");
-  names.push_back("Bob");
+  kingCalled = takers.members.begin()->second->chooseKing( deck );
+}
+
+void Game::closeBiddings( const Biddings bestBid )
+{
+  bidding = bestBid;
   
-  if( numberPlayers == 3 )
+  takers.members[ players[indexBidder]->name ] = players[indexBidder];
+  if( players.size() < 5 )
   {
-    dogSize = 6;
-    cardsPerPlayer = 24;
-    consecutiveDealing = 4;
-    if( botsOnly )
-      names.push_back("Charly");      
-  }
-  else if( numberPlayers == 5 )
-  {
-    dogSize = 3;
-    cardsPerPlayer = 15;
-    consecutiveDealing = 3;
-    names.push_back("Charly");
-    names.push_back("Dave");
-    if( botsOnly )
-      names.push_back("Erin");      
+    for( int i = 0; i < (int)players.size(); i++ )
+      if( i != indexBidder )
+	defenders.members[ players[i]->name ] = players[i];
   }
   else
   {
-    dogSize = 6;
-    cardsPerPlayer = 18;
-    consecutiveDealing = 3;
-    names.push_back("Charly");
-    if( botsOnly )
-      names.push_back("Dave");      
-    numberPlayers = 4;
+    for( int i = 0; i < (int)players.size(); i++ )
+      if( i != indexBidder )
+	unknown.members[ players[i]->name ] = players[i];
   }
   
-  if( !botsOnly )
-    players.push_back( make_shared<Human>( yourName ) );
-
-  players.push_back( make_shared<AI>( "Alice", names ) );
-  players.push_back( make_shared<AI>( "Bob", names ) );
-
-  if( numberPlayers >= 4 || botsOnly )
-    players.push_back( make_shared<AI>( "Charly", names ) );
-  if( numberPlayers == 5 || ( numberPlayers == 4 && botsOnly ) )
-    players.push_back( make_shared<AI>( "Dave", names ) );
-  if( numberPlayers == 5 && botsOnly )
-    players.push_back( make_shared<AI>( "Erin", names ) );
-      
-  indexNext = rand() % players.size();
-  indexStarter = indexNext;
-  next = players[ indexNext ];
+  if( !chelemAnnounced )
+  {
+    indexNext = indexBidder;
+    next = players[indexBidder];
+  }
 }
 
-void Game::newGame()
+double Game::computeScore( const string& name ) const
 {
-  for( shared_ptr<Player> player : players )
-  {
-    cardsPlayer[player->name].clear();
-    player->newGame();    
-  }
+  double score = 0;
 
-  dog.clear();
+  for( shared_ptr<Card> card : cardsPlayer.at( name ) )
+    score += card->getPoints();
   
-  while( !history.empty() )
-    history.pop();
-
-  takers.newGame();
-  defenders.newGame();
-  if( players.size() == 5 )
-    unknown.newGame();
-
-  foolGiver = foolReceiver = nullptr;
-  toSwap = false;
-  chelemAnnounced = false;
-}
-
-void Game::printScores() const
-{
-  for(shared_ptr<Player> player : players)
-    cout << player->name << " " << player->score << endl;
-
-  cout << "Takers: " << takers.getScore() << endl;
-  cout << "Defenders: " << defenders.getScore() << endl;
-}
-
-void Game::update()
-{
-  addWonCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
-
-  // if the Fool has been played, decide who must keep it.
-  if( currentTrick->getFoolPlayer() != nullptr 
-      && 
-      !sameTeam(currentTrick->getFoolPlayer(), currentTrick->getLeader() ) )
-  {
-    toSwap = true;
-    foolGiver = currentTrick->getLeader();
-    foolReceiver = currentTrick->getFoolPlayer();
-  }
-
-  setNext( currentTrick->getLeader() );
-  //currentTrick->getLeader()->score = currentTrick->getScore();
-  history.push( currentTrick );
-}
-
-Team Game::endGame()
-{
-  if( toSwap )
-    swapFool();
-  
-  if( addDogAtTheEnd )
-    addWonCards( defenders.members.begin()->first, dog );
-    
-  // Compute score for each player
-  for( shared_ptr<Player> player : players )
-    player->score = computeScore( player->name );
-  
-  if( takers > defenders )
-    return takers;
-  else
-    return defenders;
-}
-
-shared_ptr<Trick> Game::playTrick()
-{
-  shared_ptr<Card> refCard; 
-  shared_ptr<Card> playedCard; 
-
-  currentTrick = make_shared<Trick>( nullptr );
-      
-  for( unsigned int gamer = 0; gamer < players.size(); ++gamer )
-  {
-    if( gamer == 0)
-    {
-      refCard = next->playCard( nullptr, nullptr );
-      playedCard = refCard;
-      currentTrick->setCard( next, refCard );
-    }
-    else if( gamer == 1 && refCard->isFool() )
-    {
-      refCard = next->playCard( refCard, nullptr );
-      playedCard = refCard;
-      currentTrick->setCard( next, refCard );
-    }
-    else
-    {
-      playedCard = next->playCard( refCard, currentTrick->getGreaterTrump() );
-      currentTrick->setCard( next, playedCard );
-    }
-
-    if( !kingFound )
-      isCardCalled( playedCard, next );
-	
-    nextPlayer();
-  }
-
-  update();
-  return currentTrick;
-}
-
-void Game::showDeck() const
-{
-  cout << "Deck: ";
-  for( shared_ptr<Card> card : deck.cards )
-    cout << *card;
-  cout << endl;
-}
-
-void Game::showPlayersCards() const
-{
-  for( shared_ptr<Player> player : players )
-  {
-    cout << player->name << ": ";
-    player->showCards();
-    cout << endl;
-  }
-}
-
-void Game::shuffleDeck()
-{
-  for( unsigned int i = 0; i < players.size(); ++i )
-    deck.shuffle();
+  return score;
 }
 
 void Game::dealCards()
@@ -252,119 +132,221 @@ void Game::dealCards()
     }
 }
 
-bool Game::takeBiddings()
+Team Game::endGame()
+{
+  if( toSwap )
+    swapFool();
+  
+  if( addDogAtTheEnd )
+    addWonCards( defenders.members.begin()->first, dog );
+    
+  // Compute score for each player
+  for( shared_ptr<Player> player : players )
+    player->score = computeScore( player->name );
+  
+  if( takers > defenders )
+    return takers;
+  else
+    return defenders;
+}
+
+set<shared_ptr<Card> > Game::getPlayerWonCards( const shared_ptr<Player> player ) const
+{
+  return cardsPlayer.at( player->name );
+}
+
+shared_ptr<Trick> Game::getTrick()
+{
+  update();
+  return currentTrick;
+}
+
+void Game::newGame()
+{
+  for( shared_ptr<Player> player : players )
+  {
+    cardsPlayer[player->name].clear();
+    player->newGame();    
+  }
+
+  dog.clear();
+  
+  while( !history.empty() )
+    history.pop();
+
+  takers.newGame();
+  defenders.newGame();
+  if( players.size() == 5 )
+  {
+    unknown.newGame();
+    kingFound = false;
+  }
+  
+  foolGiver = foolReceiver = nullptr;
+  toSwap = false;
+  chelemAnnounced = false;
+  if( indexToBid == (int)players.size() - 1 )
+    indexToBid = 0;
+  else
+    ++indexToBid;
+}
+
+shared_ptr< Card > Game::playCard( bool &kingJustFound )
+{
+  shared_ptr<Card> playedCard; 
+
+  if( currentTrick->getNumberOfCards() == players.size() )
+    currentTrick->clearTrick();
+  
+  playedCard = next->playCard( currentTrick->getReferenceSuit(), currentTrick->getGreaterTrump() );
+  currentTrick->setCard( next, playedCard );
+  
+  if( !kingFound )
+    kingJustFound = isCardCalled( playedCard, next ) || kingJustFound;
+	
+  nextPlayer();
+
+  return playedCard;
+}
+
+void Game::printScores() const
+{
+  for(shared_ptr<Player> player : players)
+    cout << player->name << " " << player->score << endl;
+
+  cout << "Takers: " << takers.getScore() << endl;
+  cout << "Defenders: " << defenders.getScore() << endl;
+}
+
+bool Game::sameTeam( const shared_ptr<Player> p1, const shared_ptr<Player> p2 ) const
+{
+  return ( takers.contains(p1->name) && takers.contains(p2->name) ) 
+    || ( defenders.contains(p1->name) && defenders.contains(p2->name) );
+}
+
+void Game::setGame( int& numberPlayers, const bool automatic )
+{
+  botsOnly = automatic;
+  vector<string> names;
+  names.push_back("Alice");
+  names.push_back("Bob");
+  
+  if( numberPlayers == 3 )
+  {
+    dogSize = 6;
+    cardsPerPlayer = 24;
+    consecutiveDealing = 4;
+    if( botsOnly )
+      names.push_back("Charly");      
+  }
+  else if( numberPlayers == 5 )
+  {
+    dogSize = 3;
+    cardsPerPlayer = 15;
+    consecutiveDealing = 3;
+    names.push_back("Charly");
+    names.push_back("Dave");
+    if( botsOnly )
+      names.push_back("Erin");      
+  }
+  else
+  {
+    dogSize = 6;
+    cardsPerPlayer = 18;
+    consecutiveDealing = 3;
+    names.push_back("Charly");
+    if( botsOnly )
+      names.push_back("Dave");      
+    numberPlayers = 4;
+  }
+  
+  if( !botsOnly )
+    players.push_back( make_shared<Human>( "You" ) );
+
+  players.push_back( make_shared<AI>( "Alice", names ) );
+  players.push_back( make_shared<AI>( "Bob", names ) );
+
+  if( numberPlayers >= 4 || botsOnly )
+    players.push_back( make_shared<AI>( "Charly", names ) );
+  if( numberPlayers == 5 || ( numberPlayers == 4 && botsOnly ) )
+    players.push_back( make_shared<AI>( "Dave", names ) );
+  if( numberPlayers == 5 && botsOnly )
+    players.push_back( make_shared<AI>( "Erin", names ) );
+
+  for( shared_ptr<Player> player : players )
+    cardsPlayer[player->name].clear();
+  
+  indexNext = rand() % players.size();
+  indexStarter = indexNext;
+  next = players[ indexNext ];
+}
+
+void Game::showDeck() const
+{
+  cout << "Deck: ";
+  for( shared_ptr<Card> card : deck.cards )
+    cout << *card;
+  cout << endl;
+}
+
+void Game::showPlayersCards() const
+{
+  for( shared_ptr<Player> player : players )
+  {
+    cout << player->name << ": ";
+    player->showCards();
+    cout << endl;
+  }
+}
+
+void Game::shuffleDeck()
+{
+  for( size_t i = 0; i < players.size(); ++i )
+    deck.shuffle();
+}
+
+pair< shared_ptr<Player>, Biddings > Game::takeBiddings( const Biddings &bestBid )
 {
   if( indexToBid != -1 )
   {
-    if( indexToBid == players.size() - 1 )
+    if( indexToBid == (int)players.size() - 1 )
       indexToBid = 0;
     else
-      indexToBid++;
+      ++indexToBid;
   }
   else
-    indexToBid = rand() % players.size();
-
-  int index = indexToBid;
-  Biddings bestBid = Biddings::none;  
-
-  for( unsigned int i = 0; i < players.size(); i++ )
+    indexToBid = rand() % (int)players.size();
+  
+  pair< shared_ptr<Player>, Biddings > playerBid;
+  
+  Biddings bid = players[indexToBid]->bid( bestBid, chelemAnnounced );
+  playerBid = make_pair( players[indexToBid], bid );
+  
+  if( players[indexToBid]->getAnnounced().find( Announcements::chelem ) != players[indexToBid]->getAnnounced().end() )
   {
-    if( index == players.size() )
-      index = 0;
-
-    Biddings bid = players[index]->bid( bestBid, chelemAnnounced ); 
-    if( bid == Biddings::none )
-      cout << players[index]->name << " passes." << endl;
-    else
-    {
-      cout << players[index]->name << " takes a ";
-      switch( bid )
-      {
-      case Biddings::small:
-	cout << "Small." << endl;
-	break;
-      case Biddings::guard:
-	cout << "Guard." << endl;
-	break;
-      case Biddings::guard_w:
-	cout << "Guard Without." << endl;
-	break;
-      case Biddings::guard_a:
-	cout << "Guard Against." << endl;
-	break;
-      default:
-	break;
-      }
-    }
-
-    if( players[index]->getAnnounced().find( Announcements::chelem ) != players[index]->getAnnounced().end() )
-    {
-      indexNext = index;
-      next = players[index];
-      chelemAnnounced = true;
-    }
-
-    if( bestBid < bid )
-    {
-      indexBidder = index;
-      bestBid = bid;
-    }
-    index++;
+    indexNext = indexToBid;
+    next = players[indexToBid];
+    chelemAnnounced = true;
   }
-
-  if( bestBid == Biddings::none )
-    return false;
-  else
-  {
-    bidding = bestBid;
-
-    takers.members[ players[indexBidder]->name ] = players[indexBidder];
-    if( players.size() < 5 )
-    {
-      for( unsigned int i = 0; i < players.size(); i++ )
-	if( i != indexBidder )
-	  defenders.members[ players[i]->name ] = players[i];
-    }
-    else
-    {
-      for( unsigned int i = 0; i < players.size(); i++ )
-	if( i != indexBidder )
-	  unknown.members[ players[i]->name ] = players[i];
-    }
-    
-    if( !chelemAnnounced )
-    {
-      indexNext = indexToBid;
-      next = players[indexToBid];
-    }
-
-    return true;
-  }
+  
+  return playerBid;
 }
 
 void Game::takeDog()
 {
   if( bidding <= Biddings::guard )
   {
-    cout << "Show dog: ";
     for( shared_ptr<Card> card : dog )
     {
-      cout << *card << " ";
       players[indexBidder]->addCard( card );
       if( kingCalled == card )
       {
 	defenders.members = unknown.members;
 	unknown.members.clear();
 	kingFound = true;
-	if( botsOnly )
-	{
-	  cout << "Player alone! Unlucky!" << endl;
-	  cout << "Taker: " << takers << endl;
-	  cout << "Defenders: " << defenders << endl;      
-	}
       }
     }
-    cout << endl;
+
     dog.clear();
     addWonCards( players[indexBidder]->name, players[indexBidder]->makeEcart( dogSize ) );
   }
@@ -379,52 +361,16 @@ void Game::takeDog()
   }
 }
 
-void Game::chooseKing()
-{
-  kingCalled = takers.members.begin()->second->chooseKing( deck );
-  cout << takers.members.begin()->first << " called " << *kingCalled << endl;
-}
 
-bool Game::sameTeam( shared_ptr<Player> p1, shared_ptr<Player> p2 ) const
-{
-  return ( takers.contains(p1->name) && takers.contains(p2->name) ) 
-    || ( defenders.contains(p1->name) && defenders.contains(p2->name) );
-}
-
-double Game::computeScore( const string& name ) const
-{
-  double score = 0;
-
-  for( shared_ptr<Card> card : cardsPlayer.at( name ) )
-    score += card->getPoints();
-  
-  return score;
-}
-
-void Game::nextPlayer()
-{
-  if( indexNext == players.size() - 1 )
-    indexNext = 0;
-  else
-    indexNext++;
-
-  next = players[ indexNext ];
-}
-
-void Game::setNext( shared_ptr<Player> player )
-{
-  next = player;
-  for( unsigned int i = 0; i < players.size(); ++i )
-    if( players[i] == player )
-      indexNext = i;
-}
+//////////
+// private
 
 void Game::addWonCards( const string& name, const set<shared_ptr<Card> >& cards )
 {
   cardsPlayer[name].insert(cards.begin(), cards.end());
 }
 
-bool Game::isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player )
+bool Game::isCardCalled( const shared_ptr<Card> card, const shared_ptr<Player> player )
 {
   if( kingCalled == card && !kingFound )
   {
@@ -432,28 +378,33 @@ bool Game::isCardCalled( shared_ptr<Card> card, shared_ptr<Player> player )
     takers.members[ player->name ] = player;
     unknown.members.erase( player->name );
     defenders.members = unknown.members;
-    if( botsOnly )
-    {
-      cout << "Parter known!" << endl;
-      cout << "Taker: " << takers << endl;
-      cout << "Defenders: " << defenders << endl;      
-    }
   }
+  
   return kingFound;
+}
+
+void Game::nextPlayer()
+{
+  if( indexNext == (int)players.size() - 1 )
+    indexNext = 0;
+  else
+    indexNext++;
+
+  next = players[ indexNext ];
+}
+
+void Game::setNext( const shared_ptr<Player> player )
+{
+  next = player;
+  for( int i = 0; i < (int)players.size(); ++i )
+    if( players[i] == player )
+      indexNext = i;
 }
 
 void Game::swapFool()
 {
   shared_ptr<Card> fromReceiver = nullptr;
   shared_ptr<Card> theFool;
-
-  // for( auto player : players )
-  //   {
-  //     cout << player->name << ": ";
-  //     for( auto card : cardsPlayer[player->name])
-  // 	cout << *card << " ";
-  //     cout << endl;
-  //   }
 
   // search a dummy card
   for( shared_ptr<Card> card : cardsPlayer[foolReceiver->name] )
@@ -480,4 +431,23 @@ void Game::swapFool()
     cardsPlayer[foolReceiver->name].insert( theFool );
     cardsPlayer[foolGiver->name].insert( fromReceiver );
   }
+}
+
+void Game::update()
+{
+  addWonCards( currentTrick->getLeader()->name, currentTrick->getAllCards() );
+
+  // if the Fool has been played, decide who must keep it.
+  if( currentTrick->getFoolPlayer() != nullptr 
+      && 
+      !sameTeam(currentTrick->getFoolPlayer(), currentTrick->getLeader() ) )
+  {
+    toSwap = true;
+    foolGiver = currentTrick->getLeader();
+    foolReceiver = currentTrick->getFoolPlayer();
+  }
+
+  setNext( currentTrick->getLeader() );
+  //currentTrick->getLeader()->score = currentTrick->getScore();
+  history.push( currentTrick );
 }

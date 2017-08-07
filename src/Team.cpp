@@ -19,24 +19,7 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Team.hpp>
-
-void Team::newGame() 
-{
-  // for( auto it = members.begin(); it != members.end(); ++it )
-  //   it->second->newGame();
-  members.clear();
-}
-
-bool Team::operator<( const Team &team ) const
-{
-  return this->getScore() < team.getScore();
-}
-
-bool Team::operator>( const Team &team ) const
-{
-  return this->getScore() > team.getScore();
-}
+#include "Team.hpp"
 
 double Team::getScore() const
 {
@@ -51,6 +34,21 @@ double Team::getScore() const
 bool Team::isEmpty() const
 {
   return members.empty();
+}
+
+void Team::newGame() 
+{
+  members.clear();
+}
+
+bool Team::operator<( const Team &team ) const
+{
+  return this->getScore() < team.getScore();
+}
+
+bool Team::operator>( const Team &team ) const
+{
+  return this->getScore() > team.getScore();
 }
 
 ostream& operator<<( ostream& os, const Team& team )

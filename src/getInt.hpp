@@ -23,9 +23,6 @@
 
 #pragma once
 
-#include <iostream>
-#include <sstream>
-
 //! Get an integer from the standard input and keep asking until it does not received an integer.
 /*!
   \param message A string (char* in fact) with the error message to print if something goes wrong.

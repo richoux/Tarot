@@ -23,8 +23,8 @@
 #include <cstdlib>
 #include <string>
 
-#include <Game.hpp>
-#include <getInt.hpp>
+#include "Game.hpp"
+#include "getInt.hpp"
 
 using namespace std;
 
@@ -45,6 +45,14 @@ void printRound( string toPrint )
        << "****" << stars << "****" << endl;
 }
 
+void printDog( Game &game )
+{
+  cout << "Show dog: ";
+  for( shared_ptr<Card> card : game.getDog() )
+    cout << *card << " ";
+  cout << endl;
+}
+
 void gameLoop( Game &game )
 {
   game.dealCards();
@@ -52,17 +60,68 @@ void gameLoop( Game &game )
   if( game.isBotsOnly() )
     game.showPlayersCards();
 
-  if( !game.takeBiddings() )
+  bool allPassed = true;
+  Biddings bestBid = Biddings::none;  
+  for( int p = 0 ; p < game.getNumberPlayers() ; ++p )
+  {
+    auto bid = game.takeBiddings( bestBid );
+    if( bid.second == Biddings::none )
+      cout << bid.first->name << " passes." << endl;
+    else
+    {
+      allPassed = false;
+      if( bestBid < bid.second )
+      {
+	game.updateIndexBidder();
+	bestBid = bid.second;
+      }
+      
+      cout << bid.first->name << " takes a ";
+      switch( bid.second )
+      {
+      case Biddings::small:
+	cout << "Small." << endl;
+	break;
+      case Biddings::guard:
+	cout << "Guard." << endl;
+	break;
+      case Biddings::guard_w:
+	cout << "Guard Without." << endl;
+	break;
+      case Biddings::guard_a:
+	cout << "Guard Against." << endl;
+	break;
+      default:
+	break;
+      }
+    }
+  }
+    
+  if( allPassed )
   {
     cout << "All players passed." << endl;
     return;
   }
 
-  if( game.getNumberPlayers() == 5 )
-    game.chooseKing();
+  game.closeBiddings( bestBid );
   
-  game.takeDog();
+  if( game.getNumberPlayers() == 5 )
+  {
+    game.chooseKing();
+    cout << game.getTakers().members.begin()->first << " called " << *game.getKingCalled() << endl;
+  }
 
+  if( game.getBidding() <= Biddings::guard )
+    printDog( game );
+    
+  game.takeDog();
+  if( game.isKingFound() && game.isBotsOnly() )
+  {
+    cout << "Player alone! Unlucky!" << endl
+	 << "Taker: " << game.getTakers() << endl
+	 << "Defenders: " << game.getDefenders() << endl;      
+  }
+  
   cout << "Taker: " << game.getTakers() << endl;
   if( game.getNumberPlayers() <= 5 )
     cout << "Defenders: " << game.getDefenders() << endl;
@@ -70,16 +129,44 @@ void gameLoop( Game &game )
   if( game.isBotsOnly() )
     game.showPlayersCards();
 
+  bool kingJustFound;
+  string playerName;
+  int indexPlayer;
+  
   for( int round = 0; round < game.getCardsPerPlayer(); ++round )
   {
     string roundString("Round ");
     roundString += to_string( round + 1 );
     printRound( roundString );
 
-    auto trick = game.playTrick();
+    kingJustFound = false;
+      
+    for( int p = 0 ; p < game.getNumberPlayers() ; ++p )
+    {
+      indexPlayer = game.getIndexNext();
+      // The human player has the index 0 in the players vector.
+      if( !game.isBotsOnly() && indexPlayer == 0 )
+      {
+	
+      }
+      
+      playerName = game.getPlayers()[ indexPlayer ]->name;
+      auto playedCard = game.playCard( kingJustFound );
+      if( game.isBotsOnly() || indexPlayer != 0 )
+	cout << playerName << " played " << *playedCard << endl;
+    }
+    
+    auto trick = game.getTrick();
     cout << "Trick: ";
     trick->showAllCards();
     cout << "=> Won by " << trick->getLeader()->name << endl;
+
+    if( kingJustFound && game.isBotsOnly() )
+    {
+      cout << "Parter known!" << endl
+	   << "Taker: " << game.getTakers() << endl
+	   << "Defenders: " << game.getDefenders() << endl;      
+    }
   }
 
   Team winners = game.endGame();
@@ -93,6 +180,9 @@ void gameLoop( Game &game )
     cout << endl;
   }
 
+  if( game.getBidding() > Biddings::guard )
+    printDog( game );
+
   if( !winners.isEmpty() )
   {
     game.printScores();  
@@ -102,12 +192,10 @@ void gameLoop( Game &game )
 
 int main( int argc, char **argv )
 {
-  srand ( unsigned ( time(0) ) );
-
   Game game;
   string playerName;
   int nberPlayers;
-  int loop;
+  int loop = 1;
 
   if( argc >= 2 )
   {
@@ -119,22 +207,16 @@ int main( int argc, char **argv )
     }
     
     if( argc == 2 )
-    {
       nberPlayers = 4;
-      loop = 1;
-    }
     else if( argc == 3 )
-    {
       nberPlayers = atoi( argv[2] );
-      loop = 1;
-    }
     else
     {
       nberPlayers = atoi( argv[2] );
       loop = atoi( argv[3] );
     }
 
-    game.setGame( nberPlayers, playerName, true );
+    game.setGame( nberPlayers, true );
 
     game.shuffleDeck();
     game.showDeck();
@@ -148,10 +230,7 @@ int main( int argc, char **argv )
       nberPlayers = getInt( "Please enter the number of players: 3, 4 or 5.\n" );
     } while( nberPlayers < 3 || nberPlayers > 5 );
     
-    if( !playerName.empty() )
-      game.setGame( nberPlayers, playerName );
-    else
-      game.setGame( nberPlayers );
+    game.setGame( nberPlayers );
 
     game.shuffleDeck();
   }

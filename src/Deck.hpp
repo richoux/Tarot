@@ -23,34 +23,34 @@
 
 #include <vector>
 #include <memory>
-#include <algorithm>
-#include <iterator>
-#include <ctime>
 
-#include <Card.hpp>
+#include "Card.hpp"
 
 using namespace std;
 
 //! Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a counting cards AI.
 class Deck
 {
+private:
+  unsigned _seed = 0;
+
 public:
   //! The unique constructor of Deck.
   Deck();
-
-  //! indexInDeck returns the index of a card in the deck.
-  /*!
-    \param card A pointer of Card.
-    \return The index of card in the Deck, or -1 if the deck does not contain it.
-  */
-  int indexInDeck( shared_ptr<Card> card ) const;
 
   //! Tests if the current deck has a stronger card than to proposed one.
   /*!
     \param card A pointer of Card.
     \return True iff the deck has a stronger card than the input. 
   */
-  bool hasStrongerThan( shared_ptr<Card> card ) const;
+  bool hasStrongerThan( const shared_ptr<Card> card ) const;
+
+  //! indexInDeck returns the index of a card in the deck.
+  /*!
+    \param card A pointer of Card.
+    \return The index of card in the Deck, or -1 if the deck does not contain it.
+  */
+  int indexInDeck( const shared_ptr<Card> card ) const;
 
   //! Make a new deal; create each card of the game.
   void newDeal();

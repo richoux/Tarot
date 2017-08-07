@@ -21,7 +21,7 @@
 
 #include <sstream>
 
-#include <Card.hpp>
+#include "Card.hpp"
 
 Card::Card( const Suits suit, const int value, const double points, const bool oudler )
   : suit(suit), value(value), points(points), oudler(oudler)
@@ -32,7 +32,7 @@ int Card::computeIndex() const
   switch( suit )
   {
   case heart:
-    return value;
+    return value - 1;
   case spade:
     return 13 + value;
   case diamond:
@@ -132,6 +132,9 @@ ostream& operator<<( ostream& os, const Card& card )
     col = "F";
     val = "";
     break;
+  default:
+    col = "Unkwown card";
+    val = "";
   }
 
   os << val + col + "  ";

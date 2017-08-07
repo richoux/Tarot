@@ -19,35 +19,14 @@
  * along with Tarot.  If not, see http://www.gnu.org/licenses/.
  */
 
-#include <Human.hpp>
 #include <algorithm>
 #include <iterator>
 
+#include "Human.hpp"
+#include "getInt.hpp"
+#include "getChar.hpp"
+
 Human::Human( const string& name ) : Player( name ) {}
-
-shared_ptr<Card> Human::playCard( shared_ptr<Card> referenceCard, shared_ptr<Card> highTrump )
-{
-  vector< shared_ptr<Card> > valids = validCards( referenceCard, highTrump );
-
-  cout << "My cards: ";
-  showCards();
-  cout << endl;
-  
-  for( unsigned int i = 0; i < valids.size(); i++ )
-    cout << "(" << i << ") " << *valids[i] << " | ";
-  
-  int index;
-  
-  do
-  {
-    index = getInt( "\nSelect your card: " );
-  }
-  while( index < 0 || index >= valids.size() );
-
-  cout << "You played " << *valids[index] << endl;
-  delCard( valids[index] );
-  return valids[index];
-}
 
 Biddings Human::bid( const Biddings bestBid, const bool chelemAnnounced ) const
 {
@@ -124,7 +103,7 @@ shared_ptr<Card> Human::chooseKing( const Deck &deck ) const
   auto callable = callableCards( deck );
 
   cout << "Cards you can call: ";
-  for( int i = 0 ; i < callable.size() ; ++i )
+  for( size_t i = 0 ; i < callable.size() ; ++i )
     cout << "(" << i << ") " << *callable[i] << " | ";
   cout << endl;
   
@@ -133,7 +112,7 @@ shared_ptr<Card> Human::chooseKing( const Deck &deck ) const
   return callable[ index ];
 }
 
-set< shared_ptr<Card> >	Human::makeEcart( const int dogSize )
+set< shared_ptr<Card> >	Human::makeEcart( const size_t dogSize )
 {
   set< shared_ptr<Card> > ecart;
   vector< int > mapIndex( initialCards.size() );
@@ -192,7 +171,7 @@ set< shared_ptr<Card> >	Human::makeEcart( const int dogSize )
     {
       index = getInt( "\nSelect a card: " );
     }
-    while( index < 0 || index >= initialCards.size() );
+    while( index < 0 || index >= (int)initialCards.size() );
       
     if( ecart.find( initialCards[ mapIndex[ index ] ] ) == ecart.end() )
       ecart.insert( initialCards[ mapIndex[ index ] ] );
@@ -221,3 +200,26 @@ void Human::newGame()
   initialCards.clear();
 }
 
+shared_ptr<Card> Human::playCard( const Suits referenceCard, const shared_ptr<Card> highTrump )
+{
+  vector< shared_ptr<Card> > valids = validCards( referenceCard, highTrump );
+
+  cout << "My cards: ";
+  showCards();
+  cout << endl;
+  
+  for( size_t i = 0; i < valids.size(); i++ )
+    cout << "(" << i << ") " << *valids[i] << " | ";
+  
+  int index;
+  
+  do
+  {
+    index = getInt( "\nSelect your card: " );
+  }
+  while( index < 0 || index >= (int)valids.size() );
+
+  cout << "You played " << *valids[index] << endl;
+  delCard( valids[index] );
+  return valids[index];
+}
