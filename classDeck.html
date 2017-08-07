@@ -107,12 +107,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a57ae1cb4ac6fd61c249cefb2db85eb99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a57ae1cb4ac6fd61c249cefb2db85eb99">Deck</a> ()</td></tr>
 <tr class="memdesc:a57ae1cb4ac6fd61c249cefb2db85eb99"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classDeck.html" title="Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a count...">Deck</a>.  <a href="#a57ae1cb4ac6fd61c249cefb2db85eb99">More...</a><br/></td></tr>
 <tr class="separator:a57ae1cb4ac6fd61c249cefb2db85eb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe7b0b266ec9a30c271333d00a3b4168"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#afe7b0b266ec9a30c271333d00a3b4168">indexInDeck</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card) const </td></tr>
-<tr class="memdesc:afe7b0b266ec9a30c271333d00a3b4168"><td class="mdescLeft">&#160;</td><td class="mdescRight">indexInDeck returns the index of a card in the deck.  <a href="#afe7b0b266ec9a30c271333d00a3b4168">More...</a><br/></td></tr>
-<tr class="separator:afe7b0b266ec9a30c271333d00a3b4168"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82a3371b10b8be7bc5fef6999a56bb88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a82a3371b10b8be7bc5fef6999a56bb88">hasStrongerThan</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card) const </td></tr>
-<tr class="memdesc:a82a3371b10b8be7bc5fef6999a56bb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if the current deck has a stronger card than to proposed one.  <a href="#a82a3371b10b8be7bc5fef6999a56bb88">More...</a><br/></td></tr>
-<tr class="separator:a82a3371b10b8be7bc5fef6999a56bb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acace898024f4017a04d02a7313b32818"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#acace898024f4017a04d02a7313b32818">hasStrongerThan</a> (const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card) const </td></tr>
+<tr class="memdesc:acace898024f4017a04d02a7313b32818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if the current deck has a stronger card than to proposed one.  <a href="#acace898024f4017a04d02a7313b32818">More...</a><br/></td></tr>
+<tr class="separator:acace898024f4017a04d02a7313b32818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390965cf57ea0c00877564ef234f5dde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#a390965cf57ea0c00877564ef234f5dde">indexInDeck</a> (const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card) const </td></tr>
+<tr class="memdesc:a390965cf57ea0c00877564ef234f5dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">indexInDeck returns the index of a card in the deck.  <a href="#a390965cf57ea0c00877564ef234f5dde">More...</a><br/></td></tr>
+<tr class="separator:a390965cf57ea0c00877564ef234f5dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec4d8d2a67f1c46a1a7f175b8848f5b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeck.html#aec4d8d2a67f1c46a1a7f175b8848f5b6">newDeal</a> ()</td></tr>
 <tr class="memdesc:aec4d8d2a67f1c46a1a7f175b8848f5b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a new deal; create each card of the game.  <a href="#aec4d8d2a67f1c46a1a7f175b8848f5b6">More...</a><br/></td></tr>
 <tr class="separator:aec4d8d2a67f1c46a1a7f175b8848f5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,14 +165,14 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a82a3371b10b8be7bc5fef6999a56bb88"></a>
+<a class="anchor" id="acace898024f4017a04d02a7313b32818"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool Deck::hasStrongerThan </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>card</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -190,14 +190,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afe7b0b266ec9a30c271333d00a3b4168"></a>
+<a class="anchor" id="a390965cf57ea0c00877564ef234f5dde"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int Deck::indexInDeck </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>card</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -355,7 +355,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 7 2017 03:57:26 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

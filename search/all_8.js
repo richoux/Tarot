@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['indexindeck',['indexInDeck',['../classDeck.html#afe7b0b266ec9a30c271333d00a3b4168',1,'Deck']]],
+  ['indexindeck',['indexInDeck',['../classDeck.html#a390965cf57ea0c00877564ef234f5dde',1,'Deck']]],
   ['initialcards',['initialCards',['../classPlayer.html#aac0d154d58a07310ee23c3c763f2cfa9',1,'Player']]],
   ['initialpoints',['initialPoints',['../classPlayer.html#af625acf7f8ad267630c7e3bd50d2683b',1,'Player']]],
   ['isbotsonly',['isBotsOnly',['../classGame.html#a7a56ee5adaeb93428763cf99a581028a',1,'Game']]],
-  ['iscardcalled',['isCardCalled',['../classGame.html#a469c5155b0c24401514e072af4fbbb53',1,'Game']]],
   ['iscomparable',['isComparable',['../classCard.html#a2c531d32de5e76e758254b9d03689ae5',1,'Card']]],
   ['isempty',['isEmpty',['../classTeam.html#afe2a42077c1a8647d757834bd5bf0c3b',1,'Team']]],
   ['isfacecard',['isFaceCard',['../classCard.html#ac8978fa4de9e59246381ebd2f9c5ecfc',1,'Card']]],

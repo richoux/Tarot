@@ -112,50 +112,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;iterator&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Card_8hpp.html">Card.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classDeck.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDeck.html">Deck</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classDeck.html">Deck</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">int</span> indexInDeck( shared_ptr&lt;Card&gt; card ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">bool</span> hasStrongerThan( shared_ptr&lt;Card&gt; card ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Card_8hpp.html">Card.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classDeck.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDeck.html">Deck</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="classDeck.html">Deck</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">bool</span> hasStrongerThan( <span class="keyword">const</span> shared_ptr&lt;Card&gt; card ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">int</span> indexInDeck( <span class="keyword">const</span> shared_ptr&lt;Card&gt; card ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> newDeal();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> newDeal();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> shuffle();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> shuffle();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classDeck.html#a6b1a1cb4731888fe92e381dd74eb1e16">   61</a></span>&#160;  vector&lt; shared_ptr&lt;Card&gt; &gt;    <a class="code" href="classDeck.html#a6b1a1cb4731888fe92e381dd74eb1e16">cards</a>;          </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classDeck.html#a25fb7d0855d89be0f4f9928900b39ebc">   62</a></span>&#160;  vector&lt; shared_ptr&lt;Card&gt; &gt;    <a class="code" href="classDeck.html#a25fb7d0855d89be0f4f9928900b39ebc">heads</a>;          </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classDeck.html#ac42ed01da688a430609cac03c00b2a5a">   63</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#ac42ed01da688a430609cac03c00b2a5a">numberHearts</a>;   </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classDeck.html#a3f3e1163d62a3e6136d2a1104b93f80d">   64</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#a3f3e1163d62a3e6136d2a1104b93f80d">numberSpades</a>;   </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classDeck.html#ac36c6f248cf951b54580d6eba0734e3b">   65</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#ac36c6f248cf951b54580d6eba0734e3b">numberDiamonds</a>; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classDeck.html#af3ff1d8bc6de0cc05a1fe64b5c70b38a">   66</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#af3ff1d8bc6de0cc05a1fe64b5c70b38a">numberClubs</a>;    </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classDeck.html#a7ddd8527b161887e1ae4023e371c1093">   67</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#a7ddd8527b161887e1ae4023e371c1093">numberTrumps</a>;   </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
-<div class="ttc" id="classDeck_html_ac36c6f248cf951b54580d6eba0734e3b"><div class="ttname"><a href="classDeck.html#ac36c6f248cf951b54580d6eba0734e3b">Deck::numberDiamonds</a></div><div class="ttdeci">int numberDiamonds</div><div class="ttdoc">The number of Diamonds in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:65</div></div>
-<div class="ttc" id="classDeck_html"><div class="ttname"><a href="classDeck.html">Deck</a></div><div class="ttdoc">Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a count...</div><div class="ttdef"><b>Definition:</b> Deck.hpp:35</div></div>
-<div class="ttc" id="classDeck_html_a7ddd8527b161887e1ae4023e371c1093"><div class="ttname"><a href="classDeck.html#a7ddd8527b161887e1ae4023e371c1093">Deck::numberTrumps</a></div><div class="ttdeci">int numberTrumps</div><div class="ttdoc">The number of Trumps in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:67</div></div>
-<div class="ttc" id="classDeck_html_a3f3e1163d62a3e6136d2a1104b93f80d"><div class="ttname"><a href="classDeck.html#a3f3e1163d62a3e6136d2a1104b93f80d">Deck::numberSpades</a></div><div class="ttdeci">int numberSpades</div><div class="ttdoc">The number of Spades in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:64</div></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classDeck.html#a6b1a1cb4731888fe92e381dd74eb1e16">   58</a></span>&#160;  vector&lt; shared_ptr&lt;Card&gt; &gt;    <a class="code" href="classDeck.html#a6b1a1cb4731888fe92e381dd74eb1e16">cards</a>;          </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classDeck.html#a25fb7d0855d89be0f4f9928900b39ebc">   59</a></span>&#160;  vector&lt; shared_ptr&lt;Card&gt; &gt;    <a class="code" href="classDeck.html#a25fb7d0855d89be0f4f9928900b39ebc">heads</a>;          </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classDeck.html#ac42ed01da688a430609cac03c00b2a5a">   60</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#ac42ed01da688a430609cac03c00b2a5a">numberHearts</a>;   </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classDeck.html#a3f3e1163d62a3e6136d2a1104b93f80d">   61</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#a3f3e1163d62a3e6136d2a1104b93f80d">numberSpades</a>;   </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classDeck.html#ac36c6f248cf951b54580d6eba0734e3b">   62</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#ac36c6f248cf951b54580d6eba0734e3b">numberDiamonds</a>; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classDeck.html#af3ff1d8bc6de0cc05a1fe64b5c70b38a">   63</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#af3ff1d8bc6de0cc05a1fe64b5c70b38a">numberClubs</a>;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classDeck.html#a7ddd8527b161887e1ae4023e371c1093">   64</a></span>&#160;  <span class="keywordtype">int</span>                           <a class="code" href="classDeck.html#a7ddd8527b161887e1ae4023e371c1093">numberTrumps</a>;   </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="ttc" id="classDeck_html_ac36c6f248cf951b54580d6eba0734e3b"><div class="ttname"><a href="classDeck.html#ac36c6f248cf951b54580d6eba0734e3b">Deck::numberDiamonds</a></div><div class="ttdeci">int numberDiamonds</div><div class="ttdoc">The number of Diamonds in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:62</div></div>
+<div class="ttc" id="classDeck_html"><div class="ttname"><a href="classDeck.html">Deck</a></div><div class="ttdoc">Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a count...</div><div class="ttdef"><b>Definition:</b> Deck.hpp:32</div></div>
+<div class="ttc" id="classDeck_html_a7ddd8527b161887e1ae4023e371c1093"><div class="ttname"><a href="classDeck.html#a7ddd8527b161887e1ae4023e371c1093">Deck::numberTrumps</a></div><div class="ttdeci">int numberTrumps</div><div class="ttdoc">The number of Trumps in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:64</div></div>
+<div class="ttc" id="classDeck_html_a3f3e1163d62a3e6136d2a1104b93f80d"><div class="ttname"><a href="classDeck.html#a3f3e1163d62a3e6136d2a1104b93f80d">Deck::numberSpades</a></div><div class="ttdeci">int numberSpades</div><div class="ttdoc">The number of Spades in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:61</div></div>
 <div class="ttc" id="Card_8hpp_html"><div class="ttname"><a href="Card_8hpp.html">Card.hpp</a></div></div>
-<div class="ttc" id="classDeck_html_a6b1a1cb4731888fe92e381dd74eb1e16"><div class="ttname"><a href="classDeck.html#a6b1a1cb4731888fe92e381dd74eb1e16">Deck::cards</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; Card &gt; &gt; cards</div><div class="ttdoc">The vector of all cards in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:61</div></div>
-<div class="ttc" id="classDeck_html_ac42ed01da688a430609cac03c00b2a5a"><div class="ttname"><a href="classDeck.html#ac42ed01da688a430609cac03c00b2a5a">Deck::numberHearts</a></div><div class="ttdeci">int numberHearts</div><div class="ttdoc">The number of Hearts in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:63</div></div>
-<div class="ttc" id="classDeck_html_af3ff1d8bc6de0cc05a1fe64b5c70b38a"><div class="ttname"><a href="classDeck.html#af3ff1d8bc6de0cc05a1fe64b5c70b38a">Deck::numberClubs</a></div><div class="ttdeci">int numberClubs</div><div class="ttdoc">The number of Clubs in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:66</div></div>
-<div class="ttc" id="classDeck_html_a25fb7d0855d89be0f4f9928900b39ebc"><div class="ttname"><a href="classDeck.html#a25fb7d0855d89be0f4f9928900b39ebc">Deck::heads</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; Card &gt; &gt; heads</div><div class="ttdoc">The vector of head cards (useful calling a card for 5-players games). </div><div class="ttdef"><b>Definition:</b> Deck.hpp:62</div></div>
+<div class="ttc" id="classDeck_html_a6b1a1cb4731888fe92e381dd74eb1e16"><div class="ttname"><a href="classDeck.html#a6b1a1cb4731888fe92e381dd74eb1e16">Deck::cards</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; Card &gt; &gt; cards</div><div class="ttdoc">The vector of all cards in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:58</div></div>
+<div class="ttc" id="classDeck_html_ac42ed01da688a430609cac03c00b2a5a"><div class="ttname"><a href="classDeck.html#ac42ed01da688a430609cac03c00b2a5a">Deck::numberHearts</a></div><div class="ttdeci">int numberHearts</div><div class="ttdoc">The number of Hearts in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:60</div></div>
+<div class="ttc" id="classDeck_html_af3ff1d8bc6de0cc05a1fe64b5c70b38a"><div class="ttname"><a href="classDeck.html#af3ff1d8bc6de0cc05a1fe64b5c70b38a">Deck::numberClubs</a></div><div class="ttdeci">int numberClubs</div><div class="ttdoc">The number of Clubs in the deck. </div><div class="ttdef"><b>Definition:</b> Deck.hpp:63</div></div>
+<div class="ttc" id="classDeck_html_a25fb7d0855d89be0f4f9928900b39ebc"><div class="ttname"><a href="classDeck.html#a25fb7d0855d89be0f4f9928900b39ebc">Deck::heads</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; Card &gt; &gt; heads</div><div class="ttdoc">The vector of head cards (useful calling a card for 5-players games). </div><div class="ttdef"><b>Definition:</b> Deck.hpp:59</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 7 2017 03:57:26 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

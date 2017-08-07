@@ -1,9 +1,6 @@
 <map id="src/getInt.hpp" name="src/getInt.hpp">
-<area shape="rect" id="node2" href="$getInt_8cpp.html" title="src/getInt.cpp" alt="" coords="13,80,115,107"/>
-<area shape="rect" id="node3" href="$Human_8hpp.html" title="src/Human.hpp" alt="" coords="139,80,249,107"/>
-<area shape="rect" id="node6" href="$main-nogui_8cpp.html" title="src/main&#45;nogui.cpp" alt="" coords="134,229,265,256"/>
-<area shape="rect" id="node7" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="290,229,387,256"/>
-<area shape="rect" id="node4" href="$Game_8hpp.html" title="src/Game.hpp" alt="" coords="11,155,115,181"/>
-<area shape="rect" id="node8" href="$Human_8cpp.html" title="src/Human.cpp" alt="" coords="139,155,249,181"/>
-<area shape="rect" id="node5" href="$Game_8cpp.html" title="src/Game.cpp" alt="" coords="5,229,109,256"/>
+<area shape="rect" id="node2" href="$getInt_8cpp.html" title="src/getInt.cpp" alt="" coords="5,80,107,107"/>
+<area shape="rect" id="node3" href="$Human_8cpp.html" title="src/Human.cpp" alt="" coords="131,80,241,107"/>
+<area shape="rect" id="node4" href="$main-nogui_8cpp.html" title="src/main&#45;nogui.cpp" alt="" coords="266,80,397,107"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="422,80,519,107"/>
 </map>

@@ -113,62 +113,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Player_8hpp.html">Player.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Card_8hpp.html">Card.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classTrick.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTrick.html">Trick</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Player_8hpp.html">Player.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Card_8hpp.html">Card.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classTrick.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTrick.html">Trick</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="classTrick.html">Trick</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classTrick.html">Trick</a>( shared_ptr&lt;Card&gt; kingCalled );</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  shared_ptr&lt;Player&gt; asCalledKing() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  set&lt; shared_ptr&lt;Card&gt; &gt; getAllCards() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  set&lt; shared_ptr&lt;Card&gt; &gt; getAllCards() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> setCard( <span class="keyword">const</span> shared_ptr&lt;Player&gt; player, <span class="keyword">const</span> shared_ptr&lt;Card&gt; card );</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> setCard( shared_ptr&lt;Player&gt; player, shared_ptr&lt;Card&gt; card );</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">double</span> getScore() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> showAllCards() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classTrick.html#a1649b27628cb224f3eb98f56ea00f5ac">   64</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       <a class="code" href="classTrick.html#a1649b27628cb224f3eb98f56ea00f5ac">getCard</a>         ( shared_ptr&lt;Player&gt; player )<span class="keyword">   const </span>{ <span class="keywordflow">return</span> trickCards.at(player); }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b">   67</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       <a class="code" href="classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b">getWinCard</a>      ()<span class="keyword">                              const </span>{ <span class="keywordflow">return</span> trickCards.at(leader); }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// Inline assessor to get the pointer on the leader.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classTrick.html#a87cf6697a5f9f417e19c2749e73ae2be">   70</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Player&gt;     <a class="code" href="classTrick.html#a87cf6697a5f9f417e19c2749e73ae2be">getLeader</a>       ()<span class="keyword">                              const </span>{ <span class="keywordflow">return</span> leader; }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// Inline assessor to get the pointer on the player who played the Fool.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classTrick.html#a4d43afa1ae8417094be02494852f7c56">   73</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Player&gt;     <a class="code" href="classTrick.html#a4d43afa1ae8417094be02494852f7c56">getFoolPlayer</a>   ()<span class="keyword">                              const </span>{ <span class="keywordflow">return</span> foolPlayer; }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// Inline assessor to get the pointer on the greatest trump of the current trick.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classTrick.html#a21f11527bb41c8a9a5ad3706c220ba4c">   76</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       <a class="code" href="classTrick.html#a21f11527bb41c8a9a5ad3706c220ba4c">getGreaterTrump</a> ()<span class="keyword">                              const </span>{ <span class="keywordflow">return</span> greaterTrump; }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  shared_ptr&lt;Player&gt;                            leader;         </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  shared_ptr&lt;Player&gt;                            foolPlayer;     </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  shared_ptr&lt;Card&gt;                              kingCalled;     </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  shared_ptr&lt;Card&gt;                              greaterTrump;   </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  map&lt; shared_ptr&lt;Player&gt;, shared_ptr&lt;Card&gt; &gt;   trickCards;     </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
-<div class="ttc" id="classTrick_html_ae5e65fbe08d6df0ca71224e465424c6b"><div class="ttname"><a href="classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b">Trick::getWinCard</a></div><div class="ttdeci">shared_ptr&lt; Card &gt; getWinCard() const </div><div class="ttdoc">Inline function returning the card which takes the trick. </div><div class="ttdef"><b>Definition:</b> Trick.hpp:67</div></div>
-<div class="ttc" id="classTrick_html_a87cf6697a5f9f417e19c2749e73ae2be"><div class="ttname"><a href="classTrick.html#a87cf6697a5f9f417e19c2749e73ae2be">Trick::getLeader</a></div><div class="ttdeci">shared_ptr&lt; Player &gt; getLeader() const </div><div class="ttdef"><b>Definition:</b> Trick.hpp:70</div></div>
-<div class="ttc" id="classTrick_html_a21f11527bb41c8a9a5ad3706c220ba4c"><div class="ttname"><a href="classTrick.html#a21f11527bb41c8a9a5ad3706c220ba4c">Trick::getGreaterTrump</a></div><div class="ttdeci">shared_ptr&lt; Card &gt; getGreaterTrump() const </div><div class="ttdef"><b>Definition:</b> Trick.hpp:76</div></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">double</span> getScore() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classTrick.html#af9ac29e341baed3bcd38bea295a8e4cd">   54</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classTrick.html#af9ac29e341baed3bcd38bea295a8e4cd">getNumberOfCards</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> trickCards.empty() ? 0 : trickCards.size(); }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> showAllCards() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> clearTrick();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classTrick.html#a018b51abfacee4c8cce7646b2888217f">   63</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       <a class="code" href="classTrick.html#a018b51abfacee4c8cce7646b2888217f">getCard</a>         ( <span class="keyword">const</span> shared_ptr&lt;Player&gt; player )<span class="keyword">     const </span>{ <span class="keywordflow">return</span> trickCards.at(player); }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b">   66</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       <a class="code" href="classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b">getWinCard</a>      ()<span class="keyword">                              const </span>{ <span class="keywordflow">return</span> trickCards.at(leader); }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// Inline assessor to get the pointer on the leader.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classTrick.html#a87cf6697a5f9f417e19c2749e73ae2be">   69</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Player&gt;     <a class="code" href="classTrick.html#a87cf6697a5f9f417e19c2749e73ae2be">getLeader</a>       ()<span class="keyword">                              const </span>{ <span class="keywordflow">return</span> leader; }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// Inline assessor to get the pointer on the player who played the Fool.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classTrick.html#a4d43afa1ae8417094be02494852f7c56">   72</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Player&gt;     <a class="code" href="classTrick.html#a4d43afa1ae8417094be02494852f7c56">getFoolPlayer</a>   ()<span class="keyword">                              const </span>{ <span class="keywordflow">return</span> foolPlayer; }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// Inline assessor to get the pointer on the greatest trump of the current trick.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classTrick.html#a21f11527bb41c8a9a5ad3706c220ba4c">   75</a></span>&#160;  <span class="keyword">inline</span> shared_ptr&lt;Card&gt;       <a class="code" href="classTrick.html#a21f11527bb41c8a9a5ad3706c220ba4c">getGreaterTrump</a> ()<span class="keyword">                              const </span>{ <span class="keywordflow">return</span> greaterTrump; }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// Inline assessor to get the pointer on the greatest trump of the current trick.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classTrick.html#a2d9df1acf7c405fb553301dcd54ac670">   78</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>                  <a class="code" href="classTrick.html#a2d9df1acf7c405fb553301dcd54ac670">getReferenceSuit</a>()<span class="keyword">                              const </span>{ <span class="keywordflow">return</span> referenceSuit; }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  shared_ptr&lt;Player&gt;                            leader;         </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  shared_ptr&lt;Player&gt;                            foolPlayer;     </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  shared_ptr&lt;Card&gt;                              greaterTrump;   </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>                                         referenceSuit;  </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  map&lt; shared_ptr&lt;Player&gt;, shared_ptr&lt;Card&gt; &gt;   trickCards;     </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="ttc" id="classTrick_html_af9ac29e341baed3bcd38bea295a8e4cd"><div class="ttname"><a href="classTrick.html#af9ac29e341baed3bcd38bea295a8e4cd">Trick::getNumberOfCards</a></div><div class="ttdeci">int getNumberOfCards() const </div><div class="ttdoc">Inline function returning the number of cards composing the trick. </div><div class="ttdef"><b>Definition:</b> Trick.hpp:54</div></div>
+<div class="ttc" id="classTrick_html_ae5e65fbe08d6df0ca71224e465424c6b"><div class="ttname"><a href="classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b">Trick::getWinCard</a></div><div class="ttdeci">shared_ptr&lt; Card &gt; getWinCard() const </div><div class="ttdoc">Inline function returning the card which takes the trick. </div><div class="ttdef"><b>Definition:</b> Trick.hpp:66</div></div>
+<div class="ttc" id="classTrick_html_a87cf6697a5f9f417e19c2749e73ae2be"><div class="ttname"><a href="classTrick.html#a87cf6697a5f9f417e19c2749e73ae2be">Trick::getLeader</a></div><div class="ttdeci">shared_ptr&lt; Player &gt; getLeader() const </div><div class="ttdef"><b>Definition:</b> Trick.hpp:69</div></div>
+<div class="ttc" id="Suits_8hpp_html_af9c1b0214e7a472bf75d8a8bb43a28bb"><div class="ttname"><a href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a></div><div class="ttdeci">Suits</div><div class="ttdoc">The enum containing all suits, plus the Fool as a special suit. </div><div class="ttdef"><b>Definition:</b> Suits.hpp:25</div></div>
+<div class="ttc" id="classTrick_html_a018b51abfacee4c8cce7646b2888217f"><div class="ttname"><a href="classTrick.html#a018b51abfacee4c8cce7646b2888217f">Trick::getCard</a></div><div class="ttdeci">shared_ptr&lt; Card &gt; getCard(const shared_ptr&lt; Player &gt; player) const </div><div class="ttdoc">Inline assessor to the card played of the given player during the current trick. </div><div class="ttdef"><b>Definition:</b> Trick.hpp:63</div></div>
+<div class="ttc" id="classTrick_html_a21f11527bb41c8a9a5ad3706c220ba4c"><div class="ttname"><a href="classTrick.html#a21f11527bb41c8a9a5ad3706c220ba4c">Trick::getGreaterTrump</a></div><div class="ttdeci">shared_ptr&lt; Card &gt; getGreaterTrump() const </div><div class="ttdef"><b>Definition:</b> Trick.hpp:75</div></div>
 <div class="ttc" id="Card_8hpp_html"><div class="ttname"><a href="Card_8hpp.html">Card.hpp</a></div></div>
 <div class="ttc" id="Player_8hpp_html"><div class="ttname"><a href="Player_8hpp.html">Player.hpp</a></div></div>
-<div class="ttc" id="classTrick_html_a1649b27628cb224f3eb98f56ea00f5ac"><div class="ttname"><a href="classTrick.html#a1649b27628cb224f3eb98f56ea00f5ac">Trick::getCard</a></div><div class="ttdeci">shared_ptr&lt; Card &gt; getCard(shared_ptr&lt; Player &gt; player) const </div><div class="ttdoc">Inline assessor to the card played of the given player during the current trick. </div><div class="ttdef"><b>Definition:</b> Trick.hpp:64</div></div>
-<div class="ttc" id="classTrick_html"><div class="ttname"><a href="classTrick.html">Trick</a></div><div class="ttdoc">This class manages the current and previously played tricks. </div><div class="ttdef"><b>Definition:</b> Trick.hpp:35</div></div>
-<div class="ttc" id="classTrick_html_a4d43afa1ae8417094be02494852f7c56"><div class="ttname"><a href="classTrick.html#a4d43afa1ae8417094be02494852f7c56">Trick::getFoolPlayer</a></div><div class="ttdeci">shared_ptr&lt; Player &gt; getFoolPlayer() const </div><div class="ttdef"><b>Definition:</b> Trick.hpp:73</div></div>
+<div class="ttc" id="classTrick_html_a2d9df1acf7c405fb553301dcd54ac670"><div class="ttname"><a href="classTrick.html#a2d9df1acf7c405fb553301dcd54ac670">Trick::getReferenceSuit</a></div><div class="ttdeci">Suits getReferenceSuit() const </div><div class="ttdef"><b>Definition:</b> Trick.hpp:78</div></div>
+<div class="ttc" id="classTrick_html"><div class="ttname"><a href="classTrick.html">Trick</a></div><div class="ttdoc">This class manages the current and previously played tricks. </div><div class="ttdef"><b>Definition:</b> Trick.hpp:34</div></div>
+<div class="ttc" id="classTrick_html_a4d43afa1ae8417094be02494852f7c56"><div class="ttname"><a href="classTrick.html#a4d43afa1ae8417094be02494852f7c56">Trick::getFoolPlayer</a></div><div class="ttdeci">shared_ptr&lt; Player &gt; getFoolPlayer() const </div><div class="ttdef"><b>Definition:</b> Trick.hpp:72</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 7 2017 03:57:26 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

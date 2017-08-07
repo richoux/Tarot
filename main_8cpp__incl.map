@@ -1,19 +1,18 @@
 <map id="src/main.cpp" name="src/main.cpp">
-<area shape="rect" id="node7" href="$Game_8hpp.html" title="Game.hpp" alt="" coords="1204,80,1285,107"/>
-<area shape="rect" id="node25" href="$getInt_8hpp.html" title="getInt.hpp" alt="" coords="2371,229,2449,256"/>
-<area shape="rect" id="node33" href="$CardPixmap_8hpp.html" title="CardPixmap.hpp" alt="" coords="3090,155,3208,181"/>
-<area shape="rect" id="node35" href="$TarotScene_8hpp.html" title="TarotScene.hpp" alt="" coords="2861,80,2976,107"/>
-<area shape="rect" id="node14" href="$Suits_8hpp.html" title="Suits.hpp" alt="" coords="1811,453,1887,480"/>
-<area shape="rect" id="node15" href="$Biddings_8hpp.html" title="Biddings.hpp" alt="" coords="386,379,483,405"/>
-<area shape="rect" id="node16" href="$Team_8hpp.html" title="Team.hpp" alt="" coords="1373,155,1452,181"/>
-<area shape="rect" id="node17" href="$Player_8hpp.html" title="Player.hpp" alt="" coords="1553,229,1636,256"/>
-<area shape="rect" id="node19" href="$Card_8hpp.html" title="Card.hpp" alt="" coords="1687,379,1760,405"/>
-<area shape="rect" id="node20" href="$Deck_8hpp.html" title="Deck.hpp" alt="" coords="1150,304,1228,331"/>
-<area shape="rect" id="node24" href="$Human_8hpp.html" title="Human.hpp" alt="" coords="2021,155,2109,181"/>
-<area shape="rect" id="node28" href="$AI_8hpp.html" title="AI.hpp" alt="" coords="1091,155,1151,181"/>
-<area shape="rect" id="node32" href="$Trick_8hpp.html" title="Trick.hpp" alt="" coords="1557,155,1632,181"/>
-<area shape="rect" id="node23" href="$Announcements_8hpp.html" title="Announcements.hpp" alt="" coords="1557,304,1697,331"/>
-<area shape="rect" id="node27" href="$getChar_8hpp.html" title="getChar.hpp" alt="" coords="2253,229,2347,256"/>
-<area shape="rect" id="node30" href="$StratDiff_8hpp.html" title="StratDiff.hpp" alt="" coords="523,304,619,331"/>
-<area shape="rect" id="node31" href="$Beginner_8hpp.html" title="Beginner.hpp" alt="" coords="608,229,707,256"/>
+<area shape="rect" id="node7" href="$Game_8hpp.html" title="Game.hpp" alt="" coords="1003,80,1084,107"/>
+<area shape="rect" id="node25" href="$CardItem_8hpp.html" title="CardItem.hpp" alt="" coords="2479,155,2580,181"/>
+<area shape="rect" id="node27" href="$TarotScene_8hpp.html" title="TarotScene.hpp" alt="" coords="1924,80,2039,107"/>
+<area shape="rect" id="node32" href="$getInt_8hpp.html" title="getInt.hpp" alt="" coords="2113,80,2192,107"/>
+<area shape="rect" id="node13" href="$Suits_8hpp.html" title="Suits.hpp" alt="" coords="1417,453,1493,480"/>
+<area shape="rect" id="node14" href="$Biddings_8hpp.html" title="Biddings.hpp" alt="" coords="1511,379,1608,405"/>
+<area shape="rect" id="node15" href="$Team_8hpp.html" title="Team.hpp" alt="" coords="784,155,863,181"/>
+<area shape="rect" id="node16" href="$Player_8hpp.html" title="Player.hpp" alt="" coords="687,229,771,256"/>
+<area shape="rect" id="node17" href="$Card_8hpp.html" title="Card.hpp" alt="" coords="1063,379,1136,405"/>
+<area shape="rect" id="node18" href="$Deck_8hpp.html" title="Deck.hpp" alt="" coords="614,304,692,331"/>
+<area shape="rect" id="node20" href="$Human_8hpp.html" title="Human.hpp" alt="" coords="214,155,303,181"/>
+<area shape="rect" id="node21" href="$AI_8hpp.html" title="AI.hpp" alt="" coords="1242,155,1301,181"/>
+<area shape="rect" id="node24" href="$Trick_8hpp.html" title="Trick.hpp" alt="" coords="895,155,971,181"/>
+<area shape="rect" id="node19" href="$Announcements_8hpp.html" title="Announcements.hpp" alt="" coords="448,304,588,331"/>
+<area shape="rect" id="node22" href="$StratDiff_8hpp.html" title="StratDiff.hpp" alt="" coords="1275,304,1371,331"/>
+<area shape="rect" id="node23" href="$Beginner_8hpp.html" title="Beginner.hpp" alt="" coords="1223,229,1321,256"/>
 </map>

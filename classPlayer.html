@@ -102,7 +102,7 @@ Inheritance diagram for Player:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayer__inherit__graph.png" border="0" usemap="#Player_inherit__map" alt="Inheritance graph"/></div>
 <map name="Player_inherit__map" id="Player_inherit__map">
-<area shape="rect" id="node2" href="classAI.html" title="This class defines AI players. " alt="" coords="5,483,160,707"/><area shape="rect" id="node3" href="classHuman.html" title="Human is the class implementing Human player actions, like playing a card. " alt="" coords="185,519,295,670"/></map>
+<area shape="rect" id="node2" href="classAI.html" title="This class defines AI players. " alt="" coords="5,499,160,723"/><area shape="rect" id="node3" href="classHuman.html" title="Human is the class implementing Human player actions, like playing a card. " alt="" coords="185,535,295,686"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Player:</div>
@@ -123,39 +123,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5a2790fccf10c30106370d910c96d317"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5a2790fccf10c30106370d910c96d317">Player</a> (const string &amp;<a class="el" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">name</a>)</td></tr>
 <tr class="memdesc:a5a2790fccf10c30106370d910c96d317"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players. ">Player</a>.  <a href="#a5a2790fccf10c30106370d910c96d317">More...</a><br/></td></tr>
 <tr class="separator:a5a2790fccf10c30106370d910c96d317"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeba090a124bfd9a3666d2d793439cae0"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#aeba090a124bfd9a3666d2d793439cae0">playCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; referenceCard, shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; highTrump)=0</td></tr>
-<tr class="memdesc:aeba090a124bfd9a3666d2d793439cae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">playCard is a pure virtual function returning the card the player chooses to play.  <a href="#aeba090a124bfd9a3666d2d793439cae0">More...</a><br/></td></tr>
-<tr class="separator:aeba090a124bfd9a3666d2d793439cae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76a707ceb6f24b0a2a801434ee5a60ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a76a707ceb6f24b0a2a801434ee5a60ad">newGame</a> ()=0</td></tr>
-<tr class="memdesc:a76a707ceb6f24b0a2a801434ee5a60ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to prepare the player for a new game.  <a href="#a76a707ceb6f24b0a2a801434ee5a60ad">More...</a><br/></td></tr>
-<tr class="separator:a76a707ceb6f24b0a2a801434ee5a60ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa6595da4148e219bbca569acc5ac80d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#afa6595da4148e219bbca569acc5ac80d">addCard</a> (const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
+<tr class="memdesc:afa6595da4148e219bbca569acc5ac80d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a card among player's initial cards.  <a href="#afa6595da4148e219bbca569acc5ac80d">More...</a><br/></td></tr>
+<tr class="separator:afa6595da4148e219bbca569acc5ac80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bb658ca7b46f32a42578b884ad7fe82"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4bb658ca7b46f32a42578b884ad7fe82">bid</a> (const <a class="el" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a> bestBid, const bool chelemAnnounced) const =0</td></tr>
 <tr class="memdesc:a4bb658ca7b46f32a42578b884ad7fe82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make a choice for biddings.  <a href="#a4bb658ca7b46f32a42578b884ad7fe82">More...</a><br/></td></tr>
 <tr class="separator:a4bb658ca7b46f32a42578b884ad7fe82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac85ce39f638b28f13588e8957dc952ff"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ac85ce39f638b28f13588e8957dc952ff">chooseKing</a> (const <a class="el" href="classDeck.html">Deck</a> &amp;deck) const =0</td></tr>
 <tr class="memdesc:ac85ce39f638b28f13588e8957dc952ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make a choice for partnership in a 5-player game.  <a href="#ac85ce39f638b28f13588e8957dc952ff">More...</a><br/></td></tr>
 <tr class="separator:ac85ce39f638b28f13588e8957dc952ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34c9e9f402c6a68d6e16caebdb93a33f"><td class="memItemLeft" align="right" valign="top">virtual set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a34c9e9f402c6a68d6e16caebdb93a33f">makeEcart</a> (const int dogSize)=0</td></tr>
-<tr class="memdesc:a34c9e9f402c6a68d6e16caebdb93a33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make the ecart when the player is the best bidder.  <a href="#a34c9e9f402c6a68d6e16caebdb93a33f">More...</a><br/></td></tr>
-<tr class="separator:a34c9e9f402c6a68d6e16caebdb93a33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c8ebbb4c19e642537535382446cd397"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5c8ebbb4c19e642537535382446cd397">getAllCards</a> () const </td></tr>
+<tr class="memdesc:a5c8ebbb4c19e642537535382446cd397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of all cards in player's hand.  <a href="#a5c8ebbb4c19e642537535382446cd397">More...</a><br/></td></tr>
+<tr class="separator:a5c8ebbb4c19e642537535382446cd397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5573dd91ddb6fa8874d5a7f7a186f186"><td class="memItemLeft" align="right" valign="top">set&lt; <a class="el" href="Announcements_8hpp.html#a473ad3cf2a9a2e9a38ac2d1fdbd055e0">Announcements</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5573dd91ddb6fa8874d5a7f7a186f186">getAnnounced</a> () const </td></tr>
 <tr class="memdesc:a5573dd91ddb6fa8874d5a7f7a186f186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the set of announcements.  <a href="#a5573dd91ddb6fa8874d5a7f7a186f186">More...</a><br/></td></tr>
 <tr class="separator:a5573dd91ddb6fa8874d5a7f7a186f186"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dc51cf2a773556eb26f3d47c4274b0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4dc51cf2a773556eb26f3d47c4274b0a">getNumberOudlers</a> () const </td></tr>
-<tr class="memdesc:a4dc51cf2a773556eb26f3d47c4274b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the number of oudlers the player has with his/her initial hand.  <a href="#a4dc51cf2a773556eb26f3d47c4274b0a">More...</a><br/></td></tr>
-<tr class="separator:a4dc51cf2a773556eb26f3d47c4274b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab2cfa2ce2e7a3903ff99ac5c7ef8db6"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#aab2cfa2ce2e7a3903ff99ac5c7ef8db6">getInitialCards</a> () const </td></tr>
 <tr class="memdesc:aab2cfa2ce2e7a3903ff99ac5c7ef8db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the player's initial cards.  <a href="#aab2cfa2ce2e7a3903ff99ac5c7ef8db6">More...</a><br/></td></tr>
 <tr class="separator:aab2cfa2ce2e7a3903ff99ac5c7ef8db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab89873d894a8e4e7e67a16feba4bf116"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ab89873d894a8e4e7e67a16feba4bf116">validCards</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; refCard, shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; greaterTrump)</td></tr>
-<tr class="memdesc:ab89873d894a8e4e7e67a16feba4bf116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick.  <a href="#ab89873d894a8e4e7e67a16feba4bf116">More...</a><br/></td></tr>
-<tr class="separator:ab89873d894a8e4e7e67a16feba4bf116"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c7b8325247c91ef255ca493de9f35eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a7c7b8325247c91ef255ca493de9f35eb">addCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
-<tr class="memdesc:a7c7b8325247c91ef255ca493de9f35eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a card among player's initial cards.  <a href="#a7c7b8325247c91ef255ca493de9f35eb">More...</a><br/></td></tr>
-<tr class="separator:a7c7b8325247c91ef255ca493de9f35eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dc51cf2a773556eb26f3d47c4274b0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4dc51cf2a773556eb26f3d47c4274b0a">getNumberOudlers</a> () const </td></tr>
+<tr class="memdesc:a4dc51cf2a773556eb26f3d47c4274b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the number of oudlers the player has with his/her initial hand.  <a href="#a4dc51cf2a773556eb26f3d47c4274b0a">More...</a><br/></td></tr>
+<tr class="separator:a4dc51cf2a773556eb26f3d47c4274b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34c9e9f402c6a68d6e16caebdb93a33f"><td class="memItemLeft" align="right" valign="top">virtual set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a34c9e9f402c6a68d6e16caebdb93a33f">makeEcart</a> (const int dogSize)=0</td></tr>
+<tr class="memdesc:a34c9e9f402c6a68d6e16caebdb93a33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to make the ecart when the player is the best bidder.  <a href="#a34c9e9f402c6a68d6e16caebdb93a33f">More...</a><br/></td></tr>
+<tr class="separator:a34c9e9f402c6a68d6e16caebdb93a33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a707ceb6f24b0a2a801434ee5a60ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a76a707ceb6f24b0a2a801434ee5a60ad">newGame</a> ()=0</td></tr>
+<tr class="memdesc:a76a707ceb6f24b0a2a801434ee5a60ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to prepare the player for a new game.  <a href="#a76a707ceb6f24b0a2a801434ee5a60ad">More...</a><br/></td></tr>
+<tr class="separator:a76a707ceb6f24b0a2a801434ee5a60ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae57e9fda7c993d6f0562b84f57279067"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ae57e9fda7c993d6f0562b84f57279067">playCard</a> (const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a> referenceSuit, const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; highTrump)=0</td></tr>
+<tr class="memdesc:ae57e9fda7c993d6f0562b84f57279067"><td class="mdescLeft">&#160;</td><td class="mdescRight">playCard is a pure virtual function returning the card the player chooses to play.  <a href="#ae57e9fda7c993d6f0562b84f57279067">More...</a><br/></td></tr>
+<tr class="separator:ae57e9fda7c993d6f0562b84f57279067"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5216f487067dd79371af457f4b8f1769"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5216f487067dd79371af457f4b8f1769">showCards</a> () const </td></tr>
 <tr class="memdesc:a5216f487067dd79371af457f4b8f1769"><td class="mdescLeft">&#160;</td><td class="mdescRight">To print all player's cards in his/her current hand.  <a href="#a5216f487067dd79371af457f4b8f1769">More...</a><br/></td></tr>
 <tr class="separator:a5216f487067dd79371af457f4b8f1769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec0a235f4fd133a6e9ba228a506c4c4"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a7ec0a235f4fd133a6e9ba228a506c4c4">validCards</a> (const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a> referenceSuit, const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; greaterTrump) const </td></tr>
+<tr class="memdesc:a7ec0a235f4fd133a6e9ba228a506c4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick.  <a href="#a7ec0a235f4fd133a6e9ba228a506c4c4">More...</a><br/></td></tr>
+<tr class="separator:a7ec0a235f4fd133a6e9ba228a506c4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -168,12 +171,12 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a82c40ddca5214bbc9cc204ae9b789ca7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a82c40ddca5214bbc9cc204ae9b789ca7">delCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
-<tr class="memdesc:a82c40ddca5214bbc9cc204ae9b789ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">To delete a card from the player's current hand.  <a href="#a82c40ddca5214bbc9cc204ae9b789ca7">More...</a><br/></td></tr>
-<tr class="separator:a82c40ddca5214bbc9cc204ae9b789ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2880662cb5f5cc2e778242c7a1477b30"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a2880662cb5f5cc2e778242c7a1477b30">callableCards</a> (const <a class="el" href="classDeck.html">Deck</a> &amp;deck) const </td></tr>
 <tr class="memdesc:a2880662cb5f5cc2e778242c7a1477b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">To compute the vector of cards we can call during a 5-player game.  <a href="#a2880662cb5f5cc2e778242c7a1477b30">More...</a><br/></td></tr>
 <tr class="separator:a2880662cb5f5cc2e778242c7a1477b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98cd8e305915c975161c073269147ad7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a98cd8e305915c975161c073269147ad7">delCard</a> (const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
+<tr class="memdesc:a98cd8e305915c975161c073269147ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">To delete a card from the player's current hand.  <a href="#a98cd8e305915c975161c073269147ad7">More...</a><br/></td></tr>
+<tr class="separator:a98cd8e305915c975161c073269147ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -241,14 +244,14 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a7c7b8325247c91ef255ca493de9f35eb"></a>
+<a class="anchor" id="afa6595da4148e219bbca569acc5ac80d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Player::addCard </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>card</em></td><td>)</td>
           <td></td>
         </tr>
@@ -340,7 +343,7 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the vector of cards the taker can call (usually, the four kings). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector of cards the taker can call (usually, the four kings). </dd></dl>
 
 </div>
 </div>
@@ -379,7 +382,7 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a82c40ddca5214bbc9cc204ae9b789ca7"></a>
+<a class="anchor" id="a98cd8e305915c975161c073269147ad7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -389,7 +392,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Player::delCard </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>card</em></td><td>)</td>
           <td></td>
         </tr>
@@ -408,6 +411,24 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a5c8ebbb4c19e642537535382446cd397"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; Player::getAllCards </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the vector of all cards in player's hand. </p>
+<dl class="section return"><dt>Returns</dt><dd>The union of hearts, spades, etc, sets. </dd></dl>
 
 </div>
 </div>
@@ -548,7 +569,7 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aeba090a124bfd9a3666d2d793439cae0"></a>
+<a class="anchor" id="ae57e9fda7c993d6f0562b84f57279067"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -558,13 +579,13 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; Player::playCard </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
-          <td class="paramname"><em>referenceCard</em>, </td>
+          <td class="paramtype">const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>&#160;</td>
+          <td class="paramname"><em>referenceSuit</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>highTrump</em>&#160;</td>
         </tr>
         <tr>
@@ -583,14 +604,14 @@ Protected Attributes</h2></td></tr>
 <p>playCard is a pure virtual function returning the card the player chooses to play. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">referenceCard</td><td>The card fixing the ask suit for the trick. </td></tr>
+    <tr><td class="paramname">referenceSuit</td><td>The asked suit for the trick. </td></tr>
     <tr><td class="paramname">highTrump</td><td>The highest trump played so far for the trick, if any. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The chosen card to play. </dd></dl>
 
-<p>Implemented in <a class="el" href="classAI.html#a3f5b2888e03634db701c66f82a4f03a8">AI</a>, and <a class="el" href="classHuman.html#a3258d3ce0eec7a5e393c639506ef28e5">Human</a>.</p>
+<p>Implemented in <a class="el" href="classAI.html#a1876551a4ef483d744bff39039a6d355">AI</a>, and <a class="el" href="classHuman.html#a31128cfb3b5ce94c022db6746c08fcc5">Human</a>.</p>
 
 </div>
 </div>
@@ -611,26 +632,26 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab89873d894a8e4e7e67a16feba4bf116"></a>
+<a class="anchor" id="a7ec0a235f4fd133a6e9ba228a506c4c4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt; Player::validCards </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
-          <td class="paramname"><em>refCard</em>, </td>
+          <td class="paramtype">const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>&#160;</td>
+          <td class="paramname"><em>referenceSuit</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>greaterTrump</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -638,7 +659,7 @@ Protected Attributes</h2></td></tr>
 <p>Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">refCard</td><td>A pointer of the card fixing the asked suit of the trick. </td></tr>
+    <tr><td class="paramname">referenceSuit</td><td>The asked suit for the trick. </td></tr>
     <tr><td class="paramname">greaterTrump</td><td>A pointer on the greater trump of the trick, if any. </td></tr>
   </table>
   </dd>
@@ -903,7 +924,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 7 2017 03:57:26 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

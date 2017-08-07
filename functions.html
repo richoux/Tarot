@@ -88,7 +88,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
-      <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
       <li><a href="#index_u"><span>u</span></a></li>
@@ -115,16 +114,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>addCard()
-: <a class="el" href="classPlayer.html#a7c7b8325247c91ef255ca493de9f35eb">Player</a>
+: <a class="el" href="classPlayer.html#afa6595da4148e219bbca569acc5ac80d">Player</a>
 </li>
 <li>AI()
 : <a class="el" href="classAI.html#a059fcf3ea09f908bca75567937f7e8a7">AI</a>
 </li>
 <li>announced
 : <a class="el" href="classPlayer.html#a90efe0cf8930297c7d30805d19763b65">Player</a>
-</li>
-<li>asCalledKing()
-: <a class="el" href="classTrick.html#a4d196a8097feccd87f1aca65ea4e80c8">Trick</a>
 </li>
 </ul>
 
@@ -150,14 +146,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Card()
 : <a class="el" href="classCard.html#a113a46b46e64efe0fd98a42df301db9a">Card</a>
 </li>
-<li>CardPixmap()
-: <a class="el" href="classCardPixmap.html#a554294aafed23281465287c7ceef36ba">CardPixmap</a>
+<li>CardItem()
+: <a class="el" href="classCardItem.html#ac0df25856387146f30f4e3d74314f361">CardItem</a>
 </li>
 <li>cards
 : <a class="el" href="classDeck.html#a6b1a1cb4731888fe92e381dd74eb1e16">Deck</a>
 </li>
 <li>center()
-: <a class="el" href="classCardPixmap.html#a887e2f91a3ec108e869a231830574795">CardPixmap</a>
+: <a class="el" href="classCardItem.html#ac8397040b836f30052f86382973ff08e">CardItem</a>
 </li>
 <li>chooseKing()
 : <a class="el" href="classAI.html#a6d7eafe5efa20fd78ec91048ad7c1ae2">AI</a>
@@ -165,8 +161,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classHuman.html#a7b465bef30158c2b5552f54651e48318">Human</a>
 , <a class="el" href="classPlayer.html#ac85ce39f638b28f13588e8957dc952ff">Player</a>
 </li>
+<li>clearTrick()
+: <a class="el" href="classTrick.html#a4ffa7b4b0ded707c359d3d211c280ce3">Trick</a>
+</li>
 <li>closeBiddings()
-: <a class="el" href="classGame.html#a478f381d19d7a18af7633cbaad3bab98">Game</a>
+: <a class="el" href="classGame.html#a347bef9d1d5ced0faee2ecda042e470d">Game</a>
 </li>
 <li>clubs
 : <a class="el" href="classPlayer.html#ad3f3acdaf6ee318ba528e82e1c188820">Player</a>
@@ -191,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classDeck.html#a57ae1cb4ac6fd61c249cefb2db85eb99">Deck</a>
 </li>
 <li>delCard()
-: <a class="el" href="classPlayer.html#a82c40ddca5214bbc9cc204ae9b789ca7">Player</a>
+: <a class="el" href="classPlayer.html#a98cd8e305915c975161c073269147ad7">Player</a>
 </li>
 <li>diamonds
 : <a class="el" href="classPlayer.html#a3ad0f1545e0653635eac5ced5c31dc0b">Player</a>
@@ -218,7 +217,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classGame.html#ad59df6562a58a614fda24622d3715b65">Game</a>
 </li>
 <li>getAllCards()
-: <a class="el" href="classTrick.html#a1db9b6c13def25e38b6604b56d97ddd2">Trick</a>
+: <a class="el" href="classPlayer.html#a5c8ebbb4c19e642537535382446cd397">Player</a>
+, <a class="el" href="classTrick.html#a1db9b6c13def25e38b6604b56d97ddd2">Trick</a>
 </li>
 <li>getAnnounced()
 : <a class="el" href="classPlayer.html#a5573dd91ddb6fa8874d5a7f7a186f186">Player</a>
@@ -227,7 +227,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classGame.html#ace04e437ab83e14d0355466cf9ee0501">Game</a>
 </li>
 <li>getCard()
-: <a class="el" href="classTrick.html#a1649b27628cb224f3eb98f56ea00f5ac">Trick</a>
+: <a class="el" href="classTrick.html#a018b51abfacee4c8cce7646b2888217f">Trick</a>
 </li>
 <li>getCardsPerPlayer()
 : <a class="el" href="classGame.html#a4fc2622666c1040a6b31374aa99d7ab9">Game</a>
@@ -247,6 +247,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>getGreaterTrump()
 : <a class="el" href="classTrick.html#a21f11527bb41c8a9a5ad3706c220ba4c">Trick</a>
 </li>
+<li>getIndexBidder()
+: <a class="el" href="classGame.html#a5204fdff64d39a2bfb4ef3b0f10a894e">Game</a>
+</li>
+<li>getIndexNext()
+: <a class="el" href="classGame.html#a9f69cf96b77ff83b5fee1a22e765c4b6">Game</a>
+</li>
+<li>getIndexStarter()
+: <a class="el" href="classGame.html#adaaaa22aeadc691d8d1a66310e079034">Game</a>
+</li>
+<li>getIndexToBid()
+: <a class="el" href="classGame.html#ae88b6b43d5ca948a2139688eb8367429">Game</a>
+</li>
 <li>getInitialCards()
 : <a class="el" href="classPlayer.html#aab2cfa2ce2e7a3903ff99ac5c7ef8db6">Player</a>
 </li>
@@ -256,6 +268,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>getLeader()
 : <a class="el" href="classTrick.html#a87cf6697a5f9f417e19c2749e73ae2be">Trick</a>
 </li>
+<li>getNumberOfCards()
+: <a class="el" href="classTrick.html#af9ac29e341baed3bcd38bea295a8e4cd">Trick</a>
+</li>
 <li>getNumberOudlers()
 : <a class="el" href="classPlayer.html#a4dc51cf2a773556eb26f3d47c4274b0a">Player</a>
 </li>
@@ -263,13 +278,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classGame.html#a887371d74b2b9083e8b8df3c51e5efbb">Game</a>
 </li>
 <li>getPlayers()
-: <a class="el" href="classGame.html#aadb9a4b5a747542b337c93b6f887e2c6">Game</a>
+: <a class="el" href="classGame.html#a585b384c478fdcd81cf4f461412057cb">Game</a>
 </li>
 <li>getPlayerWonCards()
-: <a class="el" href="classGame.html#af1eb0e16a5ed6ff4b363779b109fb063">Game</a>
+: <a class="el" href="classGame.html#a12cecd7ac71d8c73c34666e7085e4b50">Game</a>
 </li>
 <li>getPoints()
 : <a class="el" href="classCard.html#adf11e6396788e2e832d3bdf29880593f">Card</a>
+</li>
+<li>getReferenceSuit()
+: <a class="el" href="classTrick.html#a2d9df1acf7c405fb553301dcd54ac670">Trick</a>
 </li>
 <li>getScore()
 : <a class="el" href="classTeam.html#a57a775ba38aaf35510e412a01d6a3062">Team</a>
@@ -280,6 +298,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>getTakers()
 : <a class="el" href="classGame.html#a1df3d65019a8370adb0ac42f788403e4">Game</a>
+</li>
+<li>getTrick()
+: <a class="el" href="classGame.html#abeccabcd569423bc4d7baba9f0667568">Game</a>
 </li>
 <li>getUnknownTeam()
 : <a class="el" href="classGame.html#a293d27f6ea1e5efcf117594f4d19110d">Game</a>
@@ -295,7 +316,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
 <li>hasStrongerThan()
-: <a class="el" href="classDeck.html#a82a3371b10b8be7bc5fef6999a56bb88">Deck</a>
+: <a class="el" href="classDeck.html#acace898024f4017a04d02a7313b32818">Deck</a>
 </li>
 <li>haveSuit()
 : <a class="el" href="classAI.html#a01cd7c1760412dde024605226591328c">AI</a>
@@ -314,7 +335,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>indexInDeck()
-: <a class="el" href="classDeck.html#afe7b0b266ec9a30c271333d00a3b4168">Deck</a>
+: <a class="el" href="classDeck.html#a390965cf57ea0c00877564ef234f5dde">Deck</a>
 </li>
 <li>initialCards
 : <a class="el" href="classPlayer.html#aac0d154d58a07310ee23c3c763f2cfa9">Player</a>
@@ -324,9 +345,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>isBotsOnly()
 : <a class="el" href="classGame.html#a7a56ee5adaeb93428763cf99a581028a">Game</a>
-</li>
-<li>isCardCalled()
-: <a class="el" href="classGame.html#a469c5155b0c24401514e072af4fbbb53">Game</a>
 </li>
 <li>isComparable()
 : <a class="el" href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">Card</a>
@@ -415,7 +433,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
 <li>operator()()
-: <a class="el" href="structPlayer_1_1cardOrder.html#a1992ec2fb8b64e0749dcbbf997a56846">Player::cardOrder</a>
+: <a class="el" href="structPlayer_1_1cardOrder.html#a7a6061ddd3cd5a58d74ab341c123975d">Player::cardOrder</a>
 </li>
 <li>operator&lt;()
 : <a class="el" href="classCard.html#a0210e809d9ec749824716ec1f5ebbf8a">Card</a>
@@ -439,18 +457,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>placeCard()
+: <a class="el" href="classTarotScene.html#a981b85486819ee86ec7d09c5f160e121">TarotScene</a>
+</li>
 <li>playCard()
-: <a class="el" href="classAI.html#a3f5b2888e03634db701c66f82a4f03a8">AI</a>
+: <a class="el" href="classAI.html#a1876551a4ef483d744bff39039a6d355">AI</a>
 , <a class="el" href="classBeginner.html#a73e2bf8d807166c994c42fd3b6bfc7bf">Beginner</a>
-, <a class="el" href="classHuman.html#a3258d3ce0eec7a5e393c639506ef28e5">Human</a>
-, <a class="el" href="classPlayer.html#aeba090a124bfd9a3666d2d793439cae0">Player</a>
+, <a class="el" href="classGame.html#a7ab3212f21448b45374ebd6f30b33b74">Game</a>
+, <a class="el" href="classHuman.html#a31128cfb3b5ce94c022db6746c08fcc5">Human</a>
+, <a class="el" href="classPlayer.html#ae57e9fda7c993d6f0562b84f57279067">Player</a>
 , <a class="el" href="classStratDiff.html#a550903bf95e6a897f346debab972f33a">StratDiff</a>
 </li>
 <li>Player()
 : <a class="el" href="classPlayer.html#a5a2790fccf10c30106370d910c96d317">Player</a>
-</li>
-<li>playTrick()
-: <a class="el" href="classGame.html#a403227b09b331182e56d46bfda54fdc6">Game</a>
 </li>
 <li>printScores()
 : <a class="el" href="classGame.html#acb39f55a7b0b1d0d35b06d305a508dd4">Game</a>
@@ -458,37 +477,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
-<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>rotationY()
-: <a class="el" href="classCardPixmap.html#a77c306a4c0a48f0af095b55604e2eaad">CardPixmap</a>
-</li>
-</ul>
-
-
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>sameTeam()
-: <a class="el" href="classGame.html#a1d945d8519b4cf2253e2b91d1149bf7d">Game</a>
+: <a class="el" href="classGame.html#a1f8a1534903f9810399bc78e76bb7e1c">Game</a>
 </li>
 <li>scale()
-: <a class="el" href="classCardPixmap.html#a274541bbd3421455d8657e7a9e53d017">CardPixmap</a>
+: <a class="el" href="classCardItem.html#a4e62ff856adb59b39c8e02afcfcd16fc">CardItem</a>
 </li>
 <li>score
 : <a class="el" href="classPlayer.html#a55f7b5b674245c2e09f3c191a54d3542">Player</a>
 </li>
 <li>setCard()
-: <a class="el" href="classTrick.html#a4d2b4c09c8d7c255ff34bde5fe29532a">Trick</a>
+: <a class="el" href="classTrick.html#a70c7778b0e25a6206dd74f246fc04773">Trick</a>
 </li>
 <li>setDifficulty()
-: <a class="el" href="classAI.html#a19cae044bb7f221819f61b017b6a7ffe">AI</a>
+: <a class="el" href="classAI.html#a425d89362d38e916e114cf8b514049bf">AI</a>
 </li>
 <li>setGame()
-: <a class="el" href="classGame.html#a1690785b0e8dd9ddc41e8ae16c3c51c2">Game</a>
+: <a class="el" href="classGame.html#a1d997253de332f105e73dd28c9e0f3fe">Game</a>
 </li>
-<li>setRotationY()
-: <a class="el" href="classCardPixmap.html#af1a326207aea7aea0fae00a6a04687cb">CardPixmap</a>
+<li>setPos()
+: <a class="el" href="classCardItem.html#a84de28bda4206a8fc89b73a3470f1f1d">CardItem</a>
 </li>
 <li>setScale()
-: <a class="el" href="classCardPixmap.html#ad72dbde83b417bd604b5f65d3a119f57">CardPixmap</a>
+: <a class="el" href="classCardItem.html#a75cfcc22aede853a0ee706f7d663d2fa">CardItem</a>
 </li>
 <li>showAllCards()
 : <a class="el" href="classTrick.html#af156d49d692f5168320ebc30aa084da1">Trick</a>
@@ -516,7 +528,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>takeBiddings()
-: <a class="el" href="classGame.html#aa7c5a63731a1e2e5229e4d9a004d3735">Game</a>
+: <a class="el" href="classGame.html#ad62908d0a1abc7c43b9a40bb20723b07">Game</a>
 </li>
 <li>takeDog()
 : <a class="el" href="classGame.html#ab725d07327db4dfb836e90eb08c83393">Game</a>
@@ -525,7 +537,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classTarotScene.html#af1f25b6002b2d3e8c24f2517681c133e">TarotScene</a>
 </li>
 <li>Trick()
-: <a class="el" href="classTrick.html#a2d52be4c67d65793531d2dc96122ae72">Trick</a>
+: <a class="el" href="classTrick.html#a6f28da13a8b2c015af106fc453197cc0">Trick</a>
 </li>
 <li>trumps
 : <a class="el" href="classPlayer.html#a66b3455fc8c6685a78eb193a015a07a0">Player</a>
@@ -542,13 +554,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
 <li>validCards()
-: <a class="el" href="classPlayer.html#ab89873d894a8e4e7e67a16feba4bf116">Player</a>
+: <a class="el" href="classPlayer.html#a7ec0a235f4fd133a6e9ba228a506c4c4">Player</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 7 2017 03:57:26 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

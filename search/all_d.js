@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['rotationy',['rotationY',['../classCardPixmap.html#a77c306a4c0a48f0af095b55604e2eaad',1,'CardPixmap']]]
+  ['sameteam',['sameTeam',['../classGame.html#a1f8a1534903f9810399bc78e76bb7e1c',1,'Game']]],
+  ['scale',['scale',['../classCardItem.html#a4e62ff856adb59b39c8e02afcfcd16fc',1,'CardItem']]],
+  ['score',['score',['../classPlayer.html#a55f7b5b674245c2e09f3c191a54d3542',1,'Player']]],
+  ['setcard',['setCard',['../classTrick.html#a70c7778b0e25a6206dd74f246fc04773',1,'Trick']]],
+  ['setdifficulty',['setDifficulty',['../classAI.html#a425d89362d38e916e114cf8b514049bf',1,'AI']]],
+  ['setgame',['setGame',['../classGame.html#a1d997253de332f105e73dd28c9e0f3fe',1,'Game']]],
+  ['setpos',['setPos',['../classCardItem.html#a84de28bda4206a8fc89b73a3470f1f1d',1,'CardItem']]],
+  ['setscale',['setScale',['../classCardItem.html#a75cfcc22aede853a0ee706f7d663d2fa',1,'CardItem']]],
+  ['showallcards',['showAllCards',['../classTrick.html#af156d49d692f5168320ebc30aa084da1',1,'Trick']]],
+  ['showcards',['showCards',['../classPlayer.html#a5216f487067dd79371af457f4b8f1769',1,'Player']]],
+  ['showdeck',['showDeck',['../classGame.html#a1e9e48c10a9ca4bc66b69e05b983e3ab',1,'Game']]],
+  ['showplayerscards',['showPlayersCards',['../classGame.html#aed6d30748ef9db0a89fba543fa4b5dfb',1,'Game']]],
+  ['shuffle',['shuffle',['../classDeck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb',1,'Deck']]],
+  ['shuffledeck',['shuffleDeck',['../classGame.html#a8eb0a092d23b426a8b4b03c4083b7afe',1,'Game']]],
+  ['small',['small',['../Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9dba6eb5ea92f3d8e929ccc26a9692383761',1,'Biddings.hpp']]],
+  ['spade',['spade',['../Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bba3e43abd911f9a86592bc626e17dc286d',1,'Suits.hpp']]],
+  ['spades',['spades',['../classPlayer.html#a89177ee8076c1a3411a74b2b1d68156c',1,'Player']]],
+  ['stratdiff',['StratDiff',['../classStratDiff.html',1,'']]],
+  ['stratdiff_2ehpp',['StratDiff.hpp',['../StratDiff_8hpp.html',1,'']]],
+  ['stratlang',['StratLang',['../classStratLang.html',1,'']]],
+  ['stratlang_2ehpp',['StratLang.hpp',['../StratLang_8hpp.html',1,'']]],
+  ['suits',['Suits',['../Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb',1,'Suits.hpp']]],
+  ['suits_2ehpp',['Suits.hpp',['../Suits_8hpp.html',1,'']]]
 ];

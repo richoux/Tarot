@@ -98,14 +98,14 @@ Inheritance diagram for Human:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHuman__inherit__graph.png" border="0" usemap="#Human_inherit__map" alt="Inheritance graph"/></div>
 <map name="Human_inherit__map" id="Human_inherit__map">
-<area shape="rect" id="node2" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players. " alt="" coords="5,5,155,435"/></map>
+<area shape="rect" id="node2" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players. " alt="" coords="5,6,155,450"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Human:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHuman__coll__graph.png" border="0" usemap="#Human_coll__map" alt="Collaboration graph"/></div>
 <map name="Human_coll__map" id="Human_coll__map">
-<area shape="rect" id="node2" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players. " alt="" coords="5,5,155,435"/></map>
+<area shape="rect" id="node2" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players. " alt="" coords="5,6,155,450"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -113,12 +113,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abfd57b90d90f9222384c76b44346ba7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHuman.html#abfd57b90d90f9222384c76b44346ba7b">Human</a> (const string &amp;<a class="el" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">name</a>)</td></tr>
 <tr class="memdesc:abfd57b90d90f9222384c76b44346ba7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classHuman.html" title="Human is the class implementing Human player actions, like playing a card. ">Human</a>.  <a href="#abfd57b90d90f9222384c76b44346ba7b">More...</a><br/></td></tr>
 <tr class="separator:abfd57b90d90f9222384c76b44346ba7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3258d3ce0eec7a5e393c639506ef28e5"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHuman.html#a3258d3ce0eec7a5e393c639506ef28e5">playCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; referenceCard, shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; highTrump)</td></tr>
-<tr class="memdesc:a3258d3ce0eec7a5e393c639506ef28e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">To play a card, knowing the ask suit and the highest trump of the trick, if any.  <a href="#a3258d3ce0eec7a5e393c639506ef28e5">More...</a><br/></td></tr>
-<tr class="separator:a3258d3ce0eec7a5e393c639506ef28e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae5efb6945fdbcda9c9a4d9e72d4a60e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHuman.html#aae5efb6945fdbcda9c9a4d9e72d4a60e">newGame</a> ()</td></tr>
-<tr class="memdesc:aae5efb6945fdbcda9c9a4d9e72d4a60e"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get prepared for a new game.  <a href="#aae5efb6945fdbcda9c9a4d9e72d4a60e">More...</a><br/></td></tr>
-<tr class="separator:aae5efb6945fdbcda9c9a4d9e72d4a60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a424bc9179b7036f22a694329b5f6fedf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHuman.html#a424bc9179b7036f22a694329b5f6fedf">bid</a> (const <a class="el" href="Biddings_8hpp.html#a22a8f3d77d582e8ce796583bc67dc9db">Biddings</a> bestBid, const bool chelemAnnounced) const </td></tr>
 <tr class="memdesc:a424bc9179b7036f22a694329b5f6fedf"><td class="mdescLeft">&#160;</td><td class="mdescRight">To let the <a class="el" href="classHuman.html" title="Human is the class implementing Human player actions, like playing a card. ">Human</a> player bids.  <a href="#a424bc9179b7036f22a694329b5f6fedf">More...</a><br/></td></tr>
 <tr class="separator:a424bc9179b7036f22a694329b5f6fedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,28 +122,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a02cdef89dde0adcb554f081e81f97896"><td class="memItemLeft" align="right" valign="top">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHuman.html#a02cdef89dde0adcb554f081e81f97896">makeEcart</a> (const int dogSize)</td></tr>
 <tr class="memdesc:a02cdef89dde0adcb554f081e81f97896"><td class="mdescLeft">&#160;</td><td class="mdescRight">To let the <a class="el" href="classHuman.html" title="Human is the class implementing Human player actions, like playing a card. ">Human</a> player makes his/her ecart.  <a href="#a02cdef89dde0adcb554f081e81f97896">More...</a><br/></td></tr>
 <tr class="separator:a02cdef89dde0adcb554f081e81f97896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5efb6945fdbcda9c9a4d9e72d4a60e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHuman.html#aae5efb6945fdbcda9c9a4d9e72d4a60e">newGame</a> ()</td></tr>
+<tr class="memdesc:aae5efb6945fdbcda9c9a4d9e72d4a60e"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get prepared for a new game.  <a href="#aae5efb6945fdbcda9c9a4d9e72d4a60e">More...</a><br/></td></tr>
+<tr class="separator:aae5efb6945fdbcda9c9a4d9e72d4a60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31128cfb3b5ce94c022db6746c08fcc5"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHuman.html#a31128cfb3b5ce94c022db6746c08fcc5">playCard</a> (const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a> referenceCard, const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; highTrump)</td></tr>
+<tr class="memdesc:a31128cfb3b5ce94c022db6746c08fcc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">To play a card, knowing the ask suit and the highest trump of the trick, if any.  <a href="#a31128cfb3b5ce94c022db6746c08fcc5">More...</a><br/></td></tr>
+<tr class="separator:a31128cfb3b5ce94c022db6746c08fcc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPlayer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPlayer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classPlayer.html">Player</a></td></tr>
 <tr class="memitem:a5a2790fccf10c30106370d910c96d317 inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5a2790fccf10c30106370d910c96d317">Player</a> (const string &amp;<a class="el" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">name</a>)</td></tr>
 <tr class="memdesc:a5a2790fccf10c30106370d910c96d317 inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classPlayer.html" title="Player is an abstract class presenting a common interface for AI and Human players. ">Player</a>.  <a href="#a5a2790fccf10c30106370d910c96d317">More...</a><br/></td></tr>
 <tr class="separator:a5a2790fccf10c30106370d910c96d317 inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa6595da4148e219bbca569acc5ac80d inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#afa6595da4148e219bbca569acc5ac80d">addCard</a> (const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
+<tr class="memdesc:afa6595da4148e219bbca569acc5ac80d inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a card among player's initial cards.  <a href="#afa6595da4148e219bbca569acc5ac80d">More...</a><br/></td></tr>
+<tr class="separator:afa6595da4148e219bbca569acc5ac80d inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c8ebbb4c19e642537535382446cd397 inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5c8ebbb4c19e642537535382446cd397">getAllCards</a> () const </td></tr>
+<tr class="memdesc:a5c8ebbb4c19e642537535382446cd397 inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of all cards in player's hand.  <a href="#a5c8ebbb4c19e642537535382446cd397">More...</a><br/></td></tr>
+<tr class="separator:a5c8ebbb4c19e642537535382446cd397 inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5573dd91ddb6fa8874d5a7f7a186f186 inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">set&lt; <a class="el" href="Announcements_8hpp.html#a473ad3cf2a9a2e9a38ac2d1fdbd055e0">Announcements</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5573dd91ddb6fa8874d5a7f7a186f186">getAnnounced</a> () const </td></tr>
 <tr class="memdesc:a5573dd91ddb6fa8874d5a7f7a186f186 inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the set of announcements.  <a href="#a5573dd91ddb6fa8874d5a7f7a186f186">More...</a><br/></td></tr>
 <tr class="separator:a5573dd91ddb6fa8874d5a7f7a186f186 inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dc51cf2a773556eb26f3d47c4274b0a inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4dc51cf2a773556eb26f3d47c4274b0a">getNumberOudlers</a> () const </td></tr>
-<tr class="memdesc:a4dc51cf2a773556eb26f3d47c4274b0a inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the number of oudlers the player has with his/her initial hand.  <a href="#a4dc51cf2a773556eb26f3d47c4274b0a">More...</a><br/></td></tr>
-<tr class="separator:a4dc51cf2a773556eb26f3d47c4274b0a inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab2cfa2ce2e7a3903ff99ac5c7ef8db6 inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#aab2cfa2ce2e7a3903ff99ac5c7ef8db6">getInitialCards</a> () const </td></tr>
 <tr class="memdesc:aab2cfa2ce2e7a3903ff99ac5c7ef8db6 inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the player's initial cards.  <a href="#aab2cfa2ce2e7a3903ff99ac5c7ef8db6">More...</a><br/></td></tr>
 <tr class="separator:aab2cfa2ce2e7a3903ff99ac5c7ef8db6 inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab89873d894a8e4e7e67a16feba4bf116 inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ab89873d894a8e4e7e67a16feba4bf116">validCards</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; refCard, shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; greaterTrump)</td></tr>
-<tr class="memdesc:ab89873d894a8e4e7e67a16feba4bf116 inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick.  <a href="#ab89873d894a8e4e7e67a16feba4bf116">More...</a><br/></td></tr>
-<tr class="separator:ab89873d894a8e4e7e67a16feba4bf116 inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c7b8325247c91ef255ca493de9f35eb inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a7c7b8325247c91ef255ca493de9f35eb">addCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
-<tr class="memdesc:a7c7b8325247c91ef255ca493de9f35eb inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a card among player's initial cards.  <a href="#a7c7b8325247c91ef255ca493de9f35eb">More...</a><br/></td></tr>
-<tr class="separator:a7c7b8325247c91ef255ca493de9f35eb inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dc51cf2a773556eb26f3d47c4274b0a inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4dc51cf2a773556eb26f3d47c4274b0a">getNumberOudlers</a> () const </td></tr>
+<tr class="memdesc:a4dc51cf2a773556eb26f3d47c4274b0a inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the number of oudlers the player has with his/her initial hand.  <a href="#a4dc51cf2a773556eb26f3d47c4274b0a">More...</a><br/></td></tr>
+<tr class="separator:a4dc51cf2a773556eb26f3d47c4274b0a inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5216f487067dd79371af457f4b8f1769 inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5216f487067dd79371af457f4b8f1769">showCards</a> () const </td></tr>
 <tr class="memdesc:a5216f487067dd79371af457f4b8f1769 inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">To print all player's cards in his/her current hand.  <a href="#a5216f487067dd79371af457f4b8f1769">More...</a><br/></td></tr>
 <tr class="separator:a5216f487067dd79371af457f4b8f1769 inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec0a235f4fd133a6e9ba228a506c4c4 inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a7ec0a235f4fd133a6e9ba228a506c4c4">validCards</a> (const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a> referenceSuit, const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; greaterTrump) const </td></tr>
+<tr class="memdesc:a7ec0a235f4fd133a6e9ba228a506c4c4 inherit pub_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of cards the player can currently play, regarding the asked suit and the greater trump of the trick.  <a href="#a7ec0a235f4fd133a6e9ba228a506c4c4">More...</a><br/></td></tr>
+<tr class="separator:a7ec0a235f4fd133a6e9ba228a506c4c4 inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -161,12 +164,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a55f7b5b674245c2e09f3c191a54d3542 inherit pub_attribs_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">The player's score.  <a href="#a55f7b5b674245c2e09f3c191a54d3542">More...</a><br/></td></tr>
 <tr class="separator:a55f7b5b674245c2e09f3c191a54d3542 inherit pub_attribs_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classPlayer"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classPlayer')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classPlayer.html">Player</a></td></tr>
-<tr class="memitem:a82c40ddca5214bbc9cc204ae9b789ca7 inherit pro_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a82c40ddca5214bbc9cc204ae9b789ca7">delCard</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
-<tr class="memdesc:a82c40ddca5214bbc9cc204ae9b789ca7 inherit pro_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">To delete a card from the player's current hand.  <a href="#a82c40ddca5214bbc9cc204ae9b789ca7">More...</a><br/></td></tr>
-<tr class="separator:a82c40ddca5214bbc9cc204ae9b789ca7 inherit pro_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2880662cb5f5cc2e778242c7a1477b30 inherit pro_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a2880662cb5f5cc2e778242c7a1477b30">callableCards</a> (const <a class="el" href="classDeck.html">Deck</a> &amp;deck) const </td></tr>
 <tr class="memdesc:a2880662cb5f5cc2e778242c7a1477b30 inherit pro_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">To compute the vector of cards we can call during a 5-player game.  <a href="#a2880662cb5f5cc2e778242c7a1477b30">More...</a><br/></td></tr>
 <tr class="separator:a2880662cb5f5cc2e778242c7a1477b30 inherit pro_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98cd8e305915c975161c073269147ad7 inherit pro_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a98cd8e305915c975161c073269147ad7">delCard</a> (const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
+<tr class="memdesc:a98cd8e305915c975161c073269147ad7 inherit pro_methods_classPlayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">To delete a card from the player's current hand.  <a href="#a98cd8e305915c975161c073269147ad7">More...</a><br/></td></tr>
+<tr class="separator:a98cd8e305915c975161c073269147ad7 inherit pro_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classPlayer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classPlayer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classPlayer.html">Player</a></td></tr>
 <tr class="memitem:afab8e372cfef87440bc42168d5fa0f6a inherit pro_attribs_classPlayer"><td class="memItemLeft" align="right" valign="top">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;<br class="typebreak"/>
 , <a class="el" href="structPlayer_1_1cardOrder.html">cardOrder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#afab8e372cfef87440bc42168d5fa0f6a">hearts</a></td></tr>
@@ -374,7 +377,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3258d3ce0eec7a5e393c639506ef28e5"></a>
+<a class="anchor" id="a31128cfb3b5ce94c022db6746c08fcc5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -384,13 +387,13 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; Human::playCard </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramtype">const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>&#160;</td>
           <td class="paramname"><em>referenceCard</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>highTrump</em>&#160;</td>
         </tr>
         <tr>
@@ -416,7 +419,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The card the player plays. </dd></dl>
 
-<p>Implements <a class="el" href="classPlayer.html#aeba090a124bfd9a3666d2d793439cae0">Player</a>.</p>
+<p>Implements <a class="el" href="classPlayer.html#ae57e9fda7c993d6f0562b84f57279067">Player</a>.</p>
 
 </div>
 </div>
@@ -427,7 +430,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 7 2017 03:57:26 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

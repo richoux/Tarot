@@ -1,8 +1,8 @@
 <map id="src/Trick.hpp" name="src/Trick.hpp">
-<area shape="rect" id="node6" href="$Player_8hpp.html" title="Player.hpp" alt="" coords="367,80,451,107"/>
-<area shape="rect" id="node9" href="$Card_8hpp.html" title="Card.hpp" alt="" coords="656,229,729,256"/>
-<area shape="rect" id="node10" href="$Suits_8hpp.html" title="Suits.hpp" alt="" coords="683,304,759,331"/>
-<area shape="rect" id="node11" href="$Deck_8hpp.html" title="Deck.hpp" alt="" coords="293,155,371,181"/>
-<area shape="rect" id="node14" href="$Biddings_8hpp.html" title="Biddings.hpp" alt="" coords="498,155,595,181"/>
-<area shape="rect" id="node15" href="$Announcements_8hpp.html" title="Announcements.hpp" alt="" coords="620,155,760,181"/>
+<area shape="rect" id="node5" href="$Player_8hpp.html" title="Player.hpp" alt="" coords="353,80,436,107"/>
+<area shape="rect" id="node7" href="$Card_8hpp.html" title="Card.hpp" alt="" coords="540,229,613,256"/>
+<area shape="rect" id="node10" href="$Deck_8hpp.html" title="Deck.hpp" alt="" coords="458,155,536,181"/>
+<area shape="rect" id="node11" href="$Biddings_8hpp.html" title="Biddings.hpp" alt="" coords="613,155,709,181"/>
+<area shape="rect" id="node12" href="$Announcements_8hpp.html" title="Announcements.hpp" alt="" coords="191,155,331,181"/>
+<area shape="rect" id="node9" href="$Suits_8hpp.html" title="Suits.hpp" alt="" coords="588,304,664,331"/>
 </map>

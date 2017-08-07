@@ -107,6 +107,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a113a46b46e64efe0fd98a42df301db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a113a46b46e64efe0fd98a42df301db9a">Card</a> (const <a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a> suit, const int value, const double points, const bool oudler)</td></tr>
 <tr class="memdesc:a113a46b46e64efe0fd98a42df301db9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor for <a class="el" href="classCard.html" title="Card is the class compiling all useful information on cards: points, suit, value... ">Card</a>.  <a href="#a113a46b46e64efe0fd98a42df301db9a">More...</a><br/></td></tr>
 <tr class="separator:a113a46b46e64efe0fd98a42df301db9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70251edbcc704aef4f42b150ba5ea869"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a70251edbcc704aef4f42b150ba5ea869">computeIndex</a> () const </td></tr>
+<tr class="memdesc:a70251edbcc704aef4f42b150ba5ea869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the card index in the deck before shuffle. Used for the GUI.  <a href="#a70251edbcc704aef4f42b150ba5ea869">More...</a><br/></td></tr>
+<tr class="separator:a70251edbcc704aef4f42b150ba5ea869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf11e6396788e2e832d3bdf29880593f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#adf11e6396788e2e832d3bdf29880593f">getPoints</a> () const </td></tr>
 <tr class="memdesc:adf11e6396788e2e832d3bdf29880593f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to get the card's points.  <a href="#adf11e6396788e2e832d3bdf29880593f">More...</a><br/></td></tr>
 <tr class="separator:adf11e6396788e2e832d3bdf29880593f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,21 +119,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab70c98dd7bfc44f87c5914990737e79d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ab70c98dd7bfc44f87c5914990737e79d">getValue</a> () const </td></tr>
 <tr class="memdesc:ab70c98dd7bfc44f87c5914990737e79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to get the card's value.  <a href="#ab70c98dd7bfc44f87c5914990737e79d">More...</a><br/></td></tr>
 <tr class="separator:ab70c98dd7bfc44f87c5914990737e79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa05732992ee8352a205a15d89f4edda4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#aa05732992ee8352a205a15d89f4edda4">isFool</a> () const </td></tr>
-<tr class="memdesc:aa05732992ee8352a205a15d89f4edda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is the Fool.  <a href="#aa05732992ee8352a205a15d89f4edda4">More...</a><br/></td></tr>
-<tr class="separator:aa05732992ee8352a205a15d89f4edda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9674d010674d0a536994147696abc6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ad9674d010674d0a536994147696abc6d">isTrump</a> () const </td></tr>
-<tr class="memdesc:ad9674d010674d0a536994147696abc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is a trump.  <a href="#ad9674d010674d0a536994147696abc6d">More...</a><br/></td></tr>
-<tr class="separator:ad9674d010674d0a536994147696abc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ac4b04ac18721afdff8d504a7621a97"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a8ac4b04ac18721afdff8d504a7621a97">isOudler</a> () const </td></tr>
-<tr class="memdesc:a8ac4b04ac18721afdff8d504a7621a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is an oudler.  <a href="#a8ac4b04ac18721afdff8d504a7621a97">More...</a><br/></td></tr>
-<tr class="separator:a8ac4b04ac18721afdff8d504a7621a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c531d32de5e76e758254b9d03689ae5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">isComparable</a> (const <a class="el" href="classCard.html">Card</a> &amp;card) const </td></tr>
+<tr class="memdesc:a2c531d32de5e76e758254b9d03689ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function to decide if two cards are comparable.  <a href="#a2c531d32de5e76e758254b9d03689ae5">More...</a><br/></td></tr>
+<tr class="separator:a2c531d32de5e76e758254b9d03689ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8978fa4de9e59246381ebd2f9c5ecfc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ac8978fa4de9e59246381ebd2f9c5ecfc">isFaceCard</a> () const </td></tr>
 <tr class="memdesc:ac8978fa4de9e59246381ebd2f9c5ecfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is a face card.  <a href="#ac8978fa4de9e59246381ebd2f9c5ecfc">More...</a><br/></td></tr>
 <tr class="separator:ac8978fa4de9e59246381ebd2f9c5ecfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70251edbcc704aef4f42b150ba5ea869"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a70251edbcc704aef4f42b150ba5ea869">computeIndex</a> () const </td></tr>
-<tr class="memdesc:a70251edbcc704aef4f42b150ba5ea869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the card index in the deck before shuffle. Used for the GUI.  <a href="#a70251edbcc704aef4f42b150ba5ea869">More...</a><br/></td></tr>
-<tr class="separator:a70251edbcc704aef4f42b150ba5ea869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05732992ee8352a205a15d89f4edda4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#aa05732992ee8352a205a15d89f4edda4">isFool</a> () const </td></tr>
+<tr class="memdesc:aa05732992ee8352a205a15d89f4edda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is the Fool.  <a href="#aa05732992ee8352a205a15d89f4edda4">More...</a><br/></td></tr>
+<tr class="separator:aa05732992ee8352a205a15d89f4edda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac4b04ac18721afdff8d504a7621a97"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a8ac4b04ac18721afdff8d504a7621a97">isOudler</a> () const </td></tr>
+<tr class="memdesc:a8ac4b04ac18721afdff8d504a7621a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is an oudler.  <a href="#a8ac4b04ac18721afdff8d504a7621a97">More...</a><br/></td></tr>
+<tr class="separator:a8ac4b04ac18721afdff8d504a7621a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9674d010674d0a536994147696abc6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#ad9674d010674d0a536994147696abc6d">isTrump</a> () const </td></tr>
+<tr class="memdesc:ad9674d010674d0a536994147696abc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning true iif the card is a trump.  <a href="#ad9674d010674d0a536994147696abc6d">More...</a><br/></td></tr>
+<tr class="separator:ad9674d010674d0a536994147696abc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50bd8a1a5d5bdfce5727718844f87ce8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a50bd8a1a5d5bdfce5727718844f87ce8">operator&gt;</a> (const <a class="el" href="classCard.html">Card</a> &amp;card) const </td></tr>
 <tr class="memdesc:a50bd8a1a5d5bdfce5727718844f87ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A greater-than comparator to make easier the comparison between cards.  <a href="#a50bd8a1a5d5bdfce5727718844f87ce8">More...</a><br/></td></tr>
 <tr class="separator:a50bd8a1a5d5bdfce5727718844f87ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,9 +143,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a54a1553ca40e32768ee09465447b8090"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a54a1553ca40e32768ee09465447b8090">operator==</a> (const <a class="el" href="classCard.html">Card</a> &amp;card) const </td></tr>
 <tr class="memdesc:a54a1553ca40e32768ee09465447b8090"><td class="mdescLeft">&#160;</td><td class="mdescRight">An equal comparator to make easier the comparison between cards.  <a href="#a54a1553ca40e32768ee09465447b8090">More...</a><br/></td></tr>
 <tr class="separator:a54a1553ca40e32768ee09465447b8090"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c531d32de5e76e758254b9d03689ae5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCard.html#a2c531d32de5e76e758254b9d03689ae5">isComparable</a> (const <a class="el" href="classCard.html">Card</a> &amp;card) const </td></tr>
-<tr class="memdesc:a2c531d32de5e76e758254b9d03689ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function to decide if two cards are comparable.  <a href="#a2c531d32de5e76e758254b9d03689ae5">More...</a><br/></td></tr>
-<tr class="separator:a2c531d32de5e76e758254b9d03689ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -548,7 +548,7 @@ Friends</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 7 2017 03:57:26 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

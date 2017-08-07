@@ -103,27 +103,30 @@ Collaboration diagram for Trick:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2d52be4c67d65793531d2dc96122ae72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a2d52be4c67d65793531d2dc96122ae72">Trick</a> (shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; kingCalled)</td></tr>
-<tr class="memdesc:a2d52be4c67d65793531d2dc96122ae72"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classTrick.html" title="This class manages the current and previously played tricks. ">Trick</a>.  <a href="#a2d52be4c67d65793531d2dc96122ae72">More...</a><br/></td></tr>
-<tr class="separator:a2d52be4c67d65793531d2dc96122ae72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d196a8097feccd87f1aca65ea4e80c8"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a4d196a8097feccd87f1aca65ea4e80c8">asCalledKing</a> () const </td></tr>
-<tr class="memdesc:a4d196a8097feccd87f1aca65ea4e80c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a player has played the called king in the current trick, and returns a pointer on this player, if any.  <a href="#a4d196a8097feccd87f1aca65ea4e80c8">More...</a><br/></td></tr>
-<tr class="separator:a4d196a8097feccd87f1aca65ea4e80c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f28da13a8b2c015af106fc453197cc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a6f28da13a8b2c015af106fc453197cc0">Trick</a> ()</td></tr>
+<tr class="memdesc:a6f28da13a8b2c015af106fc453197cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique constructor of <a class="el" href="classTrick.html" title="This class manages the current and previously played tricks. ">Trick</a>.  <a href="#a6f28da13a8b2c015af106fc453197cc0">More...</a><br/></td></tr>
+<tr class="separator:a6f28da13a8b2c015af106fc453197cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1db9b6c13def25e38b6604b56d97ddd2"><td class="memItemLeft" align="right" valign="top">set&lt; shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a1db9b6c13def25e38b6604b56d97ddd2">getAllCards</a> () const </td></tr>
 <tr class="memdesc:a1db9b6c13def25e38b6604b56d97ddd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all cards in the current trick.  <a href="#a1db9b6c13def25e38b6604b56d97ddd2">More...</a><br/></td></tr>
 <tr class="separator:a1db9b6c13def25e38b6604b56d97ddd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d2b4c09c8d7c255ff34bde5fe29532a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a4d2b4c09c8d7c255ff34bde5fe29532a">setCard</a> (shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; player, shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
-<tr class="memdesc:a4d2b4c09c8d7c255ff34bde5fe29532a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the trickCards map, and determine also the value of other variables like foolPlayer, greaterTrump and leader.  <a href="#a4d2b4c09c8d7c255ff34bde5fe29532a">More...</a><br/></td></tr>
-<tr class="separator:a4d2b4c09c8d7c255ff34bde5fe29532a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c7778b0e25a6206dd74f246fc04773"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a70c7778b0e25a6206dd74f246fc04773">setCard</a> (const shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; player, const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt; card)</td></tr>
+<tr class="memdesc:a70c7778b0e25a6206dd74f246fc04773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the trickCards map, and determine also the value of other variables like foolPlayer, greaterTrump and leader.  <a href="#a70c7778b0e25a6206dd74f246fc04773">More...</a><br/></td></tr>
+<tr class="separator:a70c7778b0e25a6206dd74f246fc04773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63625303ef93e30fec915b8cd039e6af"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a63625303ef93e30fec915b8cd039e6af">getScore</a> () const </td></tr>
 <tr class="memdesc:a63625303ef93e30fec915b8cd039e6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get the cumulative points of the current trick.  <a href="#a63625303ef93e30fec915b8cd039e6af">More...</a><br/></td></tr>
 <tr class="separator:a63625303ef93e30fec915b8cd039e6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9ac29e341baed3bcd38bea295a8e4cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#af9ac29e341baed3bcd38bea295a8e4cd">getNumberOfCards</a> () const </td></tr>
+<tr class="memdesc:af9ac29e341baed3bcd38bea295a8e4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the number of cards composing the trick.  <a href="#af9ac29e341baed3bcd38bea295a8e4cd">More...</a><br/></td></tr>
+<tr class="separator:af9ac29e341baed3bcd38bea295a8e4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af156d49d692f5168320ebc30aa084da1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#af156d49d692f5168320ebc30aa084da1">showAllCards</a> () const </td></tr>
 <tr class="memdesc:af156d49d692f5168320ebc30aa084da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show all card of the current trick.  <a href="#af156d49d692f5168320ebc30aa084da1">More...</a><br/></td></tr>
 <tr class="separator:af156d49d692f5168320ebc30aa084da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1649b27628cb224f3eb98f56ea00f5ac"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a1649b27628cb224f3eb98f56ea00f5ac">getCard</a> (shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; player) const </td></tr>
-<tr class="memdesc:a1649b27628cb224f3eb98f56ea00f5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the card played of the given player during the current trick.  <a href="#a1649b27628cb224f3eb98f56ea00f5ac">More...</a><br/></td></tr>
-<tr class="separator:a1649b27628cb224f3eb98f56ea00f5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ffa7b4b0ded707c359d3d211c280ce3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a4ffa7b4b0ded707c359d3d211c280ce3">clearTrick</a> ()</td></tr>
+<tr class="memdesc:a4ffa7b4b0ded707c359d3d211c280ce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear trick data (cards, leader, ...).  <a href="#a4ffa7b4b0ded707c359d3d211c280ce3">More...</a><br/></td></tr>
+<tr class="separator:a4ffa7b4b0ded707c359d3d211c280ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018b51abfacee4c8cce7646b2888217f"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a018b51abfacee4c8cce7646b2888217f">getCard</a> (const shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; player) const </td></tr>
+<tr class="memdesc:a018b51abfacee4c8cce7646b2888217f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline assessor to the card played of the given player during the current trick.  <a href="#a018b51abfacee4c8cce7646b2888217f">More...</a><br/></td></tr>
+<tr class="separator:a018b51abfacee4c8cce7646b2888217f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5e65fbe08d6df0ca71224e465424c6b"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#ae5e65fbe08d6df0ca71224e465424c6b">getWinCard</a> () const </td></tr>
 <tr class="memdesc:ae5e65fbe08d6df0ca71224e465424c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline function returning the card which takes the trick.  <a href="#ae5e65fbe08d6df0ca71224e465424c6b">More...</a><br/></td></tr>
 <tr class="separator:ae5e65fbe08d6df0ca71224e465424c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,49 +136,44 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4d43afa1ae8417094be02494852f7c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21f11527bb41c8a9a5ad3706c220ba4c"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a21f11527bb41c8a9a5ad3706c220ba4c">getGreaterTrump</a> () const </td></tr>
 <tr class="separator:a21f11527bb41c8a9a5ad3706c220ba4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9df1acf7c405fb553301dcd54ac670"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrick.html#a2d9df1acf7c405fb553301dcd54ac670">getReferenceSuit</a> () const </td></tr>
+<tr class="separator:a2d9df1acf7c405fb553301dcd54ac670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class manages the current and previously played tricks. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a2d52be4c67d65793531d2dc96122ae72"></a>
+<a class="anchor" id="a6f28da13a8b2c015af106fc453197cc0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Trick::Trick </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
-          <td class="paramname"><em>kingCalled</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The unique constructor of <a class="el" href="classTrick.html" title="This class manages the current and previously played tricks. ">Trick</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">kingCalled</td><td>A pointer on the king called for a 5-player game. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4d196a8097feccd87f1aca65ea4e80c8"></a>
+<a class="anchor" id="a4ffa7b4b0ded707c359d3d211c280ce3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; Trick::asCalledKing </td>
+          <td class="memname">void Trick::clearTrick </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determine if a player has played the called king in the current trick, and returns a pointer on this player, if any. </p>
+<p>Clear trick data (cards, leader, ...). </p>
 
 </div>
 </div>
@@ -196,7 +194,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1649b27628cb224f3eb98f56ea00f5ac"></a>
+<a class="anchor" id="a018b51abfacee4c8cce7646b2888217f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -206,7 +204,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">shared_ptr&lt;<a class="el" href="classCard.html">Card</a>&gt; Trick::getCard </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td>
           <td class="paramname"><em>player</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -291,6 +289,54 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af9ac29e341baed3bcd38bea295a8e4cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Trick::getNumberOfCards </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inline function returning the number of cards composing the trick. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2d9df1acf7c405fb553301dcd54ac670"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Suits_8hpp.html#af9c1b0214e7a472bf75d8a8bb43a28bb">Suits</a> Trick::getReferenceSuit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a63625303ef93e30fec915b8cd039e6af"></a>
 <div class="memitem">
 <div class="memproto">
@@ -333,20 +379,20 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4d2b4c09c8d7c255ff34bde5fe29532a"></a>
+<a class="anchor" id="a70c7778b0e25a6206dd74f246fc04773"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Trick::setCard </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt;&#160;</td>
           <td class="paramname"><em>player</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>card</em>&#160;</td>
         </tr>
         <tr>
@@ -392,7 +438,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 6 2016 03:04:14 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 7 2017 03:57:26 for Mari&#39;s Tarot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
