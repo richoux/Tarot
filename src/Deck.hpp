@@ -31,6 +31,9 @@ using namespace std;
 //! Deck is the class managing the deck of cards. Used as well as for the game deck, but also for a counting cards AI.
 class Deck
 {
+private:
+  unsigned _seed = 0;
+
 public:
   //! The unique constructor of Deck.
   Deck();

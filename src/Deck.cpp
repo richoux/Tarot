@@ -20,8 +20,10 @@
  */
 
 #include <algorithm>
+#include <random>
 #include <iterator>
 #include <ctime>
+#include <chrono>
 
 #include "Deck.hpp"
 
@@ -50,6 +52,9 @@ int Deck::indexInDeck( const shared_ptr<Card> card ) const
 
 void Deck::newDeal()
 {
+  if( _seed == 0 )
+    _seed = chrono::system_clock::now().time_since_epoch().count();
+  
   cards.clear();
   heads.clear();
   
@@ -176,5 +181,6 @@ void Deck::newDeal()
 
 void Deck::shuffle()
 {
-  random_shuffle( cards.begin(), cards.end() );
+  // random_shuffle( cards.begin(), cards.end() );
+  std::shuffle( cards.begin(), cards.end(), default_random_engine( _seed ) );
 }
